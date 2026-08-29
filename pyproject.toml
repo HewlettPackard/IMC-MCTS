@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "imc-mcts"
+version = "0.1.0"
+description = "Research code for in-memory-compute acceleration of Monte Carlo Tree Search"
+readme = "README.md"
+requires-python = ">=3.10"
+maintainers = [
+    { name = "Tergel Molom-Ochir", email = "tergel.molom-ochir@hpe.com" },
+]
+license = "MIT"
+license-files = ["LICENSE"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "numpy>=1.22",
+]
+
+[project.optional-dependencies]
+paper = [
+    "matplotlib>=3.5",
+    "pandas>=1.4",
+    "scipy>=1.9",
+    "seaborn>=0.12",
+]
+benchmark-cpu = [
+    "psutil>=5.9",
+    "py-cpuinfo>=9.0",
+]
+gpu = [
+    "numba>=0.57",
+    "pynvml>=11.5",
+]
+train = [
+    "tqdm>=4.64",
+]
+test = [
+    "pytest>=7.4",
+]
+
+[project.urls]
+Repository = "https://github.com/HewlettPackard/IMC-MCTS"
+Issues = "https://github.com/HewlettPackard/IMC-MCTS/issues"
+Paper = "https://arxiv.org/abs/2607.22869"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+    "core",
+    "core.*",
+    "generalizability",
+    "generalizability.*",
+    "py_sst_cpp",
+    "py_sst_cpp.*",
+    "tournament",
+    "tournament.*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

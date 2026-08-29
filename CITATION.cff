@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying paper in preferred-citation."
+title: "IMC-MCTS: In-Memory-Compute Acceleration of Monte Carlo Tree Search"
+type: software
+authors:
+  - name: "IMC-MCTS contributors"
+contact:
+  - family-names: "Molom-Ochir"
+    given-names: "Tergel"
+    affiliation: "Hewlett Packard Labs"
+    email: "tergel.molom-ochir@hpe.com"
+repository-code: "https://github.com/HewlettPackard/IMC-MCTS"
+version: "0.1.0"
+license: MIT
+keywords:
+  - in-memory computing
+  - Monte Carlo Tree Search
+  - hardware accelerator
+  - content-addressable memory
+  - research software
+preferred-citation:
+  type: article
+  title: "Multi-primitive in-memory computing for Monte Carlo tree search"
+  authors:
+    - family-names: "Molom-Ochir"
+      given-names: "Tergel"
+    - family-names: "Morris"
+      given-names: "Benjamin F."
+      name-suffix: "III"
+    - family-names: "He"
+      given-names: "Yintao"
+    - family-names: "Gajjar"
+      given-names: "Archit"
+    - family-names: "Pedretti"
+      given-names: "Giacomo"
+    - family-names: "Li"
+      given-names: "Hai Helen"
+    - family-names: "Chen"
+      given-names: "Yiran"
+    - family-names: "Ignowski"
+      given-names: "Jim"
+    - family-names: "Natarajan"
+      given-names: "Aishwarya"
+  journal: "arXiv"
+  date-published: "2026-07-24"
+  year: 2026
+  status: "preprint"
+  doi: "10.48550/arXiv.2607.22869"
+  identifiers:
+    - type: other
+      value: "arXiv:2607.22869"
+      description: "The arXiv identifier for the accompanying paper."
+  url: "https://arxiv.org/abs/2607.22869"

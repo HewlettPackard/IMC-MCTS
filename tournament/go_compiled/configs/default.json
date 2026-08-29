@@ -1,0 +1,52 @@
+{
+  "board_size": 9,
+  "komi": 6.5,
+  "mcts_iterations": 2000,
+  "games_per_matchup": 50,
+  "max_moves_per_game": 162,
+  "players": {
+    "IMC-MCTS-8bit": {
+      "type": "mcts_nn",
+      "weights": "weights/8bit/model_8bit.pkl",
+      "noise_std": 0.0,
+      "adc_bits": 0
+    },
+    "IMC-MCTS-4bit": {
+      "type": "mcts_nn",
+      "weights": "weights/4bit/model_4bit.pkl",
+      "noise_std": 0.0,
+      "adc_bits": 0
+    },
+    "IMC-MCTS-2bit": {
+      "type": "mcts_nn",
+      "weights": "weights/2bit/model_2bit.pkl",
+      "noise_std": 0.0,
+      "adc_bits": 0
+    },
+    "MCTS-Rollout": {
+      "type": "mcts_rollout"
+    }
+  },
+  "external_players": {
+    "GnuGo-L1": {
+      "engine": "gnugo",
+      "gnugo_path": "gnugo",
+      "level": 1
+    },
+    "GnuGo-L10": {
+      "engine": "gnugo",
+      "gnugo_path": "gnugo",
+      "level": 10
+    },
+    "Pachi-5s": {
+      "engine": "pachi",
+      "pachi_path": "pachi",
+      "time_per_move": 5
+    },
+    "Pachi-1s": {
+      "engine": "pachi",
+      "pachi_path": "pachi",
+      "time_per_move": 1
+    }
+  }
+}

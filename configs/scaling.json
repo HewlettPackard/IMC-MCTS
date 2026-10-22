@@ -1,0 +1,128 @@
+[
+  {
+    "board_size": 2,
+    "iterations": 50,
+    "budget": "low",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 2,
+    "iterations": 200,
+    "budget": "medium",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 2,
+    "iterations": 400,
+    "budget": "high",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 3,
+    "iterations": 75,
+    "budget": "low",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 3,
+    "iterations": 500,
+    "budget": "medium",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 3,
+    "iterations": 1000,
+    "budget": "high",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 5,
+    "iterations": 100,
+    "budget": "low",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 5,
+    "iterations": 1000,
+    "budget": "medium",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 5,
+    "iterations": 2000,
+    "budget": "high",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 9,
+    "iterations": 500,
+    "budget": "low",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 9,
+    "iterations": 5000,
+    "budget": "medium",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 9,
+    "iterations": 10000,
+    "budget": "high",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 13,
+    "iterations": 1000,
+    "budget": "low",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 13,
+    "iterations": 7500,
+    "budget": "medium",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 13,
+    "iterations": 15000,
+    "budget": "high",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 19,
+    "iterations": 2000,
+    "budget": "low",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 19,
+    "iterations": 10000,
+    "budget": "medium",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  },
+  {
+    "board_size": 19,
+    "iterations": 20000,
+    "budget": "high",
+    "model_id": "random_diagnostic",
+    "seed": 0
+  }
+]

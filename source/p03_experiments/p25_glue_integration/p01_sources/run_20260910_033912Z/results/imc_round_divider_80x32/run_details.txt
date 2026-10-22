@@ -1,0 +1,20 @@
+top=imc_round_divider
+parameters=NUM_W=80,DEN_W=32
+technology=TSMC 65nm
+library=sc12_cln65gplus_base_rvt
+corner=tt_typical_max_1p00v_25c
+voltage=1.00 V
+temperature=25 C
+time_unit=1 ns
+capacitance_unit=1 pF
+area_unit=square micrometers
+clock_period_ns=2.0
+clock_uncertainty_ns=0.05
+clock_transition_ns=0.10
+input_output_delay_ns=0.20
+input_driver=BUF_X1M_A12TR/Y
+output_load_pf=0.01
+reset_exception=set_false_path -from rst_n (active-low asynchronous reset)
+compile=compile_ultra -no_autoungroup
+power=vectorless; no workload activity supplied
+design_compiler=U-2022.12-SP7-1

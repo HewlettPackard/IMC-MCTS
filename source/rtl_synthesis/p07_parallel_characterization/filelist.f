@@ -1,0 +1,11 @@
+../p01_mapped_core/p00_rtl/imc_round_divider.sv
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv
+../p03_iteration_core/p00_rtl/imc_ln_table.sv
+../p03_iteration_core/p00_rtl/imc_isqrt.sv
+../p06_ucb_overlap/p00_rtl/imc_ucb_score_overlap.sv
+p00_rtl/imc_candidate_banks.sv
+p00_rtl/imc_shift_add_lane.sv
+p00_rtl/imc_accumulator_bank.sv
+p00_rtl/imc_parallel_accumulators.sv
+p00_rtl/imc_parallel_result_banks.sv
+p00_rtl/imc_ucb_batch16_overlap.sv

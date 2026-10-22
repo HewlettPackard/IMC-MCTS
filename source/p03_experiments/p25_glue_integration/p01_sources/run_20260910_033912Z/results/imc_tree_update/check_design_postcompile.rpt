@@ -1,0 +1,80 @@
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12-SP7-1
+Date:        Wed Sep  9 19:55:09 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     64
+    Unconnected ports (LINT-28)                                     9
+    Shorted outputs (LINT-31)                                      54
+    Constant outputs (LINT-52)                                      1
+--------------------------------------------------------------------------------
+
+Warning: In design 'imc_q17_codec', port 'binary_result[63]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_q17_codec', port 'binary_result[61]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_q17_codec', port 'binary_result[60]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_q17_codec', port 'binary_result[59]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_q17_codec', port 'binary_result[58]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_q17_codec', port 'binary_result[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_q17_codec', port 'binary_result[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_q17_codec', port 'binary_result[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_q17_codec', port 'binary_result[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_write' is connected directly to output port 'child_req_write'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[20]' is connected directly to output port 'child_req_addr[20]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[19]' is connected directly to output port 'child_req_addr[19]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[18]' is connected directly to output port 'child_req_addr[18]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[17]' is connected directly to output port 'child_req_addr[17]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[16]' is connected directly to output port 'child_req_addr[16]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[15]' is connected directly to output port 'child_req_addr[15]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[14]' is connected directly to output port 'child_req_addr[14]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[13]' is connected directly to output port 'child_req_addr[13]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[12]' is connected directly to output port 'child_req_addr[12]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[11]' is connected directly to output port 'child_req_addr[11]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[10]' is connected directly to output port 'child_req_addr[10]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[9]' is connected directly to output port 'child_req_addr[9]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[8]' is connected directly to output port 'child_req_addr[8]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[7]' is connected directly to output port 'child_req_addr[7]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[6]' is connected directly to output port 'child_req_addr[6]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[5]' is connected directly to output port 'child_req_addr[5]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[4]' is connected directly to output port 'child_req_addr[4]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[3]' is connected directly to output port 'child_req_addr[3]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[2]' is connected directly to output port 'child_req_addr[2]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[1]' is connected directly to output port 'child_req_addr[1]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_addr[0]' is connected directly to output port 'child_req_addr[0]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[31]' is connected directly to output port 'child_req_wdata[31]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[30]' is connected directly to output port 'child_req_wdata[30]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[29]' is connected directly to output port 'child_req_wdata[29]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[28]' is connected directly to output port 'child_req_wdata[28]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[27]' is connected directly to output port 'child_req_wdata[27]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[26]' is connected directly to output port 'child_req_wdata[26]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[25]' is connected directly to output port 'child_req_wdata[25]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[24]' is connected directly to output port 'child_req_wdata[24]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[23]' is connected directly to output port 'child_req_wdata[23]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[22]' is connected directly to output port 'child_req_wdata[22]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[21]' is connected directly to output port 'child_req_wdata[21]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[20]' is connected directly to output port 'child_req_wdata[20]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[19]' is connected directly to output port 'child_req_wdata[19]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[18]' is connected directly to output port 'child_req_wdata[18]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[17]' is connected directly to output port 'child_req_wdata[17]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[16]' is connected directly to output port 'child_req_wdata[16]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[15]' is connected directly to output port 'child_req_wdata[15]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[14]' is connected directly to output port 'child_req_wdata[14]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[13]' is connected directly to output port 'child_req_wdata[13]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[12]' is connected directly to output port 'child_req_wdata[12]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[11]' is connected directly to output port 'child_req_wdata[11]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[10]' is connected directly to output port 'child_req_wdata[10]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[9]' is connected directly to output port 'child_req_wdata[9]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[8]' is connected directly to output port 'child_req_wdata[8]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[7]' is connected directly to output port 'child_req_wdata[7]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[6]' is connected directly to output port 'child_req_wdata[6]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[5]' is connected directly to output port 'child_req_wdata[5]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[4]' is connected directly to output port 'child_req_wdata[4]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[3]' is connected directly to output port 'child_req_wdata[3]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[2]' is connected directly to output port 'child_req_wdata[2]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[1]' is connected directly to output port 'child_req_wdata[1]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'node_req_wdata[0]' is connected directly to output port 'child_req_wdata[0]'. (LINT-31)
+Warning: In design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21', output port 'debug_state[5]' is connected directly to 'logic 0'. (LINT-52)
+1

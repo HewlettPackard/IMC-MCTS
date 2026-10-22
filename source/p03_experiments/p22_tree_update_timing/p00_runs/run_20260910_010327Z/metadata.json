@@ -1,0 +1,3285 @@
+{
+  "phase": "candidate_update_rtl",
+  "status": "passed",
+  "started_utc": "2026-09-10T01:03:27.476897+00:00",
+  "starting_checkpoint": "39680f4a05c1cceab0960f8484213f0c573e6a5f",
+  "python": "3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:38:53) [Clang 18.1.8 ]",
+  "commands": [
+    {
+      "check": "version_iverilog",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-V"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "version_vvp",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "-V"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "version_verilator",
+      "argv": [
+        "/opt/homebrew/bin/verilator",
+        "--version"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "version_yosys",
+      "argv": [
+        "/opt/homebrew/bin/yosys",
+        "-V"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "remainder_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_choice_remainder",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/choice.vvp",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "p01_tests/tb_imc_choice_remainder.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "remainder_test",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/choice.vvp"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 60
+    },
+    {
+      "check": "small_syntax",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-tnull",
+        "-s",
+        "imc_tree_update",
+        "-Pimc_tree_update.BOARD_SIZE=2",
+        "-Pimc_tree_update.CAM_ENTRIES=7",
+        "-Pimc_tree_update.NEURAL_BYTES=16424",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_lint",
+      "argv": [
+        "/opt/homebrew/bin/verilator",
+        "--lint-only",
+        "-Wall",
+        "--top-module",
+        "imc_tree_update",
+        "-GBOARD_SIZE=2",
+        "-GCAM_ENTRIES=7",
+        "-GNEURAL_BYTES=16424",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_baseline_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=2",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=7",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16424",
+        "-Ptb_imc_tree_update.STALL=0",
+        "-Ptb_imc_tree_update.FAULT=0",
+        "-Ptb_imc_tree_update.ABORT_STATE=0",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core/p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_baseline_unvisited",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/unvisited",
+        "+COUNT=16",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_unvisited.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_baseline_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/expand_black",
+        "+COUNT=68",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_baseline_expand_white",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/expand_white",
+        "+COUNT=59",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_expand_white.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_baseline_full",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/full",
+        "+COUNT=19",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_full.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_baseline_ragged",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/ragged",
+        "+COUNT=50",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_ragged.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_baseline_already_expanded",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/already_expanded",
+        "+COUNT=16",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_already_expanded.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_baseline_multi_path",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/multi_path",
+        "+COUNT=69",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_multi_path.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_baseline_exact_fit",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/exact_fit",
+        "+COUNT=68",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_exact_fit.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_baseline_node_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/node_overflow",
+        "+COUNT=9",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_node_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_baseline_edge_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/edge_overflow",
+        "+COUNT=9",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_edge_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_baseline_path_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/path_overflow",
+        "+COUNT=9",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_path_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_baseline_bad_board",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/bad_board",
+        "+COUNT=9",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_bad_board.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_baseline_visit_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/visit_overflow",
+        "+COUNT=7",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_baseline_visit_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=2",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=7",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16424",
+        "-Ptb_imc_tree_update.STALL=0",
+        "-Ptb_imc_tree_update.FAULT=0",
+        "-Ptb_imc_tree_update.ABORT_STATE=0",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_candidate_unvisited",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/unvisited",
+        "+COUNT=16",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_unvisited.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/expand_black",
+        "+COUNT=68",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_expand_white",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/expand_white",
+        "+COUNT=59",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_expand_white.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_full",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/full",
+        "+COUNT=19",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_full.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_ragged",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/ragged",
+        "+COUNT=50",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_ragged.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_already_expanded",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/already_expanded",
+        "+COUNT=16",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_already_expanded.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_multi_path",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/multi_path",
+        "+COUNT=69",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_multi_path.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_exact_fit",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/exact_fit",
+        "+COUNT=68",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_exact_fit.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_node_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/node_overflow",
+        "+COUNT=9",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_node_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_edge_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/edge_overflow",
+        "+COUNT=9",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_edge_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_path_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/path_overflow",
+        "+COUNT=9",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_path_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_bad_board",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/bad_board",
+        "+COUNT=9",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_bad_board.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_candidate_visit_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/visit_overflow",
+        "+COUNT=7",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_candidate_visit_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=2",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=7",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16424",
+        "-Ptb_imc_tree_update.STALL=1",
+        "-Ptb_imc_tree_update.FAULT=0",
+        "-Ptb_imc_tree_update.ABORT_STATE=0",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_stalled_unvisited",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/unvisited",
+        "+COUNT=16",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_unvisited.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/expand_black",
+        "+COUNT=68",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_expand_white",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/expand_white",
+        "+COUNT=59",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_expand_white.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_full",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/full",
+        "+COUNT=19",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_full.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_ragged",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/ragged",
+        "+COUNT=50",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_ragged.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_already_expanded",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/already_expanded",
+        "+COUNT=16",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_already_expanded.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_multi_path",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/multi_path",
+        "+COUNT=69",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_multi_path.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_exact_fit",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/exact_fit",
+        "+COUNT=68",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_exact_fit.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_node_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/node_overflow",
+        "+COUNT=9",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_node_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_edge_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/edge_overflow",
+        "+COUNT=9",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_edge_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_path_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/path_overflow",
+        "+COUNT=9",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_path_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_bad_board",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/bad_board",
+        "+COUNT=9",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_bad_board.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_stalled_visit_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/visit_overflow",
+        "+COUNT=7",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_stalled_visit_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_fault_read_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_fault_read.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=2",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=7",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16424",
+        "-Ptb_imc_tree_update.STALL=1",
+        "-Ptb_imc_tree_update.FAULT=1",
+        "-Ptb_imc_tree_update.ABORT_STATE=0",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_fault_read_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_fault_read.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/expand_black",
+        "+COUNT=68",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_fault_read_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_fault_write_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_fault_write.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=2",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=7",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16424",
+        "-Ptb_imc_tree_update.STALL=1",
+        "-Ptb_imc_tree_update.FAULT=2",
+        "-Ptb_imc_tree_update.ABORT_STATE=0",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_fault_write_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_fault_write.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/expand_black",
+        "+COUNT=68",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_fault_write_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_fault_child_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_fault_child.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=2",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=7",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16424",
+        "-Ptb_imc_tree_update.STALL=1",
+        "-Ptb_imc_tree_update.FAULT=3",
+        "-Ptb_imc_tree_update.ABORT_STATE=0",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_fault_child_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_fault_child.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/expand_black",
+        "+COUNT=68",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_fault_child_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_abort_start_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_abort_start.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=2",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=7",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16424",
+        "-Ptb_imc_tree_update.STALL=0",
+        "-Ptb_imc_tree_update.FAULT=0",
+        "-Ptb_imc_tree_update.ABORT_STATE=23",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_abort_start_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_abort_start.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/expand_black",
+        "+COUNT=68",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_abort_start_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "small_abort_bits_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_abort_bits.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=2",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=7",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16424",
+        "-Ptb_imc_tree_update.STALL=1",
+        "-Ptb_imc_tree_update.FAULT=0",
+        "-Ptb_imc_tree_update.ABORT_STATE=24",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_abort_bits_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_abort_bits.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/small/expand_black",
+        "+COUNT=68",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/small_abort_bits_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_syntax",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-tnull",
+        "-s",
+        "imc_tree_update",
+        "-Pimc_tree_update.BOARD_SIZE=9",
+        "-Pimc_tree_update.CAM_ENTRIES=1024",
+        "-Pimc_tree_update.NEURAL_BYTES=16512",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "full_lint",
+      "argv": [
+        "/opt/homebrew/bin/verilator",
+        "--lint-only",
+        "-Wall",
+        "--top-module",
+        "imc_tree_update",
+        "-GBOARD_SIZE=9",
+        "-GCAM_ENTRIES=1024",
+        "-GNEURAL_BYTES=16512",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "full_baseline_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=9",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=1024",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16512",
+        "-Ptb_imc_tree_update.STALL=0",
+        "-Ptb_imc_tree_update.FAULT=0",
+        "-Ptb_imc_tree_update.ABORT_STATE=0",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core/p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "full_baseline_unvisited",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/unvisited",
+        "+COUNT=16",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_unvisited.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_baseline_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/expand_black",
+        "+COUNT=1586",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_baseline_expand_white",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/expand_white",
+        "+COUNT=1567",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_expand_white.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_baseline_full",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/full",
+        "+COUNT=34",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_full.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_baseline_ragged",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/ragged",
+        "+COUNT=560",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_ragged.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_baseline_already_expanded",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/already_expanded",
+        "+COUNT=16",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_already_expanded.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_baseline_multi_path",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/multi_path",
+        "+COUNT=1577",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_multi_path.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_baseline_exact_fit",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/exact_fit",
+        "+COUNT=1586",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_exact_fit.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_baseline_node_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/node_overflow",
+        "+COUNT=24",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_node_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_baseline_edge_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/edge_overflow",
+        "+COUNT=24",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_edge_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_baseline_path_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/path_overflow",
+        "+COUNT=24",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_path_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_baseline_bad_board",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/bad_board",
+        "+COUNT=24",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_bad_board.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_baseline_visit_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/visit_overflow",
+        "+COUNT=7",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_baseline_visit_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=9",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=1024",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16512",
+        "-Ptb_imc_tree_update.STALL=0",
+        "-Ptb_imc_tree_update.FAULT=0",
+        "-Ptb_imc_tree_update.ABORT_STATE=0",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "full_candidate_unvisited",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/unvisited",
+        "+COUNT=16",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_unvisited.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/expand_black",
+        "+COUNT=1586",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_expand_white",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/expand_white",
+        "+COUNT=1567",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_expand_white.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_full",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/full",
+        "+COUNT=34",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_full.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_ragged",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/ragged",
+        "+COUNT=560",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_ragged.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_already_expanded",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/already_expanded",
+        "+COUNT=16",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_already_expanded.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_multi_path",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/multi_path",
+        "+COUNT=1577",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_multi_path.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_exact_fit",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/exact_fit",
+        "+COUNT=1586",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_exact_fit.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_node_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/node_overflow",
+        "+COUNT=24",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_node_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_edge_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/edge_overflow",
+        "+COUNT=24",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_edge_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_path_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/path_overflow",
+        "+COUNT=24",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_path_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_bad_board",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/bad_board",
+        "+COUNT=24",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_bad_board.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_candidate_visit_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/visit_overflow",
+        "+COUNT=7",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_candidate_visit_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=9",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=1024",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16512",
+        "-Ptb_imc_tree_update.STALL=1",
+        "-Ptb_imc_tree_update.FAULT=0",
+        "-Ptb_imc_tree_update.ABORT_STATE=0",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "full_stalled_unvisited",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/unvisited",
+        "+COUNT=16",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_unvisited.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/expand_black",
+        "+COUNT=1586",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_expand_white",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/expand_white",
+        "+COUNT=1567",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_expand_white.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_full",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/full",
+        "+COUNT=34",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_full.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_ragged",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/ragged",
+        "+COUNT=560",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_ragged.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_already_expanded",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/already_expanded",
+        "+COUNT=16",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_already_expanded.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_multi_path",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/multi_path",
+        "+COUNT=1577",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_multi_path.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_exact_fit",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/exact_fit",
+        "+COUNT=1586",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_exact_fit.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_node_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/node_overflow",
+        "+COUNT=24",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_node_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_edge_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/edge_overflow",
+        "+COUNT=24",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_edge_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_path_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/path_overflow",
+        "+COUNT=24",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_path_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_bad_board",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/bad_board",
+        "+COUNT=24",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_bad_board.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_stalled_visit_overflow",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/visit_overflow",
+        "+COUNT=7",
+        "+COMMANDS=1",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_stalled_visit_overflow.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_fault_read_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_fault_read.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=9",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=1024",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16512",
+        "-Ptb_imc_tree_update.STALL=1",
+        "-Ptb_imc_tree_update.FAULT=1",
+        "-Ptb_imc_tree_update.ABORT_STATE=0",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "full_fault_read_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_fault_read.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/expand_black",
+        "+COUNT=1586",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_fault_read_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_fault_write_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_fault_write.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=9",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=1024",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16512",
+        "-Ptb_imc_tree_update.STALL=1",
+        "-Ptb_imc_tree_update.FAULT=2",
+        "-Ptb_imc_tree_update.ABORT_STATE=0",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "full_fault_write_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_fault_write.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/expand_black",
+        "+COUNT=1586",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_fault_write_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_fault_child_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_fault_child.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=9",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=1024",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16512",
+        "-Ptb_imc_tree_update.STALL=1",
+        "-Ptb_imc_tree_update.FAULT=3",
+        "-Ptb_imc_tree_update.ABORT_STATE=0",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "full_fault_child_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_fault_child.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/expand_black",
+        "+COUNT=1586",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_fault_child_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_abort_start_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_abort_start.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=9",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=1024",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16512",
+        "-Ptb_imc_tree_update.STALL=0",
+        "-Ptb_imc_tree_update.FAULT=0",
+        "-Ptb_imc_tree_update.ABORT_STATE=23",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "full_abort_start_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_abort_start.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/expand_black",
+        "+COUNT=1586",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_abort_start_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    },
+    {
+      "check": "full_abort_bits_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_tree_update",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_abort_bits.vvp",
+        "-Ptb_imc_tree_update.BOARD_SIZE=9",
+        "-Ptb_imc_tree_update.CAM_ENTRIES=1024",
+        "-Ptb_imc_tree_update.NEURAL_BYTES=16512",
+        "-Ptb_imc_tree_update.STALL=1",
+        "-Ptb_imc_tree_update.FAULT=0",
+        "-Ptb_imc_tree_update.ABORT_STATE=24",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "../p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p01_tests/tb_imc_tree_update.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "full_abort_bits_expand_black",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_abort_bits.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/full/expand_black",
+        "+COUNT=1586",
+        "+COMMANDS=2",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/p01_checks/full_abort_bits_expand_black.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p05_tree_update_timing",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 90
+    }
+  ],
+  "checks": {
+    "tools_present": true,
+    "version_iverilog": true,
+    "version_vvp": true,
+    "version_verilator": true,
+    "version_yosys": true,
+    "remainder_compile": true,
+    "remainder_test": true,
+    "bounded_remainder_pass": true,
+    "small_syntax": true,
+    "small_lint": true,
+    "small_no_lint_warnings": true,
+    "small_baseline_compile": true,
+    "small_baseline_unvisited": true,
+    "small_baseline_unvisited_completed": true,
+    "small_baseline_expand_black": true,
+    "small_baseline_expand_black_completed": true,
+    "small_baseline_expand_white": true,
+    "small_baseline_expand_white_completed": true,
+    "small_baseline_full": true,
+    "small_baseline_full_completed": true,
+    "small_baseline_ragged": true,
+    "small_baseline_ragged_completed": true,
+    "small_baseline_already_expanded": true,
+    "small_baseline_already_expanded_completed": true,
+    "small_baseline_multi_path": true,
+    "small_baseline_multi_path_completed": true,
+    "small_baseline_exact_fit": true,
+    "small_baseline_exact_fit_completed": true,
+    "small_baseline_node_overflow": true,
+    "small_baseline_node_overflow_completed": true,
+    "small_baseline_edge_overflow": true,
+    "small_baseline_edge_overflow_completed": true,
+    "small_baseline_path_overflow": true,
+    "small_baseline_path_overflow_completed": true,
+    "small_baseline_bad_board": true,
+    "small_baseline_bad_board_completed": true,
+    "small_baseline_visit_overflow": true,
+    "small_baseline_visit_overflow_completed": true,
+    "small_candidate_compile": true,
+    "small_candidate_unvisited": true,
+    "small_candidate_unvisited_completed": true,
+    "small_candidate_unvisited_command_0_cycles": true,
+    "small_candidate_unvisited_command_0_result": true,
+    "small_candidate_unvisited_command_1_cycles": true,
+    "small_candidate_unvisited_command_1_result": true,
+    "small_candidate_expand_black": true,
+    "small_candidate_expand_black_completed": true,
+    "small_candidate_expand_black_command_0_cycles": true,
+    "small_candidate_expand_black_command_0_result": true,
+    "small_candidate_expand_black_command_1_cycles": true,
+    "small_candidate_expand_black_command_1_result": true,
+    "small_candidate_expand_white": true,
+    "small_candidate_expand_white_completed": true,
+    "small_candidate_expand_white_command_0_cycles": true,
+    "small_candidate_expand_white_command_0_result": true,
+    "small_candidate_expand_white_command_1_cycles": true,
+    "small_candidate_expand_white_command_1_result": true,
+    "small_candidate_full": true,
+    "small_candidate_full_completed": true,
+    "small_candidate_full_command_0_cycles": true,
+    "small_candidate_full_command_0_result": true,
+    "small_candidate_full_command_1_cycles": true,
+    "small_candidate_full_command_1_result": true,
+    "small_candidate_ragged": true,
+    "small_candidate_ragged_completed": true,
+    "small_candidate_ragged_command_0_cycles": true,
+    "small_candidate_ragged_command_0_result": true,
+    "small_candidate_ragged_command_1_cycles": true,
+    "small_candidate_ragged_command_1_result": true,
+    "small_candidate_already_expanded": true,
+    "small_candidate_already_expanded_completed": true,
+    "small_candidate_already_expanded_command_0_cycles": true,
+    "small_candidate_already_expanded_command_0_result": true,
+    "small_candidate_already_expanded_command_1_cycles": true,
+    "small_candidate_already_expanded_command_1_result": true,
+    "small_candidate_multi_path": true,
+    "small_candidate_multi_path_completed": true,
+    "small_candidate_multi_path_command_0_cycles": true,
+    "small_candidate_multi_path_command_0_result": true,
+    "small_candidate_multi_path_command_1_cycles": true,
+    "small_candidate_multi_path_command_1_result": true,
+    "small_candidate_exact_fit": true,
+    "small_candidate_exact_fit_completed": true,
+    "small_candidate_exact_fit_command_0_cycles": true,
+    "small_candidate_exact_fit_command_0_result": true,
+    "small_candidate_exact_fit_command_1_cycles": true,
+    "small_candidate_exact_fit_command_1_result": true,
+    "small_candidate_node_overflow": true,
+    "small_candidate_node_overflow_completed": true,
+    "small_candidate_node_overflow_command_0_cycles": true,
+    "small_candidate_node_overflow_command_0_result": true,
+    "small_candidate_edge_overflow": true,
+    "small_candidate_edge_overflow_completed": true,
+    "small_candidate_edge_overflow_command_0_cycles": true,
+    "small_candidate_edge_overflow_command_0_result": true,
+    "small_candidate_path_overflow": true,
+    "small_candidate_path_overflow_completed": true,
+    "small_candidate_path_overflow_command_0_cycles": true,
+    "small_candidate_path_overflow_command_0_result": true,
+    "small_candidate_bad_board": true,
+    "small_candidate_bad_board_completed": true,
+    "small_candidate_bad_board_command_0_cycles": true,
+    "small_candidate_bad_board_command_0_result": true,
+    "small_candidate_visit_overflow": true,
+    "small_candidate_visit_overflow_completed": true,
+    "small_candidate_visit_overflow_command_0_cycles": true,
+    "small_candidate_visit_overflow_command_0_result": true,
+    "small_stalled_compile": true,
+    "small_stalled_unvisited": true,
+    "small_stalled_unvisited_completed": true,
+    "small_stalled_expand_black": true,
+    "small_stalled_expand_black_completed": true,
+    "small_stalled_expand_white": true,
+    "small_stalled_expand_white_completed": true,
+    "small_stalled_full": true,
+    "small_stalled_full_completed": true,
+    "small_stalled_ragged": true,
+    "small_stalled_ragged_completed": true,
+    "small_stalled_already_expanded": true,
+    "small_stalled_already_expanded_completed": true,
+    "small_stalled_multi_path": true,
+    "small_stalled_multi_path_completed": true,
+    "small_stalled_exact_fit": true,
+    "small_stalled_exact_fit_completed": true,
+    "small_stalled_node_overflow": true,
+    "small_stalled_node_overflow_completed": true,
+    "small_stalled_edge_overflow": true,
+    "small_stalled_edge_overflow_completed": true,
+    "small_stalled_path_overflow": true,
+    "small_stalled_path_overflow_completed": true,
+    "small_stalled_bad_board": true,
+    "small_stalled_bad_board_completed": true,
+    "small_stalled_visit_overflow": true,
+    "small_stalled_visit_overflow_completed": true,
+    "small_fault_read_compile": true,
+    "small_fault_read_expand_black": true,
+    "small_fault_read_expand_black_completed": true,
+    "small_fault_write_compile": true,
+    "small_fault_write_expand_black": true,
+    "small_fault_write_expand_black_completed": true,
+    "small_fault_child_compile": true,
+    "small_fault_child_expand_black": true,
+    "small_fault_child_expand_black_completed": true,
+    "small_abort_start_compile": true,
+    "small_abort_start_expand_black": true,
+    "small_abort_start_expand_black_completed": true,
+    "small_abort_bits_compile": true,
+    "small_abort_bits_expand_black": true,
+    "small_abort_bits_expand_black_completed": true,
+    "full_syntax": true,
+    "full_lint": true,
+    "full_no_lint_warnings": true,
+    "full_baseline_compile": true,
+    "full_baseline_unvisited": true,
+    "full_baseline_unvisited_completed": true,
+    "full_baseline_expand_black": true,
+    "full_baseline_expand_black_completed": true,
+    "full_baseline_expand_white": true,
+    "full_baseline_expand_white_completed": true,
+    "full_baseline_full": true,
+    "full_baseline_full_completed": true,
+    "full_baseline_ragged": true,
+    "full_baseline_ragged_completed": true,
+    "full_baseline_already_expanded": true,
+    "full_baseline_already_expanded_completed": true,
+    "full_baseline_multi_path": true,
+    "full_baseline_multi_path_completed": true,
+    "full_baseline_exact_fit": true,
+    "full_baseline_exact_fit_completed": true,
+    "full_baseline_node_overflow": true,
+    "full_baseline_node_overflow_completed": true,
+    "full_baseline_edge_overflow": true,
+    "full_baseline_edge_overflow_completed": true,
+    "full_baseline_path_overflow": true,
+    "full_baseline_path_overflow_completed": true,
+    "full_baseline_bad_board": true,
+    "full_baseline_bad_board_completed": true,
+    "full_baseline_visit_overflow": true,
+    "full_baseline_visit_overflow_completed": true,
+    "full_candidate_compile": true,
+    "full_candidate_unvisited": true,
+    "full_candidate_unvisited_completed": true,
+    "full_candidate_unvisited_command_0_cycles": true,
+    "full_candidate_unvisited_command_0_result": true,
+    "full_candidate_unvisited_command_1_cycles": true,
+    "full_candidate_unvisited_command_1_result": true,
+    "full_candidate_expand_black": true,
+    "full_candidate_expand_black_completed": true,
+    "full_candidate_expand_black_command_0_cycles": true,
+    "full_candidate_expand_black_command_0_result": true,
+    "full_candidate_expand_black_command_1_cycles": true,
+    "full_candidate_expand_black_command_1_result": true,
+    "full_candidate_expand_white": true,
+    "full_candidate_expand_white_completed": true,
+    "full_candidate_expand_white_command_0_cycles": true,
+    "full_candidate_expand_white_command_0_result": true,
+    "full_candidate_expand_white_command_1_cycles": true,
+    "full_candidate_expand_white_command_1_result": true,
+    "full_candidate_full": true,
+    "full_candidate_full_completed": true,
+    "full_candidate_full_command_0_cycles": true,
+    "full_candidate_full_command_0_result": true,
+    "full_candidate_full_command_1_cycles": true,
+    "full_candidate_full_command_1_result": true,
+    "full_candidate_ragged": true,
+    "full_candidate_ragged_completed": true,
+    "full_candidate_ragged_command_0_cycles": true,
+    "full_candidate_ragged_command_0_result": true,
+    "full_candidate_ragged_command_1_cycles": true,
+    "full_candidate_ragged_command_1_result": true,
+    "full_candidate_already_expanded": true,
+    "full_candidate_already_expanded_completed": true,
+    "full_candidate_already_expanded_command_0_cycles": true,
+    "full_candidate_already_expanded_command_0_result": true,
+    "full_candidate_already_expanded_command_1_cycles": true,
+    "full_candidate_already_expanded_command_1_result": true,
+    "full_candidate_multi_path": true,
+    "full_candidate_multi_path_completed": true,
+    "full_candidate_multi_path_command_0_cycles": true,
+    "full_candidate_multi_path_command_0_result": true,
+    "full_candidate_multi_path_command_1_cycles": true,
+    "full_candidate_multi_path_command_1_result": true,
+    "full_candidate_exact_fit": true,
+    "full_candidate_exact_fit_completed": true,
+    "full_candidate_exact_fit_command_0_cycles": true,
+    "full_candidate_exact_fit_command_0_result": true,
+    "full_candidate_exact_fit_command_1_cycles": true,
+    "full_candidate_exact_fit_command_1_result": true,
+    "full_candidate_node_overflow": true,
+    "full_candidate_node_overflow_completed": true,
+    "full_candidate_node_overflow_command_0_cycles": true,
+    "full_candidate_node_overflow_command_0_result": true,
+    "full_candidate_edge_overflow": true,
+    "full_candidate_edge_overflow_completed": true,
+    "full_candidate_edge_overflow_command_0_cycles": true,
+    "full_candidate_edge_overflow_command_0_result": true,
+    "full_candidate_path_overflow": true,
+    "full_candidate_path_overflow_completed": true,
+    "full_candidate_path_overflow_command_0_cycles": true,
+    "full_candidate_path_overflow_command_0_result": true,
+    "full_candidate_bad_board": true,
+    "full_candidate_bad_board_completed": true,
+    "full_candidate_bad_board_command_0_cycles": true,
+    "full_candidate_bad_board_command_0_result": true,
+    "full_candidate_visit_overflow": true,
+    "full_candidate_visit_overflow_completed": true,
+    "full_candidate_visit_overflow_command_0_cycles": true,
+    "full_candidate_visit_overflow_command_0_result": true,
+    "full_stalled_compile": true,
+    "full_stalled_unvisited": true,
+    "full_stalled_unvisited_completed": true,
+    "full_stalled_expand_black": true,
+    "full_stalled_expand_black_completed": true,
+    "full_stalled_expand_white": true,
+    "full_stalled_expand_white_completed": true,
+    "full_stalled_full": true,
+    "full_stalled_full_completed": true,
+    "full_stalled_ragged": true,
+    "full_stalled_ragged_completed": true,
+    "full_stalled_already_expanded": true,
+    "full_stalled_already_expanded_completed": true,
+    "full_stalled_multi_path": true,
+    "full_stalled_multi_path_completed": true,
+    "full_stalled_exact_fit": true,
+    "full_stalled_exact_fit_completed": true,
+    "full_stalled_node_overflow": true,
+    "full_stalled_node_overflow_completed": true,
+    "full_stalled_edge_overflow": true,
+    "full_stalled_edge_overflow_completed": true,
+    "full_stalled_path_overflow": true,
+    "full_stalled_path_overflow_completed": true,
+    "full_stalled_bad_board": true,
+    "full_stalled_bad_board_completed": true,
+    "full_stalled_visit_overflow": true,
+    "full_stalled_visit_overflow_completed": true,
+    "full_fault_read_compile": true,
+    "full_fault_read_expand_black": true,
+    "full_fault_read_expand_black_completed": true,
+    "full_fault_write_compile": true,
+    "full_fault_write_expand_black": true,
+    "full_fault_write_expand_black_completed": true,
+    "full_fault_child_compile": true,
+    "full_fault_child_expand_black": true,
+    "full_fault_child_expand_black_completed": true,
+    "full_abort_start_compile": true,
+    "full_abort_start_expand_black": true,
+    "full_abort_start_expand_black_completed": true,
+    "full_abort_bits_compile": true,
+    "full_abort_bits_expand_black": true,
+    "full_abort_bits_expand_black_completed": true,
+    "tested_sources_unchanged": true
+  },
+  "benchmarks_executed": false,
+  "physical_ppa_adopted": false,
+  "candidate_only": true,
+  "target_65nm_timing_validated": false,
+  "cycle_comparisons": [
+    {
+      "case": "small/unvisited",
+      "before": [
+        [
+          "result",
+          "0",
+          "20",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "35",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "20",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "35",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "small/expand_black",
+      "before": [
+        [
+          "result",
+          "0",
+          "173",
+          "2",
+          "5",
+          "4",
+          "2",
+          "4",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "2",
+          "5",
+          "4",
+          "0",
+          "2",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "208",
+          "2",
+          "5",
+          "4",
+          "2",
+          "4",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "2",
+          "5",
+          "4",
+          "0",
+          "2",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "small/expand_white",
+      "before": [
+        [
+          "result",
+          "0",
+          "141",
+          "1",
+          "4",
+          "3",
+          "2",
+          "3",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "1",
+          "4",
+          "3",
+          "0",
+          "2",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "176",
+          "1",
+          "4",
+          "3",
+          "2",
+          "3",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "1",
+          "4",
+          "3",
+          "0",
+          "2",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "small/full",
+      "before": [
+        [
+          "result",
+          "0",
+          "33",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "35",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "33",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "35",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "small/ragged",
+      "before": [
+        [
+          "result",
+          "0",
+          "109",
+          "2",
+          "3",
+          "2",
+          "2",
+          "2",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "2",
+          "3",
+          "2",
+          "0",
+          "2",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "144",
+          "2",
+          "3",
+          "2",
+          "2",
+          "2",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "2",
+          "3",
+          "2",
+          "0",
+          "2",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "small/already_expanded",
+      "before": [
+        [
+          "result",
+          "0",
+          "20",
+          "0",
+          "2",
+          "1",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "35",
+          "0",
+          "2",
+          "1",
+          "0",
+          "1",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "20",
+          "0",
+          "2",
+          "1",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "35",
+          "0",
+          "2",
+          "1",
+          "0",
+          "1",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "small/multi_path",
+      "before": [
+        [
+          "result",
+          "0",
+          "141",
+          "2",
+          "5",
+          "4",
+          "3",
+          "3",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "105",
+          "2",
+          "5",
+          "4",
+          "0",
+          "3",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "176",
+          "2",
+          "5",
+          "4",
+          "3",
+          "3",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "105",
+          "2",
+          "5",
+          "4",
+          "0",
+          "3",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "small/exact_fit",
+      "before": [
+        [
+          "result",
+          "0",
+          "173",
+          "2",
+          "5",
+          "4",
+          "2",
+          "4",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "2",
+          "5",
+          "4",
+          "0",
+          "2",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "208",
+          "2",
+          "5",
+          "4",
+          "2",
+          "4",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "2",
+          "5",
+          "4",
+          "0",
+          "2",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "small/node_overflow",
+      "before": [
+        [
+          "result",
+          "0",
+          "33",
+          "2",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "33",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ]
+    },
+    {
+      "case": "small/edge_overflow",
+      "before": [
+        [
+          "result",
+          "0",
+          "33",
+          "2",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "33",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ]
+    },
+    {
+      "case": "small/path_overflow",
+      "before": [
+        [
+          "result",
+          "0",
+          "33",
+          "2",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "33",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ]
+    },
+    {
+      "case": "small/bad_board",
+      "before": [
+        [
+          "result",
+          "0",
+          "33",
+          "1",
+          "1",
+          "0",
+          "1",
+          "0",
+          "4"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "33",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "4"
+        ]
+      ]
+    },
+    {
+      "case": "small/visit_overflow",
+      "before": [
+        [
+          "result",
+          "0",
+          "25",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "25",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ]
+    },
+    {
+      "case": "full/unvisited",
+      "before": [
+        [
+          "result",
+          "0",
+          "20",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "35",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "20",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "35",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "full/expand_black",
+      "before": [
+        [
+          "result",
+          "0",
+          "5112",
+          "34",
+          "82",
+          "81",
+          "2",
+          "81",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "34",
+          "82",
+          "81",
+          "0",
+          "2",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "5147",
+          "34",
+          "82",
+          "81",
+          "2",
+          "81",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "34",
+          "82",
+          "81",
+          "0",
+          "2",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "full/expand_white",
+      "before": [
+        [
+          "result",
+          "0",
+          "5050",
+          "26",
+          "81",
+          "80",
+          "2",
+          "80",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "26",
+          "81",
+          "80",
+          "0",
+          "2",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "5085",
+          "26",
+          "81",
+          "80",
+          "2",
+          "80",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "26",
+          "81",
+          "80",
+          "0",
+          "2",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "full/full",
+      "before": [
+        [
+          "result",
+          "0",
+          "78",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "35",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "78",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "35",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "full/ragged",
+      "before": [
+        [
+          "result",
+          "0",
+          "1764",
+          "7",
+          "28",
+          "27",
+          "2",
+          "27",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "7",
+          "28",
+          "27",
+          "0",
+          "2",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "1799",
+          "7",
+          "28",
+          "27",
+          "2",
+          "27",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "7",
+          "28",
+          "27",
+          "0",
+          "2",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "full/already_expanded",
+      "before": [
+        [
+          "result",
+          "0",
+          "20",
+          "0",
+          "2",
+          "1",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "35",
+          "0",
+          "2",
+          "1",
+          "0",
+          "1",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "20",
+          "0",
+          "2",
+          "1",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "35",
+          "0",
+          "2",
+          "1",
+          "0",
+          "1",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "full/multi_path",
+      "before": [
+        [
+          "result",
+          "0",
+          "5050",
+          "27",
+          "82",
+          "81",
+          "3",
+          "80",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "105",
+          "27",
+          "82",
+          "81",
+          "0",
+          "3",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "5085",
+          "27",
+          "82",
+          "81",
+          "3",
+          "80",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "105",
+          "27",
+          "82",
+          "81",
+          "0",
+          "3",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "full/exact_fit",
+      "before": [
+        [
+          "result",
+          "0",
+          "5112",
+          "34",
+          "82",
+          "81",
+          "2",
+          "81",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "34",
+          "82",
+          "81",
+          "0",
+          "2",
+          "0"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "5147",
+          "34",
+          "82",
+          "81",
+          "2",
+          "81",
+          "0"
+        ],
+        [
+          "result",
+          "1",
+          "70",
+          "34",
+          "82",
+          "81",
+          "0",
+          "2",
+          "0"
+        ]
+      ]
+    },
+    {
+      "case": "full/node_overflow",
+      "before": [
+        [
+          "result",
+          "0",
+          "78",
+          "34",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "78",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ]
+    },
+    {
+      "case": "full/edge_overflow",
+      "before": [
+        [
+          "result",
+          "0",
+          "78",
+          "34",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "78",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ]
+    },
+    {
+      "case": "full/path_overflow",
+      "before": [
+        [
+          "result",
+          "0",
+          "78",
+          "34",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "78",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ]
+    },
+    {
+      "case": "full/bad_board",
+      "before": [
+        [
+          "result",
+          "0",
+          "78",
+          "26",
+          "1",
+          "0",
+          "1",
+          "0",
+          "4"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "78",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "4"
+        ]
+      ]
+    },
+    {
+      "case": "full/visit_overflow",
+      "before": [
+        [
+          "result",
+          "0",
+          "25",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ],
+      "candidate": [
+        [
+          "result",
+          "0",
+          "25",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "3"
+        ]
+      ]
+    }
+  ],
+  "finished_utc": "2026-09-10T01:04:31.292579+00:00"
+}

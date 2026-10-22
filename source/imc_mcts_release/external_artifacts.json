@@ -1,0 +1,211 @@
+{
+  "schema": 1,
+  "version": "0.2.0rc1",
+  "distribution": "OPTIONAL_INPUTS_NOT_CLEARED_FOR_REDISTRIBUTION",
+  "files": [
+    {
+      "path": "fixtures/historical_test_fixtures.tar.gz",
+      "bytes": 11501220,
+      "sha256": "d338c59141d6b8488cd345cd018f8cda1535bde7d661a7bc868e3e4ef1ad8cb9",
+      "kind": "historical_fixtures_with_models"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/FunctionUnit.cpp",
+      "bytes": 4948,
+      "sha256": "9366cd00a6ea8597326335c7458264621a4cd60251656cdc0e7e1c474a177d20",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/FunctionUnit.h",
+      "bytes": 2917,
+      "sha256": "25fa46998097b9ccb94fec69a8f5f71f05c01dcb8020dd8f16abe6411de1977f",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/InputParameter.h",
+      "bytes": 2570,
+      "sha256": "9541ee61516fcc60d746fdd3cd360919bcad862cbe6fecd06da8b30828414e6f",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/MemCell.h",
+      "bytes": 4462,
+      "sha256": "69ebde5371f9d151d1b3c22936502f8ccaf90cfa4f3802302106440c780ec55b",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/Param.cpp",
+      "bytes": 23426,
+      "sha256": "120f4454ac870513aa9e2281d8c2382a65dc8c16271d0347ec5187669b588ad1",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/Param.h",
+      "bytes": 5535,
+      "sha256": "926fab6ec9547064b9399346c6fca76b2a30f9fda54a51bad567d5576b9e3ce2",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/SarADC.cpp",
+      "bytes": 9442,
+      "sha256": "9c673b4d7e74a148a0e56df8595fa545232c70ad76f18ca2dc1004defc9b7a6c",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/SarADC.h",
+      "bytes": 3338,
+      "sha256": "55e29b0ed6a67af5b630b87019442b4e3e43cb553c378fe6fff4ff259ad4c0fa",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/Technology.cpp",
+      "bytes": 58208,
+      "sha256": "971238a4572d8d76da22cf867a0e5789cdc1fbb9f1651a7a14ab8c77861e5f34",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/Technology.h",
+      "bytes": 4592,
+      "sha256": "7bbfdde9f4f0868da2f23fd942c1361ba048fbb5f7696e710a833088b6a49a7a",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/constant.h",
+      "bytes": 6522,
+      "sha256": "266a9dc383647356671190302b84f91869c7fa68949ebe94a343de9f3d4d4d28",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/formula.cpp",
+      "bytes": 74296,
+      "sha256": "acb56387ae15b990656994d6c5e0fa5c10c965dd26a0b813972e6d4000168445",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/formula.h",
+      "bytes": 4105,
+      "sha256": "987af6076b65598d15039d098fd1b98923797baa3f50b380e116f33a7b93d0fa",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/typedef.h",
+      "bytes": 3148,
+      "sha256": "c4367f10a208dcecb494b45640f3c2bf4f97fe7154e798aa76bf035b1be08520",
+      "kind": "optional_neurosim_CC_BY_NC_4_0"
+    },
+    {
+      "path": "p03_experiments/p15_workbook_models/p01_sources/archive_2x2_h16_centered_v1.pkl",
+      "bytes": 1890,
+      "sha256": "828fd25663389d3e5636985d4d07d8d23e317e42e6dc22b8013b8077854edc5d",
+      "kind": "trained_checkpoint_weight_payload"
+    },
+    {
+      "path": "p03_experiments/p15_workbook_models/p01_sources/archive_3x3_h24_centered_v1.pkl",
+      "bytes": 4915,
+      "sha256": "da6b69e1c94faca7a1a7b84f99f30214de62cba4404d7a36f75487d0604058a6",
+      "kind": "trained_checkpoint_weight_payload"
+    },
+    {
+      "path": "p03_experiments/p15_workbook_models/p01_sources/archive_5x5_h32_centered_v1.pkl",
+      "bytes": 15803,
+      "sha256": "5f4dd0339e189fa781f754141b21944fa9446070ce7b5ebc8b73d20881496210",
+      "kind": "trained_checkpoint_weight_payload"
+    },
+    {
+      "path": "p03_experiments/p15_workbook_models/p01_sources/archive_9x9_h32_centered_v1.pkl",
+      "bytes": 48507,
+      "sha256": "80c37180e397f0d31b5da48987a481819a12eeb752c60faa454bdcfef78d6739",
+      "kind": "trained_checkpoint_weight_payload"
+    },
+    {
+      "path": "p03_experiments/p15_workbook_models/p01_sources/archive_9x9_h96_centered_v1.pkl",
+      "bytes": 143820,
+      "sha256": "ff6d96aec78cf4447fb093d6e9fcc80dc9532dcd4ccd7e0840e6ce65dd7fd5eb",
+      "kind": "trained_checkpoint_weight_payload"
+    },
+    {
+      "path": "p03_experiments/p15_workbook_models/p01_sources/crossbar_reference.xlsx",
+      "bytes": 396156,
+      "sha256": "bce447d0a6f2e74a2b51062bfc4e5683061479814ff417171f887ea75615f3d0",
+      "kind": "supplied_workbook"
+    },
+    {
+      "path": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/mapped.v",
+      "bytes": 432634,
+      "sha256": "b9ef222cf8a246b00ad422c68f28d6caf14663c6e0c64cd0ab90f810e2da2fe8",
+      "kind": "mapped_netlist"
+    },
+    {
+      "path": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/mapped.v",
+      "bytes": 431100,
+      "sha256": "14914b56022dbbbca77abc1522f8269e3f864e893077ae9f8ab858430328424d",
+      "kind": "mapped_netlist"
+    },
+    {
+      "path": "p03_experiments/p45_studio_paper_models/p01_sources/go_strong_v1.bin",
+      "bytes": 127504,
+      "sha256": "61b4cfd5adcf77900e2a67da06e36b24101f79838ce87712a94e0affe85329ec",
+      "kind": "trained_checkpoint_weight_payload"
+    },
+    {
+      "path": "p03_experiments/p45_studio_paper_models/p01_sources/go_strong_v1.pkl",
+      "bytes": 144609,
+      "sha256": "a8fcc1e26681e66888ec0a83ae3f0fcd94fed8af210d20260a78170e959b3a0b",
+      "kind": "trained_checkpoint_weight_payload"
+    },
+    {
+      "path": "p03_experiments/p45_studio_paper_models/p01_sources/go_weak_v1.bin",
+      "bytes": 127504,
+      "sha256": "947566414b2195e01f3c0f9e0a100cd4d2c7253f1fb075a80faf3c5a5a82c6d3",
+      "kind": "trained_checkpoint_weight_payload"
+    },
+    {
+      "path": "p03_experiments/p45_studio_paper_models/p01_sources/go_weak_v1.pkl",
+      "bytes": 144605,
+      "sha256": "1a78f59e6df6a5c34673e81068202b8e8143bc33bd293c97a0449e343f3e81d4",
+      "kind": "trained_checkpoint_weight_payload"
+    },
+    {
+      "path": "p04_results/p03_models/archive_2x2_h16_centered_v1.npz",
+      "bytes": 1483,
+      "sha256": "af2928ee14e81a594bee65692658da7c203efed357f15ab2609606d59f7cb7f2",
+      "kind": "model_artifact"
+    },
+    {
+      "path": "p04_results/p03_models/archive_3x3_h24_centered_v1.npz",
+      "bytes": 3058,
+      "sha256": "68067ab0f4d508ebbf28ea90da23eae10dd2c8e7409b93aa20ad79725da4c2a2",
+      "kind": "model_artifact"
+    },
+    {
+      "path": "p04_results/p03_models/archive_5x5_h32_centered_v1.npz",
+      "bytes": 8826,
+      "sha256": "e3e1ec6dbc318ccd91e354e965b79db545bf9fbc1a3f8528227b5d63bc83b1a3",
+      "kind": "model_artifact"
+    },
+    {
+      "path": "p04_results/p03_models/archive_9x9_h32_centered_v1.npz",
+      "bytes": 25847,
+      "sha256": "c758f898c2674a9c868b59a879ebaea5cdb517c92cd724627cc22a6fc9e1ad91",
+      "kind": "model_artifact"
+    },
+    {
+      "path": "p04_results/p03_models/archive_9x9_h96_centered_v1.npz",
+      "bytes": 63108,
+      "sha256": "54a215e5f13db5e9bf90edfa4d7470af93af9b6bcac8e5df77de9cfbe681f946",
+      "kind": "model_artifact"
+    },
+    {
+      "path": "p04_results/p03_models/go_strong_v1.npz",
+      "bytes": 66924,
+      "sha256": "6e5a9ecb967a5dfe704d74dc6526f1cc8bbd8ed45f34cbb9c108e6a895606906",
+      "kind": "model_artifact"
+    },
+    {
+      "path": "p04_results/p03_models/go_weak_v1.npz",
+      "bytes": 66408,
+      "sha256": "1345fe0e7124512ad8d0e53b446ea28f17b5fb5bc93d65aedfd4402138ee7329",
+      "kind": "model_artifact"
+    }
+  ]
+}

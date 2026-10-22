@@ -1,0 +1,14 @@
+batch count=1 latency=224 error=0
+batch count=2 latency=225 error=0
+batch count=3 latency=226 error=0
+batch count=4 latency=227 error=0
+batch count=2 latency=225 error=0
+batch count=4 latency=227 error=0
+batch count=4 latency=227 error=0
+batch count=4 latency=227 error=0
+batch count=4 latency=223 error=1
+batch count=0 latency=0 error=1
+batch count=5 latency=0 error=1
+batch count=4 latency=227 error=0
+tb_imc_ucb_batch PASS
+p01_tests/tb_imc_ucb_batch.sv:92: $finish called at 23550000 (1ps)

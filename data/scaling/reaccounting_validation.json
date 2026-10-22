@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-13T17:57:12.825687+00:00",
+  "repriced_complete_cases": 19,
+  "repriced_application_cases": 8,
+  "preserved_source_hashes": {
+    "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p03_experiments/p108_parallel_cost_repair/final_9x9_medium.json": "66ab8adbf058947c55d50266492e471e29c33b4c7690885f52b015706b68f024",
+    "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p03_experiments/p108_parallel_cost_repair/scaling_results.json": "086c9f160e9ea645c2884e6ed1d0e1050af61f7153139600f531785e2078c5f6",
+    "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p03_experiments/p103_application_projection/energy.csv": "0c4d90163cad7377b4ee1d4cb623439a5ec89dcd9705db7ecd4fa2063fa41395",
+    "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p03_experiments/p103_application_projection/quality.csv": "1d822fb2258f992e5a06f908785f76f4c35b89d7405333966e7c6ec028067925",
+    "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p03_experiments/p103_application_projection/p02_runs/connect_four/census.json": "ddc3c9eff5bd9d1c0a7ba7cfa4888a219c6d6856e1876ec95fde8dd8b7381ea9",
+    "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p03_experiments/p103_application_projection/p02_runs/othello/census.json": "79e62e26ae6e64b6c071393cb769391e2c3af9916e8b851a9415b75636a3e58f",
+    "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p03_experiments/p103_application_projection/p02_runs/hex/census.json": "e52ca528f6cb2073cbe272a2f2fd2fd73bcf23bca141be36df46e388fb3054b1",
+    "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p03_experiments/p103_application_projection/p02_runs/frozen_lake/census.json": "2ba374d05277fca4f9c1d1844cce2249b2fda491a52c148cf21779b8acaa60f5",
+    "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p03_experiments/p103_application_projection/p02_runs/minigrid/census.json": "1f09f7712db61c8ec7639762fa6d912d8cbd1cc988332b4cb6b806aaeff56cc7",
+    "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p03_experiments/p103_application_projection/p02_runs/protein_folding/census.json": "05b204d13a8ad49030cc27e1c4dcc718a796ef56de844754359ce512cf90def5",
+    "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p03_experiments/p103_application_projection/p02_runs/minesweeper/census.json": "034d816c66a1432f551ff0ae7fabcaf9ffd893669e6f6f758d1d725a26d29860"
+  },
+  "fresh_browser_source": "/Users/tmolomochir/Documents/ChatGPT/HPE/p14_parallel_cost_repair/p22_connected_adoption/run_20261013_062622Z/browser_play_result.json",
+  "fresh_browser_sha256": "af4f82fbd7aca82c6da76593ea6297db70ad1fb6ebe3132baa0e4e5ddb796f83",
+  "hero_matches_final_browser_components": 31,
+  "schedule_evidence": "schedule_equivalence.json",
+  "retained_execution_profile": "ucb16_adc32_buffered_v1",
+  "adopted_inventory_profile": "ucb16_adc32_buffered_v2",
+  "adopted_cost_profile": "ucb16_adc32_buffered_estimate_v6",
+  "no_search_rerun": true,
+  "no_benchmark_rerun": true,
+  "quality_data_byte_preserved": true,
+  "unchanged": "All saved execution counters, numeric cycles, phase cycles, activity, tree/SRAM/event hashes and old source artifacts.",
+  "application_status": "Go uses current trained 9x9 medium reference. Seven non-Go cases retain diagnostic census and declared shape projections; no new trained-quality validation.",
+  "hero": {
+    "core_area_mm2": 5.7975690837052705,
+    "core_energy_mj": 3.7036957168173483,
+    "latency_ms": 55.186986,
+    "core_average_power_mw": 67.11175922557808
+  }
+}

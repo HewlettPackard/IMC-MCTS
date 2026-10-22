@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "scope": "Legacy regression test and fixture only; production engine/math/raw identities unchanged.",
+  "source_changes": [
+    {
+      "path": "source/tests/test_run_reproducibility.py",
+      "operation": "modified",
+      "before_sha256": "46b0a5a3f9ced2c9c8104ecb70190f675b89564e45ae1e58681de101e5ac501a",
+      "after_sha256": "236fccc2ecc99a251ebc36a409de4243bdab4ab8c1092cba85e3808c394ae927",
+      "bytes": 7090
+    },
+    {
+      "path": "source/p03_experiments/p104_simulator_campaign/legacy_placement_reference.json",
+      "operation": "modified",
+      "before_sha256": "4c44a74613e2b1f8f80fd5933dd8bc69abdbb38a8fa2d095b6295d8682ed895c",
+      "after_sha256": "d1b393502b76a7df4c82cb5fc570937ed824f77d1490242fdf17760d844f0955",
+      "bytes": 8410
+    },
+    {
+      "path": "source/p03_experiments/p104_simulator_campaign/legacy_reference.py",
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "ed760e6490eba4dd8af009b89f68310a24f17dd578a3ad2cf3135dc27d4488f5",
+      "bytes": 3058
+    },
+    {
+      "path": "source/p03_experiments/p104_simulator_campaign/legacy_placement_values.json",
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "e6392c16d5e01a0e41695d551d867517e54bcc248bdf8785d4aed818f73998ab",
+      "bytes": 149665
+    },
+    {
+      "path": "source/tests/test_legacy_reference.py",
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "689f08c72055be61266b4b5368df2eb6d48635de2dfdd5da17ac9b536c850aa3",
+      "bytes": 4213
+    }
+  ],
+  "production_source_hashes": {
+    "core/architecture/accelerator_api.py": "2650dfd16498761aff7b6a63c9ee4b781ca04f3e9fb3f7d682042a8edadccf7e",
+    "core/architecture/run_identity.py": "df0c2f8f788f7f3abd3f36611460c3ddc61f818af9c20776af47196bc6a3bd7c",
+    "core/simulator/mcts_sst_components.py": "f0d55cad5e0213d09eefee86cf5e5499b51d8c5c1f321e01255594c045ac1744"
+  },
+  "old_package_archive_sha256": "cd9eb028b0b7f6b14ae257fb2efd86c090ea83066ee9532296c24155b9be51ff"
+}

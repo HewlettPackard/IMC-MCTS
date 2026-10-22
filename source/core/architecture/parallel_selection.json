@@ -1,0 +1,21 @@
+{
+  "profile": "ucb4_register_batch_v1",
+  "lanes": 4,
+  "arithmetic": "ucb_q32_ln256_v1",
+  "arithmetic_active_cycles": 223,
+  "batch_accepted_to_valid_base_cycles": 223,
+  "batch_reduction_cycles_per_child": 1,
+  "caller_request_and_capture_cycles": 2,
+  "timing_source": "rtl_synthesis/p05_parallel_selection/p01_tests/tb_imc_ucb_batch.sv",
+  "timing_status": "Batch RTL checked with unstalled interfaces; SRAM loading and full single-child integration are architectural service estimates",
+  "candidate_node_words": 6,
+  "candidate_control_cycles": 4,
+  "candidate_register_bits": 512,
+  "candidate_register_basis": "Four slots, each 32-bit child ID, 32-bit visits and 64-bit value. UCB operand registers and wrapper result registers are additional and have their own RTL owners.",
+  "memory": "One existing 32-bit port; serially load at most four candidates, then score concurrently. No overlap of batch loading with scoring in this revision.",
+  "cost_status": "Four matching UCB report instances; changed selector/operand/batch-control storage covered by explicit whole-parent report proxy, not characterized synthesis",
+  "selection_parent_multiplier": 1.25,
+  "selection_parent_sensitivity": [1.0, 1.25, 2.0],
+  "selection_parent_basis": "Retain the full closest-selector report plus a 25% whole-parent engineering reserve for incremental selection, four candidate operand slots, batch wrapper and ordered-result control. Do not subtract removed scratch control or claim this reserve is measured or sufficient. UCB arithmetic parents are counted separately four times.",
+  "limits": "No new SRAM capacity, ADC change, physical timing closure, host-Go hardware, CPU/GPU benchmark or paper result claim"
+}

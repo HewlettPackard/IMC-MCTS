@@ -1,0 +1,169 @@
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:21: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:22: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:24: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'decoded_wide[52:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:25: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:25: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:26: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:26: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'decoded_wide[52:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:43: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'numerator_q[79:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:72: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'numerator_q[79:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:73: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'quotient[79:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:78: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'trial[32:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:85: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'quotient[79:0]').
+../p03_iteration_core/p00_rtl/imc_isqrt.sv:48: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'radicand_q[103:0]').
+p00_rtl/imc_ucb_score_overlap.sv:79: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:83: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:84: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:84: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:89: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'c_floor[52:0]').
+p00_rtl/imc_ucb_score_overlap.sv:90: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'c_rounded[52:0]').
+p00_rtl/imc_ucb_score_overlap.sv:91: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:91: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:92: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:92: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'c_rounded[52:0]').
+p00_rtl/imc_ucb_score_overlap.sv:97: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'fraction[23:0]').
+p00_rtl/imc_ucb_score_overlap.sv:98: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:98: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:99: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:99: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:102: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:102: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:103: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:103: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:107: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'rounded[40:0]').
+p00_rtl/imc_ucb_score_overlap.sv:146: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'div_quotient[79:0]').
+p00_rtl/imc_ucb_score_overlap.sv:148: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'div_quotient[79:0]').
+p00_rtl/imc_ucb_score_overlap.sv:157: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'div_quotient[79:0]').
+p00_rtl/imc_ucb_score_overlap.sv:168: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'rounded[40:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:21: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:22: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:24: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'decoded_wide[52:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:25: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:25: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:26: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:26: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'decoded_wide[52:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:43: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'numerator_q[79:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:72: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'numerator_q[79:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:73: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'quotient[79:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:78: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'trial[32:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:85: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'quotient[79:0]').
+../p03_iteration_core/p00_rtl/imc_isqrt.sv:48: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'radicand_q[103:0]').
+p00_rtl/imc_ucb_score_overlap.sv:79: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:83: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:84: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:84: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:89: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'c_floor[52:0]').
+p00_rtl/imc_ucb_score_overlap.sv:90: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'c_rounded[52:0]').
+p00_rtl/imc_ucb_score_overlap.sv:91: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:91: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:92: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:92: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'c_rounded[52:0]').
+p00_rtl/imc_ucb_score_overlap.sv:97: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'fraction[23:0]').
+p00_rtl/imc_ucb_score_overlap.sv:98: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:98: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:99: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:99: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:102: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:102: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:103: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:103: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:107: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'rounded[40:0]').
+p00_rtl/imc_ucb_score_overlap.sv:146: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'div_quotient[79:0]').
+p00_rtl/imc_ucb_score_overlap.sv:148: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'div_quotient[79:0]').
+p00_rtl/imc_ucb_score_overlap.sv:157: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'div_quotient[79:0]').
+p00_rtl/imc_ucb_score_overlap.sv:168: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'rounded[40:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:21: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:22: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:24: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'decoded_wide[52:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:25: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:25: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:26: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:26: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'decoded_wide[52:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:43: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'numerator_q[79:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:72: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'numerator_q[79:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:73: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'quotient[79:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:78: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'trial[32:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:85: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'quotient[79:0]').
+../p03_iteration_core/p00_rtl/imc_isqrt.sv:48: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'radicand_q[103:0]').
+p00_rtl/imc_ucb_score_overlap.sv:79: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:83: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:84: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:84: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:89: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'c_floor[52:0]').
+p00_rtl/imc_ucb_score_overlap.sv:90: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'c_rounded[52:0]').
+p00_rtl/imc_ucb_score_overlap.sv:91: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:91: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:92: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:92: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'c_rounded[52:0]').
+p00_rtl/imc_ucb_score_overlap.sv:97: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'fraction[23:0]').
+p00_rtl/imc_ucb_score_overlap.sv:98: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:98: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:99: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:99: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:102: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:102: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:103: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:103: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:107: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'rounded[40:0]').
+p00_rtl/imc_ucb_score_overlap.sv:146: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'div_quotient[79:0]').
+p00_rtl/imc_ucb_score_overlap.sv:148: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'div_quotient[79:0]').
+p00_rtl/imc_ucb_score_overlap.sv:157: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'div_quotient[79:0]').
+p00_rtl/imc_ucb_score_overlap.sv:168: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'rounded[40:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:21: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:22: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:24: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'decoded_wide[52:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:25: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:25: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:26: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'binary_value[63:0]').
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv:26: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'decoded_wide[52:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:43: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'numerator_q[79:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:72: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'numerator_q[79:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:73: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'quotient[79:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:78: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'trial[32:0]').
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:85: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'quotient[79:0]').
+../p03_iteration_core/p00_rtl/imc_isqrt.sv:48: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'radicand_q[103:0]').
+p00_rtl/imc_ucb_score_overlap.sv:79: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:83: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:84: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:84: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:89: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'c_floor[52:0]').
+p00_rtl/imc_ucb_score_overlap.sv:90: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'c_rounded[52:0]').
+p00_rtl/imc_ucb_score_overlap.sv:91: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:91: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:92: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'score_exploration[63:0]').
+p00_rtl/imc_ucb_score_overlap.sv:92: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'c_rounded[52:0]').
+p00_rtl/imc_ucb_score_overlap.sv:97: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'fraction[23:0]').
+p00_rtl/imc_ucb_score_overlap.sv:98: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:98: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:99: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:99: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'interpolation[71:0]').
+p00_rtl/imc_ucb_score_overlap.sv:102: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:102: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:103: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:103: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'total[87:0]').
+p00_rtl/imc_ucb_score_overlap.sv:107: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'rounded[40:0]').
+p00_rtl/imc_ucb_score_overlap.sv:146: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'div_quotient[79:0]').
+p00_rtl/imc_ucb_score_overlap.sv:148: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'div_quotient[79:0]').
+p00_rtl/imc_ucb_score_overlap.sv:157: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'div_quotient[79:0]').
+p00_rtl/imc_ucb_score_overlap.sv:168: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'rounded[40:0]').
+../p03_iteration_core/p00_rtl/imc_ln_table.sv:10: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p03_iteration_core/p00_rtl/imc_ln_table.sv:10: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:55: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p03_iteration_core/p00_rtl/imc_isqrt.sv:39: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+p00_rtl/imc_ucb_score_overlap.sv:123: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p03_iteration_core/p00_rtl/imc_ln_table.sv:10: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p03_iteration_core/p00_rtl/imc_ln_table.sv:10: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:55: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p03_iteration_core/p00_rtl/imc_isqrt.sv:39: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+p00_rtl/imc_ucb_score_overlap.sv:123: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p03_iteration_core/p00_rtl/imc_ln_table.sv:10: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p03_iteration_core/p00_rtl/imc_ln_table.sv:10: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:55: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p03_iteration_core/p00_rtl/imc_isqrt.sv:39: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+p00_rtl/imc_ucb_score_overlap.sv:123: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p03_iteration_core/p00_rtl/imc_ln_table.sv:10: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p03_iteration_core/p00_rtl/imc_ln_table.sv:10: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p01_mapped_core/p00_rtl/imc_round_divider.sv:55: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+../p03_iteration_core/p00_rtl/imc_isqrt.sv:39: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+p00_rtl/imc_ucb_score_overlap.sv:123: vvp.tgt sorry: Case unique/unique0 qualities are ignored.
+p00_rtl/imc_ucb_batch_overlap.sv:108: vvp.tgt sorry: Case unique/unique0 qualities are ignored.

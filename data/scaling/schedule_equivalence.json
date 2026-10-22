@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "scope": "Complete executable source unchanged except enumerated storage/inventory and description changes. Original activity/profile stays v1; current geometry/costs adopt v2/v6.",
+  "archived_source": "/Users/tmolomochir/Documents/ChatGPT/HPE/p14_parallel_cost_repair/p11_connected_paths/p03_preimages/core/architecture/parallel_datapath.py",
+  "archived_source_sha256": "c25cd09772dcc1c01aae6c2557df95e440f0f1c9474da8dbc820fca955fe1dae",
+  "current_source": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/core/architecture/parallel_datapath.py",
+  "current_source_sha256": "877f627664b10a3b432397fa210bc342ca3cc632b34d83bb46c2c365a276bdb5",
+  "archived_spec_sha256": "7be0a5fb6a7bbaab114a6bb7a54375300288f40ae6286288e3395d5a66955cd9",
+  "current_spec_sha256": "eecd019642dce60049c95c48241b2d37727e963e56c057b56a3f676b209b3a59",
+  "spec_changes": {
+    "profile": {
+      "old": "ucb16_adc32_buffered_v1",
+      "new": "ucb16_adc32_buffered_v2"
+    },
+    "candidate_loader": {
+      "old": null,
+      "new": "six ordered 32-bit node-header words per child; direct wide-bank UCB dispatch"
+    },
+    "readout_staging": {
+      "old": null,
+      "new": "four 128-bit end-edge captures precede four eight-lane add edges"
+    },
+    "timing_status": {
+      "old": "Executable architectural service schedule; new integrated RTL and physical timing are unvalidated",
+      "new": "Executable service schedule at assumed 500 MHz; connected digital regions pass native65 2 ns synthesis constraints. Target22 and full-core physical timing remain unvalidated."
+    },
+    "rtl_validation_status": {
+      "old": null,
+      "new": "Connected digital selection and readout paths with native65 synthesis estimates; full-core equivalence, CTS/routing and analog behavior remain unvalidated"
+    },
+    "readout_staging_bits": {
+      "old": null,
+      "new": 512
+    }
+  },
+  "code_changes": [
+    {
+      "before": "ppa_status='Separate source-linked engineering estimates; no new synthesis'",
+      "after": "ppa_status='Connected digital readout uses native65 synthesis estimates; analog parts and residual controls retain source-linked engineering assumptions'"
+    },
+    {
+      "before": "'adc_result_banks':2,",
+      "after": "'adc_result_banks':2,'readout_staging_bits':512,"
+    },
+    {
+      "before": "'storage':'two 32-by-16-bit result banks; eight banked accumulator ALUs'",
+      "after": "'storage':'two 32-by-16-bit result banks; one 512-bit staging register; eight banked accumulator ALUs'"
+    },
+    {
+      "before": "adc_register_bits=1024,adc_result_banks=2,readout_bus_bits=128,",
+      "after": "adc_register_bits=1024,adc_result_banks=2,readout_bus_bits=128,readout_staging_bits=512,"
+    },
+    {
+      "before": "control_status='Buffered parallel architectural schedule; integrated RTL unvalidated'",
+      "after": "control_status='Connected digital paths tested; full-core RTL and physical timing unvalidated'"
+    },
+    {
+      "before": "candidate_register_bits=2*16*128,adc_result_register_bits=2*32*16,",
+      "after": "candidate_register_bits=2*16*128,adc_result_register_bits=2*32*16,readout_staging_bits=512,"
+    }
+  ],
+  "saved_workload_source_bindings_verified": 19
+}

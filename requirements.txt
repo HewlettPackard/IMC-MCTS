@@ -1,4 +1,7 @@
-# Runtime dependencies for the CPU-only public package.
-# Prefer `python -m pip install -e .` so package metadata remains the single
-# source of truth. Optional extras live in `pyproject.toml`.
-numpy>=1.22
+# Tested on Python 3.12.11. Runtime, figures and optional raster checks.
+numpy==2.3.5
+matplotlib==3.10.6
+pandas==3.0.2
+scipy==1.17.0
+seaborn==0.13.2
+PyMuPDF==1.27.2.2

@@ -1,0 +1,38 @@
+{
+  "amd_traditional": {
+    "path": "data/baselines/trials/amd_traditional.csv",
+    "original_basename": "mcts_benchmark_cpu_amd_ryzen_threadripper_pro_5945wx_12_cores_20251112_182746.csv"
+  },
+  "xeon_traditional": {
+    "path": "data/baselines/trials/xeon_traditional.csv",
+    "original_basename": "mcts_benchmark_cpu_intel_r_xeon_r_platinum_8462y_20251112_191851.csv"
+  },
+  "gpu_fair": {
+    "path": "data/baselines/trials/gpu_fair.csv",
+    "original_basename": "mcts_benchmark_gpu_fair_smc4_20251111_192646.csv"
+  },
+  "gpu_max": {
+    "path": "data/baselines/trials/gpu_max.csv",
+    "original_basename": "mcts_benchmark_gpu_capability_smc4_20251111_193049.csv"
+  },
+  "amd_neural": {
+    "path": "data/baselines/trials/amd_neural.csv",
+    "original_basename": "cpu_nn_mcts_tr220-dt01.egr.duke.edu_amd_ryzen_threadripper_pro_5945wx_12_cores_20251113_211903.csv"
+  },
+  "xeon_neural": {
+    "path": "data/baselines/trials/xeon_neural.csv",
+    "original_basename": "cpu_nn_mcts_smc4_intel_r_xeon_r_platinum_8462y_20251113_220322.csv"
+  },
+  "gpu_neural": {
+    "path": "data/baselines/trials/gpu_neural.csv",
+    "original_basename": "gpu_nn_mcts_smc4_nvidia_h100_80gb_hbm3_20251113_221349.csv"
+  },
+  "gpu_neural_batch64": {
+    "path": "data/baselines/trials/gpu_neural_batch64.csv",
+    "original_basename": "gpu_nn_batched_b64_smc3_nvidia_h100_80gb_hbm3_20260325_012924.csv"
+  },
+  "gpu_neural_batch256": {
+    "path": "data/baselines/trials/gpu_neural_batch256.csv",
+    "original_basename": "gpu_nn_batched_b256_smc3_nvidia_h100_80gb_hbm3_20260325_012931.csv"
+  }
+}

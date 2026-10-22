@@ -1,0 +1,69 @@
+ 
+****************************************
+Report : area
+Design : imc_readout_path
+Version: U-2022.12-SP7-1
+Date   : Tue Oct 13 00:58:44 2026
+****************************************
+
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                         3442
+Number of nets:                         24394
+Number of cells:                        21548
+Number of combinational cells:          16987
+Number of sequential cells:              4543
+Number of macros/black boxes:               0
+Number of buf/inv:                       4548
+Number of references:                     100
+
+Combinational area:              50426.399855
+Buf/Inv area:                     7675.680241
+Noncombinational area:           54326.880180
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                104753.280035
+Total area:                     104753.280035
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area             Local cell area
+                                  --------------------  ------------------------------ 
+Hierarchical cell                 Absolute     Percent  Combi-      Noncombi-   Black-
+                                  Total        Total    national    national    boxes   Design
+--------------------------------  -----------  -------  ----------  ----------  ------  ------------------------------------------------------
+imc_readout_path                  104753.2800    100.0   3518.8801   4992.9600  0.0000  imc_readout_path
+u_accumulators                     76026.2399     72.6      1.9200      0.0000  0.0000  imc_parallel_accumulators
+u_accumulators/genblk1[0].u_bank    9516.9600      9.1   3915.8399   4632.0000  0.0000  imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_7
+u_accumulators/genblk1[0].u_bank/u_arithmetic
+                                     969.1200      0.9    969.1200      0.0000  0.0000  imc_shift_add_lane_ADC_BITS12_7
+u_accumulators/genblk1[1].u_bank    9567.8400      9.1   3986.8799   4622.4000  0.0000  imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_6
+u_accumulators/genblk1[1].u_bank/u_arithmetic
+                                     958.5600      0.9    958.5600      0.0000  0.0000  imc_shift_add_lane_ADC_BITS12_6
+u_accumulators/genblk1[2].u_bank    9450.7200      9.0   3921.1199   4564.8001  0.0000  imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_5
+u_accumulators/genblk1[2].u_bank/u_arithmetic
+                                     964.8000      0.9    964.8000      0.0000  0.0000  imc_shift_add_lane_ADC_BITS12_5
+u_accumulators/genblk1[3].u_bank    9498.2400      9.1   3898.0799   4632.0000  0.0000  imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_4
+u_accumulators/genblk1[3].u_bank/u_arithmetic
+                                     968.1600      0.9    968.1600      0.0000  0.0000  imc_shift_add_lane_ADC_BITS12_4
+u_accumulators/genblk1[4].u_bank    9538.0800      9.1   3970.5599   4622.8800  0.0000  imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_3
+u_accumulators/genblk1[4].u_bank/u_arithmetic
+                                     944.6400      0.9    944.6400      0.0000  0.0000  imc_shift_add_lane_ADC_BITS12_3
+u_accumulators/genblk1[5].u_bank    9496.8000      9.1   3916.7999   4624.3200  0.0000  imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_2
+u_accumulators/genblk1[5].u_bank/u_arithmetic
+                                     955.6800      0.9    955.6800      0.0000  0.0000  imc_shift_add_lane_ADC_BITS12_2
+u_accumulators/genblk1[6].u_bank    9430.5601      9.0   3919.1999   4536.4801  0.0000  imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_1
+u_accumulators/genblk1[6].u_bank/u_arithmetic
+                                     974.8800      0.9    974.8800      0.0000  0.0000  imc_shift_add_lane_ADC_BITS12_1
+u_accumulators/genblk1[7].u_bank    9525.1200      9.1   3933.1199   4631.5200  0.0000  imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_0
+u_accumulators/genblk1[7].u_bank/u_arithmetic
+                                     960.4800      0.9    960.4800      0.0000  0.0000  imc_shift_add_lane_ADC_BITS12_0
+u_results                          20215.2001     19.3   7747.6801  12467.5200  0.0000  imc_parallel_result_banks
+--------------------------------  -----------  -------  ----------  ----------  ------  ------------------------------------------------------
+Total                                                   50426.3999  54326.8802  0.0000
+
+1

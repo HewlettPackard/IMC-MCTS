@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "configuration": {
+    "board_size": 9,
+    "play_strength": "medium",
+    "iterations": 5000,
+    "seed": 0,
+    "rules": "empty_cell_placement_v1"
+  },
+  "tree_sha256": "98522bb7a6031ddf375a84bcf63bdb86a9bd64a3b01a6513254d02969255a96d",
+  "prior_stale_digest": "b2994c9396c2123ead4669b820b48ebfe40e86e7c69581a0a291801d9e4a5b05",
+  "basis": "Reproduced from protected pre-edit source snapshot before any numerical behavior change in Round104; this legacy placement fixture is separate from the trained Go hero",
+  "pre_edit_source_manifest": "p00_runs/run_20261003_063318Z/reference_source_sha256.json",
+  "tree_encoder_sha256": "df0c2f8f788f7f3abd3f36611460c3ddc61f818af9c20776af47196bc6a3bd7c"
+}

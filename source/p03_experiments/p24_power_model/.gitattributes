@@ -1,0 +1,4 @@
+p00_runs/** -text -whitespace
+p01_packets/** -text -whitespace
+p02_release/** -text -whitespace
+p00_runs/**/*.csv whitespace=cr-at-eol

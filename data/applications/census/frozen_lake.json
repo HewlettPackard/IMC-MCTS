@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "selected_headers": 42475,
+    "legal_mask_loads": 1787,
+    "expansion_attempts": 5000,
+    "created_nodes": 4147,
+    "backprop_nodes": 46622,
+    "neural_evaluations": 3507,
+    "cam_searches": 37475,
+    "cam_output_ids": 117694,
+    "child_sram_read_words": 5607,
+    "cam_filled_rows": 5607,
+    "cam_hits": 35823,
+    "cam_evicted_rows": 4584
+  },
+  "parents": {
+    "2": 5831,
+    "3": 20544,
+    "4": 11100
+  },
+  "nodes": 4148,
+  "max_depth": 12
+}

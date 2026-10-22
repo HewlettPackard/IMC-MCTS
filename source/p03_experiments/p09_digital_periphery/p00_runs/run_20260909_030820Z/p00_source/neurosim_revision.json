@@ -1,0 +1,101 @@
+{
+  "sha": "8a88abf85844c0e1ba17cc771ea535fff6040456",
+  "node_id": "C_kwDONkt22doAKDhhODhhYmY4NTg0NGMwZTFiYTE3Y2M3NzFlYTUzNWZmZjYwNDA0NTY",
+  "commit": {
+    "author": {
+      "name": "MING-YEN LEE",
+      "email": "mlee838@gatech.edu",
+      "date": "2025-10-26T17:52:31Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2025-10-26T17:52:31Z"
+    },
+    "message": "Implement warning for technode temperature",
+    "tree": {
+      "sha": "577ada8c06f4b9eb99912a12e25d9ff6043ebf16",
+      "url": "https://api.github.com/repos/neurosim/NeuroSim/git/trees/577ada8c06f4b9eb99912a12e25d9ff6043ebf16"
+    },
+    "url": "https://api.github.com/repos/neurosim/NeuroSim/git/commits/8a88abf85844c0e1ba17cc771ea535fff6040456",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJo/l/fCRC1aQ7uu5UhlAAAL2gQAJa8eAnp5OoONrFH/VtJSZqs\nM/wBydx3fNPSZQWYL/mqaCCndgcYu0iDtw3brAQMm7jC/TP+NxN3HEMk+EFVwmkG\nky55VuIOXVsrQu0yqxHSLdwZ1CV2HUmnvtqhs97w9p6v/fXvVSBcNG3cRquY+QPh\nkNP2nkSoRDcBEwsq7Wha/ZEPWuHkh2iAxlEXI5r5WCJaQqf0ymhqoXCuSG9+TJGV\nvL98GeOFH6eHhOZw/D+BoMdmfSMyxOj/xx1bD8FlEVf0hIkYKc3xIz/kuLKaHAX6\nJdjFGA5ActqsxpzxKVhXAZ1QsInKW9SzalkWClqWzlYt+iaYxPlJwDCXM2d7XUNl\n04hyRU38eS1c0EkuAjj40yjk9glxvB0R8EDD9lcH7qMyud7aezl+kdqIRKc7w+w9\n8Inrdm13cx2HioXNnSjT5cieMbXJLRGjtnlUIWljxuUkz7JXGf7RNNnF9rQONYvh\npeLxeaga70hblIeR3910vm/g/5nYso6qOXNBJsusFgqOlgDR7JCd0ult7EtZdp0B\nCMc8xYz9GQkEAkp0SiCTXqKxTdNS65go87hIvLWkIG/Q8ev7tVqpR2dbJ2JjQsw9\nnlq9uQo/QizL8MSXBGEZOmi6S06YL0e72qV4C+UCu0h8krxPupP65yB1xyrlXSpJ\n+B+3FbGRVWu5PaBHcqYp\n=P/81\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 577ada8c06f4b9eb99912a12e25d9ff6043ebf16\nparent 1c608ea008c9de2264b0545b638247ab10124058\nauthor MING-YEN LEE <mlee838@gatech.edu> 1761501151 -0400\ncommitter GitHub <noreply@github.com> 1761501151 -0400\n\nImplement warning for technode temperature",
+      "verified_at": "2025-10-26T17:52:31Z"
+    }
+  },
+  "url": "https://api.github.com/repos/neurosim/NeuroSim/commits/8a88abf85844c0e1ba17cc771ea535fff6040456",
+  "html_url": "https://github.com/neurosim/NeuroSim/commit/8a88abf85844c0e1ba17cc771ea535fff6040456",
+  "comments_url": "https://api.github.com/repos/neurosim/NeuroSim/commits/8a88abf85844c0e1ba17cc771ea535fff6040456/comments",
+  "author": {
+    "login": "mingyeen99",
+    "id": 179173128,
+    "node_id": "U_kgDOCq33CA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/179173128?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/mingyeen99",
+    "html_url": "https://github.com/mingyeen99",
+    "followers_url": "https://api.github.com/users/mingyeen99/followers",
+    "following_url": "https://api.github.com/users/mingyeen99/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mingyeen99/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/mingyeen99/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mingyeen99/subscriptions",
+    "organizations_url": "https://api.github.com/users/mingyeen99/orgs",
+    "repos_url": "https://api.github.com/users/mingyeen99/repos",
+    "events_url": "https://api.github.com/users/mingyeen99/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/mingyeen99/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "1c608ea008c9de2264b0545b638247ab10124058",
+      "url": "https://api.github.com/repos/neurosim/NeuroSim/commits/1c608ea008c9de2264b0545b638247ab10124058",
+      "html_url": "https://github.com/neurosim/NeuroSim/commit/1c608ea008c9de2264b0545b638247ab10124058"
+    }
+  ],
+  "stats": {
+    "total": 6,
+    "additions": 5,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "ac3abfb5a909e1a43fd58ec73f60150515bfe038",
+      "filename": "Inference_pytorch/NeuroSIM/main.cpp",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 1,
+      "changes": 6,
+      "blob_url": "https://github.com/neurosim/NeuroSim/blob/8a88abf85844c0e1ba17cc771ea535fff6040456/Inference_pytorch%2FNeuroSIM%2Fmain.cpp",
+      "raw_url": "https://github.com/neurosim/NeuroSim/raw/8a88abf85844c0e1ba17cc771ea535fff6040456/Inference_pytorch%2FNeuroSIM%2Fmain.cpp",
+      "contents_url": "https://api.github.com/repos/neurosim/NeuroSim/contents/Inference_pytorch%2FNeuroSIM%2Fmain.cpp?ref=8a88abf85844c0e1ba17cc771ea535fff6040456",
+      "patch": "@@ -110,7 +110,11 @@ int main(int argc, char * argv[]) {\n         exit(-1);\n     }\n     }\n-\n+    if ((param->technode<=14) && (param->temp !=300))\n+    {\n+        cout << \"WARNING!: TECHNOLOGY NODE UNDER 14NM IS ONLY SUPPORTED AT 300K TEMPERATURE!\" << endl;\n+    }\n+    \n     /*** initialize operationMode as default ***/\n     param->conventionalParallel = 0;\n     param->conventionalSequential = 0;"
+    }
+  ]
+}

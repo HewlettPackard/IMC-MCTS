@@ -1,0 +1,43 @@
+--- /Users/tmolomochir/Documents/ChatGPT/HPE/p14_parallel_cost_repair/p11_connected_paths/p03_preimages/core/architecture/parallel_datapath.py
++++ /Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/core/architecture/parallel_datapath.py
+@@ -24,7 +24,7 @@
+     raw = SPEC.read_bytes()
+     result = json.loads(raw)
+     expected = {'ucb_lanes':16,'candidate_banks':2,'adc_lanes':32,'adc_bits':12,
+-        'adc_slot_bits':16,'adc_service_cycles':13,'adc_result_banks':2,
++        'adc_slot_bits':16,'adc_service_cycles':13,'adc_result_banks':2,'readout_staging_bits':512,
+         'readout_bus_bits':128,'accumulator_lanes':8,'active_rows':16}
+     if any(result[k] != v for k,v in expected.items()):
+         raise ValueError('Unreviewed parallel datapath configuration')
+@@ -182,8 +182,8 @@
+             rollout_spec_sha256=self.spec['sha256'],adc_lanes=32,readout_bus_bits=128,
+             shift_add_lanes=8,timing_status=self.spec['timing_status'],
+             readout={'profile':'sustained_drive_v1','overlap':True,'array_drive':'through_all_column_groups',
+-                'storage':'two 32-by-16-bit result banks; eight banked accumulator ALUs'},
+-            ppa_status='Separate source-linked engineering estimates; no new synthesis')
++                'storage':'two 32-by-16-bit result banks; one 512-bit staging register; eight banked accumulator ALUs'},
++            ppa_status='Connected digital readout uses native65 synthesis estimates; analog parts and residual controls retain source-linked engineering assumptions')
+         self.profile['adc_service_cycles'] = adc_cycles
+         self.profile['readout_activity'] = self._readout_activity()
+ 
+@@ -212,9 +212,9 @@
+         check_intervals(rows,[])
+         resources = deepcopy(self.serial_schedule['resources'])
+         resources.update(adc_lanes=32,sample_hold_lanes=32,adc_payload_bits=384,
+-            adc_register_bits=1024,adc_result_banks=2,readout_bus_bits=128,
++            adc_register_bits=1024,adc_result_banks=2,readout_bus_bits=128,readout_staging_bits=512,
+             shift_add_lanes=8,accumulator_banks=8,accumulator_words_per_bank=12,
+-            control_status='Buffered parallel architectural schedule; integrated RTL unvalidated')
++            control_status='Connected digital paths tested; full-core RTL and physical timing unvalidated')
+         return {'resources':resources,'operations':dict(ops),'phase_cycles':dict(phases),
+             'cycles':cursor,'storage_bytes':self.profile['storage_bytes'],
+             'coefficient_initialization_words':len(self.exp_lut),
+@@ -272,7 +272,7 @@
+             selection_profile=self.datapath['profile'],selection_spec_sha256=self.datapath['sha256'],
+             rollout_profile=self.datapath['profile'],rollout_spec_sha256=self.datapath['sha256'],
+             timing_status=self.datapath['timing_status'],ucb_batch_service_cycles='171 + valid_children (1..16)',
+-            candidate_register_bits=2*16*128,adc_result_register_bits=2*32*16,
++            candidate_register_bits=2*16*128,adc_result_register_bits=2*32*16,readout_staging_bits=512,
+             internal_readout_bus_bits=128,accumulator_lanes=8,
+             trace_timing='Explicit resource schedules inside buffered regions; serial services elsewhere')
+         self.memory.config.update(adc_service_cycles=adc_cycles,ucb_busy_cycles=self.datapath["ucb_busy_cycles"])

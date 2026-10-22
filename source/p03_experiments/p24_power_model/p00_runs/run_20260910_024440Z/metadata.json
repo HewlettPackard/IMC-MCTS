@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "checks": {
+    "imc_iteration_glue": true,
+    "imc_iteration_glue_no_latches": true,
+    "imc_iteration_glue_children_excluded": true,
+    "imc_buffered_iteration_glue": true,
+    "imc_buffered_iteration_glue_no_latches": true,
+    "imc_buffered_iteration_glue_children_excluded": true
+  },
+  "results": [
+    {
+      "top": "imc_iteration_glue",
+      "generic_cells": {
+        "$add": 3,
+        "$adffe": 18,
+        "$reduce_bool": 10,
+        "$ne": 17,
+        "$not": 1,
+        "$reduce_and": 9,
+        "$reduce_or": 2,
+        "$logic_not": 6,
+        "$eq": 14,
+        "$ge": 1,
+        "$gt": 6,
+        "$logic_and": 15,
+        "$logic_or": 20,
+        "$mul": 1,
+        "$adff": 2,
+        "$pmux": 9,
+        "$mux": 73,
+        "$xor": 3
+      },
+      "area_um2": null,
+      "source_sha256": "0c6ca7e741c3caac6653be9bd619202500ebb71c1755c9dd9092afe86a2a48a2"
+    },
+    {
+      "top": "imc_buffered_iteration_glue",
+      "generic_cells": {
+        "$add": 3,
+        "$adffe": 18,
+        "$reduce_bool": 10,
+        "$ne": 17,
+        "$not": 1,
+        "$reduce_and": 9,
+        "$reduce_or": 2,
+        "$logic_not": 6,
+        "$eq": 14,
+        "$ge": 1,
+        "$gt": 6,
+        "$logic_and": 15,
+        "$logic_or": 20,
+        "$mul": 1,
+        "$adff": 2,
+        "$pmux": 9,
+        "$mux": 73,
+        "$xor": 3
+      },
+      "area_um2": null,
+      "source_sha256": "7285696a9bb7d82a265e2d96da73e4e25399fe364e04ebe80f3f6c3cee1f71c8"
+    }
+  ],
+  "scope": "Generic structural checks only; no PPA conversion"
+}

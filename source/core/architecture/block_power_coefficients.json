@@ -1,0 +1,236 @@
+{
+  "schema_version": 2,
+  "profile": "block_power_vectorless65_v1",
+  "activity_profile": "digital_fsm_nonidle_v1",
+  "method": "vectorless_clock_floor_v1",
+  "catalog_sha256": "7e3696af76566c65f431acfc0f521b37cab8789617436af406ca472ee08abeea",
+  "operating_point": {
+    "node_nm": 65,
+    "clock_mhz": 500,
+    "voltage_v": 1.0,
+    "temperature_c": 25,
+    "corner": "tt_typical_max_1p00v_25c"
+  },
+  "status": "report_based_approximation",
+  "coefficient_definition": "Active dynamic = reported total dynamic. Idle dynamic = reported clock-network internal + switching. Leakage persists for all elapsed cycles. Nonclock idle switching is omitted; active input activity is assumed.",
+  "cases": {
+    "imc_cached_selector": {
+      "parameters": {
+        "BOARD_SIZE": 9,
+        "CAM_ENTRIES": 1024,
+        "NEURAL_BYTES": 16512,
+        "ADDR_W": 21
+      },
+      "report_power_mw": {
+        "dynamic_mw": 15.3959,
+        "clock_dynamic_mw": 14.4252,
+        "leakage_mw": 0.2624815
+      },
+      "powers_mw": {
+        "active_dynamic_mw": 15.3959,
+        "idle_dynamic_mw": 14.4252,
+        "leakage_mw": 0.2624815
+      },
+      "evidence": {
+        "method": "vectorless_clock_floor_v1",
+        "sources": {
+          "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/power_vectorless.rpt": "3db39e8e839defd078235c5ebbfeda2275acdfabdaf44c31bd578d18360596c8"
+        },
+        "status": "Assumed switching; active and idle states are approximations, not calibrated measurements"
+      }
+    },
+    "imc_ucb_score": {
+      "parameters": {},
+      "report_power_mw": {
+        "dynamic_mw": 8.1313,
+        "clock_dynamic_mw": 2.7094,
+        "leakage_mw": 0.5348745
+      },
+      "powers_mw": {
+        "active_dynamic_mw": 8.1313,
+        "idle_dynamic_mw": 2.7094,
+        "leakage_mw": 0.5348745
+      },
+      "evidence": {
+        "method": "vectorless_clock_floor_v1",
+        "sources": {
+          "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/power_vectorless.rpt": "31591ad55f4361be0e3369e6590bea08587919cd313b6b997fe307d172b5a307"
+        },
+        "status": "Assumed switching; active and idle states are approximations, not calibrated measurements"
+      }
+    },
+    "imc_neural_sequencer": {
+      "parameters": {
+        "INPUTS": 162,
+        "HIDDEN": 96,
+        "ADDR_W": 21,
+        "SRAM_BYTES": 1572864
+      },
+      "report_power_mw": {
+        "dynamic_mw": 5.9508,
+        "clock_dynamic_mw": 5.459,
+        "leakage_mw": 0.1400685
+      },
+      "powers_mw": {
+        "active_dynamic_mw": 5.9508,
+        "idle_dynamic_mw": 5.459,
+        "leakage_mw": 0.1400685
+      },
+      "evidence": {
+        "method": "vectorless_clock_floor_v1",
+        "sources": {
+          "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/power_vectorless.rpt": "3f4e650382b50e1343b0105bf216e4fd9e15649b4226b9c3bc958cf2c1dc4504"
+        },
+        "status": "Assumed switching; active and idle states are approximations, not calibrated measurements"
+      }
+    },
+    "imc_buffered_neural_sequencer": {
+      "parameters": {
+        "INPUTS": 162,
+        "HIDDEN": 96,
+        "ADDR_W": 21,
+        "SRAM_BYTES": 1572864
+      },
+      "report_power_mw": {
+        "dynamic_mw": 6.0119,
+        "clock_dynamic_mw": 5.5038,
+        "leakage_mw": 0.1400118
+      },
+      "powers_mw": {
+        "active_dynamic_mw": 6.0119,
+        "idle_dynamic_mw": 5.5038,
+        "leakage_mw": 0.1400118
+      },
+      "evidence": {
+        "method": "vectorless_clock_floor_v1",
+        "sources": {
+          "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/power_vectorless.rpt": "c5f064a8ca50802733a58444a6f62a848f9e4ae2ce12d73de746134175d0b3ea"
+        },
+        "status": "Assumed switching; active and idle states are approximations, not calibrated measurements"
+      }
+    },
+    "imc_tree_update_v2": {
+      "parameters": {
+        "BOARD_SIZE": 9,
+        "CAM_ENTRIES": 1024,
+        "NEURAL_BYTES": 16512,
+        "ADDR_W": 21
+      },
+      "report_power_mw": {
+        "dynamic_mw": 4.3517,
+        "clock_dynamic_mw": 3.246,
+        "leakage_mw": 0.1201442
+      },
+      "powers_mw": {
+        "active_dynamic_mw": 4.3517,
+        "idle_dynamic_mw": 3.246,
+        "leakage_mw": 0.1201442
+      },
+      "evidence": {
+        "method": "vectorless_clock_floor_v1",
+        "sources": {
+          "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/power_vectorless.rpt": "276010d7892a9ee3681a901bbaf638e855b64a98a4d3760deed001efd2510a63"
+        },
+        "status": "Assumed switching; active and idle states are approximations, not calibrated measurements"
+      }
+    },
+    "imc_sram_router_3bank": {
+      "parameters": {
+        "BANKS": 3,
+        "BANK_BYTE_W": 19,
+        "ADDR_W": 21
+      },
+      "report_power_mw": {
+        "dynamic_mw": 0.38534160000000006,
+        "clock_dynamic_mw": 0.2753,
+        "leakage_mw": 0.0048304
+      },
+      "powers_mw": {
+        "active_dynamic_mw": 0.38534160000000006,
+        "idle_dynamic_mw": 0.2753,
+        "leakage_mw": 0.0048304
+      },
+      "evidence": {
+        "method": "vectorless_clock_floor_v1",
+        "sources": {
+          "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/power_vectorless.rpt": "76385ee9d9d880abd217593d4cb8075d692fcef3c9ec6fae8037a6a981c14d7c"
+        },
+        "status": "Assumed switching; active and idle states are approximations, not calibrated measurements"
+      }
+    },
+    "imc_sram_router_1bank": {
+      "parameters": {
+        "BANKS": 1,
+        "BANK_BYTE_W": 19,
+        "ADDR_W": 21
+      },
+      "report_power_mw": {
+        "dynamic_mw": 0.3408893,
+        "clock_dynamic_mw": 0.2744,
+        "leakage_mw": 0.0046779000000000005
+      },
+      "powers_mw": {
+        "active_dynamic_mw": 0.3408893,
+        "idle_dynamic_mw": 0.2744,
+        "leakage_mw": 0.0046779000000000005
+      },
+      "evidence": {
+        "method": "vectorless_clock_floor_v1",
+        "sources": {
+          "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/power_vectorless.rpt": "ff3ff6fb744cce9f13cc67e35bd13d3b838e8f8aad6c67b4877d8b318164f126"
+        },
+        "status": "Assumed switching; active and idle states are approximations, not calibrated measurements"
+      }
+    },
+    "imc_iteration_glue": {
+      "parameters": {
+        "BOARD_SIZE": 9,
+        "HIDDEN": 96,
+        "CAM_ENTRIES": 1024,
+        "ADDR_W": 21
+      },
+      "report_power_mw": {
+        "dynamic_mw": 2.1655,
+        "clock_dynamic_mw": 1.7282,
+        "leakage_mw": 0.0338947
+      },
+      "powers_mw": {
+        "active_dynamic_mw": 2.1655,
+        "idle_dynamic_mw": 1.7282,
+        "leakage_mw": 0.0338947
+      },
+      "evidence": {
+        "method": "vectorless_clock_floor_v1",
+        "sources": {
+          "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/power_vectorless.rpt": "b5f07bbaf31348726bbc107e104aa29390901c02803194cc49bca9f3fde4a856"
+        },
+        "status": "Assumed switching; active and idle states are approximations, not calibrated measurements"
+      }
+    },
+    "imc_buffered_iteration_glue": {
+      "parameters": {
+        "BOARD_SIZE": 9,
+        "HIDDEN": 96,
+        "CAM_ENTRIES": 1024,
+        "ADDR_W": 21
+      },
+      "report_power_mw": {
+        "dynamic_mw": 2.1603,
+        "clock_dynamic_mw": 1.7288,
+        "leakage_mw": 0.0338852
+      },
+      "powers_mw": {
+        "active_dynamic_mw": 2.1603,
+        "idle_dynamic_mw": 1.7288,
+        "leakage_mw": 0.0338852
+      },
+      "evidence": {
+        "method": "vectorless_clock_floor_v1",
+        "sources": {
+          "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/power_vectorless.rpt": "87d83d7707bacfc334490d4481fcb3f2bf87ebf677bba19df255522c2281f813"
+        },
+        "status": "Assumed switching; active and idle states are approximations, not calibrated measurements"
+      }
+    }
+  }
+}

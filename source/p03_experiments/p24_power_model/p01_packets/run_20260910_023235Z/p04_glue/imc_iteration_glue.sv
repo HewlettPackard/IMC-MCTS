@@ -1,0 +1,827 @@
+// Complete serialized placement-MCTS iteration controller.
+// Host preloads root/boards/LUT and cell arrays; reset also clears CAM and banks.
+// One job per coordinated reset. Live progress commits after full backpropagation.
+// PPA role: top_level_glue_only_children_excluded_fixed_9x9_H96_CAM1024
+// SPDX-License-Identifier: MIT
+`default_nettype none
+module imc_iteration_glue #(
+    parameter int BOARD_SIZE = 9,
+    parameter int CAM_ENTRIES = 1024,
+    parameter int HIDDEN = 96,
+    parameter int ADDR_W = 21,
+    parameter int ROW_W = (CAM_ENTRIES < 2) ? 1 : $clog2(CAM_ENTRIES),
+    parameter int ROW_COUNT_W = $clog2(CAM_ENTRIES + 1)
+) (
+    input  logic                          clk,
+    input  logic                          rst_n,
+    input  logic                          start,
+    output logic                          ready,
+    input  logic [31:0]                   root_id,
+    input  logic [31:0]                   initial_nodes,
+    input  logic [31:0]                   initial_edges,
+    input  logic [31:0]                   iteration_limit,
+    input  logic [31:0]                   node_limit,
+    input  logic [31:0]                   edge_limit,
+    input  logic [31:0]                   path_limit,
+    input  logic [31:0]                   seed,
+    input  logic [63:0]                   exploration_constant,
+    input  logic [5:0]                    hidden_shift,
+    input  logic signed [7:0]             logit_shift,
+    output logic                          result_valid,
+    input  logic                          result_ready,
+    output logic [7:0]                    result_error,
+    output logic                          iteration_done,
+    output logic [63:0]                   cycle_count,
+    output logic [31:0]                   iterations_completed,
+    output logic [31:0]                   allocated_nodes,
+    output logic [31:0]                   allocated_edges,
+    output logic [31:0]                   selected_node,
+    output logic [31:0]                   current_depth,
+    output logic [31:0]                   last_value,
+    output logic [31:0]                   random_state,
+    output logic [3:0]                    debug_phase,
+    output logic [1:0]                    debug_owner,
+    output logic                          cam_req_valid,
+    input  logic                          cam_req_ready,
+    output logic [1:0]                    cam_req_op,
+    output logic [ROW_W-1:0]              cam_req_row,
+    output logic [31:0]                   cam_req_parent,
+    output logic [31:0]                   cam_req_child,
+    input  logic                          cam_rsp_valid,
+    output logic                          cam_rsp_ready,
+    input  logic                          cam_rsp_error,
+    input  logic [CAM_ENTRIES-1:0]        cam_rsp_matches,
+    input  logic [31:0]                   cam_rsp_parent,
+    input  logic [31:0]                   cam_rsp_child,
+    input  logic                          cam_rsp_row_valid,
+    output logic [5:0]                    sel_state,
+    output logic [ROW_COUNT_W-1:0]        cache_rows_used,
+    output logic [ROW_W-1:0]              cache_row_head,
+    output logic [ROW_W-1:0]              cache_row_tail,
+    output logic                          drive_valid,
+    input  logic                          drive_ready,
+    output logic                          array_enable,
+    output logic [3:0]                    array_id,
+    output logic [7:0]                    row_start,
+    output logic [4:0]                    row_count,
+    output logic [15:0]                   row_bits,
+    output logic [2:0]                    input_bit,
+    output logic [7:0]                    column_start,
+    output logic [1:0]                    column_count,
+    output logic                          mux_select,
+    output logic                          sample_hold,
+    output logic                          adc_req_valid,
+    input  logic                          adc_req_ready,
+    input  logic                          adc_rsp_valid,
+    output logic                          adc_rsp_ready,
+    input  logic                          adc_rsp_error,
+    input  logic [23:0]                   adc_rsp_codes,
+    output logic                          hidden_saturated,
+    output logic                          logit_saturated,
+    output logic [5:0]                    nn_state,
+    output logic [5:0]                    upd_state,
+    output logic [3:0]                    ucb_state,
+    output logic [2:0]                    node_bank_valid,
+    input  logic [2:0]                    node_bank_ready,
+    output logic [2:0]                    node_bank_write,
+    output logic [50:0]                   node_bank_addr,
+    output logic [95:0]                   node_bank_wdata,
+    input  logic [2:0]                    node_bank_rsp_valid,
+    input  logic [95:0]                   node_bank_rdata,
+    output logic                          child_bank_valid,
+    input  logic                          child_bank_ready,
+    output logic                          child_bank_write,
+    output logic [16:0]                   child_bank_addr,
+    output logic [31:0]                   child_bank_wdata,
+    input  logic                          child_bank_rsp_valid,
+    input  logic [31:0]                   child_bank_rdata,
+    output logic u_node_router__clk,
+    output logic u_node_router__rst_n,
+    output logic u_node_router__req_valid,
+    input logic u_node_router__req_ready,
+    output logic [21-1:0]                 u_node_router__req_addr,
+    output logic u_node_router__req_write,
+    output logic [31:0]                        u_node_router__req_wdata,
+    input logic u_node_router__rsp_valid,
+    output logic u_node_router__rsp_ready,
+    input logic u_node_router__rsp_error,
+    input logic [31:0]                        u_node_router__rsp_rdata,
+    input logic [3-1:0]                  u_node_router__bank_valid,
+    output logic [3-1:0]                  u_node_router__bank_ready,
+    input logic [3-1:0]                  u_node_router__bank_write,
+    input logic [3*(19-2)-1:0]   u_node_router__bank_addr,
+    input logic [3*32-1:0]               u_node_router__bank_wdata,
+    output logic [3-1:0]                  u_node_router__bank_rsp_valid,
+    output logic [3*32-1:0]               u_node_router__bank_rdata,
+    output logic u_child_router__clk,
+    output logic u_child_router__rst_n,
+    output logic u_child_router__req_valid,
+    input logic u_child_router__req_ready,
+    output logic [21-1:0]                 u_child_router__req_addr,
+    output logic u_child_router__req_write,
+    output logic [31:0]                        u_child_router__req_wdata,
+    input logic u_child_router__rsp_valid,
+    output logic u_child_router__rsp_ready,
+    input logic u_child_router__rsp_error,
+    input logic [31:0]                        u_child_router__rsp_rdata,
+    input logic [1-1:0]                  u_child_router__bank_valid,
+    output logic [1-1:0]                  u_child_router__bank_ready,
+    input logic [1-1:0]                  u_child_router__bank_write,
+    input logic [1*(19-2)-1:0]   u_child_router__bank_addr,
+    input logic [1*32-1:0]               u_child_router__bank_wdata,
+    output logic [1-1:0]                  u_child_router__bank_rsp_valid,
+    output logic [1*32-1:0]               u_child_router__bank_rdata,
+    output logic u_sel__clk,
+    output logic u_sel__rst_n,
+    output logic u_sel__start,
+    input logic u_sel__ready,
+    output logic [31:0]                u_sel__root_id,
+    output logic [31:0]                u_sel__nodes_used,
+    output logic [31:0]                u_sel__edges_used,
+    output logic [31:0]                u_sel__path_limit,
+    output logic [63:0]                u_sel__exploration_constant,
+    input logic u_sel__result_valid,
+    output logic u_sel__result_ready,
+    input logic [31:0]                u_sel__leaf_id,
+    input logic [31:0]                u_sel__path_depth,
+    input logic [3:0]                 u_sel__result_error,
+    input logic u_sel__poisoned,
+    input logic u_sel__node_req_valid,
+    output logic u_sel__node_req_ready,
+    input logic u_sel__node_req_write,
+    input logic [21-1:0]          u_sel__node_req_addr,
+    input logic [31:0]                u_sel__node_req_wdata,
+    output logic u_sel__node_rsp_valid,
+    input logic u_sel__node_rsp_ready,
+    output logic [31:0]                u_sel__node_rsp_rdata,
+    output logic u_sel__node_rsp_error,
+    input logic u_sel__child_req_valid,
+    output logic u_sel__child_req_ready,
+    input logic [21-1:0]          u_sel__child_req_addr,
+    output logic u_sel__child_rsp_valid,
+    input logic u_sel__child_rsp_ready,
+    output logic [31:0]                u_sel__child_rsp_rdata,
+    output logic u_sel__child_rsp_error,
+    input logic u_sel__cam_req_valid,
+    output logic u_sel__cam_req_ready,
+    input logic [1:0]                 u_sel__cam_req_op,
+    input logic [10-1:0]           u_sel__cam_req_row,
+    input logic [31:0]                u_sel__cam_req_parent,
+    input logic [31:0]                u_sel__cam_req_child,
+    output logic u_sel__cam_rsp_valid,
+    input logic u_sel__cam_rsp_ready,
+    output logic u_sel__cam_rsp_error,
+    output logic [1024-1:0]     u_sel__cam_rsp_matches,
+    output logic [31:0]                u_sel__cam_rsp_parent,
+    output logic [31:0]                u_sel__cam_rsp_child,
+    output logic u_sel__cam_rsp_row_valid,
+    input logic u_sel__score_req_valid,
+    output logic u_sel__score_req_ready,
+    input logic [31:0]                u_sel__score_parent_visits,
+    input logic [31:0]                u_sel__score_child_visits,
+    input logic [63:0]                u_sel__score_child_value,
+    input logic [63:0]                u_sel__score_exploration,
+    output logic u_sel__score_rsp_valid,
+    input logic u_sel__score_rsp_ready,
+    output logic [63:0]                u_sel__score_rsp_value,
+    output logic u_sel__score_rsp_error,
+    input logic [5:0]                 u_sel__debug_state,
+    input logic [11-1:0]     u_sel__cache_rows_used,
+    input logic [10-1:0]           u_sel__cache_row_head,
+    input logic [10-1:0]           u_sel__cache_row_tail,
+    output logic u_upd__clk,
+    output logic u_upd__rst_n,
+    output logic u_upd__start,
+    input logic u_upd__ready,
+    output logic u_upd__backpropagate,
+    output logic [31:0]           u_upd__selected_node,
+    output logic [31:0]           u_upd__nodes_used,
+    output logic [31:0]           u_upd__edges_used,
+    output logic [31:0]           u_upd__selected_depth,
+    output logic [31:0]           u_upd__node_limit,
+    output logic [31:0]           u_upd__edge_limit,
+    output logic [31:0]           u_upd__path_limit,
+    output logic [31:0]           u_upd__choice_word,
+    output logic [31:0]           u_upd__value_q17,
+    input logic u_upd__result_valid,
+    output logic u_upd__result_ready,
+    input logic [31:0]           u_upd__result_node,
+    input logic [31:0]           u_upd__result_nodes_used,
+    input logic [31:0]           u_upd__result_edges_used,
+    input logic [31:0]           u_upd__result_depth,
+    input logic [31:0]           u_upd__nodes_changed,
+    input logic [3:0]            u_upd__result_error,
+    input logic u_upd__poisoned,
+    input logic u_upd__node_req_valid,
+    output logic u_upd__node_req_ready,
+    input logic u_upd__node_req_write,
+    input logic [21-1:0]      u_upd__node_req_addr,
+    input logic [31:0]           u_upd__node_req_wdata,
+    output logic u_upd__node_rsp_valid,
+    input logic u_upd__node_rsp_ready,
+    output logic [31:0]           u_upd__node_rsp_rdata,
+    output logic u_upd__node_rsp_error,
+    input logic u_upd__child_req_valid,
+    output logic u_upd__child_req_ready,
+    input logic u_upd__child_req_write,
+    input logic [21-1:0]      u_upd__child_req_addr,
+    input logic [31:0]           u_upd__child_req_wdata,
+    output logic u_upd__child_rsp_valid,
+    input logic u_upd__child_rsp_ready,
+    output logic [31:0]           u_upd__child_rsp_rdata,
+    output logic u_upd__child_rsp_error,
+    input logic [5:0]            u_upd__debug_state,
+    output logic u_nn__clk,
+    output logic u_nn__rst_n,
+    output logic u_nn__start,
+    input logic u_nn__ready,
+    output logic [21-1:0]       u_nn__board_base,
+    output logic [21-1:0]       u_nn__neural_base,
+    output logic [5:0]              u_nn__hidden_shift,
+    output logic signed [7:0]       u_nn__logit_shift,
+    input logic u_nn__result_valid,
+    output logic u_nn__result_ready,
+    input logic [31:0]             u_nn__value_code,
+    input logic [3:0]              u_nn__result_error,
+    input logic u_nn__mem_req_valid,
+    output logic u_nn__mem_req_ready,
+    input logic [21-1:0]       u_nn__mem_req_addr,
+    input logic u_nn__mem_req_write,
+    input logic [31:0]             u_nn__mem_req_wdata,
+    output logic u_nn__mem_rsp_valid,
+    input logic u_nn__mem_rsp_ready,
+    output logic u_nn__mem_rsp_error,
+    output logic [31:0]             u_nn__mem_rsp_rdata,
+    input logic u_nn__drive_valid,
+    output logic u_nn__drive_ready,
+    input logic u_nn__array_enable,
+    input logic [3:0]              u_nn__array_id,
+    input logic [7:0]              u_nn__row_start,
+    input logic [4:0]              u_nn__row_count,
+    input logic [15:0]             u_nn__row_bits,
+    input logic [2:0]              u_nn__input_bit,
+    input logic [7:0]              u_nn__column_start,
+    input logic [1:0]              u_nn__column_count,
+    input logic u_nn__mux_select,
+    input logic u_nn__sample_hold,
+    input logic u_nn__adc_req_valid,
+    output logic u_nn__adc_req_ready,
+    output logic u_nn__adc_rsp_valid,
+    input logic u_nn__adc_rsp_ready,
+    output logic u_nn__adc_rsp_error,
+    output logic [23:0]             u_nn__adc_rsp_codes,
+    input logic u_nn__hidden_saturated,
+    input logic u_nn__logit_saturated,
+    input logic [5:0]              u_nn__debug_state,
+    output logic u_ucb__clk,
+    output logic u_ucb__rst_n,
+    output logic u_ucb__score_req_valid,
+    input logic u_ucb__score_req_ready,
+    output logic [31:0] u_ucb__score_parent_visits,
+    output logic [31:0] u_ucb__score_child_visits,
+    output logic [63:0] u_ucb__score_child_value,
+    output logic [63:0] u_ucb__score_exploration,
+    input logic u_ucb__score_rsp_valid,
+    output logic u_ucb__score_rsp_ready,
+    input logic [63:0] u_ucb__score_rsp_value,
+    input logic u_ucb__score_rsp_error,
+    input logic [3:0] u_ucb__debug_state
+);
+
+    localparam int BOARD_BYTES = 4 * ((2 * BOARD_SIZE * BOARD_SIZE + 31) / 32);
+    localparam int NEURAL_BASE = 4 * (BOARD_SIZE * BOARD_SIZE + 1) + BOARD_BYTES + 16 + 16 * CAM_ENTRIES;
+    localparam int NEURAL_BYTES = 4 * ((HIDDEN + 3) / 4) + 16416;
+    localparam int NODE_BASE = NEURAL_BASE + NEURAL_BYTES;
+    localparam int NODE_STRIDE = 24 + BOARD_BYTES;
+    localparam int NODE_CAPACITY = (1572864-NODE_BASE)/NODE_STRIDE;
+    typedef enum logic [3:0] {
+        ST_IDLE, ST_SELECT_START, ST_SELECT_WAIT, ST_EXPAND_START, ST_EXPAND_WAIT,
+        ST_NEURAL_START, ST_NEURAL_WAIT, ST_BACKPROP_START, ST_BACKPROP_WAIT,
+        ST_ITERATION, ST_RESULT
+    } phase_e;
+    phase_e phase_q, phase_d;
+    logic used_q, used_d;
+    logic [31:0] root_q, root_d, limit_q, limit_d, nodes_limit_q, nodes_limit_d;
+    logic [31:0] edges_limit_q, edges_limit_d, path_limit_q, path_limit_d;
+    logic [31:0] iterations_d, nodes_d, edges_d, selected_d, depth_d, value_d, random_d, random_next;
+    logic [63:0] exploration_q, exploration_d, cycles_d;
+    logic [5:0] hidden_q, hidden_d;
+    logic signed [7:0] logit_q, logit_d;
+    logic [7:0] error_d;
+    logic iteration_d;
+    logic sel_start;
+    logic sel_ready;
+    logic [31:0] sel_root_id;
+    logic [31:0] sel_nodes_used;
+    logic [31:0] sel_edges_used;
+    logic [31:0] sel_path_limit;
+    logic [63:0] sel_exploration_constant;
+    logic sel_result_valid;
+    logic sel_result_ready;
+    logic [31:0] sel_leaf_id;
+    logic [31:0] sel_path_depth;
+    logic [3:0] sel_result_error;
+    logic sel_poisoned;
+    logic sel_node_req_valid;
+    logic sel_node_req_ready;
+    logic sel_node_req_write;
+    logic [ADDR_W-1:0] sel_node_req_addr;
+    logic [31:0] sel_node_req_wdata;
+    logic sel_node_rsp_valid;
+    logic sel_node_rsp_ready;
+    logic [31:0] sel_node_rsp_rdata;
+    logic sel_node_rsp_error;
+    logic sel_child_req_valid;
+    logic sel_child_req_ready;
+    logic [ADDR_W-1:0] sel_child_req_addr;
+    logic sel_child_rsp_valid;
+    logic sel_child_rsp_ready;
+    logic [31:0] sel_child_rsp_rdata;
+    logic sel_child_rsp_error;
+    logic score_req_valid;
+    logic score_req_ready;
+    logic [31:0] score_parent_visits;
+    logic [31:0] score_child_visits;
+    logic [63:0] score_child_value;
+    logic [63:0] score_exploration;
+    logic score_rsp_valid;
+    logic score_rsp_ready;
+    logic [63:0] score_rsp_value;
+    logic score_rsp_error;
+    logic nn_start;
+    logic nn_ready;
+    logic [ADDR_W-1:0] nn_board_base;
+    logic [ADDR_W-1:0] nn_neural_base;
+    logic [5:0] nn_hidden_shift;
+    logic signed [7:0] nn_logit_shift;
+    logic nn_result_valid;
+    logic nn_result_ready;
+    logic [31:0] nn_value_code;
+    logic [3:0] nn_result_error;
+    logic nn_mem_req_valid;
+    logic nn_mem_req_ready;
+    logic [ADDR_W-1:0] nn_mem_req_addr;
+    logic nn_mem_req_write;
+    logic [31:0] nn_mem_req_wdata;
+    logic nn_mem_rsp_valid;
+    logic nn_mem_rsp_ready;
+    logic nn_mem_rsp_error;
+    logic [31:0] nn_mem_rsp_rdata;
+    logic upd_start;
+    logic upd_ready;
+    logic upd_backpropagate;
+    logic [31:0] upd_selected_node;
+    logic [31:0] upd_nodes_used;
+    logic [31:0] upd_edges_used;
+    logic [31:0] upd_selected_depth;
+    logic [31:0] upd_node_limit;
+    logic [31:0] upd_edge_limit;
+    logic [31:0] upd_path_limit;
+    logic [31:0] upd_choice_word;
+    logic [31:0] upd_value_q17;
+    logic upd_result_valid;
+    logic upd_result_ready;
+    logic [31:0] upd_result_node;
+    logic [31:0] upd_result_nodes_used;
+    logic [31:0] upd_result_edges_used;
+    logic [31:0] upd_result_depth;
+    logic [31:0] upd_nodes_changed;
+    logic [3:0] upd_result_error;
+    logic upd_poisoned;
+    logic upd_node_req_valid;
+    logic upd_node_req_ready;
+    logic upd_node_req_write;
+    logic [ADDR_W-1:0] upd_node_req_addr;
+    logic [31:0] upd_node_req_wdata;
+    logic upd_node_rsp_valid;
+    logic upd_node_rsp_ready;
+    logic [31:0] upd_node_rsp_rdata;
+    logic upd_node_rsp_error;
+    logic upd_child_req_valid;
+    logic upd_child_req_ready;
+    logic upd_child_req_write;
+    logic [ADDR_W-1:0] upd_child_req_addr;
+    logic [31:0] upd_child_req_wdata;
+    logic upd_child_rsp_valid;
+    logic upd_child_rsp_ready;
+    logic [31:0] upd_child_rsp_rdata;
+    logic upd_child_rsp_error;
+    logic node_router_req_valid;
+    logic node_router_req_ready;
+    logic [ADDR_W-1:0] node_router_req_addr;
+    logic node_router_req_write;
+    logic [31:0] node_router_req_wdata;
+    logic node_router_rsp_valid;
+    logic node_router_rsp_ready;
+    logic node_router_rsp_error;
+    logic [31:0] node_router_rsp_rdata;
+    logic child_router_req_valid;
+    logic child_router_req_ready;
+    logic [ADDR_W-1:0] child_router_req_addr;
+    logic child_router_req_write;
+    logic [31:0] child_router_req_wdata;
+    logic child_router_rsp_valid;
+    logic child_router_rsp_ready;
+    logic child_router_rsp_error;
+    logic [31:0] child_router_rsp_rdata;
+
+    assign ready = rst_n && phase_q == ST_IDLE && !used_q;
+    assign result_valid = rst_n && phase_q == ST_RESULT;
+    assign debug_phase = phase_q;
+    assign debug_owner = (phase_q == ST_SELECT_START || phase_q == ST_SELECT_WAIT) ? 2'd1 :
+        (phase_q == ST_EXPAND_START || phase_q == ST_EXPAND_WAIT || phase_q == ST_BACKPROP_START || phase_q == ST_BACKPROP_WAIT) ? 2'd2 :
+        (phase_q == ST_NEURAL_START || phase_q == ST_NEURAL_WAIT) ? 2'd3 : 2'd0;
+    assign sel_start = phase_q == ST_SELECT_START;
+    assign sel_result_ready = phase_q == ST_SELECT_WAIT;
+    assign sel_root_id = root_q;
+    assign sel_nodes_used = allocated_nodes;
+    assign sel_edges_used = allocated_edges;
+    assign sel_path_limit = path_limit_q;
+    assign sel_exploration_constant = exploration_q;
+    assign upd_start = phase_q == ST_EXPAND_START || phase_q == ST_BACKPROP_START;
+    assign upd_backpropagate = phase_q == ST_BACKPROP_START || phase_q == ST_BACKPROP_WAIT;
+    assign upd_selected_node = selected_node;
+    assign upd_nodes_used = allocated_nodes;
+    assign upd_edges_used = allocated_edges;
+    assign upd_selected_depth = current_depth;
+    assign upd_node_limit = nodes_limit_q;
+    assign upd_edge_limit = edges_limit_q;
+    assign upd_path_limit = path_limit_q;
+    assign upd_choice_word = random_next;
+    assign upd_value_q17 = last_value;
+    assign upd_result_ready = phase_q == ST_EXPAND_WAIT || phase_q == ST_BACKPROP_WAIT;
+    assign nn_start = phase_q == ST_NEURAL_START;
+    assign nn_board_base = ADDR_W'(NODE_BASE+24) + ADDR_W'(selected_node)*ADDR_W'(NODE_STRIDE);
+    assign nn_neural_base = ADDR_W'(NEURAL_BASE);
+    assign nn_hidden_shift = hidden_q;
+    assign nn_logit_shift = logit_q;
+    assign nn_result_ready = phase_q == ST_NEURAL_WAIT;
+
+    always_comb begin
+        random_next = random_state ^ (random_state << 13);
+        random_next = random_next ^ (random_next >> 17);
+        random_next = random_next ^ (random_next << 5);
+        phase_d = phase_q;
+        used_d = used_q;
+        root_d = root_q;
+        limit_d = limit_q;
+        nodes_limit_d = nodes_limit_q;
+        edges_limit_d = edges_limit_q;
+        path_limit_d = path_limit_q;
+        exploration_d = exploration_q;
+        hidden_d = hidden_q;
+        logit_d = logit_q;
+        iterations_d = iterations_completed;
+        nodes_d = allocated_nodes;
+        edges_d = allocated_edges;
+        selected_d = selected_node;
+        depth_d = current_depth;
+        value_d = last_value;
+        random_d = random_state;
+        cycles_d = cycle_count;
+        error_d = result_error;
+        iteration_d = 1'b0;
+        if (phase_q != ST_IDLE && phase_q != ST_RESULT) cycles_d = cycle_count + 64'd1;
+        unique case (phase_q)
+            ST_IDLE: if (start && ready) begin
+                used_d = 1'b1;
+                root_d = root_id;
+                limit_d = iteration_limit;
+                nodes_limit_d = node_limit;
+                edges_limit_d = edge_limit;
+                path_limit_d = path_limit;
+                exploration_d = exploration_constant;
+                hidden_d = hidden_shift;
+                logit_d = logit_shift;
+                iterations_d = '0;
+                nodes_d = initial_nodes;
+                edges_d = initial_edges;
+                selected_d = root_id;
+                depth_d = '0;
+                value_d = '0;
+                random_d = seed == '0 ? 32'h6d2b79f5 : seed;
+                cycles_d = '0;
+                error_d = '0;
+                phase_d = ST_SELECT_START;
+                if (iteration_limit == '0 || initial_nodes == '0 || initial_nodes > node_limit ||
+                    node_limit > 32'(NODE_CAPACITY) || root_id >= initial_nodes || initial_edges > edge_limit ||
+                    edge_limit > 32'd131072 || path_limit == '0 || path_limit > 32'(BOARD_SIZE*BOARD_SIZE+1) ||
+                    exploration_constant[63] || exploration_constant > 64'h4020000000000000) begin
+                    error_d = 8'h01;
+                    phase_d = ST_RESULT;
+                end
+            end
+            ST_SELECT_START: if (sel_ready) phase_d = ST_SELECT_WAIT;
+            ST_SELECT_WAIT: if (sel_result_valid) begin
+                selected_d = sel_leaf_id;
+                depth_d = sel_path_depth;
+                phase_d = ST_EXPAND_START;
+                if (sel_result_error != '0 || sel_poisoned) begin error_d = {4'd1, sel_result_error}; phase_d = ST_RESULT; end
+            end
+            ST_EXPAND_START: if (upd_ready) phase_d = ST_EXPAND_WAIT;
+            ST_EXPAND_WAIT: if (upd_result_valid) begin
+                selected_d = upd_result_node;
+                nodes_d = upd_result_nodes_used;
+                edges_d = upd_result_edges_used;
+                depth_d = upd_result_depth;
+                if (upd_nodes_changed != '0) random_d = random_next;
+                phase_d = ST_NEURAL_START;
+                if (upd_result_error != '0 || upd_poisoned) begin error_d = {4'd2, upd_result_error}; phase_d = ST_RESULT; end
+            end
+            ST_NEURAL_START: if (nn_ready) phase_d = ST_NEURAL_WAIT;
+            ST_NEURAL_WAIT: if (nn_result_valid) begin
+                value_d = nn_value_code;
+                phase_d = ST_BACKPROP_START;
+                if (nn_result_error != '0) begin error_d = {4'd3, nn_result_error}; phase_d = ST_RESULT; end
+            end
+            ST_BACKPROP_START: if (upd_ready) phase_d = ST_BACKPROP_WAIT;
+            ST_BACKPROP_WAIT: if (upd_result_valid) begin
+                depth_d = upd_result_depth;
+                phase_d = ST_ITERATION;
+                if (upd_result_error != '0 || upd_poisoned) begin error_d = {4'd4, upd_result_error}; phase_d = ST_RESULT; end
+            end
+            ST_ITERATION: begin
+                iterations_d = iterations_completed + 32'd1;
+                iteration_d = 1'b1;
+                if (iterations_d == limit_q) phase_d = ST_RESULT;
+                else phase_d = ST_SELECT_START;
+            end
+            ST_RESULT: if (result_ready) phase_d = ST_IDLE;
+            default: begin error_d = 8'h7f; phase_d = ST_RESULT; end
+        endcase
+    end
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            phase_q <= ST_IDLE;
+            used_q <= 1'b0;
+            root_q <= '0;
+            limit_q <= '0;
+            nodes_limit_q <= '0;
+            edges_limit_q <= '0;
+            path_limit_q <= '0;
+            exploration_q <= '0;
+            hidden_q <= '0;
+            logit_q <= '0;
+            iterations_completed <= '0;
+            allocated_nodes <= '0;
+            allocated_edges <= '0;
+            selected_node <= '0;
+            current_depth <= '0;
+            last_value <= '0;
+            random_state <= '0;
+            cycle_count <= '0;
+            result_error <= '0;
+            iteration_done <= 1'b0;
+        end else begin
+            phase_q <= phase_d;
+            used_q <= used_d;
+            root_q <= root_d;
+            limit_q <= limit_d;
+            nodes_limit_q <= nodes_limit_d;
+            edges_limit_q <= edges_limit_d;
+            path_limit_q <= path_limit_d;
+            exploration_q <= exploration_d;
+            hidden_q <= hidden_d;
+            logit_q <= logit_d;
+            iterations_completed <= iterations_d;
+            allocated_nodes <= nodes_d;
+            allocated_edges <= edges_d;
+            selected_node <= selected_d;
+            current_depth <= depth_d;
+            last_value <= value_d;
+            random_state <= random_d;
+            cycle_count <= cycles_d;
+            result_error <= error_d;
+            iteration_done <= iteration_d;
+        end
+    end
+    assign node_router_req_valid = debug_owner == 2'd1 ? sel_node_req_valid : debug_owner == 2'd2 ? upd_node_req_valid : debug_owner == 2'd3 ? nn_mem_req_valid : '0;
+    assign node_router_req_write = debug_owner == 2'd1 ? sel_node_req_write : debug_owner == 2'd2 ? upd_node_req_write : debug_owner == 2'd3 ? nn_mem_req_write : '0;
+    assign node_router_req_addr = debug_owner == 2'd1 ? sel_node_req_addr : debug_owner == 2'd2 ? upd_node_req_addr : debug_owner == 2'd3 ? nn_mem_req_addr : '0;
+    assign node_router_req_wdata = debug_owner == 2'd1 ? sel_node_req_wdata : debug_owner == 2'd2 ? upd_node_req_wdata : debug_owner == 2'd3 ? nn_mem_req_wdata : '0;
+    assign node_router_rsp_ready = debug_owner == 2'd1 ? sel_node_rsp_ready : debug_owner == 2'd2 ? upd_node_rsp_ready : debug_owner == 2'd3 ? nn_mem_rsp_ready : '0;
+    assign sel_node_req_ready = debug_owner == 2'd1 && node_router_req_ready;
+    assign sel_node_rsp_valid = debug_owner == 2'd1 && node_router_rsp_valid;
+    assign sel_node_rsp_rdata = node_router_rsp_rdata;
+    assign sel_node_rsp_error = node_router_rsp_error;
+    assign upd_node_req_ready = debug_owner == 2'd2 && node_router_req_ready;
+    assign upd_node_rsp_valid = debug_owner == 2'd2 && node_router_rsp_valid;
+    assign upd_node_rsp_rdata = node_router_rsp_rdata;
+    assign upd_node_rsp_error = node_router_rsp_error;
+    assign nn_mem_req_ready = debug_owner == 2'd3 && node_router_req_ready;
+    assign nn_mem_rsp_valid = debug_owner == 2'd3 && node_router_rsp_valid;
+    assign nn_mem_rsp_rdata = node_router_rsp_rdata;
+    assign nn_mem_rsp_error = node_router_rsp_error;
+
+    assign child_router_req_valid = debug_owner == 2'd1 ? sel_child_req_valid : debug_owner == 2'd2 ? upd_child_req_valid : '0;
+    assign child_router_req_write = debug_owner == 2'd1 ? '0 : debug_owner == 2'd2 ? upd_child_req_write : '0;
+    assign child_router_req_addr = debug_owner == 2'd1 ? sel_child_req_addr : debug_owner == 2'd2 ? upd_child_req_addr : '0;
+    assign child_router_req_wdata = debug_owner == 2'd1 ? '0 : debug_owner == 2'd2 ? upd_child_req_wdata : '0;
+    assign child_router_rsp_ready = debug_owner == 2'd1 ? sel_child_rsp_ready : debug_owner == 2'd2 ? upd_child_rsp_ready : '0;
+    assign sel_child_req_ready = debug_owner == 2'd1 && child_router_req_ready;
+    assign sel_child_rsp_valid = debug_owner == 2'd1 && child_router_rsp_valid;
+    assign sel_child_rsp_rdata = child_router_rsp_rdata;
+    assign sel_child_rsp_error = child_router_rsp_error;
+    assign upd_child_req_ready = debug_owner == 2'd2 && child_router_req_ready;
+    assign upd_child_rsp_valid = debug_owner == 2'd2 && child_router_rsp_valid;
+    assign upd_child_rsp_rdata = child_router_rsp_rdata;
+    assign upd_child_rsp_error = child_router_rsp_error;
+
+
+
+
+
+
+    assign u_node_router__clk = clk;
+    assign u_node_router__rst_n = rst_n;
+    assign u_node_router__req_valid = node_router_req_valid;
+    assign node_router_req_ready = u_node_router__req_ready;
+    assign u_node_router__req_addr = node_router_req_addr;
+    assign u_node_router__req_write = node_router_req_write;
+    assign u_node_router__req_wdata = node_router_req_wdata;
+    assign node_router_rsp_valid = u_node_router__rsp_valid;
+    assign u_node_router__rsp_ready = node_router_rsp_ready;
+    assign node_router_rsp_error = u_node_router__rsp_error;
+    assign node_router_rsp_rdata = u_node_router__rsp_rdata;
+    assign node_bank_valid = u_node_router__bank_valid;
+    assign u_node_router__bank_ready = node_bank_ready;
+    assign node_bank_write = u_node_router__bank_write;
+    assign node_bank_addr = u_node_router__bank_addr;
+    assign node_bank_wdata = u_node_router__bank_wdata;
+    assign u_node_router__bank_rsp_valid = node_bank_rsp_valid;
+    assign u_node_router__bank_rdata = node_bank_rdata;
+    assign u_child_router__clk = clk;
+    assign u_child_router__rst_n = rst_n;
+    assign u_child_router__req_valid = child_router_req_valid;
+    assign child_router_req_ready = u_child_router__req_ready;
+    assign u_child_router__req_addr = child_router_req_addr;
+    assign u_child_router__req_write = child_router_req_write;
+    assign u_child_router__req_wdata = child_router_req_wdata;
+    assign child_router_rsp_valid = u_child_router__rsp_valid;
+    assign u_child_router__rsp_ready = child_router_rsp_ready;
+    assign child_router_rsp_error = u_child_router__rsp_error;
+    assign child_router_rsp_rdata = u_child_router__rsp_rdata;
+    assign child_bank_valid = u_child_router__bank_valid;
+    assign u_child_router__bank_ready = child_bank_ready;
+    assign child_bank_write = u_child_router__bank_write;
+    assign child_bank_addr = u_child_router__bank_addr;
+    assign child_bank_wdata = u_child_router__bank_wdata;
+    assign u_child_router__bank_rsp_valid = child_bank_rsp_valid;
+    assign u_child_router__bank_rdata = child_bank_rdata;
+    assign u_sel__clk = clk;
+    assign u_sel__rst_n = rst_n;
+    assign u_sel__start = sel_start;
+    assign sel_ready = u_sel__ready;
+    assign u_sel__root_id = sel_root_id;
+    assign u_sel__nodes_used = sel_nodes_used;
+    assign u_sel__edges_used = sel_edges_used;
+    assign u_sel__path_limit = sel_path_limit;
+    assign u_sel__exploration_constant = sel_exploration_constant;
+    assign sel_result_valid = u_sel__result_valid;
+    assign u_sel__result_ready = sel_result_ready;
+    assign sel_leaf_id = u_sel__leaf_id;
+    assign sel_path_depth = u_sel__path_depth;
+    assign sel_result_error = u_sel__result_error;
+    assign sel_poisoned = u_sel__poisoned;
+    assign sel_node_req_valid = u_sel__node_req_valid;
+    assign u_sel__node_req_ready = sel_node_req_ready;
+    assign sel_node_req_write = u_sel__node_req_write;
+    assign sel_node_req_addr = u_sel__node_req_addr;
+    assign sel_node_req_wdata = u_sel__node_req_wdata;
+    assign u_sel__node_rsp_valid = sel_node_rsp_valid;
+    assign sel_node_rsp_ready = u_sel__node_rsp_ready;
+    assign u_sel__node_rsp_rdata = sel_node_rsp_rdata;
+    assign u_sel__node_rsp_error = sel_node_rsp_error;
+    assign sel_child_req_valid = u_sel__child_req_valid;
+    assign u_sel__child_req_ready = sel_child_req_ready;
+    assign sel_child_req_addr = u_sel__child_req_addr;
+    assign u_sel__child_rsp_valid = sel_child_rsp_valid;
+    assign sel_child_rsp_ready = u_sel__child_rsp_ready;
+    assign u_sel__child_rsp_rdata = sel_child_rsp_rdata;
+    assign u_sel__child_rsp_error = sel_child_rsp_error;
+    assign cam_req_valid = u_sel__cam_req_valid;
+    assign u_sel__cam_req_ready = cam_req_ready;
+    assign cam_req_op = u_sel__cam_req_op;
+    assign cam_req_row = u_sel__cam_req_row;
+    assign cam_req_parent = u_sel__cam_req_parent;
+    assign cam_req_child = u_sel__cam_req_child;
+    assign u_sel__cam_rsp_valid = cam_rsp_valid;
+    assign cam_rsp_ready = u_sel__cam_rsp_ready;
+    assign u_sel__cam_rsp_error = cam_rsp_error;
+    assign u_sel__cam_rsp_matches = cam_rsp_matches;
+    assign u_sel__cam_rsp_parent = cam_rsp_parent;
+    assign u_sel__cam_rsp_child = cam_rsp_child;
+    assign u_sel__cam_rsp_row_valid = cam_rsp_row_valid;
+    assign score_req_valid = u_sel__score_req_valid;
+    assign u_sel__score_req_ready = score_req_ready;
+    assign score_parent_visits = u_sel__score_parent_visits;
+    assign score_child_visits = u_sel__score_child_visits;
+    assign score_child_value = u_sel__score_child_value;
+    assign score_exploration = u_sel__score_exploration;
+    assign u_sel__score_rsp_valid = score_rsp_valid;
+    assign score_rsp_ready = u_sel__score_rsp_ready;
+    assign u_sel__score_rsp_value = score_rsp_value;
+    assign u_sel__score_rsp_error = score_rsp_error;
+    assign sel_state = u_sel__debug_state;
+    assign cache_rows_used = u_sel__cache_rows_used;
+    assign cache_row_head = u_sel__cache_row_head;
+    assign cache_row_tail = u_sel__cache_row_tail;
+    assign u_upd__clk = clk;
+    assign u_upd__rst_n = rst_n;
+    assign u_upd__start = upd_start;
+    assign upd_ready = u_upd__ready;
+    assign u_upd__backpropagate = upd_backpropagate;
+    assign u_upd__selected_node = upd_selected_node;
+    assign u_upd__nodes_used = upd_nodes_used;
+    assign u_upd__edges_used = upd_edges_used;
+    assign u_upd__selected_depth = upd_selected_depth;
+    assign u_upd__node_limit = upd_node_limit;
+    assign u_upd__edge_limit = upd_edge_limit;
+    assign u_upd__path_limit = upd_path_limit;
+    assign u_upd__choice_word = upd_choice_word;
+    assign u_upd__value_q17 = upd_value_q17;
+    assign upd_result_valid = u_upd__result_valid;
+    assign u_upd__result_ready = upd_result_ready;
+    assign upd_result_node = u_upd__result_node;
+    assign upd_result_nodes_used = u_upd__result_nodes_used;
+    assign upd_result_edges_used = u_upd__result_edges_used;
+    assign upd_result_depth = u_upd__result_depth;
+    assign upd_nodes_changed = u_upd__nodes_changed;
+    assign upd_result_error = u_upd__result_error;
+    assign upd_poisoned = u_upd__poisoned;
+    assign upd_node_req_valid = u_upd__node_req_valid;
+    assign u_upd__node_req_ready = upd_node_req_ready;
+    assign upd_node_req_write = u_upd__node_req_write;
+    assign upd_node_req_addr = u_upd__node_req_addr;
+    assign upd_node_req_wdata = u_upd__node_req_wdata;
+    assign u_upd__node_rsp_valid = upd_node_rsp_valid;
+    assign upd_node_rsp_ready = u_upd__node_rsp_ready;
+    assign u_upd__node_rsp_rdata = upd_node_rsp_rdata;
+    assign u_upd__node_rsp_error = upd_node_rsp_error;
+    assign upd_child_req_valid = u_upd__child_req_valid;
+    assign u_upd__child_req_ready = upd_child_req_ready;
+    assign upd_child_req_write = u_upd__child_req_write;
+    assign upd_child_req_addr = u_upd__child_req_addr;
+    assign upd_child_req_wdata = u_upd__child_req_wdata;
+    assign u_upd__child_rsp_valid = upd_child_rsp_valid;
+    assign upd_child_rsp_ready = u_upd__child_rsp_ready;
+    assign u_upd__child_rsp_rdata = upd_child_rsp_rdata;
+    assign u_upd__child_rsp_error = upd_child_rsp_error;
+    assign upd_state = u_upd__debug_state;
+    assign u_nn__clk = clk;
+    assign u_nn__rst_n = rst_n;
+    assign u_nn__start = nn_start;
+    assign nn_ready = u_nn__ready;
+    assign u_nn__board_base = nn_board_base;
+    assign u_nn__neural_base = nn_neural_base;
+    assign u_nn__hidden_shift = nn_hidden_shift;
+    assign u_nn__logit_shift = nn_logit_shift;
+    assign nn_result_valid = u_nn__result_valid;
+    assign u_nn__result_ready = nn_result_ready;
+    assign nn_value_code = u_nn__value_code;
+    assign nn_result_error = u_nn__result_error;
+    assign nn_mem_req_valid = u_nn__mem_req_valid;
+    assign u_nn__mem_req_ready = nn_mem_req_ready;
+    assign nn_mem_req_addr = u_nn__mem_req_addr;
+    assign nn_mem_req_write = u_nn__mem_req_write;
+    assign nn_mem_req_wdata = u_nn__mem_req_wdata;
+    assign u_nn__mem_rsp_valid = nn_mem_rsp_valid;
+    assign nn_mem_rsp_ready = u_nn__mem_rsp_ready;
+    assign u_nn__mem_rsp_error = nn_mem_rsp_error;
+    assign u_nn__mem_rsp_rdata = nn_mem_rsp_rdata;
+    assign drive_valid = u_nn__drive_valid;
+    assign u_nn__drive_ready = drive_ready;
+    assign array_enable = u_nn__array_enable;
+    assign array_id = u_nn__array_id;
+    assign row_start = u_nn__row_start;
+    assign row_count = u_nn__row_count;
+    assign row_bits = u_nn__row_bits;
+    assign input_bit = u_nn__input_bit;
+    assign column_start = u_nn__column_start;
+    assign column_count = u_nn__column_count;
+    assign mux_select = u_nn__mux_select;
+    assign sample_hold = u_nn__sample_hold;
+    assign adc_req_valid = u_nn__adc_req_valid;
+    assign u_nn__adc_req_ready = adc_req_ready;
+    assign u_nn__adc_rsp_valid = adc_rsp_valid;
+    assign adc_rsp_ready = u_nn__adc_rsp_ready;
+    assign u_nn__adc_rsp_error = adc_rsp_error;
+    assign u_nn__adc_rsp_codes = adc_rsp_codes;
+    assign hidden_saturated = u_nn__hidden_saturated;
+    assign logit_saturated = u_nn__logit_saturated;
+    assign nn_state = u_nn__debug_state;
+    assign u_ucb__clk = clk;
+    assign u_ucb__rst_n = rst_n;
+    assign u_ucb__score_req_valid = score_req_valid;
+    assign score_req_ready = u_ucb__score_req_ready;
+    assign u_ucb__score_parent_visits = score_parent_visits;
+    assign u_ucb__score_child_visits = score_child_visits;
+    assign u_ucb__score_child_value = score_child_value;
+    assign u_ucb__score_exploration = score_exploration;
+    assign score_rsp_valid = u_ucb__score_rsp_valid;
+    assign u_ucb__score_rsp_ready = score_rsp_ready;
+    assign score_rsp_value = u_ucb__score_rsp_value;
+    assign score_rsp_error = u_ucb__score_rsp_error;
+    assign ucb_state = u_ucb__debug_state;
+endmodule
+`default_nettype wire

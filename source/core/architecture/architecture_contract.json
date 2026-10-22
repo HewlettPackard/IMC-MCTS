@@ -1,0 +1,27 @@
+{
+  "profile": "original_design_reconciliation_v1",
+  "algorithm": "Selection, Expansion, neural Rollout, Backpropagation, FSM orchestration",
+  "node_value": "Player to move; selection complements a child's mean for its parent",
+  "cam": {
+    "role": "Discover the ordered children of a parent node",
+    "key": "32-bit parent node ID",
+    "payload": "32-bit child node ID and row-valid state",
+    "policy": "Finite whole-parent FIFO cache; packed SRAM child lists remain authoritative",
+    "board_storage": "Packed board in node SRAM; no board-key transposition merging",
+    "physical_status": "CACTI fully-associative proxy; physical multi-hit routing unvalidated"
+  },
+  "control": {
+    "implemented": "Synthesized digital FSM and shared arbitration",
+    "original_specification": "TCAM match on state and inputs, followed by next-state RAM",
+    "fidelity_gap": "No working TCAM control implementation or matching physical report was recovered",
+    "reference_scope": "Existing digital implementation only; its report does not characterize a TCAM FSM",
+    "decision_status": "TCAM restoration versus retaining digital control remains open; this record does not select a replacement"
+  },
+  "fixed_resources": "One serialized search, one UCB calculator, one active CIM array, three shared ADC lanes, three node SRAM banks and one child SRAM bank",
+  "timing_boundary": "500 MHz nominal component schedule; Go rules, metadata, host delivery, preload and display time excluded",
+  "evidence": [
+    "p03_experiments/p05_legacy_design_review/README.md",
+    "p03_experiments/p40_old_vs_repaired/README.md",
+    "core/architecture/ARCHITECTURE_FIDELITY.md"
+  ]
+}

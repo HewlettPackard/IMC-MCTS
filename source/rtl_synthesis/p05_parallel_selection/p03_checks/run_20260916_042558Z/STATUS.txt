@@ -1,0 +1,1 @@
+PASS: syntax, warning-free Verilator lint, directed batch tests

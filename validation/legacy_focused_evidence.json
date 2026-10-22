@@ -1,0 +1,17 @@
+{
+  "scope": "Two recorded numerical environments; full current-runtime suite recorded separately.",
+  "logs": [
+    {
+      "file": "legacy_after_numpy126_final.log",
+      "sha256": "29447814c74bb6bdd633329208eb4048ac227296e15af05c7ea51c9e5c0b38ef"
+    },
+    {
+      "file": "legacy_negative_controls_numpy126.log",
+      "sha256": "7dfbe8ea9ab50676ca8b87b494cbabb21d97cd474ec9f47662e6a583b1a9d61c"
+    },
+    {
+      "file": "legacy_active_focused.log",
+      "sha256": "55a1891df24820b1bd3e690ae56049354cd9b822c6ec23514444702725e1e1fc"
+    }
+  ]
+}

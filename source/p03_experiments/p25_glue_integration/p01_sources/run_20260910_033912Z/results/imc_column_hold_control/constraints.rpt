@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : imc_column_hold_control_COLUMNS128_ARRAYS4
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 15:23:51 2026
+****************************************
+
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   imc_column_hold_control_COLUMNS128_ARRAYS4     0.00     2.11    -2.11 (VIOLATED)
+
+
+1

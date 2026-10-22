@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : imc_fixed_scale
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 15:17:03 2026
+****************************************
+
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   imc_fixed_scale              0.00          16.66         -16.66  (VIOLATED)
+
+
+1

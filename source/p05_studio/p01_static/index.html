@@ -1,0 +1,137 @@
+<!doctype html>
+<!-- SPDX-FileCopyrightText: Copyright Hewlett Packard Enterprise Development LP -->
+<!-- SPDX-License-Identifier: MIT -->
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IMC-MCTS Studio</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="IMC-MCTS Studio home"><span class="brand-mark">◈</span><span>IMC-MCTS <b>Studio</b></span></a>
+    <div class="top-meta"><span class="local-dot"></span>Local simulator <span class="divider">/</span> 22 nm target <span class="divider">/</span> 500 MHz assumed</div>
+  </header>
+  <main>
+    <div class="intro"><div><h1>Watch a search unfold.</h1><p class="subtitle">One move, from the tree to the chip.</p></div><span id="status" class="status">Ready</span></div>
+    <div id="message" class="message" role="alert" hidden></div>
+    <div class="workspace">
+      <aside class="controls panel">
+        <div class="panel-head"><h2>Set up a game</h2></div>
+        <div class="field-pair"><div><label for="board-size">Board size</label><select id="board-size"><option value="2">2 × 2</option><option value="3">3 × 3</option><option value="5">5 × 5</option><option value="9" selected>9 × 9</option><option value="13">13 × 13</option><option value="19">19 × 19</option></select></div><div><label for="iterations" id="iterations-label">Iterations / move</label><select id="iterations" required></select></div></div>
+        <small id="hardware-summary" aria-live="polite">Loading installed memory…</small>
+        <label for="model">Rollout model</label><select id="model" required aria-describedby="model-availability"></select><small id="model-availability" hidden></small>
+        <label for="opponent">Opponent</label><select id="opponent"><option value="self">Itself</option><option value="human">Me · White</option><option value="engine">Computer · MCTS</option></select>
+        <label for="architecture-side">IMC-MCTS plays as</label><select id="architecture-side"><option value="black">Black</option><option value="white">White</option></select><small id="side-note">Self-play uses both sides.</small>
+        <details id="opponent-settings" hidden><summary>Opponent settings</summary><label for="opponent-model">Model</label><select id="opponent-model"></select><div class="field-pair"><div><label for="opponent-iterations">Iterations / move</label><input id="opponent-iterations" type="number" min="2" max="50000" value="100"></div><div><label for="opponent-seed">Seed</label><input id="opponent-seed" type="number" min="0" max="4294967295" value="1"></div></div></details>
+        <div class="play-buttons"><button id="run-one">One move</button><button id="run" class="primary"><span id="run-label">Until game ends</span></button></div>
+        <div class="playback-controls"><div class="speed-heading"><label for="animation-speed">Animation speed</label><output id="speed-value">Fast</output></div><input id="animation-speed" type="range" min="0" max="100" value="85" aria-label="Animation speed"><div class="slider-labels"><span>Slow · see inside</span><span>Fast</span></div><div class="run-actions"><button id="pause" disabled>Pause</button><button id="step" disabled>Step</button><button id="cancel" disabled>Stop</button></div></div>
+        <div class="progress-wrap"><div><span id="progress-label">Ready to play</span><span id="progress-percent">0%</span></div><progress id="progress" value="0" max="1"></progress></div>
+        <div class="session-actions"><button id="finish" hidden>Save &amp; end session</button><button id="new-game">New game</button></div>
+        <details id="advanced"><summary>Advanced</summary>
+          <div class="field-pair"><div><label for="seed">Seed</label><input id="seed" type="number" min="0" max="4294967295" value="0"></div><div><label for="exploration">Exploration</label><input id="exploration" type="number" min="0" max="8" step="0.001" value="1.414"></div></div>
+          <label for="execution">Run mode</label><select id="execution"><option value="play" selected>Play a game</option><option value="search">Explore one position</option></select>
+          <label for="architecture-profile">Architecture</label><select id="architecture-profile"><option value="current">Current optimized design</option><option value="historical">Historical reference / scaling</option></select><small id="architecture-summary"></small>
+          <label for="case">Historical saved case</label><select id="case"><option value="">Custom</option></select>
+          <label for="game-rules">Game rules</label><select id="game-rules"><option value="legacy_go">Go</option><option value="placement">Empty-cell placement</option></select>
+          <label class="check-label"><input id="start-paused" type="checkbox"> Start paused</label>
+          <details id="parameter-editor" class="hardware-settings"><summary>Component unit values</summary><p>Defaults are source-linked estimates. Custom values apply only to this configuration. ADC, UCB and CAM service cycles change scheduling at an assumed 500 MHz.</p><div id="parameter-fields"></div><p id="parameter-status">Default values</p><button id="parameter-reset" type="button">Reset to defaults</button><button id="parameter-download" type="button">Download values</button></details>
+          <details class="hardware-settings"><summary>Hardware settings</summary><label for="memory-profile">SRAM model</label><select id="memory-profile"><option value="cacti_22nm_lstp">22 nm · low leakage</option><option value="cacti_22nm_hp">22 nm · high performance</option></select><label for="readout-profile">Array readout</label><select id="readout-profile"><option value="sustained_drive_v1">Keep array driven</option><option value="column_hold_v1">Column buffers</option></select><div class="field-pair"><div><label for="nodes">Max nodes</label><input id="nodes" type="number" min="1" placeholder="Full capacity"></div><div><label for="edges">Max edges</label><input id="edges" type="number" min="1" placeholder="Full capacity"></div></div><label for="path">Max path entries</label><input id="path" type="number" min="1" placeholder="Full capacity"></details>
+          <details class="about-settings"><summary>About this run</summary><p id="mode-note"></p><p id="model-note"></p><p id="workload-note"></p></details>
+        </details>
+      </aside>
+      <div class="search-column">
+      <section class="architecture panel">
+        <div class="panel-head"><div><h2>Inside one search</h2><p id="phase-description">Each phase shares the same finite memory.</p></div><span class="step-number">02</span></div>
+        <div class="pipeline" aria-label="Search phases">
+          <button class="stage selection" data-phase="selection"><span class="stage-index">1</span><b>Selection</b><small>CAM + UCB</small><span class="stage-count" id="selection-count">0 cycles</span></button><span class="arrow">→</span>
+          <button class="stage expansion" data-phase="expansion"><span class="stage-index">2</span><b>Expansion</b><small>Allocate children</small><span class="stage-count" id="expansion-count">0 cycles</span></button><span class="arrow">→</span>
+          <button class="stage neural" data-phase="neural"><span class="stage-index">3</span><b>Rollout</b><small>Two CIM layers</small><span class="stage-count" id="neural-count">0 cycles</span></button><span class="arrow">→</span>
+          <button class="stage backpropagation" data-phase="backpropagation"><span class="stage-index">4</span><b>Backprop</b><small>Update path</small><span class="stage-count" id="backpropagation-count">0 cycles</span></button>
+        </div>
+      </section>
+      <section class="chip-panel panel" id="chip-panel">
+        <div class="panel-head"><div><h2>Architecture</h2><p id="flow-caption">Choose a block to look inside.</p></div><button id="expand-chip" class="text-button">Enlarge</button></div>
+        <div class="chip-toolbar"><div class="chip-modes" role="group" aria-label="Architecture view"><button id="chip-flow-mode" aria-pressed="true">Dataflow</button><button id="chip-area-mode" aria-pressed="false">Area &amp; parts</button></div><label id="area-focus" for="area-scope" hidden>Focus <select id="area-scope" aria-label="Area focus"><option value="whole">Whole core</option><option value="rollout" selected>Rollout</option><option value="readout">Shared readout</option><option value="selection">Selection</option><option value="update">Expansion + Backprop</option><option value="fsm">FSM</option><option value="memory">Shared memory</option></select></label></div>
+        <div id="chip-dataflow">
+        <p id="micro-profile-note">Reference execution profile · Click a unit for details.</p>
+        <div id="chip" class="chip-view"></div>
+        <div class="chip-legend"><span><i aria-hidden="true"></i>Data / requests</span><span><i class="control-key" aria-hidden="true"></i>FSM control</span><span><i class="activity-key" aria-hidden="true"></i>Active service</span><span><i class="optional-key" aria-hidden="true"></i>Not installed</span></div>
+        <p class="architecture-key">One shared Tree update module serves Expansion and Backprop. Scratch regions are inside node SRAM. Diagram geometry is illustrative.</p>
+        <div id="block-detail" class="block-detail"><strong id="block-title">One search core</strong><span id="block-description">Memory, compute and control share the work.</span><div id="block-stats"></div></div>
+        </div>
+        <section id="chip-area" class="unit-area" aria-label="Component area view" hidden>
+          <div class="unit-area-heading"><h3 id="area-title">Rollout</h3><span id="area-total">Loading estimates…</span></div>
+          <p id="area-context" class="area-context"></p>
+          <div id="area-map" class="area-map"></div>
+          <p class="area-key">Outer rectangles scale with estimated component area. Shapes, placement and inner circuit symbols are illustrative. Green marks active service.</p>
+          <div id="area-parts" class="area-parts" aria-label="Choose a component"></div>
+          <p id="area-coverage" class="area-coverage"></p>
+          <div id="area-detail" class="area-detail"></div>
+        </section>
+        <details class="hierarchy-note"><summary>How much detail is shown?</summary><p>Stage → functional unit → internal parts. Open the groups beneath a selected unit to see its counters, buffers and arithmetic. These are the main modeled and implemented parts, not every register, gate or transistor. Highlights show recorded service activity and the active stage; individual internal signal timing is not recorded.</p></details>
+        <details class="memory-details"><summary>Memory use</summary>
+        <div class="memory-bus"><span></span><b>Shared 32-bit memory interface</b><span></span></div>
+        <div class="memory-grid">
+          <div class="memory-card"><div><b>Node SRAM</b><span id="node-usage">0 nodes</span></div><div class="bank-row" id="node-banks"><i></i><i></i><i></i></div><div class="meter"><span id="node-meter"></span></div><small id="node-detail">3 × 512 KiB · nodes, boards and scratch</small></div>
+          <div class="memory-card"><div><b>Child SRAM</b><span id="edge-usage">0 pointers</span></div><div class="bank-row single" id="child-banks"><i></i></div><div class="meter"><span id="edge-meter"></span></div><small id="child-detail">1 × 512 KiB · child links</small></div>
+          <div class="memory-card"><div><b>Parent-link CAM</b><span id="cam-usage">0 rows</span></div><div id="cam-cells" class="cam-cells"></div><div class="meter"><span id="cam-meter"></span></div><small>Whole child lists · FIFO replacement</small></div>
+        </div>
+        </details><details class="phase-details"><summary>Phase details</summary><div class="inspector"><div class="inspector-title"><span id="inspector-tag" class="tag">DATAFLOW</span><b id="inspector-title">Follow a phase</b></div><p id="inspector-copy">Click a stage to inspect its work. Pause or step a running job to watch the real simulator advance.</p><div id="inspector-stats" class="stat-line"></div></div>
+        </details><details class="array-details"><summary>Programmed crossbars</summary><div class="array-heading"><h3>Programmed cells</h3><span><span id="cell-code-range">Cell codes</span> <i class="color-key"></i></span></div>
+        <div id="arrays" class="arrays"><div class="array-placeholder">The actual mapped weights appear when a job starts.</div></div>
+        </details>
+      </section>
+      </div>
+      <section class="board-panel panel">
+        <div class="panel-head"><h2>Board and search</h2><span class="step-number">03</span></div>
+        <div class="tabs"><button id="played-tab" class="active">Played board</button><button id="live-tab">Search node</button><button id="input-tab">Initial board</button></div>
+        <div id="board" class="board" role="group" aria-label="Board state"></div>
+        <button id="pass-move" hidden>Pass</button><p id="board-caption" class="board-caption">No search yet. The root begins with black to play.</p>
+        <div id="placements"><h3>Placed moves <span id="move-count">0</span></h3><div id="move-history"><p>Chosen pieces stay on this board as play advances.</p></div></div>
+        <div class="node-stats"><div><small>Selected node</small><b id="selected">0</b></div><div><small>Path depth</small><b id="depth">0</b></div><div><small>Last black value</small><b id="value">—</b></div></div>
+        <div class="neural-output"><h3>Latest rollout output</h3><div class="probabilities"><div><span>White</span><i><b id="prob-white"></b></i><strong id="prob-white-value">—</strong></div><div><span>Draw</span><i><b id="prob-draw"></b></i><strong id="prob-draw-value">—</strong></div><div><span>Black</span><i><b id="prob-black"></b></i><strong id="prob-black-value">—</strong></div></div><small>Integer probabilities before value accumulation</small></div>
+        <h3 class="root-heading">Most visited root children</h3><div id="root-children" class="root-children"><p>Children appear after expansion.</p></div>
+      </section>
+    </div>
+    <section class="tree-panel panel" id="tree-panel">
+      <div class="panel-head"><div><h2>Tree growth</h2><p id="tree-caption">Each board is one possible position in the search.</p></div><div class="tree-tools"><select id="tree-history" aria-label="Choose move tree"><option value="live">Current search</option></select><button id="tree-minus" aria-label="Zoom out">−</button><button id="tree-plus" aria-label="Zoom in">+</button><button id="tree-root">Root</button><button id="tree-fit">Overview</button><button id="tree-follow">Follow search</button><button id="expand-tree">Enlarge</button></div></div>
+      <div class="tree-workspace"><div class="tree-viewport"><canvas id="tree-canvas" aria-label="Boards branching into possible moves. Drag to pan, scroll to zoom, or choose a board to inspect it."></canvas><span id="tree-empty">Start a move to watch its tree grow.</span><div class="tree-legend"><span>Drag to pan · scroll to zoom</span><span class="path-key">Green border: current path</span></div></div><aside id="tree-inspector"><div class="node-picker"><label for="tree-node">Node</label><input id="tree-node" type="number" min="0" value="0" aria-describedby="tree-node-error"><button id="tree-inspect">Inspect</button></div><p id="tree-node-error" role="alert" hidden></p><div id="tree-board" class="mini-board"></div><div id="tree-node-stats">Select a board to inspect its node.</div><button id="tree-branch" disabled>Collapse children</button><button id="tree-all">Show all branches</button><small id="tree-coverage"></small></aside></div>
+    </section>
+    <section class="pipeline-panel panel" id="pipeline-panel">
+      <div class="panel-head"><div><h2>Pipeline · cycle timeline</h2><p id="pipeline-caption">Start a move to see when each part works.</p></div><div class="tree-tools">
+        <select id="pipeline-iteration" aria-label="Timeline iteration"><option value="live">Follow latest iteration</option></select>
+        <button id="pipeline-minus" aria-label="Zoom timeline out">−</button><button id="pipeline-plus" aria-label="Zoom timeline in">+</button>
+        <button id="pipeline-fit">Fit</button><button id="pipeline-follow" class="active" aria-pressed="true">Follow</button>
+        <button id="pipeline-parts" aria-expanded="false">Show parts</button><button id="expand-pipeline">Enlarge</button>
+      </div></div>
+      <div class="pipeline-scroll"><div id="pipeline-grid"><div id="pipeline-labels"></div><canvas id="pipeline-canvas" tabindex="0" aria-label="Cycle timeline. Expand block groups on the left. Drag to pan, scroll to zoom, or use arrow keys to pan."></canvas></div></div>
+      <div class="pipeline-legend"><span><i class="pipeline-phase-key"></i>Stage</span><span><i class="pipeline-service-key"></i>Scheduled work</span><span><i class="pipeline-gap-key"></i>Grouped control time</span><span>Drag to pan · scroll to zoom</span></div>
+      <div id="pipeline-inspector" aria-live="polite">Choose a bar to see its cycles and operation.</div>
+      <details class="pipeline-note"><summary>How to read this</summary><p>Stages run in order on the current single-core design. Stage bars include the work shown in their parts and shared memory, so do not add rows together. Cycles start at zero for each computer search. The latest 12 iterations stay available here.</p><p>Service bars use the simulator's ordered schedule. Striped control time stays in its owning stage; its exact position and split among controllers are unresolved. FSM shows the four-cycle finish on the current architecture (one cycle on the historical full-expansion engine), with its other control work included in the stages. Parts without separate timing are marked “Included in parent”. Bars show scheduled work, not every cycle a circuit remains electrically active. Human thinking, host game rules and display pauses are outside these cycles.</p></details>
+    </section>
+    <section class="panel breakdown-panel" id="breakdown-panel" aria-labelledby="breakdown-heading">
+      <div class="panel-head"><div><h2 id="breakdown-heading">Live breakdown</h2><p id="breakdown-configuration">Choose a configuration to see its breakdown.</p></div><span class="breakdown-status" id="breakdown-status">Configuration preview</span></div>
+      <div class="pie-grid" id="pie-grid"></div>
+      <details class="breakdown-help"><summary>What is included?</summary><p>Area shows installed hardware and stays fixed during a run. Energy and average power use the same component estimates as Results and evidence. Uncharacterized parts are excluded from the known totals. Shared blocks count once; Expansion and Backprop share one controller, so their hardware costs stay together.</p><p>Latency uses the time spent in each search stage. Memory time is already inside those stages. FSM finish takes four cycles per iteration on the current architecture; other control time stays in its stage. Human thinking, display pauses and host Go processing are excluded. Average power is energy divided by the same simulated time, so the energy and power percentages match.</p></details>
+    </section>
+    <section class="results panel">
+      <div class="panel-head"><div><h2 id="results-title">Results and evidence</h2><p id="results-description">Controller latency and available component costs use this job's activity.</p></div><span class="tag">PARTIAL COST COVERAGE</span></div>
+      <div class="metrics"><div class="metric hero"><small>Core latency</small><b id="latency">—</b><span id="cycles">Assumed 500 MHz clock</span></div><div class="metric"><small>Known energy estimate</small><b id="energy">—</b><span id="metric-energy-scope">One search for one move</span></div><div class="metric"><small>Known average power</small><b id="power">—</b><span id="metric-power-scope">Energy divided by the same modeled time</span></div><div class="metric"><small>Known area estimate</small><b id="area">—</b><span>Mixed-source core estimate</span></div></div>
+      <p id="cost-coverage">22 nm target. Area, dynamic energy, leakage and timing have separate source coverage.</p>
+      <details id="energy-coverage" hidden><summary>Energy and activity by component</summary><p>Active time includes processing and service waits. Idle blocks remain clocked. Digital estimates use assumed switching activity. Idle power keeps the reported clock contribution; leakage uses a native 65 nm proxy.</p><div class="component-table-wrap"><table class="component-table"><thead><tr><th>Component</th><th>Active cycles</th><th>Idle cycles</th><th>22 nm energy (µJ)</th><th>Evidence / remaining work</th></tr></thead><tbody id="energy-rows"></tbody></table></div></details>
+      <div class="result-bottom"><div class="timeline-wrap"><div class="timeline-title"><b>Where the cycles go</b><span id="timeline-total">No activity yet</span></div><div id="timeline" class="timeline"></div><div class="legend"><span class="selection">Selection</span><span class="expansion">Expansion</span><span class="neural">Rollout</span><span class="backpropagation">Backprop</span><span class="iteration_commit" title="Four final FSM cycles per completed iteration on the current architecture">FSM finish</span></div><details class="fsm-note"><summary>What is FSM finish?</summary><p>Four clock cycles finish an MCTS iteration on the current architecture after Backprop. Historical full-expansion runs use one cycle. It belongs to the global finite state machine (FSM). The FSM also controls the other stages; their control time is already included in each stage's cycles. This segment counts only the finishing step.</p></details></div><div class="physical-note"><b>Source-linked component estimates</b><p>The table combines SRAM, module report proxies, CAM/analog estimates and physical allowances. Expand the rows or download the component CSV for sources and assumptions. Host I/O and programming are outside the timed core.</p><p id="digital-timing-note">Latency assumes 500 MHz; physical timing is unvalidated.</p></div></div>
+      <div class="evidence-row"><div><span id="run-name">No saved run</span><code id="identity">Versioned case + source + weights + environment</code></div><div class="exports"><a id="export-json" class="button disabled" aria-disabled="true">Result JSON</a><a id="export-csv" class="button disabled" aria-disabled="true">Summary CSV</a><a id="export-power" class="button disabled" aria-disabled="true">Block power CSV</a><a id="export-components" class="button disabled" aria-disabled="true">Component CSV</a><a id="export-moves" class="button disabled" aria-disabled="true" hidden>Move CSV</a><a id="export-source" class="button disabled" aria-disabled="true">Source snapshot</a></div></div>
+    </section>
+    <section class="panel components-panel">
+      <div class="panel-head"><div><h2>Components: area, power and timing</h2><p id="component-summary">Loading the physical component inventory…</p></div><button id="expand-components" class="text-button">Show all parts</button></div>
+      <p id="component-time-note"></p>
+      <p id="readout-summary">The array remains driven while the shared ADCs convert its outputs.</p>
+      <div class="component-table-wrap"><table class="component-table ppa-table"><thead><tr><th>Module / part</th><th>Count</th><th>Estimated area<br>(µm²)</th><th>Avg power<br>(mW)</th><th>Cycles</th><th>Source / assumptions</th></tr></thead><tbody id="component-rows"></tbody></table></div>
+      <details class="workbook-calculator"><summary>Mentor workbook: N × N reference array</summary><p>Recovered from the earlier IMC-MCTS archive. This reference uses temporal drivers, column integrators and sequential comparators. Its area and energy describe that circuit.</p><div class="field-pair"><div><label for="crossbar-size">Array side N</label><input id="crossbar-size" type="number" value="256" min="1" max="4096"></div><div><button id="calculate-crossbar">Calculate estimates</button></div></div><p id="crossbar-reference"></p></details>
+    </section>
+    <section class="saved panel"><div class="panel-head"><h2>Verified reference results</h2><a id="snapshot-csv" class="button" hidden>Download snapshot CSV</a></div><p id="snapshot-note">No verified snapshot is available yet.</p><div class="component-table-wrap"><table class="component-table" id="snapshot-table" hidden><thead><tr><th>Saved case</th><th>Cycles</th><th>Latency (µs)</th><th>Core energy estimate (µJ)</th><th>Core power estimate (mW)</th><th>Core area estimate (mm²)</th></tr></thead><tbody></tbody></table></div></section>
+    <section class="saved panel"><div class="panel-head"><h2>Current registry records</h2><button id="refresh-runs" class="text-button">Refresh</button></div><div id="saved-runs">Loading saved cases…</div></section>
+    <section class="saved panel"><div class="panel-head"><h2>Saved play sessions</h2></div><div id="saved-plays">No completed placement sessions yet.</div></section>
+    <footer id="fidelity-note">complete_serial_q32_v2 <span>·</span> Phase stepping follows software execution. Digital timing is checked against RTL with ideal interfaces. Physical timing and application quality remain unvalidated.</footer>
+  </main><script src="/visuals.js"></script><script src="/app.js"></script>
+</body></html>

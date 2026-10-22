@@ -1,0 +1,22 @@
+{
+  "profile": "ucb4_adc8_serial_rollout_v1",
+  "adc_lanes": 8,
+  "adc_bits": 8,
+  "adc_result_register_bits": 64,
+  "readout_bus_bits": 32,
+  "shift_add_lanes": 1,
+  "active_rows": 16,
+  "readout_profile": "sustained_drive_v1",
+  "overlap": false,
+  "timing_source": "Existing NeuralMapping group schedule and CompleteSimulation caller-service equation, evaluated with eight ADC lanes; not a scalar speedup factor",
+  "timing_status": "Architectural serial-service estimate with ideal ADCs, not eight-lane/163-input RTL or physical timing closure",
+  "digital_parent": "u_nn",
+  "neural_parent_multiplier": 1.5,
+  "neural_parent_sensitivity": [1.25, 1.5, 2.0],
+  "neural_parent_basis": "Closest complete 162-input/H96/three-ADC digital-controller report times the stated multiplier. Nominal 1.5 retains the prior 0.25 whole-parent reserve for the 163rd input and adds a further 0.25 reserve for eight-lane control, 64-bit result storage, two-word drain and lane/count state. Analog ADCs, S/H and references are separately priced. This is an uncalibrated engineering assumption, not measured overhead or a guaranteed bound.",
+  "reference_source": "Existing source-checked native65 imc_neural_sequencer report; same 65-to-22 area/dynamic conversion and native65 leakage proxy",
+  "analog_source": "Existing native22 NeuroSim per-ADC estimate and mentor-workbook S/H/reference/mux equations, evaluated at eight installed lanes",
+  "inactive_lanes": "Unused tail lanes do not perform conversions; all eight lanes retain the existing installed standby allowance",
+  "memory": "Unchanged 2 MiB SRAM and neural scratch; 64-bit ADC result register belongs to neural digital processing",
+  "boundary": "Preloaded core; host Go processing, off-chip I/O, programming and physical signoff excluded"
+}

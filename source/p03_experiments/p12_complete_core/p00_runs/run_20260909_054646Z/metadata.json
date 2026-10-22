@@ -1,0 +1,159 @@
+{
+  "phase": "ucb_arithmetic_rtl",
+  "status": "passed",
+  "started_utc": "2026-09-09T05:46:46.696494+00:00",
+  "starting_checkpoint": "e9314636d73e28d0c94553afbbc7d002b849ce6a",
+  "python": "3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:38:53) [Clang 18.1.8 ]",
+  "commands": [
+    {
+      "check": "version_iverilog",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-V"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "version_vvp",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "-V"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "version_verilator",
+      "argv": [
+        "/opt/homebrew/bin/verilator",
+        "--version"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "version_yosys",
+      "argv": [
+        "/opt/homebrew/bin/yosys",
+        "-V"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "ucb_lint",
+      "argv": [
+        "/opt/homebrew/bin/verilator",
+        "--lint-only",
+        "-Wall",
+        "--top-module",
+        "imc_ucb_score",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_ln_table.sv",
+        "p00_rtl/imc_isqrt.sv",
+        "p00_rtl/imc_ucb_score.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "sqrt_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_isqrt",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_054646Z/p01_checks/sqrt.vvp",
+        "p00_rtl/imc_isqrt.sv",
+        "p01_tests/tb_imc_isqrt.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "sqrt_test",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_054646Z/p01_checks/sqrt.vvp",
+        "+VECTORS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_054646Z/sqrt.hex",
+        "+COUNT=419"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "ucb_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_arithmetic",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_054646Z/p01_checks/ucb.vvp",
+        "../p01_mapped_core/p00_rtl/imc_round_divider.sv",
+        "p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_ln_table.sv",
+        "p00_rtl/imc_isqrt.sv",
+        "p00_rtl/imc_ucb_score.sv",
+        "p01_tests/tb_imc_arithmetic.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "ucb_test",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_054646Z/p01_checks/ucb.vvp",
+        "+VECTORS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_054646Z/ucb.hex",
+        "+COUNT=2009",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_054646Z/p01_checks/ucb.events.csv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    }
+  ],
+  "checks": {
+    "tools_present": true,
+    "version_iverilog": true,
+    "version_vvp": true,
+    "version_verilator": true,
+    "version_yosys": true,
+    "logarithm_rom_matches_decimal": true,
+    "ucb_lint": true,
+    "sqrt_compile": true,
+    "sqrt_test": true,
+    "sqrt_completed": true,
+    "ucb_compile": true,
+    "ucb_test": true,
+    "ucb_completed": true,
+    "constant_valid_service_cycles": true,
+    "tested_sources_unchanged": true
+  },
+  "benchmarks_executed": false,
+  "physical_ppa_adopted": false,
+  "valid_score_cycles": 222,
+  "vectors_executed": 2009,
+  "finished_utc": "2026-09-09T05:46:54.653084+00:00"
+}

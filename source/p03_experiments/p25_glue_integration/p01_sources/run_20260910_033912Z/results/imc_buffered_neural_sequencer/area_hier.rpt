@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : area
+Design : imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 16:28:05 2026
+****************************************
+
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                          627
+Number of nets:                         11691
+Number of cells:                        11197
+Number of combinational cells:           9417
+Number of sequential cells:              1776
+Number of macros/black boxes:               0
+Number of buf/inv:                       1288
+Number of references:                     175
+
+Combinational area:              27837.600247
+Buf/Inv area:                     2348.160067
+Noncombinational area:           21328.319991
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 49165.920238
+Total area:                      49165.920238
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  ------------------------------------------
+imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864 49165.9202   100.0  9067.6801  6999.8400 0.0000 imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864
+u_accumulator                     24414.2401     49.7  12102.2401  12312.0000  0.0000  imc_shift_accumulator
+u_column_hold                       448.3200      0.9    280.3200    168.0000  0.0000  imc_column_hold_control_COLUMNS128_ARRAYS4
+u_divider                          3984.0000      8.1   2135.5200   1848.4800  0.0000  imc_round_divider
+u_scale                            4251.8400      8.6   4251.8400      0.0000  0.0000  imc_fixed_scale
+--------------------------------  ----------  -------  ----------  ----------  ------  ------------------------------------------
+Total                                                  27837.6002  21328.3200  0.0000
+
+1

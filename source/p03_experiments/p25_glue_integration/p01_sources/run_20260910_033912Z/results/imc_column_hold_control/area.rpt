@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : imc_column_hold_control_COLUMNS128_ARRAYS4
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 15:23:51 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                           36
+Number of nets:                           179
+Number of cells:                          146
+Number of combinational cells:            127
+Number of sequential cells:                19
+Number of macros/black boxes:               0
+Number of buf/inv:                         28
+Number of references:                      48
+
+Combinational area:                371.520003
+Buf/Inv area:                       40.800002
+Noncombinational area:             228.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                   599.520003
+Total area:                        599.520003
+1

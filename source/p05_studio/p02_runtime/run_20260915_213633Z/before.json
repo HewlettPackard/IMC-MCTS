@@ -1,0 +1,58 @@
+{
+  "pid": 10807,
+  "command": "/Users/tmolomochir/miniforge3/bin/python -B -m p05_studio.p00_app.server --port 4784",
+  "sessions": {
+    "sessions": [
+      {
+        "run": "run_20260915_173507Z",
+        "moves": 1,
+        "status": "complete"
+      },
+      {
+        "run": "run_20260915_173209Z",
+        "moves": 1,
+        "status": "complete"
+      },
+      {
+        "run": "run_20260915_173123Z",
+        "moves": 1,
+        "status": "complete"
+      },
+      {
+        "run": "run_20260915_172946Z",
+        "moves": 1,
+        "status": "complete"
+      },
+      {
+        "run": "run_20260915_172809Z",
+        "moves": 1,
+        "status": "complete"
+      },
+      {
+        "run": "run_20260915_150139Z",
+        "moves": 4,
+        "status": "complete"
+      },
+      {
+        "run": "run_20260914_210842Z",
+        "moves": 4,
+        "status": "complete"
+      },
+      {
+        "run": "run_20260914_200058Z",
+        "moves": 2,
+        "status": "complete"
+      },
+      {
+        "run": "run_20260914_195945Z",
+        "moves": 1,
+        "status": "complete"
+      },
+      {
+        "run": "run_20260914_193847Z",
+        "moves": 2,
+        "status": "complete"
+      }
+    ]
+  }
+}

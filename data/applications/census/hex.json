@@ -1,0 +1,20 @@
+{
+  "counts": {
+    "selected_headers": 9879,
+    "legal_mask_loads": 122,
+    "expansion_attempts": 5000,
+    "created_nodes": 5000,
+    "neural_evaluations": 5000,
+    "backprop_nodes": 14879,
+    "cam_searches": 4879,
+    "cam_output_ids": 590359,
+    "child_sram_read_words": 121,
+    "cam_filled_rows": 121,
+    "cam_hits": 4878
+  },
+  "parents": {
+    "121": 4879
+  },
+  "nodes": 5001,
+  "max_depth": 3
+}

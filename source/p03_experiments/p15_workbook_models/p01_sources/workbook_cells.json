@@ -1,0 +1,1515 @@
+{
+  "source_name": "DPE_Neuromorphic_Area_Power_Improved_Architecture_10.10.2019_low_power - Copy.xlsx",
+  "source_sha256": "bce447d0a6f2e74a2b51062bfc4e5683061479814ff417171f887ea75615f3d0",
+  "identity_status": "candidate_mentor_workbook_pending_confirmation",
+  "cells": {
+    "New_Architecture": {
+      "B2": {
+        "formula": null,
+        "value": "Performance"
+      },
+      "B3": {
+        "formula": null,
+        "value": "Clock period (ns)"
+      },
+      "C3": {
+        "formula": null,
+        "value": 2
+      },
+      "B4": {
+        "formula": null,
+        "value": "Activity duty cycle (active/total)"
+      },
+      "C4": {
+        "formula": null,
+        "value": 1
+      },
+      "E4": {
+        "formula": null,
+        "value": "Set this to 1 for normal operation. Set to <1 for low power operation"
+      },
+      "B5": {
+        "formula": null,
+        "value": "Input resolution (bit)"
+      },
+      "C5": {
+        "formula": null,
+        "value": 8
+      },
+      "B6": {
+        "formula": null,
+        "value": "Temporal driver # clock cycles"
+      },
+      "C6": {
+        "formula": "=2^(C$5-1)",
+        "value": 128
+      },
+      "E6": {
+        "formula": null,
+        "value": "Sign is handled by applying negative voltage and separate arrays for positive and negative weights"
+      },
+      "B7": {
+        "formula": null,
+        "value": "Output resolution (bit)"
+      },
+      "C7": {
+        "formula": null,
+        "value": 8
+      },
+      "B8": {
+        "formula": null,
+        "value": "ADC # clock cycles"
+      },
+      "C8": {
+        "formula": "=2^(C$7)",
+        "value": 256
+      },
+      "B9": {
+        "formula": null,
+        "value": "Read duration (ns)"
+      },
+      "C9": {
+        "formula": "=C$3*(C$6+C$8)",
+        "value": 768
+      },
+      "B12": {
+        "formula": null,
+        "value": "Xbar array"
+      },
+      "C12": {
+        "formula": null,
+        "value": "22nm area"
+      },
+      "O12": {
+        "formula": null,
+        "value": "22nm power"
+      },
+      "B13": {
+        "formula": null,
+        "value": "Aray size"
+      },
+      "C13": {
+        "formula": null,
+        "value": 256
+      },
+      "B14": {
+        "formula": null,
+        "value": "Cell size (um2)"
+      },
+      "C14": {
+        "formula": null,
+        "value": 0.0424
+      },
+      "K14": {
+        "formula": null,
+        "value": "Cell on resistance (Mohm)"
+      },
+      "L14": {
+        "formula": null,
+        "value": 100
+      },
+      "B15": {
+        "formula": null,
+        "value": "Xbar area (um2)"
+      },
+      "C15": {
+        "formula": "=2*(C$13^2)*C$14",
+        "value": 5557.4528
+      },
+      "E15": {
+        "formula": null,
+        "value": "Separate arrays for positive and negative weights"
+      },
+      "K15": {
+        "formula": null,
+        "value": "Read voltage (V)"
+      },
+      "L15": {
+        "formula": null,
+        "value": 0.4
+      },
+      "K16": {
+        "formula": null,
+        "value": "Max. column current (uA)"
+      },
+      "L16": {
+        "formula": "=C$13*L$15/L$14",
+        "value": 1.024
+      },
+      "N16": {
+        "formula": null,
+        "value": "Cell Capacitance (fF)"
+      },
+      "O16": {
+        "formula": "=0.035*(80/32)^2",
+        "value": 0.21875000000000003
+      },
+      "N17": {
+        "formula": null,
+        "value": "Wire cap per cell (fF)"
+      },
+      "O17": {
+        "formula": "=0.2*50/32*SQRT(C$14)",
+        "value": 0.06434768838116875
+      },
+      "N18": {
+        "formula": null,
+        "value": "Cell on read Current (nA)"
+      },
+      "O18": {
+        "formula": "=L$15/L$14*1000",
+        "value": 4
+      },
+      "N19": {
+        "formula": null,
+        "value": "Column read Current (uA)"
+      },
+      "O19": {
+        "formula": "=C$13*O$18/1000",
+        "value": 1.024
+      },
+      "N20": {
+        "formula": null,
+        "value": "Array CV2 energy (pJ)"
+      },
+      "O20": {
+        "formula": "=2*C$13*0.5*(C$5-1)*(O$16+O$17)*C$13*L$15*L$15/1000*$C$4",
+        "value": 20.779460918438076
+      },
+      "N21": {
+        "formula": null,
+        "value": "Array IV energy (pJ)"
+      },
+      "O21": {
+        "formula": "=2*C$13*0.5*(C$6-1)*C$3*O$19*L$15/1000*$C$4",
+        "value": 26.6338304
+      },
+      "N22": {
+        "formula": null,
+        "value": "Array total energy (pJ)"
+      },
+      "O22": {
+        "formula": "=O$20+O$21",
+        "value": 47.41329131843808
+      },
+      "B24": {
+        "formula": null,
+        "value": "Temporal drivers"
+      },
+      "C24": {
+        "formula": null,
+        "value": "16nm area"
+      },
+      "D24": {
+        "formula": null,
+        "value": "22nm area"
+      },
+      "O24": {
+        "formula": null,
+        "value": "16nm power"
+      },
+      "P24": {
+        "formula": null,
+        "value": "22nm power"
+      },
+      "B25": {
+        "formula": null,
+        "value": "16\u00ae22nm thin oxide area scaling"
+      },
+      "D25": {
+        "formula": null,
+        "value": 1.5011
+      },
+      "N25": {
+        "formula": null,
+        "value": "16\u00ae22nm thin oxide power scaling"
+      },
+      "P25": {
+        "formula": "=1/0.7",
+        "value": 1.4285714285714286
+      },
+      "B26": {
+        "formula": null,
+        "value": "Temporal driver analog FET area (um2)"
+      },
+      "C26": {
+        "formula": null,
+        "value": 0.35
+      },
+      "N26": {
+        "formula": null,
+        "value": "Temporal driver analog energy per transition  (pJ)"
+      },
+      "O26": {
+        "formula": null,
+        "value": 0.015
+      },
+      "B27": {
+        "formula": null,
+        "value": "Temporal driver # analog FETs"
+      },
+      "C27": {
+        "formula": null,
+        "value": 20
+      },
+      "B28": {
+        "formula": null,
+        "value": "Temporal driver digital logic area (um2)"
+      },
+      "C28": {
+        "formula": "=8.6/8*C$5",
+        "value": 8.6
+      },
+      "D28": {
+        "formula": "=D$25*C$28",
+        "value": 12.909460000000001
+      },
+      "B29": {
+        "formula": null,
+        "value": "Temporal driver total area"
+      },
+      "C29": {
+        "formula": "=C$26*C$27+C$28",
+        "value": 15.6
+      },
+      "D29": {
+        "formula": "=C$26*C$27+D$28",
+        "value": 19.909460000000003
+      },
+      "B30": {
+        "formula": null,
+        "value": "Analog area of all temporal drivers (um2)"
+      },
+      "C30": {
+        "formula": "=C$13*C$27*C$26",
+        "value": 1792
+      },
+      "D30": {
+        "formula": "=C$30",
+        "value": 1792
+      },
+      "N30": {
+        "formula": null,
+        "value": "Analog energy of all temporal drivers (pJ)"
+      },
+      "O30": {
+        "formula": "=C$13*(C$5-1)*O$26*$C$4",
+        "value": 26.88
+      },
+      "B31": {
+        "formula": null,
+        "value": "Digital area of all temporal drivers (um2)"
+      },
+      "C31": {
+        "formula": "=C$13*C$28",
+        "value": 2201.6
+      },
+      "D31": {
+        "formula": "=C$13*D$28",
+        "value": 3304.8217600000003
+      },
+      "N31": {
+        "formula": null,
+        "value": "Digital energy of all temporal drivers (pJ)"
+      },
+      "O31": {
+        "formula": "=35/1024*C$13*$C$4",
+        "value": 8.75
+      },
+      "P31": {
+        "formula": "=O$31*$P$25",
+        "value": 12.5
+      },
+      "B32": {
+        "formula": null,
+        "value": "Area of all temporal drivers (um2)"
+      },
+      "C32": {
+        "formula": "=C$13*C$29",
+        "value": 3993.6
+      },
+      "D32": {
+        "formula": "=C$13*D$29",
+        "value": 5096.821760000001
+      },
+      "N32": {
+        "formula": null,
+        "value": "Energy of all temporal drivers (pJ)"
+      },
+      "O32": {
+        "formula": "=O$30+O$31",
+        "value": 35.629999999999995
+      },
+      "P32": {
+        "formula": "=O$30+P$31",
+        "value": 39.379999999999995
+      },
+      "B35": {
+        "formula": null,
+        "value": "Integrators"
+      },
+      "B36": {
+        "formula": null,
+        "value": "FET type 1 area increase due to L increase"
+      },
+      "C36": {
+        "formula": null,
+        "value": 0.19
+      },
+      "B37": {
+        "formula": null,
+        "value": "# FET type 1"
+      },
+      "C37": {
+        "formula": null,
+        "value": 12
+      },
+      "B38": {
+        "formula": null,
+        "value": "FET type 2 area increase due to L increase"
+      },
+      "C38": {
+        "formula": null,
+        "value": 0
+      },
+      "B39": {
+        "formula": null,
+        "value": "# FET type 2"
+      },
+      "C39": {
+        "formula": null,
+        "value": 4
+      },
+      "B40": {
+        "formula": null,
+        "value": "Integrator area"
+      },
+      "C40": {
+        "formula": "=C$26*(C$37*(1+C$36)+C$39*(1+C$38))",
+        "value": 6.398
+      },
+      "N40": {
+        "formula": null,
+        "value": "Integrator energy"
+      },
+      "O40": {
+        "formula": "=12*1.8*C$6*C$3/1000",
+        "value": 5.5296
+      },
+      "R40": {
+        "formula": null,
+        "value": "Integrator standby/active"
+      },
+      "U40": {
+        "formula": null,
+        "value": 0.05
+      },
+      "B41": {
+        "formula": null,
+        "value": "MIMCAP density (fF/um2)"
+      },
+      "C41": {
+        "formula": null,
+        "value": 15
+      },
+      "N41": {
+        "formula": null,
+        "value": "Integrator always on energy"
+      },
+      "O41": {
+        "formula": "=$U$40*12*1.8*C$9*C$3/1000",
+        "value": 1.6588800000000006
+      },
+      "B42": {
+        "formula": null,
+        "value": "Integrator cap (fF)"
+      },
+      "C42": {
+        "formula": "=(10+16*10)/2",
+        "value": 85
+      },
+      "N42": {
+        "formula": null,
+        "value": "Integrator energy scaling with active columns"
+      },
+      "O42": {
+        "formula": "=(1-$U$40)*12*1.8*C$6*C$3/1000*$C$4",
+        "value": 5.25312
+      },
+      "B43": {
+        "formula": null,
+        "value": "Integrator cap area"
+      },
+      "C43": {
+        "formula": "=C$42/C$41",
+        "value": 5.666666666666667
+      },
+      "B44": {
+        "formula": null,
+        "value": "Load cap (fF)"
+      },
+      "C44": {
+        "formula": null,
+        "value": 0
+      },
+      "E44": {
+        "formula": null,
+        "value": "50fF column parasitic cap is sufficient"
+      },
+      "B45": {
+        "formula": null,
+        "value": "Load cap area"
+      },
+      "C45": {
+        "formula": "=C$44/C$41",
+        "value": 0
+      },
+      "B46": {
+        "formula": null,
+        "value": "Area of all integrators (um2)"
+      },
+      "C46": {
+        "formula": "=C$13*(C$40+C$43+C$45)",
+        "value": 3088.554666666667
+      },
+      "N46": {
+        "formula": null,
+        "value": "Energy of all integrators"
+      },
+      "O46": {
+        "formula": "=C$13*O$40",
+        "value": 1415.5776
+      },
+      "N47": {
+        "formula": null,
+        "value": "Always on energy of all integrators"
+      },
+      "O47": {
+        "formula": "=C$13*O$41",
+        "value": 424.67328000000015
+      },
+      "N48": {
+        "formula": null,
+        "value": "Integrators energy scaling with active columns"
+      },
+      "O48": {
+        "formula": "=C$13*O$42",
+        "value": 1344.79872
+      },
+      "B51": {
+        "formula": null,
+        "value": "ADC"
+      },
+      "C51": {
+        "formula": null,
+        "value": "Sequential approach "
+      },
+      "D51": {
+        "formula": null,
+        "value": "16nm,\n8-bit DAC approach "
+      },
+      "E51": {
+        "formula": null,
+        "value": "22nm,\n8-bit DAC approach "
+      },
+      "O51": {
+        "formula": null,
+        "value": "Sequential approach "
+      },
+      "P51": {
+        "formula": null,
+        "value": "16nm,\n8-bit ADC approach"
+      },
+      "Q51": {
+        "formula": null,
+        "value": "22nm,\n8-bit ADC approach"
+      },
+      "B52": {
+        "formula": null,
+        "value": "Comparator area (um2)"
+      },
+      "C52": {
+        "formula": null,
+        "value": 5.7
+      },
+      "N52": {
+        "formula": null,
+        "value": "Comparator energy"
+      },
+      "O52": {
+        "formula": "=20*1.8*C$8*C$3/1000",
+        "value": 18.432
+      },
+      "R52": {
+        "formula": null,
+        "value": "ADC leakage/dynamic"
+      },
+      "U52": {
+        "formula": null,
+        "value": 0.25
+      },
+      "B53": {
+        "formula": null,
+        "value": "Area of all comparators"
+      },
+      "C53": {
+        "formula": "=C$13*C$52",
+        "value": 1459.2
+      },
+      "E53": {
+        "formula": "=0.7*1200+12.8+6+(0.4+0.2)*C$13",
+        "value": 1012.4
+      },
+      "N53": {
+        "formula": null,
+        "value": "Energy of all comparators (pJ)"
+      },
+      "O53": {
+        "formula": "=C$13*O$52",
+        "value": 4718.592
+      },
+      "P53": {
+        "formula": "=P$56*$C$9",
+        "value": 1529.2799999999997
+      },
+      "Q53": {
+        "formula": "=Q$56*$C$9",
+        "value": 1656.9599999999998
+      },
+      "N54": {
+        "formula": null,
+        "value": "ADC always on energy (pJ)"
+      },
+      "P54": {
+        "formula": "=P$57*$C$9",
+        "value": 1241.8400000000001
+      },
+      "Q54": {
+        "formula": "=Q$57*$C$9",
+        "value": 1273.7600000000002
+      },
+      "N55": {
+        "formula": null,
+        "value": "ADC energy scaling with active columns (pJ)"
+      },
+      "P55": {
+        "formula": "=P$58*$C$9",
+        "value": 287.43999999999966
+      },
+      "Q55": {
+        "formula": "=Q$58*$C$9",
+        "value": 383.1999999999997
+      },
+      "N56": {
+        "formula": null,
+        "value": "ADC total power (mW)"
+      },
+      "O56": {
+        "formula": "=O$53/C$9",
+        "value": 6.143999999999999
+      },
+      "P56": {
+        "formula": "=($U$52+$C$4*(1-$U$52))*0.7*ADC!$D$6/($C$3*ADC!$D$5)/$P$25+ADC!$D$7+($U$52+$C$4*(1-$U$52))*0.7*ADC!$D$8/($C$3*ADC!$D$5)/$P$25+ADC!$D$9+(0*$U$52+$C$4*(1-0*$U$52))*ADC!$D$10/($C$3*ADC!$D$5)+2*0.26",
+        "value": 1.9912499999999997
+      },
+      "Q56": {
+        "formula": "=($U$52+$C$4*(1-$U$52))*0.7*ADC!$D$6/($C$3*ADC!$D$5)+ADC!$D$7+($U$52+$C$4*(1-$U$52))*0.7*ADC!$D$8/($C$3*ADC!$D$5)+ADC!$D$9+(0*$U$52+$C$4*(1-0*$U$52))*ADC!$D$10/($C$3*ADC!$D$5)+2*0.26",
+        "value": 2.1574999999999998
+      },
+      "N57": {
+        "formula": null,
+        "value": "ADC always on power (mW)"
+      },
+      "P57": {
+        "formula": "=$U$52*0.7*ADC!$D$6/($C$3*ADC!$D$5)/$P$25+ADC!$D$7+$U$52*0.7*ADC!$D$8/($C$3*ADC!$D$5)/$P$25+ADC!$D$9+0*$U$52*ADC!$D$10/($C$3*ADC!$D$5)+2*0.26",
+        "value": 1.6169791666666669
+      },
+      "Q57": {
+        "formula": "=$U$52*0.7*ADC!$D$6/($C$3*ADC!$D$5)+ADC!$D$7+$U$52*0.7*ADC!$D$8/($C$3*ADC!$D$5)+ADC!$D$9+0*$U$52*ADC!$D$10/($C$3*ADC!$D$5)+2*0.26",
+        "value": 1.6585416666666668
+      },
+      "N58": {
+        "formula": null,
+        "value": "ADC power scaling with active columns (mW)"
+      },
+      "P58": {
+        "formula": "=P$56-P$57",
+        "value": 0.3742708333333329
+      },
+      "Q58": {
+        "formula": "=Q$56-Q$57",
+        "value": 0.49895833333333295
+      },
+      "B59": {
+        "formula": null,
+        "value": "Analog routing"
+      },
+      "B60": {
+        "formula": null,
+        "value": "Analog routing area (um2)"
+      },
+      "C60": {
+        "formula": "=2*C$13*0.086*SQRT(C$15)+10*0.086*SQRT(C$46/C$15)*C$15",
+        "value": 6845.496817205585
+      },
+      "D60": {
+        "formula": "=2*C$13*0.1*SQRT(C$15)+10*0.1*SQRT(C$46/C$15)*C$15",
+        "value": 7959.880020006495
+      },
+      "C63": {
+        "formula": null,
+        "value": "16nm area"
+      },
+      "D63": {
+        "formula": null,
+        "value": "22nm area"
+      },
+      "O63": {
+        "formula": null,
+        "value": "16nm power"
+      },
+      "P63": {
+        "formula": null,
+        "value": "22nm power"
+      },
+      "B64": {
+        "formula": null,
+        "value": "Total area per Xbar (um2)"
+      },
+      "C64": {
+        "formula": "=C15+C32+C46+C53+C60",
+        "value": 20944.304283872254
+      },
+      "D64": {
+        "formula": "=C15+D32+C46+C53+D60",
+        "value": 23161.909246673164
+      },
+      "N64": {
+        "formula": null,
+        "value": "Xbar energy (pJ)"
+      },
+      "O64": {
+        "formula": "=O22+O32+O46+P53",
+        "value": 3027.900891318438
+      },
+      "P64": {
+        "formula": "=O22+P32+O46+Q53",
+        "value": 3159.3308913184383
+      },
+      "B65": {
+        "formula": null,
+        "value": "Weight resolution (bit)"
+      },
+      "C65": {
+        "formula": null,
+        "value": 8
+      },
+      "N65": {
+        "formula": null,
+        "value": "Always on (pJ)"
+      },
+      "O65": {
+        "formula": "=O22+O32+O47+P54",
+        "value": 1749.5565713184383
+      },
+      "P65": {
+        "formula": "=O22+P32+O47+Q54",
+        "value": 1785.2265713184383
+      },
+      "B66": {
+        "formula": null,
+        "value": "Cell resolution (bit)"
+      },
+      "C66": {
+        "formula": null,
+        "value": 4
+      },
+      "N66": {
+        "formula": null,
+        "value": "Scaling with active columns (pJ)"
+      },
+      "O66": {
+        "formula": "=$O$48+P$55",
+        "value": 1632.2387199999996
+      },
+      "P66": {
+        "formula": "=$O$48+Q$55",
+        "value": 1727.9987199999996
+      },
+      "B67": {
+        "formula": null,
+        "value": "MVMU area"
+      },
+      "C67": {
+        "formula": "=C$65/C$66*(C15+C30+C46+C60)+C31+C53",
+        "value": 38227.8085677445
+      },
+      "D67": {
+        "formula": "=C$65/C$66*(C15+D30+C46+D60)+D31+C53",
+        "value": 41559.79673334632
+      },
+      "N67": {
+        "formula": null,
+        "value": "MVMU energy (pJ)"
+      },
+      "O67": {
+        "formula": "=$C$65/$C$66*(O22+O30+O46)+O31+P53",
+        "value": 4517.771782636876
+      },
+      "P67": {
+        "formula": "=$C$65/$C$66*(O22+O30+O46)+P31+Q53",
+        "value": 4649.2017826368765
+      },
+      "B68": {
+        "formula": null,
+        "value": "# Tiles per chip"
+      },
+      "C68": {
+        "formula": null,
+        "value": 16
+      },
+      "N68": {
+        "formula": null,
+        "value": "MVMU power (mW)"
+      },
+      "O68": {
+        "formula": "=O$67/$C$9",
+        "value": 5.8825153419750995
+      },
+      "P68": {
+        "formula": "=P$67/$C$9",
+        "value": 6.053648154475099
+      },
+      "B69": {
+        "formula": null,
+        "value": "# MVMUs oer chip"
+      },
+      "C69": {
+        "formula": "=4*16*C$68",
+        "value": 1024
+      },
+      "N69": {
+        "formula": null,
+        "value": "MVMU always on power (mW)"
+      },
+      "O69": {
+        "formula": "=($C$65/$C$66*(O22+O30+O47)+O31+P54)/$C$9",
+        "value": 2.9277645086417663
+      },
+      "P69": {
+        "formula": "=(C$65/C$66*(O22+O30+O47)+P31+Q54)/$C$9",
+        "value": 2.9742098211417662
+      },
+      "B70": {
+        "formula": null,
+        "value": "# Xbars per chip"
+      },
+      "C70": {
+        "formula": "=C$65/C$66*4*16*C$68",
+        "value": 2048
+      },
+      "N70": {
+        "formula": null,
+        "value": "MVMU power scaling with active columns (mW)"
+      },
+      "O70": {
+        "formula": "=($C$65/$C$66*(O48)+P55)/$C$9",
+        "value": 3.876350833333333
+      },
+      "P70": {
+        "formula": "=($C$65/$C$66*(O48)+Q55)/$C$9",
+        "value": 4.001038333333333
+      },
+      "B71": {
+        "formula": null,
+        "value": "Max # Weights (Millions)"
+      },
+      "C71": {
+        "formula": "=C$70*C$13^2*C$66/C$65/1000000",
+        "value": 67.108864
+      },
+      "B72": {
+        "formula": null,
+        "value": "Area of all Xbars (mm2)"
+      },
+      "C72": {
+        "formula": "=C$69*C$67/1000000",
+        "value": 39.14527597337037
+      },
+      "D72": {
+        "formula": "=C$69*D$67/1000000",
+        "value": 42.55723185494663
+      },
+      "N72": {
+        "formula": null,
+        "value": "Energy of all Xbars (uJ)"
+      },
+      "O72": {
+        "formula": "=O$67*$C$69/1000000",
+        "value": 4.626198305420162
+      },
+      "P72": {
+        "formula": "=P$67*$C$69/1000000",
+        "value": 4.760782625420162
+      },
+      "N73": {
+        "formula": null,
+        "value": "Power of all Xbars (W)"
+      },
+      "O73": {
+        "formula": "=O$68*$C$69/1000",
+        "value": 6.023695710182502
+      },
+      "P73": {
+        "formula": "=P$68*$C$69/1000",
+        "value": 6.198935710182502
+      },
+      "N74": {
+        "formula": null,
+        "value": "Always on power (W)"
+      },
+      "O74": {
+        "formula": "=O$69*$C$69/1000",
+        "value": 2.9980308568491685
+      },
+      "P74": {
+        "formula": "=P$69*$C$69/1000",
+        "value": 3.0455908568491687
+      },
+      "N75": {
+        "formula": null,
+        "value": "Power scaling with active columns (W)"
+      },
+      "O75": {
+        "formula": "=O$70*$C$69/1000",
+        "value": 3.969383253333333
+      },
+      "P75": {
+        "formula": "=P$70*$C$69/1000",
+        "value": 4.097063253333332
+      },
+      "B77": {
+        "formula": null,
+        "value": "Total chip max. theoretical performance (TOPs)"
+      },
+      "C77": {
+        "formula": "=C$69*2*$C$13*$C$13/$C$9*$C$4/1000",
+        "value": 174.76266666666666
+      },
+      "N77": {
+        "formula": null,
+        "value": "MVMU chip performance per Watt (TOPs/W)"
+      },
+      "O77": {
+        "formula": "=$C$77/(O$74+O$75)",
+        "value": 25.08285913582493
+      },
+      "P77": {
+        "formula": "=$C$77/(P$74+P$75)",
+        "value": 24.467468810722142
+      },
+      "B79": {
+        "formula": null,
+        "value": "ResNet-50 performance (TOPs)"
+      },
+      "C79": {
+        "formula": "='224x224 full network matrices'!Z3",
+        "value": 32.49608556149734
+      },
+      "N79": {
+        "formula": null,
+        "value": "ResNet-50 analog power (W)"
+      },
+      "O79": {
+        "formula": "=O$74+'224x224 full network matrices'!$S$59*O$75*$C$9/('224x224 full network matrices'!$L$3*$C$4)",
+        "value": 4.345500189507554
+      },
+      "P79": {
+        "formula": "=P$74+'224x224 full network matrices'!$S$59*P$75*$C$9/('224x224 full network matrices'!$L$3*$C$4)",
+        "value": 4.436403165837529
+      },
+      "N81": {
+        "formula": null,
+        "value": "ResNet-50 analog TOPs/W"
+      },
+      "O81": {
+        "formula": "=$C$79/O$79",
+        "value": 7.478100136771573
+      },
+      "P81": {
+        "formula": "=$C$79/P$79",
+        "value": 7.324872052146448
+      },
+      "C84": {
+        "formula": null,
+        "value": "16nm area"
+      },
+      "D84": {
+        "formula": null,
+        "value": "22nm area"
+      },
+      "O84": {
+        "formula": null,
+        "value": "16nm power"
+      },
+      "P84": {
+        "formula": null,
+        "value": "22nm power"
+      },
+      "B85": {
+        "formula": null,
+        "value": "MVMU ECC area (um2)"
+      },
+      "N85": {
+        "formula": null,
+        "value": "MVMU ECC power (mW)"
+      },
+      "B86": {
+        "formula": null,
+        "value": "Digital Core area (um2)"
+      },
+      "C86": {
+        "formula": "=('Digital Power Area'!$N$44+'Digital Power Area'!$N$43)/16/$C$68",
+        "value": 0.0407182232
+      },
+      "D86": {
+        "formula": "=C86*$D$25",
+        "value": 0.06112212484552001
+      },
+      "N86": {
+        "formula": null,
+        "value": "Digital Core power (mW)"
+      },
+      "O86": {
+        "formula": "=('Digital Power Area'!$Q$44+'Digital Power Area'!$Q$43)/$C$68/16",
+        "value": 4.178987054099924
+      },
+      "P86": {
+        "formula": "=O86*$P$25",
+        "value": 5.969981505857034
+      },
+      "B87": {
+        "formula": null,
+        "value": "Digital Tile area (um2)"
+      },
+      "C87": {
+        "formula": "=('Digital Power Area'!$N$42+'Digital Power Area'!$N$41)/$C$68",
+        "value": 0.4002247161872341
+      },
+      "D87": {
+        "formula": "=C87*$D$25",
+        "value": 0.6007773214686571
+      },
+      "N87": {
+        "formula": null,
+        "value": "Digital Tile power (mW)"
+      },
+      "O87": {
+        "formula": "=('Digital Power Area'!$Q$42+'Digital Power Area'!$Q$41)/$C$68",
+        "value": 69.22169252345677
+      },
+      "P87": {
+        "formula": "=O87*$P$25",
+        "value": 98.88813217636681
+      },
+      "B88": {
+        "formula": null,
+        "value": "Digital NOC area (incl. switches) (um2)"
+      },
+      "C88": {
+        "formula": "='Digital Power Area'!$N$40",
+        "value": 0.29159863086808513
+      },
+      "D88": {
+        "formula": "=C88*$D$25",
+        "value": 0.4377187047960826
+      },
+      "N88": {
+        "formula": null,
+        "value": "Digital NOC power (incl. switches) (mW)"
+      },
+      "O88": {
+        "formula": "=('Digital Power Area'!$Q$40)",
+        "value": 39.301048216049374
+      },
+      "P88": {
+        "formula": "=O88*$P$25",
+        "value": 56.14435459435625
+      },
+      "B89": {
+        "formula": null,
+        "value": "Digital RISC-V and interface area (um2)"
+      },
+      "C89": {
+        "formula": "=('Digital Power Area'!$N$39+'Digital Power Area'!$N$37+'Digital Power Area'!$N$36)",
+        "value": 10.233724949335661
+      },
+      "D89": {
+        "formula": "=C89*$D$25",
+        "value": 15.361844521447763
+      },
+      "N89": {
+        "formula": null,
+        "value": "Digital RISC-V and interface power (mW)"
+      },
+      "O89": {
+        "formula": "=('Digital Power Area'!$Q$39+'Digital Power Area'!$Q$37+'Digital Power Area'!$Q$36)",
+        "value": 1200.7707572531694
+      },
+      "P89": {
+        "formula": "=O89*$P$25",
+        "value": 1715.3867960759565
+      },
+      "B90": {
+        "formula": null,
+        "value": "PHY area (um2)"
+      },
+      "C90": {
+        "formula": "='Digital Power Area'!$N$38",
+        "value": 4.275
+      },
+      "D90": {
+        "formula": "=C90*$D$25",
+        "value": 6.417202500000001
+      },
+      "N90": {
+        "formula": null,
+        "value": "PHY power (mW)"
+      },
+      "O90": {
+        "formula": "=('Digital Power Area'!$Q$38)",
+        "value": 1360
+      },
+      "P90": {
+        "formula": "=O90*$P$25",
+        "value": 1942.857142857143
+      },
+      "B92": {
+        "formula": null,
+        "value": "Total area outside of analog MVMU parts (mm2)"
+      },
+      "C92": {
+        "formula": "=C$90+C$89+C$88+C$68*(C$87+16*(C$86+4*C$85))",
+        "value": 31.627784178399494
+      },
+      "D92": {
+        "formula": "=D$90+D$89+D$88+C$68*(D$87+16*(D$86+4*D$85))",
+        "value": 47.47646683019548
+      },
+      "N92": {
+        "formula": null,
+        "value": "ResNet-50 power outside of analog MVMUs (W)"
+      },
+      "O92": {
+        "formula": "=(O$90+O$89+O$88+C$68*(O$87+16*(O$86+4*O$85)))/1000",
+        "value": 4.777439571694107
+      },
+      "P92": {
+        "formula": "=(P$90+P$89+P$88+C$68*(P$87+16*(P$86+4*P$85)))/1000",
+        "value": 6.824913673848725
+      },
+      "B94": {
+        "formula": null,
+        "value": "Total chip area (mm2)"
+      },
+      "C94": {
+        "formula": "=C$72+C$92",
+        "value": 70.77306015176987
+      },
+      "D94": {
+        "formula": "=D$72+D$92",
+        "value": 90.0336986851421
+      },
+      "N94": {
+        "formula": null,
+        "value": "ResNet-50 Total chip power (W)"
+      },
+      "O94": {
+        "formula": "=O$79+O$92",
+        "value": 9.12293976120166
+      },
+      "P94": {
+        "formula": "=P$79+P$92",
+        "value": 11.261316839686254
+      },
+      "N95": {
+        "formula": null,
+        "value": "ResNet-50 Total chip TOPs/W"
+      },
+      "O95": {
+        "formula": "=$C$79/O$94",
+        "value": 3.562019087279055
+      },
+      "P95": {
+        "formula": "=$C$79/P$94",
+        "value": 2.8856381561858884
+      },
+      "B97": {
+        "formula": null,
+        "value": "Area margin to add "
+      },
+      "C97": {
+        "formula": null,
+        "value": 0.15
+      },
+      "D97": {
+        "formula": null,
+        "value": 0.15
+      },
+      "N97": {
+        "formula": null,
+        "value": "Analog Power margin to add"
+      },
+      "O97": {
+        "formula": null,
+        "value": 0
+      },
+      "P97": {
+        "formula": null,
+        "value": 0
+      },
+      "B98": {
+        "formula": null,
+        "value": "Total chip area with margin (mm2)"
+      },
+      "C98": {
+        "formula": "=C$94*(1+C$97)",
+        "value": 81.38901917453535
+      },
+      "D98": {
+        "formula": "=D$94*(1+D$97)",
+        "value": 103.53875348791341
+      },
+      "N98": {
+        "formula": null,
+        "value": "Digital Power margin to add"
+      },
+      "O98": {
+        "formula": null,
+        "value": -0.33
+      },
+      "P98": {
+        "formula": null,
+        "value": -0.33
+      },
+      "N99": {
+        "formula": null,
+        "value": "ResNet-50 Total chip power with margin (W)"
+      },
+      "O99": {
+        "formula": "=O$79*(1+O$97)+O$92*(1+O$98)",
+        "value": 7.546384702542605
+      },
+      "P99": {
+        "formula": "=P$79*(1+P$97)+P$92*(1+P$98)",
+        "value": 9.009095327316174
+      }
+    },
+    "ADC": {
+      "B2": {
+        "formula": null,
+        "value": "Resolution (bit)"
+      },
+      "D2": {
+        "formula": null,
+        "value": 8
+      },
+      "K2": {
+        "formula": null,
+        "value": 6
+      },
+      "D4": {
+        "formula": null,
+        "value": "32nm"
+      },
+      "E4": {
+        "formula": null,
+        "value": "scaling"
+      },
+      "F4": {
+        "formula": null,
+        "value": "7nm"
+      },
+      "K4": {
+        "formula": null,
+        "value": "40nm"
+      },
+      "L4": {
+        "formula": null,
+        "value": "scaling"
+      },
+      "M4": {
+        "formula": null,
+        "value": "28nm"
+      },
+      "B5": {
+        "formula": null,
+        "value": "ADC speed (GS/s)"
+      },
+      "D5": {
+        "formula": null,
+        "value": 1.2
+      },
+      "K5": {
+        "formula": null,
+        "value": 1
+      },
+      "B6": {
+        "formula": null,
+        "value": "ADC clock power (mW)"
+      },
+      "D6": {
+        "formula": null,
+        "value": 1.2
+      },
+      "E6": {
+        "formula": null,
+        "value": 0.19599999999999998
+      },
+      "F6": {
+        "formula": "=D6*E6",
+        "value": 0.23519999999999996
+      },
+      "K6": {
+        "formula": "=D6/$D$11*$K$11",
+        "value": 0.4877419354838709
+      },
+      "L6": {
+        "formula": "=0.7/1.429",
+        "value": 0.48985304408677394
+      },
+      "M6": {
+        "formula": "=K6*L6",
+        "value": 0.23892187182554905
+      },
+      "B7": {
+        "formula": null,
+        "value": "ADC comparators and calib. (mW)"
+      },
+      "D7": {
+        "formula": null,
+        "value": 0.8
+      },
+      "E7": {
+        "formula": null,
+        "value": 1
+      },
+      "F7": {
+        "formula": "=D7*E7",
+        "value": 0.8
+      },
+      "K7": {
+        "formula": "=D7/$D$11*$K$11",
+        "value": 0.3251612903225806
+      },
+      "L7": {
+        "formula": null,
+        "value": 1
+      },
+      "M7": {
+        "formula": "=K7*L7",
+        "value": 0.3251612903225806
+      },
+      "B8": {
+        "formula": null,
+        "value": "ADC memory and state logic (mW)"
+      },
+      "D8": {
+        "formula": null,
+        "value": 0.7
+      },
+      "E8": {
+        "formula": null,
+        "value": 0.19599999999999998
+      },
+      "F8": {
+        "formula": "=D8*E8",
+        "value": 0.1372
+      },
+      "K8": {
+        "formula": "=D8/$D$11*$K$11",
+        "value": 0.284516129032258
+      },
+      "L8": {
+        "formula": "=0.7/1.429",
+        "value": 0.48985304408677394
+      },
+      "M8": {
+        "formula": "=K8*L8",
+        "value": 0.13937109189823693
+      },
+      "B9": {
+        "formula": null,
+        "value": "ADC ref. buffer (mW)"
+      },
+      "D9": {
+        "formula": null,
+        "value": 0.2
+      },
+      "E9": {
+        "formula": null,
+        "value": 1
+      },
+      "F9": {
+        "formula": "=D9*E9",
+        "value": 0.2
+      },
+      "K9": {
+        "formula": "=D9/$D$11*$K$11",
+        "value": 0.08129032258064516
+      },
+      "L9": {
+        "formula": null,
+        "value": 1
+      },
+      "M9": {
+        "formula": "=K9*L9",
+        "value": 0.08129032258064516
+      },
+      "B10": {
+        "formula": null,
+        "value": "ADC CDAC (mW)"
+      },
+      "D10": {
+        "formula": null,
+        "value": 0.2
+      },
+      "E10": {
+        "formula": null,
+        "value": 1
+      },
+      "F10": {
+        "formula": "=D10*E10",
+        "value": 0.2
+      },
+      "K10": {
+        "formula": "=D10/$D$11*$K$11",
+        "value": 0.08129032258064516
+      },
+      "L10": {
+        "formula": null,
+        "value": 1
+      },
+      "M10": {
+        "formula": "=K10*L10",
+        "value": 0.08129032258064516
+      },
+      "B11": {
+        "formula": null,
+        "value": "ADC Total power (mW)"
+      },
+      "D11": {
+        "formula": "=SUM(D6:D10)",
+        "value": 3.1000000000000005
+      },
+      "F11": {
+        "formula": "=SUM(F6:F10)",
+        "value": 1.5724
+      },
+      "K11": {
+        "formula": null,
+        "value": 1.26
+      },
+      "M11": {
+        "formula": "=SUM(M6:M10)",
+        "value": 0.866034899207657
+      },
+      "B12": {
+        "formula": null,
+        "value": "ADC SNDR (dB)"
+      },
+      "D12": {
+        "formula": null,
+        "value": 39.3
+      },
+      "K12": {
+        "formula": "=6.02*K13+1.76",
+        "value": 34.6292
+      },
+      "B13": {
+        "formula": null,
+        "value": "ADC ENOB"
+      },
+      "D13": {
+        "formula": "=(D12-1.76)/6.02",
+        "value": 6.235880398671097
+      },
+      "K13": {
+        "formula": null,
+        "value": 5.46
+      },
+      "B14": {
+        "formula": null,
+        "value": "ADC energy per bit per step (fJ/conv.)"
+      },
+      "D14": {
+        "formula": "=D11/D5*1000/(2^D13)",
+        "value": 34.27625762707959
+      },
+      "B15": {
+        "formula": null,
+        "value": "Published FOM (fJ/conv.)"
+      },
+      "D15": {
+        "formula": null,
+        "value": 34
+      },
+      "K15": {
+        "formula": null,
+        "value": 28.7
+      },
+      "B16": {
+        "formula": null,
+        "value": "FOMs (dB/J)"
+      },
+      "D16": {
+        "formula": "=D12+10*LOG(D5/2/D11*1000000000000)",
+        "value": 152.16789556549372
+      },
+      "B17": {
+        "formula": null,
+        "value": "Power at FOMs = 155.2 (mW)"
+      },
+      "F17": {
+        "formula": "=D5/2/(10^((155.2-D12)/10))*1000000000000",
+        "value": 1.5422374696613137
+      },
+      "B18": {
+        "formula": null,
+        "value": "Power at published FOM"
+      },
+      "F18": {
+        "formula": "=D5/2/(10^((D16-D12)/10))*1000000000000",
+        "value": 3.09999999999998
+      },
+      "K18": {
+        "formula": "=K15*K5*2^K13/1000",
+        "value": 1.2632976057795406
+      },
+      "B19": {
+        "formula": null,
+        "value": "Improved 2x at 7nm"
+      },
+      "F19": {
+        "formula": "=F17/2",
+        "value": 0.7711187348306568
+      },
+      "A22": {
+        "formula": null,
+        "value": "ResNet-50"
+      },
+      "B23": {
+        "formula": null,
+        "value": "# Neurons"
+      },
+      "C23": {
+        "formula": null,
+        "value": "# Neurons * # Synapses"
+      },
+      "C24": {
+        "formula": null,
+        "value": 7
+      }
+    }
+  }
+}

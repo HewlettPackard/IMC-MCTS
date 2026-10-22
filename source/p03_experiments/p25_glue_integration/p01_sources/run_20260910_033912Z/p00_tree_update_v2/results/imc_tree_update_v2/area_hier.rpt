@@ -1,0 +1,45 @@
+ 
+****************************************
+Report : area
+Design : imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 21:22:38 2026
+****************************************
+
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                          960
+Number of nets:                          9615
+Number of cells:                         8755
+Number of combinational cells:           7746
+Number of sequential cells:              1007
+Number of macros/black boxes:               0
+Number of buf/inv:                       1547
+Number of references:                     205
+
+Combinational area:              23745.600051
+Buf/Inv area:                     2604.000081
+Noncombinational area:           12109.919979
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 35855.520030
+Total area:                      35855.520030
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  --------------------------------
+imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21 35855.5200   100.0 17704.8000 11437.9200 0.0000 imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21
+u_choice                           1198.0800      3.3    526.0800    672.0000  0.0000  imc_round_divider_NUM_W32_DEN_W7
+u_codec                            5514.7200     15.4   5514.7200      0.0000  0.0000  imc_q17_codec
+--------------------------------  ----------  -------  ----------  ----------  ------  --------------------------------
+Total                                                  23745.6001  12109.9200  0.0000
+
+1

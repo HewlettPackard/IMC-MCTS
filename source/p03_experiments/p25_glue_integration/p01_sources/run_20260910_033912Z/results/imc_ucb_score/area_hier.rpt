@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : area
+Design : imc_ucb_score
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 15:22:59 2026
+****************************************
+
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                         1017
+Number of nets:                         22159
+Number of cells:                        20019
+Number of combinational cells:          19194
+Number of sequential cells:               820
+Number of macros/black boxes:               0
+Number of buf/inv:                       3509
+Number of references:                     320
+
+Combinational area:              80938.080533
+Buf/Inv area:                     8010.720155
+Noncombinational area:            9996.959929
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 90935.040461
+Total area:                      90935.040461
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------------------------------
+imc_ucb_score                     90935.0405    100.0  52051.6802  4490.8800  0.0000  imc_ucb_score
+u_divider                          5894.8801      6.5   3075.3601  2819.5200  0.0000  imc_round_divider_NUM_W80_DEN_W32
+u_high                            11914.0801     13.1  11914.0801     0.0000  0.0000  imc_ln_table_0
+u_low                              7909.4401      8.7   7909.4401     0.0000  0.0000  imc_ln_table_1
+u_sqrt                             5644.3200      6.2   2957.7601  2686.5600  0.0000  imc_isqrt
+u_value                            3029.7600      3.3   3029.7600     0.0000  0.0000  imc_q17_codec
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------------------------------
+Total                                                  80938.0805  9996.9599  0.0000
+
+1

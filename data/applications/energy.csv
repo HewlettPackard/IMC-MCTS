@@ -1,0 +1,9 @@
+application,domain,board,inputs,hidden,outputs,input_bits,memory_tier,iterations,neural_evaluations,area_mm2,energy_mj,latency_ms,power_mw,average_energy_uj_per_iteration,result_kind,source
+Connect Four,Strategy,8,129,96,3,1,9,5000,5000,5.797073136079519,2.916212569379637,43.414842,67.17086680586415,0.5832425138759274,diagnostic architecture projection,p00_costs/connect_four/costs.json
+Othello,Strategy,8,129,96,3,1,9,5000,5000,5.797073136079519,3.0233038560568435,45.153656,66.95590399273192,0.6046607712113686,diagnostic architecture projection,p00_costs/othello/costs.json
+Hex,Strategy,11,485,96,3,8,13,5000,5000,6.829239863301662,19.412422138470742,216.023046,89.86273686035675,3.8824844276941484,diagnostic architecture projection,p00_costs/hex/costs.json
+Go,Strategy,9,163,96,3,1,9,5000,5000,5.7975690837052705,3.7036957168173483,55.186986,67.11175922557808,0.7407391433634697,trained Go reference,p00_costs/go/costs.json
+FrozenLake,Navigation,8,129,96,3,1,9,5000,3507,5.797073136079519,2.938916666714396,44.783058,65.62563607680377,0.5877833333428791,diagnostic architecture projection,p00_costs/frozen_lake/costs.json
+MiniGrid,Navigation,8,129,96,3,1,9,5000,5000,5.797073136079519,3.827472195501137,58.07258,65.90842348490693,0.7654944391002274,diagnostic architecture projection,p00_costs/minigrid/costs.json
+HP Protein Folding,Science,13,344,128,3,8,13,5000,5000,6.847206635705145,18.476151921700424,191.48512,96.48870847876026,3.6952303843400847,diagnostic architecture projection,p00_costs/protein_folding/costs.json
+Minesweeper,Puzzle,9,244,96,3,8,9,5000,4231,5.798750605990144,9.419688582164447,114.937538,81.95484909520549,1.8839377164328892,diagnostic architecture projection,p00_costs/minesweeper/costs.json

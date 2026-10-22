@@ -6,7 +6,7 @@ directory. The following components retain separate upstream terms.
 
 ## MCTS-NC CUDA baseline
 
-Files under `cpu-gpu-benchmarking/benchmark_gpu_traditional/` are adapted from
+Files under `baselines/source_context/benchmark_gpu_traditional/` are adapted from
 Przemyslaw Klesk's MCTS-NC project:
 
 - Upstream: https://github.com/pklesk/mcts_numba_cuda
@@ -18,9 +18,9 @@ Attribution and upstream links are retained in the adapted source files.
 
 ## Michi
 
-The C tournament baseline (`tournament/go_compiled/engine/michi_c.c`) is an
-original reimplementation inspired by the random-rollout design of Michi by
-Petr Baudis. It contains no upstream Michi source.
+Michi by Petr Baudis is a design reference for the historical C tournament
+baseline. Neither that baseline C file nor upstream Michi source is bundled
+in this release.
 
 - Reference: https://github.com/pasky/michi (MIT)
 
@@ -43,3 +43,15 @@ The default public Python package is intended to be SBOM'd from a CPU-only
 installation of `imc-mcts` (optionally with `.[test]`). CUDA benchmarking
 dependencies, external Go engines, and self-trained model artifacts are outside
 that default SBOM scope and must be reviewed separately before distribution.
+
+## Optional inputs excluded from the public package
+
+The public source and wheel exclude 34 raw inputs: seven NPZ, seven PKL and two BIN checkpoint files; the historical test-fixture archive (which embeds additional model weights); the supplied Super-T workbook; two historical mapped netlists; and 14 NeuroSim C++/header files. For these inputs, only a checksum manifest and an offline installer are included. The files remain in a separate local packet; no public download URL or redistribution permission is implied.
+
+The excluded NeuroSim files retain their upstream Creative Commons Attribution-NonCommercial 4.0 notices, including the original Arizona State University / Shimeng Yu attribution. They are not relicensed under MIT. Review the intended use and obtain any necessary permission before distributing or using that optional code beyond its license terms. The license is described at https://creativecommons.org/licenses/by-nc/4.0/.
+
+The project owner confirms that the original repository security clearance is complete. This code update keeps the raw inputs listed above excluded and does not reopen that clearance. Python dependency metadata, the project MIT license and technical tests do not grant separate rights to redistribute excluded supplied data or third-party inputs. The two attribution-context files recorded in LICENSE_EXCEPTIONS.json were already in the first public commit and their Python ASTs are unchanged; only SPDX comments differ. Existing individual-holder notes and upstream CC-BY-4.0 attribution remain preserved, without a new approval requirement.
+
+## Python runtime dependencies
+
+The default runtime and public test extra require NumPy only (BSD-3-Clause metadata; its wheel may contain separately licensed bundled components). The fresh SBOM inventories actual installed Python distributions; it does not replace wheel-level native-library or corporate license review. Plotting and PDF-render dependencies remain optional. Their licenses remain with their respective upstream projects.

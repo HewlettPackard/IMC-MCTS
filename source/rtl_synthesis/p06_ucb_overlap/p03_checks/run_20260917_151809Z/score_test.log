@@ -1,0 +1,3 @@
+single scorer cycles: old=222 new=168 saved=54
+tb_imc_ucb_score_overlap PASS vectors=358
+p01_tests/tb_imc_ucb_score_overlap.sv:92: $finish called at 828400000 (1ps)

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "vectors": 358,
+  "single_accept_to_valid_cycles": 168,
+  "reference_single_accept_to_valid_cycles": 222,
+  "arithmetic_active_cycles": 169,
+  "batch_accepted_to_valid_base_cycles": 169,
+  "batch_reduction_cycles_per_child": 1,
+  "caller_request_and_capture_cycles": 2,
+  "saved_cycles_per_batch": 54,
+  "limits": "RTL cycles with ideal interfaces; no physical clock closure or power characterization"
+}

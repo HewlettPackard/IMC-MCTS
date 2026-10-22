@@ -1,0 +1,370 @@
+[
+  {
+    "path": "data/primary/hero.json",
+    "sha256": "d9fb03c2ea640176b020815742088eb069a6d6257db375dcd39ea10453ea72ea",
+    "size": 83120,
+    "status": "Trained primary search; retained v6 cost record"
+  },
+  {
+    "path": "data/scaling/diagnostic_results.json",
+    "sha256": "7becc4fc3f942c3f118cb46aa377684c4d9767849601c5c547d86ec3c13867f9",
+    "size": 1555794,
+    "status": "18 seeded diagnostic searches; never trained-quality evidence"
+  },
+  {
+    "path": "data/scaling/display_totals.csv",
+    "sha256": "75b6516e56d193ba8651672391bfc1eed0dd6107d619a559f680cca3a41aec1a",
+    "size": 1799,
+    "status": "Displayed medium scaling; trained hero replaces diagnostic 9x9-medium only here"
+  },
+  {
+    "path": "data/scaling/schedule_equivalence.json",
+    "sha256": "f2f50f7ef49e34564eca618541d0f4cfd8e521575da9bdd0fb756c3a1fa602ff",
+    "size": 3289,
+    "status": "Recorded schedule-equivalence and repricing evidence"
+  },
+  {
+    "path": "data/scaling/schedule_source.diff",
+    "sha256": "b2b900c067885a80f949c9d752d92938de9c5157697e1d61507b83e717abcd3c",
+    "size": 3432,
+    "status": "Recorded schedule-equivalence and repricing evidence"
+  },
+  {
+    "path": "data/scaling/reaccounting_validation.json",
+    "sha256": "a0cd904728b3ec1716099170de007ce19a5118c156d24872782a0b7f03a9438c",
+    "size": 4055,
+    "status": "Recorded schedule-equivalence and repricing evidence"
+  },
+  {
+    "path": "data/applications/energy.csv",
+    "sha256": "49637cf4afe55bfc202c0850003822cd68729d0bfb1d00d701dd191591b8ed21",
+    "size": 1737,
+    "status": "Go trained cost; other task costs diagnostic projections; quality CSV archival only"
+  },
+  {
+    "path": "data/applications/p00_costs/connect_four/costs.json",
+    "sha256": "7fcd53a894c40f172a7b5637b5dcdbf54551a8b8b535311eb1563c17a6beab06",
+    "size": 71965,
+    "status": "Go trained cost; other task costs diagnostic projections; quality CSV archival only"
+  },
+  {
+    "path": "data/applications/p00_costs/frozen_lake/costs.json",
+    "sha256": "3383cb1f9710d6d25410eb0b025bd2c351182c6e562d6f7424d0213c60efe359",
+    "size": 71995,
+    "status": "Go trained cost; other task costs diagnostic projections; quality CSV archival only"
+  },
+  {
+    "path": "data/applications/p00_costs/go/costs.json",
+    "sha256": "7a8e9bffc3bf1d106ea0ec3e0f347c47818fda76642152aa61338811d4fbf267",
+    "size": 64185,
+    "status": "Go trained cost; other task costs diagnostic projections; quality CSV archival only"
+  },
+  {
+    "path": "data/applications/p00_costs/hex/costs.json",
+    "sha256": "2cc277211ce8825809541b481273e96be283f942f075f0bf95e28a950754ab41",
+    "size": 72278,
+    "status": "Go trained cost; other task costs diagnostic projections; quality CSV archival only"
+  },
+  {
+    "path": "data/applications/p00_costs/minesweeper/costs.json",
+    "sha256": "0abd150f159d949b7b7334a748e355b3aacbf6ecbafd3e180b5c373abadb274d",
+    "size": 72076,
+    "status": "Go trained cost; other task costs diagnostic projections; quality CSV archival only"
+  },
+  {
+    "path": "data/applications/p00_costs/minigrid/costs.json",
+    "sha256": "a7b9bbd5a122ef65dd1614f2ad60257dbfb24f801734daa17b6249bc2a9140be",
+    "size": 71946,
+    "status": "Go trained cost; other task costs diagnostic projections; quality CSV archival only"
+  },
+  {
+    "path": "data/applications/p00_costs/othello/costs.json",
+    "sha256": "57ed74c4b78e21a5c1d1ddf51ac72f2e208e031269c2b52292be2aac6ec01c43",
+    "size": 72062,
+    "status": "Go trained cost; other task costs diagnostic projections; quality CSV archival only"
+  },
+  {
+    "path": "data/applications/p00_costs/protein_folding/costs.json",
+    "sha256": "5a72129594cb777bc70e9132211d00b676fd1998c7360264a64caf34b8ab50a2",
+    "size": 72450,
+    "status": "Go trained cost; other task costs diagnostic projections; quality CSV archival only"
+  },
+  {
+    "path": "data/applications/quality.csv",
+    "sha256": "1d822fb2258f992e5a06f908785f76f4c35b89d7405333966e7c6ec028067925",
+    "size": 1938,
+    "status": "Go trained cost; other task costs diagnostic projections; quality CSV archival only"
+  },
+  {
+    "path": "data/applications/census/connect_four.json",
+    "sha256": "ddc3c9eff5bd9d1c0a7ba7cfa4888a219c6d6856e1876ec95fde8dd8b7381ea9",
+    "size": 449,
+    "status": "Retained non-Go diagnostic activity; not trained evaluator activity"
+  },
+  {
+    "path": "data/applications/census/frozen_lake.json",
+    "sha256": "2ba374d05277fca4f9c1d1844cce2249b2fda491a52c148cf21779b8acaa60f5",
+    "size": 478,
+    "status": "Retained non-Go diagnostic activity; not trained evaluator activity"
+  },
+  {
+    "path": "data/applications/census/hex.json",
+    "sha256": "e52ca528f6cb2073cbe272a2f2fd2fd73bcf23bca141be36df46e388fb3054b1",
+    "size": 411,
+    "status": "Retained non-Go diagnostic activity; not trained evaluator activity"
+  },
+  {
+    "path": "data/applications/census/minesweeper.json",
+    "sha256": "034d816c66a1432f551ff0ae7fabcaf9ffd893669e6f6f758d1d725a26d29860",
+    "size": 440,
+    "status": "Retained non-Go diagnostic activity; not trained evaluator activity"
+  },
+  {
+    "path": "data/applications/census/minigrid.json",
+    "sha256": "1f09f7712db61c8ec7639762fa6d912d8cbd1cc988332b4cb6b806aaeff56cc7",
+    "size": 481,
+    "status": "Retained non-Go diagnostic activity; not trained evaluator activity"
+  },
+  {
+    "path": "data/applications/census/othello.json",
+    "sha256": "79e62e26ae6e64b6c071393cb769391e2c3af9916e8b851a9415b75636a3e58f",
+    "size": 559,
+    "status": "Retained non-Go diagnostic activity; not trained evaluator activity"
+  },
+  {
+    "path": "data/applications/census/protein_folding.json",
+    "sha256": "05b204d13a8ad49030cc27e1c4dcc718a796ef56de844754359ce512cf90def5",
+    "size": 491,
+    "status": "Retained non-Go diagnostic activity; not trained evaluator activity"
+  },
+  {
+    "path": "data/baselines/trials/amd_traditional.csv",
+    "sha256": "3b47bc19960657867251b1614d7135307b889a317dca282ca6e230e08c526923",
+    "size": 10124,
+    "status": "Frozen reported benchmark data; no benchmark rerun or reconstructed raw GPU power trace"
+  },
+  {
+    "path": "data/baselines/trials/xeon_traditional.csv",
+    "sha256": "2c2b627d234e5a56a67a1ca47a7fdb41096a980c143fa27918e2738b81c728b5",
+    "size": 9740,
+    "status": "Frozen reported benchmark data; no benchmark rerun or reconstructed raw GPU power trace"
+  },
+  {
+    "path": "data/baselines/trials/gpu_fair.csv",
+    "sha256": "a77e62499d9883c9c35aa3dd9c6a3546d22d695fd8e4d4d26508695adc3c3d95",
+    "size": 14477,
+    "status": "Frozen reported benchmark data; no benchmark rerun or reconstructed raw GPU power trace"
+  },
+  {
+    "path": "data/baselines/trials/gpu_max.csv",
+    "sha256": "dcfe28db40f2a3b47b93a1c577c87896fb9dd39de83a47b76db20e125e4c95c9",
+    "size": 14658,
+    "status": "Frozen reported benchmark data; no benchmark rerun or reconstructed raw GPU power trace"
+  },
+  {
+    "path": "data/baselines/trials/amd_neural.csv",
+    "sha256": "7a182c7b4fc5ff5dd1bcba63b9d7ccb69cba79983dfa30c32c63ec23ee740533",
+    "size": 10284,
+    "status": "Frozen reported benchmark data; no benchmark rerun or reconstructed raw GPU power trace"
+  },
+  {
+    "path": "data/baselines/trials/xeon_neural.csv",
+    "sha256": "badef7a625d52f9a8a0df8ceab3034318022cbb510a7b3349cd3d290c4af9abb",
+    "size": 9993,
+    "status": "Frozen reported benchmark data; no benchmark rerun or reconstructed raw GPU power trace"
+  },
+  {
+    "path": "data/baselines/trials/gpu_neural.csv",
+    "sha256": "85779f2df13de03356ca315f54c700fb2053468af708687a2dea4b2bfa482065",
+    "size": 9861,
+    "status": "Frozen reported benchmark data; no benchmark rerun or reconstructed raw GPU power trace"
+  },
+  {
+    "path": "data/baselines/trials/gpu_neural_batch64.csv",
+    "sha256": "ec635e89f6263739c63fbe1619422bdd26adf70f45c4362ee546c5251d3dacfd",
+    "size": 9510,
+    "status": "Frozen reported benchmark data; no benchmark rerun or reconstructed raw GPU power trace"
+  },
+  {
+    "path": "data/baselines/trials/gpu_neural_batch256.csv",
+    "sha256": "5ae2a6184b5969fcb1d2661fcd7369f40b55edec79f26fe8b803bb70293fc334",
+    "size": 9489,
+    "status": "Frozen reported benchmark data; no benchmark rerun or reconstructed raw GPU power trace"
+  },
+  {
+    "path": "data/baselines/fig3bc.csv",
+    "sha256": "f1c49a23c774dc5adfb7d02aacfc868776caac494a6ee7395e54b03b8155194b",
+    "size": 391,
+    "status": "Accepted processor means and trained IMC denominator"
+  },
+  {
+    "path": "data/baselines/stacked_ratios.json",
+    "sha256": "a702fe52e701d5ea9294590363e8a68eafc3849fea03a17e0145a416e85d989f",
+    "size": 3585,
+    "status": "Accepted arithmetic; final combined endpoints receive red caps"
+  },
+  {
+    "path": "data/baselines/context/historical_summary.md",
+    "sha256": "a6e1f833d6d76fe9aad7b6baa966491ca99ae5d324d4ea8bd92207e9ab4adf54",
+    "size": 10116,
+    "status": "Historical context only; prose contains known256mJ typo, not used in calculations; canonical raw GPU mean255.7J",
+    "pre_oss_sha256": "eb1c541ef531524b55b9afb47375c93f79e849cc2527cdd0cdf9a67239ce5602",
+    "release_adaptation": "SPDX comment headers only, or historical codename genericization in context prose. Original numerical data unchanged; pre_oss_sha256 preserves the former copied-file identity."
+  },
+  {
+    "path": "baselines/source_context/Makefile",
+    "sha256": "d9711876b5961f72cc0d8891c03dd5304ead43204975744e1f6156a7ae4ffa81",
+    "size": 4272,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/QUICKSTART.md",
+    "sha256": "b9e4e3007d07d0d706feef9516b4c1d283ab5bfce145d545bfc4eeb0ae281182",
+    "size": 6587,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/README.md",
+    "sha256": "c4b5eec26c7805c1c98faa4d3a8617fe4ad0f8a0b8de0233d3dfede30422d7b7",
+    "size": 8876,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/analysis/utils/__init__.py",
+    "sha256": "65d581639096fa675966745c8cbe6ef842881225a589febc28af919be2edd206",
+    "size": 110,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/analysis/utils/compare_to_sst.py",
+    "sha256": "9ea0ce28991ad42b98fa661ffe06243f8a313cea1ab80bc422eb7946341a7d7c",
+    "size": 2272,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/analysis/utils/generate_tables.py",
+    "sha256": "4fb620798f0c69f2635702e55a704688fc1b30c7c0c64246c9589ba4de406270",
+    "size": 28441,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/benchmark_cpu_nn.cpp",
+    "sha256": "0be268c855e23f196e115f72d59424db2fa94f91079797af4f5afdc20c5a7f75",
+    "size": 24736,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/benchmark_cpu_traditional.cpp",
+    "sha256": "c3d81f591d494296444b61e3b9e3d08a0d40ac9e4f39aabf276aceef332c643f",
+    "size": 31536,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/benchmark_gpu_nn.cu",
+    "sha256": "3228b1d243e818204639504f0efd1c04985b6bd0a045057eabd8ca1685f0fc57",
+    "size": 30966,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/benchmark_gpu_nn_batched.cu",
+    "sha256": "a87dd248a0bca59af466ef8ce6b91a6d1c61f6b1f87d2984b3e93ea7ab4ab2b5",
+    "size": 31186,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/benchmark_gpu_traditional/README.md",
+    "sha256": "a5d4c285204a796aa76d4f29eb0f8e59e69f30d94f6fc4bedd3249eb259c7f29",
+    "size": 4178,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/benchmark_gpu_traditional/THIRD_PARTY_LICENSE.md",
+    "sha256": "77915d3453121c2edb223629e873f077233b14a9b2d6d35d57480e8f0984a563",
+    "size": 419,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/benchmark_gpu_traditional/__init__.py",
+    "sha256": "bdeea9af9cb8d7cb22c2f2044e49eb10fac0486ad216da1444435251edf4bccf",
+    "size": 37,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed",
+    "pre_oss_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "release_adaptation": "SPDX comment headers only, or historical codename genericization in context prose. Original numerical data unchanged; pre_oss_sha256 preserves the former copied-file identity."
+  },
+  {
+    "path": "baselines/source_context/benchmark_gpu_traditional/benchmark.py",
+    "sha256": "3ac16b2738cf1ba98a88dbe4d74a8b4056ce9836e1700e2ea28670ffbbbc5922",
+    "size": 15790,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed",
+    "pre_oss_sha256": "31abe5c4234d7461f89b6c93d40d2374319f6482756c3b083bd1c8b628929d21",
+    "release_adaptation": "SPDX comment headers only, or historical codename genericization in context prose. Original numerical data unchanged; pre_oss_sha256 preserves the former copied-file identity."
+  },
+  {
+    "path": "baselines/source_context/benchmark_gpu_traditional/mctsnc.py",
+    "sha256": "28c28637563a5e8e7cd9200ae6fe4ab3132052d42965e923ed42674613d36917",
+    "size": 147194,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed",
+    "pre_oss_sha256": "274a2da2739de554e1f2e3a5eba8c4a3d1fc8267a247891656ac3e01a153e210",
+    "release_adaptation": "SPDX comment headers only, or historical codename genericization in context prose. Original numerical data unchanged; pre_oss_sha256 preserves the former copied-file identity."
+  },
+  {
+    "path": "baselines/source_context/benchmark_gpu_traditional/mctsnc_game_mechanics.py",
+    "sha256": "2c08daada5f924287de1cbd1c1bd2fb07797847e2bff411d5c1af49a859d38b0",
+    "size": 16818,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed",
+    "pre_oss_sha256": "8def527d5426c6547cc80bdfc12ff26ad90fca98010e37ce43a7b86c5665f3ca",
+    "release_adaptation": "SPDX comment headers only, or historical codename genericization in context prose. Original numerical data unchanged; pre_oss_sha256 preserves the former copied-file identity."
+  },
+  {
+    "path": "baselines/source_context/benchmark_gpu_traditional/utils.py",
+    "sha256": "b836047bb7ae514cbb8117d0bf712f4d59c720e5776923aa0541e76369836aa1",
+    "size": 8537,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed",
+    "pre_oss_sha256": "40b193c849ae46511d69ac2361eb2d32d8aaad1e489fab18f3af3b88471db862",
+    "release_adaptation": "SPDX comment headers only, or historical codename genericization in context prose. Original numerical data unchanged; pre_oss_sha256 preserves the former copied-file identity."
+  },
+  {
+    "path": "baselines/source_context/docs/QUICKSTART_GPU_REMOTE.md",
+    "sha256": "2cdac9bdb9bec601eead00bf2e5148cf2bc1a91eca6d97b33cfe325717aa00d3",
+    "size": 13592,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/include/nn_inference.h",
+    "sha256": "0b7d412cc1185aa29b91c630a117ef429f85aec4576ff14d31472d8f5957186e",
+    "size": 7421,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "baselines/source_context/weights/convert_weights_to_binary.py",
+    "sha256": "e9fd51f41ddc56d2b330d181121ed10ed64212181b4f7d9a77dbb0dfb42cc906",
+    "size": 4951,
+    "status": "Retained baseline source context; historical executable binding and imported power monitor unavailable; not automatically executed"
+  },
+  {
+    "path": "LICENSE",
+    "sha256": "d8c5242fea68617ef97bc756c59ac80df8f10054ae487076295baa32de9ba971",
+    "size": 1089,
+    "status": "Original project license and third-party notices; not a blanket license for evidence/model files"
+  },
+  {
+    "path": "THIRD_PARTY_NOTICES.md",
+    "sha256": "bb7b7366db68ad65ef9825bcaf359eac7b266ed8b849efd60a3c2f5aff9fce2a",
+    "size": 3514,
+    "status": "Original project license and third-party notices; not a blanket license for evidence/model files",
+    "pre_oss_sha256": "38115c261f8646cab1c1145b679eebda9da1d50bf6ebb5bfb83b6517eaedf4dc",
+    "release_adaptation": "SPDX comment headers only, or historical codename genericization in context prose. Original numerical data unchanged; pre_oss_sha256 preserves the former copied-file identity."
+  },
+  {
+    "path": "LICENSES/CC-BY-4.0.txt",
+    "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+    "size": 18657,
+    "status": "Preserved upstream license text"
+  },
+  {
+    "path": "LICENSES/MIT.txt",
+    "sha256": "d8c5242fea68617ef97bc756c59ac80df8f10054ae487076295baa32de9ba971",
+    "size": 1089,
+    "status": "Preserved upstream license text"
+  }
+]

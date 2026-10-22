@@ -1,0 +1,13 @@
+IMC-MCTS Studio: http://127.0.0.1:4784
+127.0.0.1 - - [15/Sep/2026 17:09:22] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 17:09:22] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 17:09:22] "GET /api/catalog HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 17:09:22] "GET /api/plays HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 17:09:22] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 17:09:22] "GET /visuals.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 17:09:22] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 17:34:39] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 17:35:59] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 17:35:59] "GET /api/plays HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 17:36:33] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 17:36:33] "GET /api/plays HTTP/1.1" 200 -

@@ -1,0 +1,223 @@
+{
+  "closure": "UNVERIFIED",
+  "missing_native_evidence": [
+    "imc_selection_path/driver_resize.svf"
+  ],
+  "flow_complete": true,
+  "tool_version": {
+    "native_version": "U-2022.12-SP7-1",
+    "native_verified": true,
+    "query_exit_code": 1,
+    "query_error": null,
+    "query_version": "U-2022.12-SP7-1",
+    "query_ok": false,
+    "query_report_present": true,
+    "startup_versions": [
+      "U-2022.12-SP7-1"
+    ],
+    "report_versions": {
+      "before/imc_selection_path/design.rpt": [
+        "U-2022.12-SP7-1"
+      ],
+      "after_resize/imc_selection_path/design.rpt": [
+        "U-2022.12-SP7-1"
+      ],
+      "before/imc_readout_path/design.rpt": [
+        "U-2022.12-SP7-1"
+      ],
+      "after_resize/imc_readout_path/design.rpt": [
+        "U-2022.12-SP7-1"
+      ]
+    },
+    "report_designs": {
+      "before/imc_selection_path/design.rpt": [
+        "imc_selection_path"
+      ],
+      "after_resize/imc_selection_path/design.rpt": [
+        "imc_selection_path"
+      ],
+      "before/imc_readout_path/design.rpt": [
+        "imc_readout_path"
+      ],
+      "after_resize/imc_readout_path/design.rpt": [
+        "imc_readout_path"
+      ]
+    },
+    "issues": []
+  },
+  "previous_hashes_ok": true,
+  "native_artifact_hashes_ok": true,
+  "source_hashes_ok": true,
+  "library_hash_ok": true,
+  "approved_source_snapshot_ok": true,
+  "approved_settings_ok": true,
+  "configuration_hash_ok": true,
+  "command_help_present": true,
+  "previous_archives_ok": true,
+  "driver_exit_code": 0,
+  "tool_errors": [],
+  "cases": {
+    "imc_selection_path": {
+      "closure": "FAIL",
+      "source_stage": "after_timing",
+      "source_checkpoint_ok": true,
+      "baseline_violations_reproduced": true,
+      "all_stages_preserve_boundary": true,
+      "optimization_guidance_present": false,
+      "driver_evidence_ok": true,
+      "bounded_cell_changes_ok": true,
+      "stages": {
+        "before": {
+          "closure": "FAIL",
+          "critical_constraints_preserved": true,
+          "setup_slack_ns": 1.43051e-06,
+          "hold_slack_ns": 0.0606843,
+          "units_ok": true,
+          "operating_conditions_ok": true,
+          "mapped_native_cells_ok": true,
+          "check_design_ok": true,
+          "report_design_headers_ok": true,
+          "timing_checks_ok": true,
+          "timing_warnings": [
+            "Warning: Design 'imc_selection_path' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)",
+            "Warning: The following input ports have no clock_relative delay specified, the command set_input_delay without -clock option will be ignored. (TIM-216)"
+          ],
+          "violation_counts": {
+            "max_transition": 4,
+            "max_capacitance": 1
+          },
+          "qor_violation_counts": {
+            "max_delay/setup": 0,
+            "min_delay/hold": 0,
+            "max_capacitance": 1,
+            "max_transition": 4
+          },
+          "qor_counts_agree": true,
+          "cell_area_um2": 1538770.089904,
+          "equivalence": "UNVERIFIED",
+          "power": "VECTORLESS_ONLY",
+          "original_constraints_unchanged": true,
+          "original_ports_unchanged": true,
+          "missing_repair_reports": [],
+          "actual_mapped_ports_preserved": true,
+          "nosplit_counts_agree": true
+        },
+        "after_resize": {
+          "closure": "PASS",
+          "critical_constraints_preserved": true,
+          "setup_slack_ns": 1.43051e-06,
+          "hold_slack_ns": 0.0606843,
+          "units_ok": true,
+          "operating_conditions_ok": true,
+          "mapped_native_cells_ok": true,
+          "check_design_ok": true,
+          "report_design_headers_ok": true,
+          "timing_checks_ok": true,
+          "timing_warnings": [
+            "Warning: The following input ports have no clock_relative delay specified, the command set_input_delay without -clock option will be ignored. (TIM-216)"
+          ],
+          "violation_counts": {
+            "max_leakage_power": 1
+          },
+          "qor_violation_counts": {
+            "max_delay/setup": 0,
+            "min_delay/hold": 0,
+            "max_capacitance": 0,
+            "max_transition": 0
+          },
+          "qor_counts_agree": true,
+          "cell_area_um2": 1538770.569904,
+          "equivalence": "UNVERIFIED",
+          "power": "VECTORLESS_ONLY",
+          "original_constraints_unchanged": true,
+          "original_ports_unchanged": true,
+          "missing_repair_reports": [],
+          "actual_mapped_ports_preserved": true,
+          "nosplit_counts_agree": true
+        }
+      },
+      "equivalence": "UNVERIFIED",
+      "power": "VECTORLESS_ONLY"
+    },
+    "imc_readout_path": {
+      "closure": "PASS",
+      "source_stage": "after_drc",
+      "source_checkpoint_ok": true,
+      "baseline_violations_reproduced": true,
+      "all_stages_preserve_boundary": true,
+      "optimization_guidance_present": true,
+      "driver_evidence_ok": true,
+      "bounded_cell_changes_ok": true,
+      "stages": {
+        "before": {
+          "closure": "PASS",
+          "critical_constraints_preserved": true,
+          "setup_slack_ns": 0.000558019,
+          "hold_slack_ns": 0.113675,
+          "units_ok": true,
+          "operating_conditions_ok": true,
+          "mapped_native_cells_ok": true,
+          "check_design_ok": true,
+          "report_design_headers_ok": true,
+          "timing_checks_ok": true,
+          "timing_warnings": [
+            "Warning: Design 'imc_readout_path' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)",
+            "Warning: The following input ports have no clock_relative delay specified, the command set_input_delay without -clock option will be ignored. (TIM-216)"
+          ],
+          "violation_counts": {},
+          "qor_violation_counts": {
+            "max_delay/setup": 0,
+            "min_delay/hold": 0,
+            "max_capacitance": 0,
+            "max_transition": 0
+          },
+          "qor_counts_agree": true,
+          "cell_area_um2": 104753.280035,
+          "equivalence": "UNVERIFIED",
+          "power": "VECTORLESS_ONLY",
+          "original_constraints_unchanged": true,
+          "original_ports_unchanged": true,
+          "missing_repair_reports": [],
+          "actual_mapped_ports_preserved": true,
+          "nosplit_counts_agree": true
+        },
+        "after_resize": {
+          "closure": "PASS",
+          "critical_constraints_preserved": true,
+          "setup_slack_ns": 0.000558019,
+          "hold_slack_ns": 0.113675,
+          "units_ok": true,
+          "operating_conditions_ok": true,
+          "mapped_native_cells_ok": true,
+          "check_design_ok": true,
+          "report_design_headers_ok": true,
+          "timing_checks_ok": true,
+          "timing_warnings": [
+            "Warning: The following input ports have no clock_relative delay specified, the command set_input_delay without -clock option will be ignored. (TIM-216)"
+          ],
+          "violation_counts": {},
+          "qor_violation_counts": {
+            "max_delay/setup": 0,
+            "min_delay/hold": 0,
+            "max_capacitance": 0,
+            "max_transition": 0
+          },
+          "qor_counts_agree": true,
+          "cell_area_um2": 104753.280035,
+          "equivalence": "UNVERIFIED",
+          "power": "VECTORLESS_ONLY",
+          "original_constraints_unchanged": true,
+          "original_ports_unchanged": true,
+          "missing_repair_reports": [],
+          "actual_mapped_ports_preserved": true,
+          "nosplit_counts_agree": true
+        }
+      },
+      "equivalence": "UNVERIFIED",
+      "power": "VECTORLESS_ONLY"
+    }
+  },
+  "equivalence": "UNVERIFIED",
+  "power": "VECTORLESS_ONLY",
+  "adoption": "UNVERIFIED: native report closure does not establish formal equivalence, workload power or physical implementation"
+}

@@ -1,0 +1,315 @@
+[
+  {
+    "path": "figures/scripts/plotstyle.py",
+    "source": "active_checkout/paper/figure/plotstyle.py",
+    "source_sha256": "cd9f3420fe75972c441fbed177e19943222a033e4f63d7b2720da1e7aa210336",
+    "sha256": "cd9f3420fe75972c441fbed177e19943222a033e4f63d7b2720da1e7aa210336",
+    "kind": "style_helper"
+  },
+  {
+    "path": "data/figure_inputs/fig3a/iteration_energy.csv",
+    "source": "workspace/p14_parallel_cost_repair/p23_paper_refresh/run_20261013_174556Z/p02_paper_refresh/energy_scaling/p00_data/iteration_energy.csv",
+    "source_sha256": "f1944a6742ca70a562c197f683ced11d72ab36d94a81fe2a03c850b569a9d8ae",
+    "sha256": "f1944a6742ca70a562c197f683ced11d72ab36d94a81fe2a03c850b569a9d8ae",
+    "kind": "frozen_plot_input"
+  },
+  {
+    "path": "data/figure_inputs/comparisons/fig3bc.csv",
+    "source": "workspace/p20_fig3c_cleanup/run_20261016_red_caps/data/fig3bc.csv",
+    "source_sha256": "f1c49a23c774dc5adfb7d02aacfc868776caac494a6ee7395e54b03b8155194b",
+    "sha256": "f1c49a23c774dc5adfb7d02aacfc868776caac494a6ee7395e54b03b8155194b",
+    "kind": "frozen_plot_input"
+  },
+  {
+    "path": "data/figure_inputs/comparisons/expected_stacked_ratios.csv",
+    "source": "workspace/p20_fig3c_cleanup/run_20261016_red_caps/data/stacked_ratios.csv",
+    "source_sha256": "9e50227ac857b3c586b8359f771f6e765862105d5e83fe1c113ac2e67a31427a",
+    "sha256": "9e50227ac857b3c586b8359f771f6e765862105d5e83fe1c113ac2e67a31427a",
+    "kind": "expected_derived_data"
+  },
+  {
+    "path": "data/figure_inputs/comparisons/expected_stacked_ratios.json",
+    "source": "workspace/p20_fig3c_cleanup/run_20261016_red_caps/data/stacked_ratios.json",
+    "source_sha256": "a702fe52e701d5ea9294590363e8a68eafc3849fea03a17e0145a416e85d989f",
+    "sha256": "a702fe52e701d5ea9294590363e8a68eafc3849fea03a17e0145a416e85d989f",
+    "kind": "expected_derived_data"
+  },
+  {
+    "path": "data/figure_inputs/applications/quality.csv",
+    "source": "workspace/p14_parallel_cost_repair/p23_paper_refresh/run_20261013_174556Z/p02_paper_refresh/applications/quality.csv",
+    "source_sha256": "1d822fb2258f992e5a06f908785f76f4c35b89d7405333966e7c6ec028067925",
+    "sha256": "1d822fb2258f992e5a06f908785f76f4c35b89d7405333966e7c6ec028067925",
+    "kind": "frozen_plot_input"
+  },
+  {
+    "path": "data/figure_inputs/applications/energy.csv",
+    "source": "workspace/p14_parallel_cost_repair/p23_paper_refresh/run_20261013_174556Z/p02_paper_refresh/applications/energy.csv",
+    "source_sha256": "49637cf4afe55bfc202c0850003822cd68729d0bfb1d00d701dd191591b8ed21",
+    "sha256": "49637cf4afe55bfc202c0850003822cd68729d0bfb1d00d701dd191591b8ed21",
+    "kind": "frozen_plot_input"
+  },
+  {
+    "path": "data/figure_inputs/resources/1a_area_breakdown.csv",
+    "source": "workspace/p14_parallel_cost_repair/p23_paper_refresh/run_20261013_174556Z/p02_paper_refresh/resources/1a_area_breakdown.csv",
+    "source_sha256": "bd3f04a4c334cc65bba300fa49bad94d9b67cd706db85672cc313a97aeb718de",
+    "sha256": "bd3f04a4c334cc65bba300fa49bad94d9b67cd706db85672cc313a97aeb718de",
+    "kind": "frozen_plot_input"
+  },
+  {
+    "path": "data/figure_inputs/resources/1b_power_breakdown.csv",
+    "source": "workspace/p14_parallel_cost_repair/p23_paper_refresh/run_20261013_174556Z/p02_paper_refresh/resources/1b_power_breakdown.csv",
+    "source_sha256": "537f62b5f17db5f43a89d676dd4e4bb9ddc7d3d5c139ee8b6ae850424e0ef9ee",
+    "sha256": "537f62b5f17db5f43a89d676dd4e4bb9ddc7d3d5c139ee8b6ae850424e0ef9ee",
+    "kind": "frozen_plot_input"
+  },
+  {
+    "path": "data/figure_inputs/resources/scaling_totals.csv",
+    "source": "workspace/p14_parallel_cost_repair/p23_paper_refresh/run_20261013_174556Z/p02_paper_refresh/scaling_totals.csv",
+    "source_sha256": "75b6516e56d193ba8651672391bfc1eed0dd6107d619a559f680cca3a41aec1a",
+    "sha256": "75b6516e56d193ba8651672391bfc1eed0dd6107d619a559f680cca3a41aec1a",
+    "kind": "table_input"
+  },
+  {
+    "path": "data/figure_inputs/applications/archived_quality_sources/cross_domain_sgg_all13.csv",
+    "source": "active_checkout/p03_experiments/p103_application_projection/p01_sources/cross_domain_sgg_all13.csv",
+    "source_sha256": "483a4df8bffcfdbe213a78fadd3e9cbafb002ad68ccfad38f90a9a8863b248a6",
+    "sha256": "483a4df8bffcfdbe213a78fadd3e9cbafb002ad68ccfad38f90a9a8863b248a6",
+    "kind": "historical_functional_data_not_training_reproduction"
+  },
+  {
+    "path": "data/figure_inputs/applications/archived_quality_sources/cross_domain_sgg_protein_nn.csv",
+    "source": "active_checkout/p03_experiments/p103_application_projection/p01_sources/cross_domain_sgg_protein_nn.csv",
+    "source_sha256": "877d7f5e459d17ce71dcc00d6ef4b9215f05fa080e24a59d53f9e1cf0f7b474c",
+    "sha256": "877d7f5e459d17ce71dcc00d6ef4b9215f05fa080e24a59d53f9e1cf0f7b474c",
+    "kind": "historical_functional_data_not_training_reproduction"
+  },
+  {
+    "path": "data/figure_inputs/applications/archived_quality_sources/cross_domain_sgg_nn.csv",
+    "source": "active_checkout/p03_experiments/p103_application_projection/p01_sources/cross_domain_sgg_nn.csv",
+    "source_sha256": "c3e6826b83797bf3e2a7986e98529e5e21a17cad9683e707a16223134cefdb8c",
+    "sha256": "c3e6826b83797bf3e2a7986e98529e5e21a17cad9683e707a16223134cefdb8c",
+    "kind": "historical_functional_data_not_training_reproduction"
+  },
+  {
+    "path": "figures/scripts/plot_fig3a.py",
+    "source": "workspace/p14_parallel_cost_repair/p23_paper_refresh/run_20261013_174556Z/p02_paper_refresh/energy_scaling/p01_plotters/plot.py",
+    "source_sha256": "84adac80203aba65ca1f487d1b8de4324cc1d45717122203d3b1ae364555d9c4",
+    "sha256": "fcedae181f7eb51e85984130d067002de0ed6aedd82fa7c51e5b047e1f5550cb",
+    "kind": "portable_plotter",
+    "changes": "Only input/output paths and removal of unrelated simulator imports; plotting logic retained. Updated stale figure-number/path/accounting docstrings."
+  },
+  {
+    "path": "figures/scripts/plot_fig3b.py",
+    "source": "workspace/p14_parallel_cost_repair/p23_paper_refresh/run_20261013_174556Z/p02_paper_refresh/comparisons/p01_plotters/plot_fig8b_scatter.py",
+    "source_sha256": "284daf02f003e19106bc3333d26cbc733062a1bc824bd2332bca814553110598",
+    "sha256": "3ce8873840ea2e2d545d9fd7018deedaad30f82a48c5edbfa7404e16c364de01",
+    "kind": "portable_plotter",
+    "changes": "Only input/output paths and removal of unrelated simulator imports; plotting logic retained. Updated stale figure-number/path/accounting docstrings."
+  },
+  {
+    "path": "figures/scripts/plot_fig3c.py",
+    "source": "workspace/p20_fig3c_cleanup/run_20261016_red_caps/plotters/plot_fig3c_stacked.py",
+    "source_sha256": "8f6084b302b08ba79b78712b51e2743d86b72db27ede5b33e3d644275d767a13",
+    "sha256": "d0c623879fb6f6712d1e52ee00e7a88cc3189121cf4f99231b0ddf99f2e1c4d8",
+    "kind": "portable_plotter",
+    "changes": "Only input/output paths and removal of unrelated simulator imports; plotting logic retained.",
+    "pre_oss_sha256": "3a0788c1fbe7f35ebd7d203c85d822a17b4bfaa063df8d0d4f5ac42c227710ed",
+    "release_adaptation": "SPDX comment headers only, or historical codename genericization in context prose. Original numerical data unchanged; pre_oss_sha256 preserves the former copied-file identity."
+  },
+  {
+    "path": "figures/scripts/plot_fig4.py",
+    "source": "workspace/p14_parallel_cost_repair/p23_paper_refresh/run_20261013_174556Z/p02_paper_refresh/applications/figures.py",
+    "source_sha256": "36886ea3418190669be4ea8f51c280abfea1649fa848e91eb8c554c0c1415f27",
+    "sha256": "59c21e3a7860798040f9e657d6d4ee05070b85c5a76bfa879577b49bd60b1818",
+    "kind": "portable_plotter",
+    "changes": "Only input/output paths and removal of unrelated simulator imports; plotting logic retained.",
+    "pre_oss_sha256": "f29b65600bdb9a3de3d8f183b2212022d62998ffd33d258f6be79dac96d8abdc",
+    "release_adaptation": "SPDX comment headers only, or historical codename genericization in context prose. Original numerical data unchanged; pre_oss_sha256 preserves the former copied-file identity."
+  },
+  {
+    "path": "figures/scripts/plot_fig2de.py",
+    "source": "active_checkout/p03_experiments/p79_scalability/plot.py",
+    "source_sha256": "a51ef9e995e22db6c64a0f7930e88287fe3028a4862a0f23f0d88aab84fa5894",
+    "sha256": "12a063b029adeb67d9118d1c0b8cdadb671ae3bf22af466bed236b76fc65188c",
+    "kind": "portable_plotter",
+    "changes": "Extracted original panel; removed experiment dependencies; load archived component columns as floats; resolve portable input/output paths. No style or numeric-value change.",
+    "pre_oss_sha256": "76c9091ab15accc012428ec19e13e9b1effa26bed1b5cbb49c52ac96a8fb9995",
+    "release_adaptation": "SPDX comment headers only, or historical codename genericization in context prose. Original numerical data unchanged; pre_oss_sha256 preserves the former copied-file identity."
+  },
+  {
+    "path": "figures/supplied/fig01_decomposition/1d_mcts_phases.pdf",
+    "source": "workspace/p21_gpu_methods_wording/run_20261016_232653Z/working/manuscript/Figures/fig01_decomposition/1d_mcts_phases.pdf",
+    "source_sha256": "0247ed1cbd0221fa8a259b871092e38c4c90ce0ca4a12ef315f1c193a3e948a1",
+    "sha256": "0247ed1cbd0221fa8a259b871092e38c4c90ce0ca4a12ef315f1c193a3e948a1",
+    "kind": "canonical_paper_pdf"
+  },
+  {
+    "path": "figures/supplied/fig01_decomposition/1b_primitive_mapping.pdf",
+    "source": "workspace/p21_gpu_methods_wording/run_20261016_232653Z/working/manuscript/Figures/fig01_decomposition/1b_primitive_mapping.pdf",
+    "source_sha256": "54870669aa842bcecefab186eaa067ab14cdb1ee437b752e311af171af23f6a3",
+    "sha256": "54870669aa842bcecefab186eaa067ab14cdb1ee437b752e311af171af23f6a3",
+    "kind": "canonical_paper_pdf"
+  },
+  {
+    "path": "figures/supplied/fig01_decomposition/1c_imc_landscape.pdf",
+    "source": "workspace/p21_gpu_methods_wording/run_20261016_232653Z/working/manuscript/Figures/fig01_decomposition/1c_imc_landscape.pdf",
+    "source_sha256": "f10bf99346975639010093eab16ada1585baed596b79cb046f244d20c2fa9935",
+    "sha256": "f10bf99346975639010093eab16ada1585baed596b79cb046f244d20c2fa9935",
+    "kind": "canonical_paper_pdf"
+  },
+  {
+    "path": "figures/supplied/fig02_architecture/2ab_architecture_full.pdf",
+    "source": "workspace/p21_gpu_methods_wording/run_20261016_232653Z/working/manuscript/Figures/fig02_architecture/2ab_architecture_full.pdf",
+    "source_sha256": "50df0fdbd0b35cfb9c056b1a309c93c93fa6b7f55a7a74d77e08431f2862ae49",
+    "sha256": "50df0fdbd0b35cfb9c056b1a309c93c93fa6b7f55a7a74d77e08431f2862ae49",
+    "kind": "canonical_paper_pdf"
+  },
+  {
+    "path": "figures/expected/ed_fig01_resources/1a_area_breakdown.pdf",
+    "source": "workspace/p21_gpu_methods_wording/run_20261016_232653Z/working/manuscript/Figures/ed_fig01_resources/1a_area_breakdown.pdf",
+    "source_sha256": "9a5af9407d637ce9254b061da3c24649256fa9c5e40f1ffbe766075e0ec1dcc5",
+    "sha256": "9a5af9407d637ce9254b061da3c24649256fa9c5e40f1ffbe766075e0ec1dcc5",
+    "kind": "canonical_paper_pdf"
+  },
+  {
+    "path": "figures/expected/ed_fig01_resources/1b_power_breakdown.pdf",
+    "source": "workspace/p21_gpu_methods_wording/run_20261016_232653Z/working/manuscript/Figures/ed_fig01_resources/1b_power_breakdown.pdf",
+    "source_sha256": "36209c07a3f33d677329885a7f5ce481fbbabb3f25c01e0442267d6e8e780dcb",
+    "sha256": "36209c07a3f33d677329885a7f5ce481fbbabb3f25c01e0442267d6e8e780dcb",
+    "kind": "canonical_paper_pdf"
+  },
+  {
+    "path": "figures/expected/fig04_energy/4a_energy_scaling.pdf",
+    "source": "workspace/p21_gpu_methods_wording/run_20261016_232653Z/working/manuscript/Figures/fig04_energy/4a_energy_scaling.pdf",
+    "source_sha256": "c0068db834b6cc3f07d3bda1e0a8abcbdbb9ae8be93c0e3dd287ef0ab633dc71",
+    "sha256": "c0068db834b6cc3f07d3bda1e0a8abcbdbb9ae8be93c0e3dd287ef0ab633dc71",
+    "kind": "canonical_paper_pdf"
+  },
+  {
+    "path": "figures/expected/fig04_energy/4b_pareto_scatter.pdf",
+    "source": "workspace/p21_gpu_methods_wording/run_20261016_232653Z/working/manuscript/Figures/fig04_energy/4b_pareto_scatter.pdf",
+    "source_sha256": "201d17bfd379f4e62f4f29862aaa7b75396586d0ed1bf79dd2ed431e2c18a082",
+    "sha256": "201d17bfd379f4e62f4f29862aaa7b75396586d0ed1bf79dd2ed431e2c18a082",
+    "kind": "canonical_paper_pdf"
+  },
+  {
+    "path": "figures/expected/ed_fig03_gain/gain_bars.pdf",
+    "source": "workspace/p21_gpu_methods_wording/run_20261016_232653Z/working/manuscript/Figures/ed_fig03_gain/gain_bars.pdf",
+    "source_sha256": "ac8eb7949ba95b3a695f86ec3516fc8219b1562285e106c757a47d1102d32136",
+    "sha256": "ac8eb7949ba95b3a695f86ec3516fc8219b1562285e106c757a47d1102d32136",
+    "kind": "canonical_paper_pdf"
+  },
+  {
+    "path": "figures/expected/fig05_generalisation/5b_sgg_bars.pdf",
+    "source": "workspace/p21_gpu_methods_wording/run_20261016_232653Z/working/manuscript/Figures/fig05_generalisation/5b_sgg_bars.pdf",
+    "source_sha256": "5de8442cc40957462031cb4388b15b31f028e2d604f35c4ff7cd00a076f7f36d",
+    "sha256": "5de8442cc40957462031cb4388b15b31f028e2d604f35c4ff7cd00a076f7f36d",
+    "kind": "canonical_paper_pdf"
+  },
+  {
+    "path": "figures/expected/fig05_generalisation/5c_energy_bars.pdf",
+    "source": "workspace/p21_gpu_methods_wording/run_20261016_232653Z/working/manuscript/Figures/fig05_generalisation/5c_energy_bars.pdf",
+    "source_sha256": "6cdeed807a94775e67c7b8e1a3d70cd13f9cd489efc8d2c03cd604a91389dc4f",
+    "sha256": "6cdeed807a94775e67c7b8e1a3d70cd13f9cd489efc8d2c03cd604a91389dc4f",
+    "kind": "canonical_paper_pdf"
+  },
+  {
+    "path": "figures/expected/ed_fig02_bottlenecks/bottleneck_scaling.pdf",
+    "source": "workspace/p21_gpu_methods_wording/run_20261016_232653Z/working/manuscript/Figures/ed_fig02_bottlenecks/bottleneck_scaling.pdf",
+    "source_sha256": "2801e9f1fde3a656777043050544ebba69ac2a89fa42811fed23008b66dd59d8",
+    "sha256": "2801e9f1fde3a656777043050544ebba69ac2a89fa42811fed23008b66dd59d8",
+    "kind": "canonical_paper_pdf"
+  },
+  {
+    "path": "figures/table_sources/extended_data_table_1.tex",
+    "source": "manuscript/sections/05_backmatter.tex",
+    "source_sha256": "e3927f818b56774804cd0a6dd33432fd321cbaedd197c2a29b445371aa7d46c2",
+    "sha256": "1da3c67d71182db2e7ac50e50dacdb48351d3ef4324c008f6c995df0f2660ff0",
+    "kind": "exact_table_extract"
+  },
+  {
+    "path": "figures/table_sources/extended_data_table_2.tex",
+    "source": "manuscript/sections/05_backmatter.tex",
+    "source_sha256": "e3927f818b56774804cd0a6dd33432fd321cbaedd197c2a29b445371aa7d46c2",
+    "sha256": "0883808587c49bfa863e44f58672fa0c6924e0275537969b384396903b2128c2",
+    "kind": "exact_table_extract"
+  },
+  {
+    "path": "figures/table_sources/extended_data_table_3.tex",
+    "source": "manuscript/sections/05_backmatter.tex",
+    "source_sha256": "e3927f818b56774804cd0a6dd33432fd321cbaedd197c2a29b445371aa7d46c2",
+    "sha256": "6f09c4d27484a9d16c0e86eca49351a48816767f6cdde8fbfd73e706591e3697",
+    "kind": "exact_table_extract"
+  },
+  {
+    "path": "figures/table_sources/extended_data_table_4.tex",
+    "source": "manuscript/sections/05_backmatter.tex",
+    "source_sha256": "e3927f818b56774804cd0a6dd33432fd321cbaedd197c2a29b445371aa7d46c2",
+    "sha256": "e58ddaa594d1a0cfe748dd132daee3f2c656b0db316bfc6d29dfee1ebdaec5aa",
+    "kind": "exact_table_extract"
+  },
+  {
+    "path": "figures/table_sources/table_S1.tex",
+    "source": "supplement/main.tex",
+    "source_sha256": "e22146ef659b35fcb57b96e62039c2dcaa0e2a291f5f9cac80ba414fae808aaf",
+    "sha256": "d7d095804521b3c21818c102ee013cfe24cbb441044782436c50391e66dc130a",
+    "kind": "exact_table_extract"
+  },
+  {
+    "path": "figures/table_sources/table_S2.tex",
+    "source": "supplement/main.tex",
+    "source_sha256": "e22146ef659b35fcb57b96e62039c2dcaa0e2a291f5f9cac80ba414fae808aaf",
+    "sha256": "63a91bef8e0d28dcf0bc277d0131f9e012b569cc33758d771905414b3a089fd1",
+    "kind": "exact_table_extract"
+  },
+  {
+    "path": "figures/table_sources/table_S3.tex",
+    "source": "supplement/main.tex",
+    "source_sha256": "e22146ef659b35fcb57b96e62039c2dcaa0e2a291f5f9cac80ba414fae808aaf",
+    "sha256": "4c2a51648f775e872c7f235a3a3296f284ef6a34caa5b41dc5d6b1ebb0df5f7a",
+    "kind": "exact_table_extract"
+  },
+  {
+    "path": "figures/table_sources/table_S4.tex",
+    "source": "supplement/main.tex",
+    "source_sha256": "e22146ef659b35fcb57b96e62039c2dcaa0e2a291f5f9cac80ba414fae808aaf",
+    "sha256": "cbe6aeaebe902be7d71aa3dc1fab8459f7313fd4281297e8d015bb86e0664ba0",
+    "kind": "exact_table_extract"
+  },
+  {
+    "path": "figures/table_sources/table_S5.tex",
+    "source": "supplement/main.tex",
+    "source_sha256": "e22146ef659b35fcb57b96e62039c2dcaa0e2a291f5f9cac80ba414fae808aaf",
+    "sha256": "2ec5006fd3ed59b0fa11a0fb8174f480e27b76bf45992e4476339a07b6d1177f",
+    "kind": "exact_table_extract"
+  },
+  {
+    "path": "figures/table_sources/table_S6.tex",
+    "source": "supplement/main.tex",
+    "source_sha256": "e22146ef659b35fcb57b96e62039c2dcaa0e2a291f5f9cac80ba414fae808aaf",
+    "sha256": "00f2526d958e6ac97e6bba751f84aff97eb6518a657f1478e12b662319c49c1b",
+    "kind": "exact_table_extract"
+  },
+  {
+    "path": "figures/table_sources/table_S7.tex",
+    "source": "supplement/main.tex",
+    "source_sha256": "e22146ef659b35fcb57b96e62039c2dcaa0e2a291f5f9cac80ba414fae808aaf",
+    "sha256": "b920a6abf80f86a28393cec8450512987de12670ea361fbf46602d868cca2218",
+    "kind": "exact_table_extract"
+  },
+  {
+    "path": "data/figure_inputs/bottleneck/fig01_bottleneck_scaling.csv",
+    "source": "protected_original/legacy/try2/paper/results/fig01_bottleneck_scaling.csv",
+    "source_sha256": "638ec3e3fd0e80596fa239f2bc6ab4a5130e240ebecba7d022596eb8a0b88c06",
+    "sha256": "638ec3e3fd0e80596fa239f2bc6ab4a5130e240ebecba7d022596eb8a0b88c06",
+    "kind": "frozen_plot_input"
+  },
+  {
+    "path": "figures/scripts/plot_extended_bottleneck.py",
+    "source": "active_checkout/paper/figure/plot_fig01_bottleneck.py",
+    "source_sha256": "fd604eba6db05a2bd59383f80bd50b6e2858733438a6f6dbabeff817d94c803e",
+    "sha256": "98adefe78167ca03f5ead373b648dd4161681586707b834c40bf0ecbe2fb9461",
+    "kind": "portable_plotter",
+    "changes": "Portable input/output paths; pin DejaVu Serif already embedded in canonical archived PDF instead of machine-dependent Times fallback. Numeric and drawing logic unchanged. Updated stale figure-number/path/accounting docstrings."
+  }
+]

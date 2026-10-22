@@ -1,0 +1,18 @@
+\begin{table}[!htbp]
+\centering
+\caption{\textcolor{blue}{\textbf{Modeled-core scaling at the medium search budget.} Each row reports one complete search selecting a move using the board-dependent configuration in Supplementary Table~S1. The $9\times9$ row is the primary Go-strong reference; other sizes use seed-0 diagnostic weights. Energy and latency are per move, power is averaged over the search, and area counts installed resources. ADC standby uses a 25\% active-power allowance during nonconverting intervals. These are preloaded-core estimates, excluding host rule processing, I/O and weight programming.}}
+\label{edt:scaling}
+\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrr@{}}
+\toprule
+\textcolor{blue}{Board} & \textcolor{blue}{Iterations/move} & \textcolor{blue}{\shortstack{Energy\\(mJ/move)}} & \textcolor{blue}{\shortstack{Latency\\(ms/move)}} & \textcolor{blue}{\shortstack{Average power\\(mW)}} & \textcolor{blue}{\shortstack{Installed area\\(mm$^2$)}} \\
+\midrule
+\textcolor{blue}{$2\times2$} & \textcolor{blue}{200} & \textcolor{blue}{0.075763} & \textcolor{blue}{1.204846} & \textcolor{blue}{62.881484} & \textcolor{blue}{4.125458} \\
+\textcolor{blue}{$3\times3$} & \textcolor{blue}{500} & \textcolor{blue}{0.196986} & \textcolor{blue}{3.093978} & \textcolor{blue}{63.667699} & \textcolor{blue}{4.360420} \\
+\textcolor{blue}{$5\times5$} & \textcolor{blue}{1{,}000} & \textcolor{blue}{0.469330} & \textcolor{blue}{7.238044} & \textcolor{blue}{64.842172} & \textcolor{blue}{4.865940} \\
+\textcolor{blue}{$9\times9$} & \textcolor{blue}{5{,}000} & \textcolor{blue}{3.703696} & \textcolor{blue}{55.186986} & \textcolor{blue}{67.111759} & \textcolor{blue}{5.797569} \\
+\textcolor{blue}{$13\times13$} & \textcolor{blue}{7{,}500} & \textcolor{blue}{9.700279} & \textcolor{blue}{127.560768} & \textcolor{blue}{76.044375} & \textcolor{blue}{6.841590} \\
+\textcolor{blue}{$19\times19$} & \textcolor{blue}{10{,}000} & \textcolor{blue}{28.643894} & \textcolor{blue}{306.864396} & \textcolor{blue}{93.343818} & \textcolor{blue}{8.334619} \\
+\bottomrule
+\end{tabular*}
+\end{table}

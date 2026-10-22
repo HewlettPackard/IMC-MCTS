@@ -1,0 +1,21 @@
+\begin{table*}[!htbp]
+\centering
+\caption{\textcolor{blue}{\textbf{Representative implementations of MCTS and related search methods.} Five examples from the selected studies in Supplementary Table~S6, spanning field-programmable gate array (FPGA), graphics processing unit (GPU), neuromorphic and multi-core central processing unit (CPU) platforms. The evaluation column identifies the processing used by each implementation. Energy comparisons retain their source-specific workload and accounting boundary; dashes indicate information not included in this comparison.}}
+\label{edt:prior_work}
+\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.24\textwidth}p{0.22\textwidth}p{0.26\textwidth}p{0.16\textwidth}@{}}
+\toprule
+\raggedright \textcolor{blue}{\textbf{Work}} & \raggedright \textcolor{blue}{\textbf{Platform}} & \raggedright \textcolor{blue}{\textbf{Evaluation}} & \raggedright \textcolor{blue}{\textbf{Energy ratio}} \\
+\midrule
+\raggedright \textcolor{blue}{Meng et al.\ 2023\cite{meng2023framework}} & \raggedright \textcolor{blue}{CPU--FPGA} & \raggedright \textcolor{blue}{Environment simulation} & \raggedright \textcolor{blue}{---} \\
+\raggedright \textcolor{blue}{Buzer \& Cazenave 2023\cite{buzer2023mcts}} & \raggedright \textcolor{blue}{GPU} & \raggedright \textcolor{blue}{NMCS; random playouts} & \raggedright \textcolor{blue}{---} \\
+\raggedright \textcolor{blue}{Thomas 2022\cite{thomas2022julia}} & \raggedright \textcolor{blue}{GPU} & \raggedright \textcolor{blue}{Neural evaluation} & \raggedright \textcolor{blue}{---} \\
+\raggedright \textcolor{blue}{Ho et al.\ 2024\cite{ho2024neuromorphic}} & \raggedright \textcolor{blue}{Neuromorphic (Loihi 2)} & \raggedright \textcolor{blue}{Spiking shortest-path solver} & \raggedright \textcolor{blue}{$\sim$5--10$\times$\textsuperscript{a}} \\
+\raggedright \textcolor{blue}{Steinmetz \& Gini 2021\cite{steinmetz2020tog}} & \raggedright \textcolor{blue}{Multi-core CPU} & \raggedright \textcolor{blue}{Stochastic playouts; RAVE variants} & \raggedright \textcolor{blue}{---} \\
+\midrule
+\textbf{This work} & \textcolor{blue}{\textbf{Modeled IMC core}} & \textbf{NN evaluator} & \textcolor{blue}{Not established} \\
+\bottomrule
+\end{tabular*}
+\par\vspace{0.3em}
+{\scriptsize\leftskip=0pt\rightskip=0pt plus 1fil\parindent=0pt \textcolor{blue}{NMCS: nested Monte Carlo search; RAVE: rapid action value estimation. Thomas is an author project report. $^{a}$ Author conference presentation\cite{ho2024presentation}: one MCTS iteration on small TSPLib cases, branching factor 0.75 and maximum depth 3, with CPU idle energy subtracted. This is a source-specific comparison.}\par}
+\end{table*}

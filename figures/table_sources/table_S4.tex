@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\centering
+\caption{\textcolor{blue}{Software sensitivity to fixed weight perturbations on $9{\times}9$ Go. Win rate of perturbed-evaluator MCTS against random-rollout MCTS, with each player using 200 iterations per move, and mean one-ply move agreement with the unperturbed evaluator (fraction, 0--1).}}
+\label{tab:supp_noise_robustness}
+\footnotesize
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$\sigma$ (\% $G_{\text{center}}$) & Win-rate vs random-rollout MCTS ($n{=}30$) & 1-ply policy agreement vs $\sigma{=}0$ ($n{=}100$) \\
+\midrule
+2  & 93\%  & 0.85 \\
+5  & 100\% & 0.71 \\
+10 & 93\%  & 0.57 \\
+\bottomrule
+\end{tabular}
+\par\vspace{0.3em}
+{\scriptsize 30 games per row (3 independent noise realisations $\times$ 10 games, alternating colors), 200 MCTS simulations per move; raw CSV at \texttt{results/noise\_sweep\_9x9.csv}.}
+\end{table}

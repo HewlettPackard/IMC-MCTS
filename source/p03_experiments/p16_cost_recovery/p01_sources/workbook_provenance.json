@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "identity_status": "recovered_from_legacy_imc_mcts_archive",
+  "source_name": "DPE_Neuromorphic_Area_Power_Improved_Architecture_10.10.2019_low_power - Copy.xlsx",
+  "source_sha256": "bce447d0a6f2e74a2b51062bfc4e5683061479814ff417171f887ea75615f3d0",
+  "archive_path": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/Trash/IMC-MCTS very old messy.zip",
+  "archive_sha256": "bcc97041b4e8c9e31845f5280918e1abe4b2a08bed55b5dcdff90bf741907604",
+  "archive_member": "IMC-MCTS very old messy/legacy/HPE_Duke/src/synthesis/data/superT_measurements/DPE_Neuromorphic_Area_Power_Improved_Architecture_10.10.2019_low_power - Copy.xlsx",
+  "retained_workbook": "p03_experiments/p15_workbook_models/p01_sources/crossbar_reference.xlsx",
+  "evidence": "Archive member is byte-identical to the retained workbook; direct prior-project provenance established",
+  "mentor_authorship": "Not independently established by file contents"
+}

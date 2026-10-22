@@ -1,0 +1,75 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : imc_readout_path
+Version: U-2022.12-SP7-1
+Date   : Tue Oct 13 00:58:44 2026
+****************************************
+
+
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+
+Operating Conditions: tt_typical_max_1p00v_25c   Library: sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+imc_readout_path       Small             sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c
+
+
+Global Operating Voltage = 1    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1uW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+imc_readout_path                          1.103   14.160  246.301   15.509 100.0
+  u_accumulators (imc_parallel_accumulators)
+                                          0.741    9.565  164.180   10.471  67.5
+    genblk1[7].u_bank (imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_0)
+                                       9.25e-02    1.194   20.050    1.306   8.4
+      u_arithmetic (imc_shift_add_lane_ADC_BITS12_0)
+                                          0.000    0.000    2.987 2.99e-03   0.0
+    genblk1[6].u_bank (imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_1)
+                                       9.27e-02    1.184   19.462    1.297   8.4
+      u_arithmetic (imc_shift_add_lane_ADC_BITS12_1)
+                                       8.70e-05 5.34e-05    3.238 3.38e-03   0.0
+    genblk1[5].u_bank (imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_2)
+                                       9.29e-02    1.194   20.134    1.307   8.4
+      u_arithmetic (imc_shift_add_lane_ADC_BITS12_2)
+                                       6.92e-06 4.09e-06    3.067 3.08e-03   0.0
+    genblk1[4].u_bank (imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_3)
+                                       9.26e-02    1.208   22.221    1.323   8.5
+      u_arithmetic (imc_shift_add_lane_ADC_BITS12_3)
+                                       6.13e-06 5.51e-06    3.574 3.59e-03   0.0
+    genblk1[3].u_bank (imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_4)
+                                       9.27e-02    1.194   19.822    1.306   8.4
+      u_arithmetic (imc_shift_add_lane_ADC_BITS12_4)
+                                          0.000    0.000    3.061 3.06e-03   0.0
+    genblk1[2].u_bank (imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_5)
+                                       9.24e-02    1.203   20.425    1.315   8.5
+      u_arithmetic (imc_shift_add_lane_ADC_BITS12_5)
+                                       9.36e-05 6.68e-05    3.135 3.30e-03   0.0
+    genblk1[1].u_bank (imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_6)
+                                       9.23e-02    1.194   21.827    1.308   8.4
+      u_arithmetic (imc_shift_add_lane_ADC_BITS12_6)
+                                       5.73e-06 5.22e-06    3.687 3.70e-03   0.0
+    genblk1[0].u_bank (imc_accumulator_bank_ENTRIES12_ADC_BITS12_ADDR_BITS4_7)
+                                       9.31e-02    1.195   20.232    1.308   8.4
+      u_arithmetic (imc_shift_add_lane_ADC_BITS12_7)
+                                          0.000    0.000    3.154 3.15e-03   0.0
+  u_results (imc_parallel_result_banks)
+                                          0.270    3.303   58.630    3.631  23.4
+1

@@ -1,0 +1,84 @@
+{
+  "profile": "board_sized_s1_v1",
+  "source": "Approved blue Supplementary Table S1, Round 80",
+  "boards": [
+    {
+      "board_size": 2,
+      "cam_entries": 128,
+      "node_sram_kib": 192,
+      "child_sram_kib": 64,
+      "sram_bank_kib": 64,
+      "total_sram_kib": 256,
+      "iterations": {
+        "low": 50,
+        "medium": 200,
+        "high": 400
+      }
+    },
+    {
+      "board_size": 3,
+      "cam_entries": 256,
+      "node_sram_kib": 384,
+      "child_sram_kib": 128,
+      "sram_bank_kib": 128,
+      "total_sram_kib": 512,
+      "iterations": {
+        "low": 75,
+        "medium": 500,
+        "high": 1000
+      }
+    },
+    {
+      "board_size": 5,
+      "cam_entries": 512,
+      "node_sram_kib": 768,
+      "child_sram_kib": 256,
+      "sram_bank_kib": 256,
+      "total_sram_kib": 1024,
+      "iterations": {
+        "low": 100,
+        "medium": 1000,
+        "high": 2000
+      }
+    },
+    {
+      "board_size": 9,
+      "cam_entries": 1024,
+      "node_sram_kib": 1536,
+      "child_sram_kib": 512,
+      "sram_bank_kib": 512,
+      "total_sram_kib": 2048,
+      "iterations": {
+        "low": 500,
+        "medium": 5000,
+        "high": 10000
+      }
+    },
+    {
+      "board_size": 13,
+      "cam_entries": 1536,
+      "node_sram_kib": 2048,
+      "child_sram_kib": 1024,
+      "sram_bank_kib": 512,
+      "total_sram_kib": 3072,
+      "iterations": {
+        "low": 1000,
+        "medium": 7500,
+        "high": 15000
+      }
+    },
+    {
+      "board_size": 19,
+      "cam_entries": 2048,
+      "node_sram_kib": 3584,
+      "child_sram_kib": 1024,
+      "sram_bank_kib": 512,
+      "total_sram_kib": 4608,
+      "iterations": {
+        "low": 2000,
+        "medium": 10000,
+        "high": 20000
+      }
+    }
+  ]
+}

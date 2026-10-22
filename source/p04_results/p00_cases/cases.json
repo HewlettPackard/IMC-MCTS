@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "purpose": "One versioned definition per simulator case. The trained Go reference and preserved random-weight placement diagnostics remain separate.",
+  "cases": [
+    {"id":"go_9x9_trained_reference_v1","name":"9x9 Go reference, trained H96, 5,000 iterations","status":"trained_checkpoint_reference_not_strength_validated","configuration":{"board_size":9,"iterations":5000,"seed":0,"exploration":1.414,"rules":"legacy_go","profile":"legacy_go_host_rules_q32_v3","model_id":"archive_9x9_h96_centered_v1","model_perspective":1,"memory_profile":"cacti_22nm_lstp","readout_profile":"sustained_drive_v1","cam_entries":1024,"memory_limits":{},"go_state":{"current_player":1,"ko_hash":null,"consecutive_passes":0,"move_count":0,"captures":{"1":0,"-1":0}}}},
+    {"id":"placement_9x9_medium_v1","name":"9x9 medium, 5,000 iterations","status":"diagnostic","configuration":{"board_size":9,"iterations":5000,"seed":0}},
+    {"id":"placement_9x9_low_v1","name":"9x9 low, 500 iterations","status":"diagnostic","configuration":{"board_size":9,"iterations":500,"seed":0}},
+    {"id":"placement_5x5_medium_v1","name":"5x5 medium, 1,000 iterations","status":"diagnostic","configuration":{"board_size":5,"iterations":1000,"seed":0}},
+    {"id":"placement_3x3_medium_v1","name":"3x3 medium, 500 iterations","status":"diagnostic","configuration":{"board_size":3,"iterations":500,"seed":0}},
+    {"id":"placement_2x2_medium_v1","name":"2x2 medium, 200 iterations","status":"diagnostic","configuration":{"board_size":2,"iterations":200,"seed":0}}
+  ],
+  "publication_gate": "Application-specific trained weights, workload rules, task quality and compatible complete physical costs must be validated before any case becomes a paper result."
+}

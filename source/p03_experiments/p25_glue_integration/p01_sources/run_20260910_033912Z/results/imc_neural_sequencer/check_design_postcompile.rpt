@@ -1,0 +1,89 @@
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12-SP7-1
+Date:        Wed Sep  9 16:26:18 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     68
+    Unconnected ports (LINT-28)                                    49
+    Shorted outputs (LINT-31)                                       9
+    Constant outputs (LINT-52)                                     10
+
+Cells                                                               1
+    Nets connected to multiple pins on same cell (LINT-33)          1
+--------------------------------------------------------------------------------
+
+Warning: In design 'imc_round_divider', port 'clear' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'numerator[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_round_divider', port 'remainder[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'result_error[3]' is connected directly to output port 'column_start[7]'. (LINT-31)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'result_error[3]' is connected directly to output port 'row_count[0]'. (LINT-31)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'result_error[3]' is connected directly to output port 'row_count[3]'. (LINT-31)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'result_error[3]' is connected directly to output port 'row_count[2]'. (LINT-31)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'result_error[3]' is connected directly to output port 'row_start[0]'. (LINT-31)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'result_error[3]' is connected directly to output port 'row_start[1]'. (LINT-31)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'result_error[3]' is connected directly to output port 'row_start[2]'. (LINT-31)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'result_error[3]' is connected directly to output port 'row_start[3]'. (LINT-31)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'result_error[3]' is connected directly to output port 'debug_state[5]'. (LINT-31)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', the same net is connected to more than one pin on submodule 'u_divider'. (LINT-33)
+   Net 'result_error[3]' is connected to pins 'clear', 'numerator[15]'', 'numerator[14]', 'numerator[13]', 'numerator[12]', 'numerator[11]', 'numerator[10]', 'numerator[9]', 'numerator[8]', 'numerator[7]', 'numerator[6]', 'numerator[5]', 'numerator[4]', 'numerator[3]', 'numerator[2]', 'numerator[1]', 'numerator[0]'.
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'result_error[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'row_start[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'row_start[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'row_start[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'row_start[0]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'row_count[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'row_count[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'row_count[0]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'column_start[7]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864', output port 'debug_state[5]' is connected directly to 'logic 0'. (LINT-52)
+1

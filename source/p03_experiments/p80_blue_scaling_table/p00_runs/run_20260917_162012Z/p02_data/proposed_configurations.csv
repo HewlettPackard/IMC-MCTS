@@ -1,0 +1,7 @@
+board_size,cam_entries,node_sram_kib,child_sram_kib,total_sram_mib,low,medium,high,status,node_stride_bytes,reserved_node_bytes,proposed_path_entries,node_capacity,child_link_capacity,worst_case_nodes,worst_case_links
+2,128,192,64,0.25,50,200,400,proposed_not_run,40,18616,9,4449,8192,401,400
+3,256,384,128,0.5,75,500,1000,proposed_not_run,40,20704,19,9312,16384,1001,1000
+5,512,768,256,1.0,100,1000,2000,proposed_not_run,44,24932,51,17306,32768,2001,2000
+9,1024,1536,512,2.0,500,5000,10000,proposed_not_run,68,33588,163,22636,65536,10001,10000
+13,1536,2048,1024,3.0,1000,7500,15000,proposed_not_run,100,42504,339,20546,131072,15001,15000
+19,2048,3584,1024,4.5,2000,10000,20000,proposed_not_run,172,52280,723,21033,131072,20001,20000

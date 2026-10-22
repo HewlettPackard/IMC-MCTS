@@ -1,0 +1,100 @@
+{
+  "profile": "complete_serial_q32_v2",
+  "status": "digital_RTL_and_generic_gates_verified_ideal_interfaces",
+  "validated_sources": {
+    "core/algorithm/evaluator.py": "a8e5ccae6bf5367895b20b930ab88c77fa2cd9c77e4c0c791685bbfb4fd51ce4",
+    "core/architecture/iteration_model.py": "b94811b840d5c0271a45e7f0c88f62197a9bbc9b1499b5dc72f955f27e98ed01",
+    "core/architecture/neural_mapping.py": "9a0b31e468dd06896acbe8cef55ea8038f6b42fc1709dc2583ce369a8789a702",
+    "core/architecture/tree_update_timing.py": "24eadda88c0d07c195a9266378d95ce7b12c6b0ce58c9dbc7a0dbb0e4614fcd9",
+    "core/architecture/ucb_arithmetic.py": "7ac2b66ae2d8b16c18addb5cf6b53cd9880217a382109c9107a5ad68da946642",
+    "core/simulator/tree_memory.py": "4b7a7544bd904f234b2909e7e28e5776101eb3a4f95b696c8b1643cce10c9618",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_fixed_scale.sv": "d2235571543cb0318fa1d2b71b9ab26d2e0be97b077debe500ef84e0f19b14f8",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_neural_sequencer.sv": "be088a583eb320879b0ae4a2e18b315063d978bc6f997e569b8790a7ffee4d44",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_round_divider.sv": "ca0ec9dae66448e91a3432dfc295568ea2d4d39574b264bd00a8e66243b3200b",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_shift_accumulator.sv": "f78bbabad55aa61fc3618ff6572d5d9e7c225dba9932956d8a4af85d0392de6e",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_sram_router.sv": "2f68cdb2c950238c36f46479cae0137df5a91c45f64c7ecc7ba726f5f135a7d3",
+    "rtl_synthesis/p02_search_control/p00_rtl/imc_cached_selector.sv": "81553412e6fd71b1916addfb33d069db2d2391d8d6f1689480b915f5a43c2f53",
+    "rtl_synthesis/p03_iteration_core/filelist.f": "c17d5bef751627490375b19811c3e0e2e955c3fe9f9c06c1f9cfc90a37655b75",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_isqrt.sv": "c740195f20a84d567626b8db81a81d70064ec506d70bea112286c8c34f04bc9d",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_iteration_core.sv": "352d373166e01fccd3aa6b86ec0ad8c7e5ba0bc06d63b5c9be26965361194f31",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_ln_table.sv": "a6bc7783b141cb52f6bb73896fd5c05522fbec6d130078d639400333c2b5c26e",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_q17_codec.sv": "01ee00551b6ebc3162410dabfa0185a5ead7797e95f7f5edc4e1d8798888625c",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_tree_update.sv": "215d86aa6b85e1ef33f93c4650ad7f9ed7f23f855fe4e209fb938bce477de668",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_ucb_score.sv": "b5313afd47e1334dd64e7a67855dbdce101c7370b0100a036cc2e2f72404a6e3",
+    "core/architecture/block_activity.py": "8f752c8afe758101ee0f0f83bdd162d4944a716d0c9c5517bef47191f33beb19"
+  },
+  "evidence": {
+    "updates_rtl": {
+      "path": "p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z",
+      "metadata_sha256": "b810760a81f6caffb65e80a5bb8721900af830382bdb0bf3b8b56f20e441553c",
+      "snapshot_sha256": "0b32c3924c2d9ed4e8595261a5724ae61318cf9905d037eadd1eb191e5fc101a"
+    },
+    "updates_gates": {
+      "path": "p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010512Z",
+      "metadata_sha256": "962e4f013686c508d9b4e5991de7a324c3e6a29ef3f99611f425adaa502269dc",
+      "snapshot_sha256": "3e29fda6952e1aec12ed1f463493f9735b83fe70bedbab54fd4ef8b48eb22d2c"
+    },
+    "arithmetic_rtl": {
+      "path": "p03_experiments/p12_complete_core/p00_runs/run_20260909_054646Z",
+      "metadata_sha256": "8d96aed5fa08ce044a2b737885c1881f8630472ecf1fd07d0d5a499c2e2dcf0b",
+      "snapshot_sha256": "6db58236da12858900518bc4309052fd970ed094c11f94a93da1c95c9200ecdf"
+    },
+    "arithmetic_gates": {
+      "path": "p03_experiments/p12_complete_core/p00_runs/run_20260909_054723Z",
+      "metadata_sha256": "2dc73bd0c5aed5ec6c1eb8e35e057f8c422378ce8f82de139bc39c6acf605cd6",
+      "snapshot_sha256": "b1dc7109c53f9ede6dcfd24f40b9d6906fa2a2422f0768d2b141fea2545b7e94"
+    },
+    "complete_rtl": {
+      "path": "p03_experiments/p23_tree_update_integration/p00_runs/run_20260910_014700Z",
+      "metadata_sha256": "14af1e68f278ba9c84b5c34806879617aa9de3895ecde70f5fb82f62fa3309b6",
+      "snapshot_sha256": "972562d5d68187ef1e638231cff3903f9c12acb3b9ce4eec48df60ef643128ad"
+    }
+  },
+  "software_reconciliation": {
+    "path": "p03_experiments/p23_tree_update_integration/p00_runs/run_20260910_014700Z",
+    "method": "Active v2 source regenerates exact accepted Round 22 stimulus, full SRAM, ADC responses, transactions and phase cycles for eight driven/buffered configurations"
+  },
+  "nominal_clock_mhz": 500,
+  "physical_timing_closed": false,
+  "whole_chip_ppa_available": false,
+  "limits": [
+    "Preloaded root/LUT and programmed ideal cell arrays",
+    "No analog nonidealities or clock closure",
+    "Phase timing checked; service trace aggregates internal control gaps",
+    "Random-weight placement diagnostics, not trained applications"
+  ],
+  "tree_update_timing_profile": "registered_count_iterative_remainder_v2",
+  "generic_gate_scope": "Retained arithmetic/neural/selector evidence and Round 22 tree-update gates; no new whole-core generic gate count or physical closure claim",
+  "prior_revision_evidence": {
+    "complete_gates": {
+      "path": "p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z",
+      "metadata_sha256": "894a86183f5bf4ba21342861c35ebaece1bc300b5153d6cab4af835f88caaa9f",
+      "snapshot_sha256": "3aec0291078b65fbcec2687c92786596dc72b26ab85f74ab3841c2a344531d92"
+    },
+    "legacy_counterexamples": {
+      "path": "p03_experiments/p12_complete_core/p00_runs/run_20260909_060653Z",
+      "metadata_sha256": "a1cef31e76854487abd2d81c3183bcac75dfaa0bd8763a3676ea08e12afa6001",
+      "snapshot_sha256": "28f398777777ad9d530417fbd059bed5ed5a69be9529dd867e873bae45722567"
+    },
+    "python_86_tests": {
+      "path": "p03_experiments/p12_complete_core/p00_runs/run_20260909_061851Z",
+      "metadata_sha256": "0e163b4aebbc69ae82fa6b2dde4e6f5bfcdd617287bc2de0c4654ac426b36605",
+      "snapshot_sha256": "611390a31e0ea2ba8fb01026c4c03a8f90aafaea3f15eb2005499495f4cf6e9d"
+    },
+    "cost_boundary": {
+      "path": "p03_experiments/p12_complete_core/p00_runs/run_20260909_061213Z",
+      "metadata_sha256": "7391d6e51ddc834c749fdab0cfb263a22bb1ee160a15004c763f9521b159bcc1",
+      "snapshot_sha256": "80a06a3937615e2f3da220cc1fee4b59a40f2fcc5a1b140efb72d80d1304d571"
+    }
+  },
+  "activity_extension": {
+    "path": "p03_experiments/p29_block_power/p00_runs/run_20260910_150558Z",
+    "metadata_sha256": "d2ac9ae745783178c5761d9a68daefd50de3e5586b21214db10cacef3385b08f",
+    "method": "New counters match retained FSM waveforms; algorithm, state, traffic and schedule match the previous validated simulator."
+  },
+  "software_extension": {
+    "path": "p03_experiments/p93_optimized_scaling/compatibility.json",
+    "sha256": "20adaa6c5b18ba98ddadbcb34c3faf71c2652899848fd6e731c8d0dca2c3bb10",
+    "scope": "Software admission-guard extension only. All previously accepted mappings execute identical code; new sized parallel hardware is not RTL or physically validated."
+  }
+}

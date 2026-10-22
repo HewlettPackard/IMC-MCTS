@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-10T02:32:36.380060+00:00",
+  "checkpoint": "b655a0d0c1d2b1d443d085c9db0bf8d1233401e9",
+  "synthesis_commit": "bf33a610a5f8cbd8f2aee9010d8063a73ac92ee6",
+  "source_sha256": {
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_shift_accumulator.sv": "f78bbabad55aa61fc3618ff6572d5d9e7c225dba9932956d8a4af85d0392de6e",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_round_divider.sv": "ca0ec9dae66448e91a3432dfc295568ea2d4d39574b264bd00a8e66243b3200b",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_sram_router.sv": "2f68cdb2c950238c36f46479cae0137df5a91c45f64c7ecc7ba726f5f135a7d3",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_fixed_scale.sv": "d2235571543cb0318fa1d2b71b9ab26d2e0be97b077debe500ef84e0f19b14f8",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_neural_sequencer.sv": "be088a583eb320879b0ae4a2e18b315063d978bc6f997e569b8790a7ffee4d44",
+    "rtl_synthesis/p02_search_control/p00_rtl/imc_cached_selector.sv": "81553412e6fd71b1916addfb33d069db2d2391d8d6f1689480b915f5a43c2f53",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_q17_codec.sv": "01ee00551b6ebc3162410dabfa0185a5ead7797e95f7f5edc4e1d8798888625c",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_tree_update.sv": "215d86aa6b85e1ef33f93c4650ad7f9ed7f23f855fe4e209fb938bce477de668",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_ln_table.sv": "a6bc7783b141cb52f6bb73896fd5c05522fbec6d130078d639400333c2b5c26e",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_isqrt.sv": "c740195f20a84d567626b8db81a81d70064ec506d70bea112286c8c34f04bc9d",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_ucb_score.sv": "b5313afd47e1334dd64e7a67855dbdce101c7370b0100a036cc2e2f72404a6e3",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_iteration_core.sv": "352d373166e01fccd3aa6b86ec0ad8c7e5ba0bc06d63b5c9be26965361194f31",
+    "rtl_synthesis/p03_iteration_core/p01_tests/tb_imc_iteration_core.sv": "f41ce51e0232fb1cb2756a54a88b437c2da39de5dbf8a12c74902794d3911701",
+    "rtl_synthesis/p04_column_hold/p00_rtl/imc_column_hold_control.sv": "b72f6ae88b3136579295e9e8d28b3f5de050af1c0a1eac042da5a401a664aad4",
+    "rtl_synthesis/p04_column_hold/p00_rtl/imc_buffered_neural_sequencer.sv": "60485964dac2de038ec1cd29e3be470af8d40279340cf4e56433274e4ff01011",
+    "rtl_synthesis/p04_column_hold/p00_rtl/imc_buffered_iteration_core.sv": "f9a3843f7f6e86b8e47d253142d446686be236c4b502b24fc844722ad35b6c58",
+    "rtl_synthesis/p04_column_hold/p00_rtl/imc_buffered_neural_core.sv": "4cbd4ce0958c0dbdc803c8118298af6d8557dc94931fb4c1c5a6601e976b1f21",
+    "rtl_synthesis/p04_column_hold/p01_tests/tb_imc_buffered_iteration_core.sv": "875913dbef4dde263ec76e59ab3380e18e63b5fd1926a8420d88bcbffd95021f",
+    "rtl_synthesis/p04_column_hold/p01_tests/held_columns.svh": "37627ce65ee62f16fa6f88b5a9d092b72d1cfe9a4bc2dbb76ba9910c94479877",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_buffered_neural_sequencer/mapped.v": "3dd63fcea26f8fc3bbb759f4966a462e5280a475b23a5417085b01dbc370741a",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_buffered_neural_sequencer/mapped.ddc": "740a68e6be2e19d2853c3267b4e3cb07c39d82130cf411a7136c442dc24e959b",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_buffered_neural_sequencer/applied.sdc": "14f91ff4ded2bc6a458cc6863dcb9f64789e3ff2c6783ec36f4c45a42de061f6",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_buffered_neural_sequencer/run_details.txt": "aebe92daccaa8d4ab753ddee30087a7f2acb2a92b7bbec8bc1a1695c489a1a90",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_buffered_neural_sequencer/area.rpt": "39f173526a83c997aa68696f0d7ed187af568013347e249c2ad57f11c2bcf5cd",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_buffered_neural_sequencer/qor.rpt": "0ca2dad95c84937250c3d1686e8cc07bf75e1139771ddb5ab3dac931151c96ec",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_cached_selector/mapped.v": "366f0834f07decf8f8ea0e4953c16e1b3658794d603a68170093f53b79170d28",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_cached_selector/mapped.ddc": "e2ac7eedcf34be8ec808cdb1d1333573753812b78c02e140f71b09d297151482",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_cached_selector/applied.sdc": "509412b189df749a14ca29b188b320894529a7b190d15964b8ddaae4b2d746b9",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_cached_selector/run_details.txt": "cc6b67c13454b2b1d1a70f4760bc2b4e4d16c68e7e20a19b9fb2f4b6f61626b5",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_cached_selector/area.rpt": "15f5a63da13feb0686f41521bb208690454bddcb02a320d042a8e30057062f92",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_cached_selector/qor.rpt": "0476888b72e728d5b84582889346ab145a6aa98e5e7af835771722875e02f076",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_neural_sequencer/mapped.v": "e1a7e6cdae98e323061df0af83043260e26b24f0b1df69d0e734825498655b4c",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_neural_sequencer/mapped.ddc": "3ebc757a4dbefff8ff187ad4059da1c5eb0ac5e98ffd66a49fffe9c5420b90d2",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_neural_sequencer/applied.sdc": "bb49f61e44cdf0eaa2b6e0a91649f82dc0225f4e0a20aff20703b413f11c6219",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_neural_sequencer/run_details.txt": "9690f451f8a7257b9759e3cf247a903bd52de310fd6fff671fd869b5b86c49ec",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_neural_sequencer/area.rpt": "1f68f9b04638f77dc3094da1967849e0521be446ade6ac0165139c41e902a9f6",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_neural_sequencer/qor.rpt": "e5aa9d0b1c1b0078cc916d409e719f71226ba8e3da67e281d9ef4ef1b6111d98",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_sram_router_1bank/mapped.v": "d146a7184111015605e91b8b03ec76ad4d26a5ce2f66a72c93d65f6d622e1d27",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_sram_router_1bank/mapped.ddc": "be81914c4f256925bb61d9779ce48bbc23d76af439d3e6161bb1fb46b157da3d",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_sram_router_1bank/applied.sdc": "ffa273ec2067c3a99392e44fe4bb9ec09a13629429a0254fe3e075a86a88584b",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_sram_router_1bank/run_details.txt": "233702e463fd66981a48e9e1bb9ddee808681cd3ba2c413dbc54c88c62a160b8",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_sram_router_1bank/area.rpt": "e8245b57d20699ff9d8187c40094d93e93d2f35dda49eb71dd2d0f19380e32b4",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_sram_router_1bank/qor.rpt": "f826f0e64ca76fe2cff10917e3c8f583771e97ec7cde3d4a1131456c5534ec5c",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_sram_router_3bank/mapped.v": "62641fda45e57302e0bc0d20d3d29221511237dd2d3f66339f02da9d14f87b5e",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_sram_router_3bank/mapped.ddc": "630a4dfa3b15ddbac8eb88cd75407d4c4fc863fe619f7da08318c7d6af86a1f2",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_sram_router_3bank/applied.sdc": "a6d8fcdb39095584456f3064f03a92df1b2c3725442f235f2db5d141b68520df",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_sram_router_3bank/run_details.txt": "853b7ce628df625a00dac97408f3df368b1f1d439f0f111fa59854648513a1be",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_sram_router_3bank/area.rpt": "c4bbc9a1299efdde828930b64b1fa7178bb562d96d2a9dcfd18c4bb95e684279",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_sram_router_3bank/qor.rpt": "5376d12caa82fd43811615a08d83378db64876ea9c7bd6235acaa584d3a9fe5c",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/p00_tree_update_v2/results/imc_tree_update_v2/mapped.v": "3171e4c0c929e0941c8f60b75fff0a1c0f9f84cb6e490714124a33f71dfdb406",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/p00_tree_update_v2/results/imc_tree_update_v2/mapped.ddc": "62fc9ed7ed75c7c8c7f393d4b437ffeb8d59a63b9f268227e22a5760ea4c8dbc",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/p00_tree_update_v2/results/imc_tree_update_v2/applied.sdc": "5a86d9943629d694e989c94adbf31413658d0a5973e7b594bfb8068073ad4de2",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/p00_tree_update_v2/results/imc_tree_update_v2/run_details.txt": "79dcc048b44f2a8eb8e122d7825810582db891aa12f8bc6cf1e778c84c29e0af",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/p00_tree_update_v2/results/imc_tree_update_v2/area.rpt": "dcd7c6898a460a8e4a5a48a48b2c7356ff8a52131bf6234dfa7d714904680065",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/p00_tree_update_v2/results/imc_tree_update_v2/qor.rpt": "85523243ae348c60d013a676f77ac1118a49f15ef465a5c7ef4dcc45abadc2ed",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_ucb_score/mapped.v": "96b5db1c412002a68aee09db1a9d6e4a6ee8a54ef7d1c66099e8b98e4d54110e",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_ucb_score/mapped.ddc": "a6cb9db509227c9f1922655b5d8b88c932293115a22ca87c4146284777b4aa5e",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_ucb_score/applied.sdc": "0a1d1426cefa1aaa07cd9fe8d7b8baddc7f04587c899c239798464d1390df5fe",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_ucb_score/run_details.txt": "8eb423af0c1ace5587a5cf4c3bd836d9c83e2157b8e38d912ae711d9a205129b",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_ucb_score/area.rpt": "4dd820ad1a5c2f6ee60881bac07eb25bb6272d0d54113ae1113a785c17baaad8",
+    "p03_experiments/p23_tree_update_integration/p01_sources/run_20260910_014505Z/results/imc_ucb_score/qor.rpt": "4bbbb06ae6e0e337b6f05e989b5eb1bd2a2536be24779daaa9152f738dededb7"
+  },
+  "variants": {
+    "driven": {
+      "top": "imc_iteration_core",
+      "filelist": [
+        "p00_rtl/imc_shift_accumulator.sv",
+        "p00_rtl/imc_round_divider.sv",
+        "p00_rtl/imc_sram_router.sv",
+        "p00_rtl/imc_fixed_scale.sv",
+        "p00_rtl/imc_neural_sequencer.sv",
+        "p00_rtl/imc_cached_selector.sv",
+        "p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p00_rtl/imc_ln_table.sv",
+        "p00_rtl/imc_isqrt.sv",
+        "p00_rtl/imc_ucb_score.sv",
+        "p00_rtl/imc_iteration_core.sv"
+      ],
+      "owners": {
+        "u_sel": "imc_cached_selector",
+        "u_upd": "imc_tree_update_v2",
+        "u_ucb": "imc_ucb_score",
+        "u_nn": "imc_neural_sequencer",
+        "u_node_router": "imc_sram_router_3bank",
+        "u_child_router": "imc_sram_router_1bank"
+      },
+      "glue_top": "imc_iteration_glue",
+      "glue_parameters": "BOARD_SIZE=9,CAM_ENTRIES=1024,HIDDEN=96,ADDR_W=21"
+    },
+    "buffered": {
+      "top": "imc_buffered_iteration_core",
+      "filelist": [
+        "p00_rtl/imc_column_hold_control.sv",
+        "p00_rtl/imc_shift_accumulator.sv",
+        "p00_rtl/imc_round_divider.sv",
+        "p00_rtl/imc_sram_router.sv",
+        "p00_rtl/imc_fixed_scale.sv",
+        "p00_rtl/imc_buffered_neural_sequencer.sv",
+        "p00_rtl/imc_cached_selector.sv",
+        "p00_rtl/imc_q17_codec.sv",
+        "p00_rtl/imc_tree_update.sv",
+        "p00_rtl/imc_ln_table.sv",
+        "p00_rtl/imc_isqrt.sv",
+        "p00_rtl/imc_ucb_score.sv",
+        "p00_rtl/imc_buffered_iteration_core.sv",
+        "p00_rtl/imc_buffered_neural_core.sv"
+      ],
+      "owners": {
+        "u_sel": "imc_cached_selector",
+        "u_upd": "imc_tree_update_v2",
+        "u_ucb": "imc_ucb_score",
+        "u_nn": "imc_buffered_neural_sequencer",
+        "u_node_router": "imc_sram_router_3bank",
+        "u_child_router": "imc_sram_router_1bank"
+      },
+      "glue_top": "imc_buffered_iteration_glue",
+      "glue_parameters": "BOARD_SIZE=9,CAM_ENTRIES=1024,HIDDEN=96,ADDR_W=21"
+    }
+  },
+  "cases": {
+    "driven_empty": {
+      "variant": "driven",
+      "fixture": "p02_fixtures/driven_empty",
+      "iterations": 4,
+      "ucb_operations": 1,
+      "expected_cycles": 114074
+    },
+    "driven_ragged": {
+      "variant": "driven",
+      "fixture": "p02_fixtures/driven_ragged",
+      "iterations": 12,
+      "ucb_operations": 32,
+      "expected_cycles": 332459
+    },
+    "buffered_empty": {
+      "variant": "buffered",
+      "fixture": "p02_fixtures/buffered_empty",
+      "iterations": 4,
+      "ucb_operations": 1,
+      "expected_cycles": 114398
+    },
+    "buffered_ragged": {
+      "variant": "buffered",
+      "fixture": "p02_fixtures/buffered_ragged",
+      "iterations": 12,
+      "ucb_operations": 32,
+      "expected_cycles": 333431
+    }
+  },
+  "clock_period_ns": 2,
+  "characterization": "Short diagnostic workloads; no automatic extrapolation to canonical searches",
+  "target_node_nm": 22,
+  "native_power_node_nm": 65,
+  "server_power_completed": false,
+  "modules": {
+    "imc_buffered_neural_sequencer": {
+      "design": "imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864",
+      "parameters": {
+        "INPUTS": 162,
+        "HIDDEN": 96,
+        "ADDR_W": 21,
+        "SRAM_BYTES": 1572864
+      }
+    },
+    "imc_cached_selector": {
+      "design": "imc_cached_selector_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21",
+      "parameters": {
+        "BOARD_SIZE": 9,
+        "CAM_ENTRIES": 1024,
+        "NEURAL_BYTES": 16512,
+        "ADDR_W": 21
+      }
+    },
+    "imc_neural_sequencer": {
+      "design": "imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864",
+      "parameters": {
+        "INPUTS": 162,
+        "HIDDEN": 96,
+        "ADDR_W": 21,
+        "SRAM_BYTES": 1572864
+      }
+    },
+    "imc_sram_router_1bank": {
+      "design": "imc_sram_router_BANKS1_BANK_BYTE_W19_ADDR_W21",
+      "parameters": {
+        "BANKS": 1,
+        "BANK_BYTE_W": 19,
+        "ADDR_W": 21
+      }
+    },
+    "imc_sram_router_3bank": {
+      "design": "imc_sram_router_BANKS3_BANK_BYTE_W19_ADDR_W21",
+      "parameters": {
+        "BANKS": 3,
+        "BANK_BYTE_W": 19,
+        "ADDR_W": 21
+      }
+    },
+    "imc_tree_update_v2": {
+      "design": "imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21",
+      "parameters": {
+        "BOARD_SIZE": 9,
+        "CAM_ENTRIES": 1024,
+        "NEURAL_BYTES": 16512,
+        "ADDR_W": 21
+      }
+    },
+    "imc_ucb_score": {
+      "design": "imc_ucb_score",
+      "parameters": {}
+    }
+  }
+}

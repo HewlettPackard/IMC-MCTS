@@ -1,0 +1,28 @@
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12-SP7-1
+Date:        Wed Sep  9 15:29:23 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     13
+    Shorted outputs (LINT-31)                                       8
+    Constant outputs (LINT-52)                                      5
+--------------------------------------------------------------------------------
+
+Warning: In design 'imc_q17_codec', output port 'binary_result[63]' is connected directly to output port 'binary_result[0]'. (LINT-31)
+Warning: In design 'imc_q17_codec', output port 'binary_result[63]' is connected directly to output port 'binary_result[2]'. (LINT-31)
+Warning: In design 'imc_q17_codec', output port 'binary_result[63]' is connected directly to output port 'binary_result[3]'. (LINT-31)
+Warning: In design 'imc_q17_codec', output port 'binary_result[63]' is connected directly to output port 'binary_result[1]'. (LINT-31)
+Warning: In design 'imc_q17_codec', output port 'binary_result[61]' is connected directly to output port 'binary_result[57]'. (LINT-31)
+Warning: In design 'imc_q17_codec', output port 'binary_result[61]' is connected directly to output port 'binary_result[58]'. (LINT-31)
+Warning: In design 'imc_q17_codec', output port 'binary_result[61]' is connected directly to output port 'binary_result[59]'. (LINT-31)
+Warning: In design 'imc_q17_codec', output port 'binary_result[61]' is connected directly to output port 'binary_result[60]'. (LINT-31)
+Warning: In design 'imc_q17_codec', output port 'binary_result[63]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_q17_codec', output port 'binary_result[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_q17_codec', output port 'binary_result[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_q17_codec', output port 'binary_result[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_q17_codec', output port 'binary_result[0]' is connected directly to 'logic 0'. (LINT-52)
+1

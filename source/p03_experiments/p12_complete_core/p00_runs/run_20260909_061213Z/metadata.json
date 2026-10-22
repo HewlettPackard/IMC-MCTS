@@ -1,0 +1,48 @@
+{
+  "phase": "complete_cost_boundary",
+  "status": "passed",
+  "started_utc": "2026-09-09T06:12:13.285182+00:00",
+  "starting_checkpoint": "e9314636d73e28d0c94553afbbc7d002b849ce6a",
+  "python": "3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:38:53) [Clang 18.1.8 ]",
+  "commands": [
+    {
+      "check": "dc_unavailable",
+      "argv": [
+        "/Users/tmolomochir/miniforge3/bin/python",
+        "-B",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core/p02_syn/run_dc.py"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 1,
+      "expected_returncode": 1,
+      "timeout_s": 600
+    },
+    {
+      "check": "required_library_inputs",
+      "argv": [
+        "tclsh",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core/p02_syn/config.tcl"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 1,
+      "expected_returncode": 1,
+      "timeout_s": 600
+    }
+  ],
+  "checks": {
+    "dc_unavailable": true,
+    "required_library_inputs": true,
+    "native_sram_not_scaled": true,
+    "whole_chip_withheld": true,
+    "tested_sources_unchanged": true
+  },
+  "benchmarks_executed": false,
+  "physical_ppa_adopted": false,
+  "available_tools": {
+    "dc_shell": null,
+    "pt_shell": null,
+    "sta": null,
+    "tclsh": "/opt/homebrew/bin/tclsh"
+  },
+  "finished_utc": "2026-09-09T06:12:13.379273+00:00"
+}

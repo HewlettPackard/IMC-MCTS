@@ -1,0 +1,153 @@
+{
+  "schema_version": 2,
+  "configuration": {
+    "board_size": 9,
+    "play_strength": "medium",
+    "iterations": 5000,
+    "seed": 0,
+    "rules": "empty_cell_placement_v1"
+  },
+  "evaluator_specification": {
+    "mode": "random_diagnostic",
+    "input_size": 162,
+    "hidden_size": 96,
+    "output_size": 3,
+    "input_encoding": "interleaved_black_white",
+    "arithmetic_dtype": "float64"
+  },
+  "structure_encoder_version": 1,
+  "structure_sha256": "afdd994b869d80b2dba0a618217800f7e2e4078293c753d7eca3dda0dd959979",
+  "nodes": 6562,
+  "visited_nodes": 5000,
+  "values_file": "legacy_placement_values.json",
+  "values_sha256": "e6392c16d5e01a0e41695d551d867517e54bcc248bdf8785d4aed818f73998ab",
+  "value_rtol": 1e-14,
+  "value_atol": 2e-14,
+  "value_reference_runtime": "Python 3.10.4 / NumPy 1.26.4 / OpenBLAS 0.3.23.dev",
+  "basis": "Same unchanged source and seed produce identical discrete search state and timing under both observed runtimes. Last-bit random-normal initialization and floating-point evaluation differ. Exact raw hashes remain runtime-specific production provenance; neither historical digest is stale. This fixture is separate from the trained integer Go hero.",
+  "tolerance_basis": {
+    "observed_max_value_ulp_difference": 3,
+    "observed_max_absolute_value_difference": 1.0658141036401503e-14,
+    "observed_max_relative_value_difference": 4.0707694571154663e-16,
+    "scope": "Tight regression envelope tested on the two recorded macOS arm64 runtimes; no claim of universal cross-platform identity."
+  },
+  "observed_runtimes": [
+    {
+      "runtime": {
+        "python": "3.10.4",
+        "python_implementation": "CPython",
+        "numpy": "1.26.4",
+        "system": "Darwin",
+        "machine": "arm64",
+        "numpy_build": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/arm64-builds/include\n    lib directory: /opt/arm64-builds/lib\n    name: openblas64\n    openblas configuration: USE_64BITINT=1 DYNAMIC_ARCH=1 DYNAMIC_OLDER= NO_CBLAS=\n      NO_LAPACK= NO_LAPACKE= NO_AFFINITY=1 USE_OPENMP= SANDYBRIDGE MAX_THREADS=3\n    pc file directory: /usr/local/lib/pkgconfig\n    version: 0.3.23.dev\n  lapack:\n    detection method: internal\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: dep4335948544\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: 1.26.4\nCompilers:\n  c:\n    args: -fno-strict-aliasing, -DBLAS_SYMBOL_SUFFIX=64_, -DHAVE_BLAS_ILP64\n    commands: cc\n    linker: ld64\n    linker args: -fno-strict-aliasing, -DBLAS_SYMBOL_SUFFIX=64_, -DHAVE_BLAS_ILP64\n    name: clang\n    version: 14.0.0\n  c++:\n    args: -DBLAS_SYMBOL_SUFFIX=64_, -DHAVE_BLAS_ILP64\n    commands: c++\n    linker: ld64\n    linker args: -DBLAS_SYMBOL_SUFFIX=64_, -DHAVE_BLAS_ILP64\n    name: clang\n    version: 14.0.0\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.0.8\nMachine Information:\n  build:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\n  host:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\nPython Information:\n  path: /private/var/folders/76/zy5ktkns50v6gt5g8r0sf6sc0000gn/T/cibw-run-iyy0yn4s/cp310-macosx_arm64/build/venv/bin/python\n  version: '3.10'\nSIMD Extensions:\n  baseline:\n  - NEON\n  - NEON_FP16\n  - NEON_VFPV4\n  - ASIMD\n  found:\n  - ASIMDHP\n  not found:\n  - ASIMDFHM\n\n",
+        "thread_environment": {
+          "OPENBLAS_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": null,
+          "VECLIB_MAXIMUM_THREADS": null,
+          "NUMEXPR_NUM_THREADS": null
+        }
+      },
+      "evaluator": {
+        "mode": "random_diagnostic",
+        "input_size": 162,
+        "hidden_size": 96,
+        "output_size": 3,
+        "input_encoding": "interleaved_black_white",
+        "turn_indicator": false,
+        "weight_transform": "identity",
+        "output_order": [
+          "white",
+          "draw",
+          "black"
+        ],
+        "value_perspective": "black",
+        "arithmetic_dtype": "float64",
+        "weight_sha256": [
+          "a775be2313c989b8395bb9b5f01095db0233ea736255141101c05d0bd46545e0",
+          "710d6fdfd575003790579db0aca43c6da544c4fbf34c1f6db19b9c61d6cb4777"
+        ],
+        "hardware_mapping": "unverified"
+      },
+      "configuration_sha256": "4047a4695ae654e9deac66205bcc5377c169f88b68ccac855c57a5f46fafaa0d",
+      "tree_sha256": "98522bb7a6031ddf375a84bcf63bdb86a9bd64a3b01a6513254d02969255a96d",
+      "structure_sha256": "afdd994b869d80b2dba0a618217800f7e2e4078293c753d7eca3dda0dd959979",
+      "completed": 5000,
+      "cycles": 10987522
+    },
+    {
+      "runtime": {
+        "python": "3.12.11",
+        "python_implementation": "CPython",
+        "numpy": "2.3.5",
+        "system": "Darwin",
+        "machine": "arm64",
+        "numpy_build": "Build Dependencies:\n  blas:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\n  lapack:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\nCompilers:\n  c:\n    commands: cc\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  c++:\n    commands: c++\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.1\nMachine Information:\n  build:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\n  host:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\nPython Information:\n  path: /private/var/folders/8s/1jkm89h96qjdtjr7q3bll2vh0000gn/T/build-env-zbmksv9_/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - NEON\n  - NEON_FP16\n  - NEON_VFPV4\n  - ASIMD\n  found:\n  - ASIMDHP\n  not found:\n  - ASIMDFHM\n\n",
+        "thread_environment": {
+          "OPENBLAS_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": null,
+          "VECLIB_MAXIMUM_THREADS": null,
+          "NUMEXPR_NUM_THREADS": null
+        }
+      },
+      "evaluator": {
+        "mode": "random_diagnostic",
+        "input_size": 162,
+        "hidden_size": 96,
+        "output_size": 3,
+        "input_encoding": "interleaved_black_white",
+        "turn_indicator": false,
+        "weight_transform": "identity",
+        "output_order": [
+          "white",
+          "draw",
+          "black"
+        ],
+        "value_perspective": "black",
+        "arithmetic_dtype": "float64",
+        "weight_sha256": [
+          "61b2a8b9d6e86cacd760410979979c7e9a75da07418c5aa6b6485897a148fe59",
+          "4327a5768a7f9ad7b0492bb9857ac7c282f750ea91811ffec414dce2fae42b92"
+        ],
+        "hardware_mapping": "unverified"
+      },
+      "configuration_sha256": "9eb772665a0b2330e05298418c6723469370e2fba49586b7a8b04cf66dd66c34",
+      "tree_sha256": "b2994c9396c2123ead4669b820b48ebfe40e86e7c69581a0a291801d9e4a5b05",
+      "structure_sha256": "afdd994b869d80b2dba0a618217800f7e2e4078293c753d7eca3dda0dd959979",
+      "completed": 5000,
+      "cycles": 10987522
+    }
+  ],
+  "initializer_comparison": {
+    "raw1": {
+      "elements": 15552,
+      "different": 2121,
+      "max_absolute_difference": 2.609024107869118e-15,
+      "max_relative_difference": 8.544597397543796e-14,
+      "max_ulp_difference": 752
+    },
+    "raw2": {
+      "elements": 288,
+      "different": 55,
+      "max_absolute_difference": 8.881784197001252e-16,
+      "max_relative_difference": 2.4084564528703248e-15,
+      "max_ulp_difference": 19
+    },
+    "weights1": {
+      "elements": 15552,
+      "different": 2046,
+      "max_absolute_difference": 2.896988204881268e-16,
+      "max_relative_difference": 8.533283047176286e-14,
+      "max_ulp_difference": 668
+    },
+    "weights2": {
+      "elements": 288,
+      "different": 53,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "max_relative_difference": 2.415118862424933e-15,
+      "max_ulp_difference": 13
+    }
+  },
+  "tree_encoder_sha256": "df0c2f8f788f7f3abd3f36611460c3ddc61f818af9c20776af47196bc6a3bd7c"
+}

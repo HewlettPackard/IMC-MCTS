@@ -1,0 +1,29 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 16:26:18 2026
+****************************************
+
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   u_accumulator/n3678          0.69           0.89          -0.20  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      1                  -0.20  
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864     0.00   184.73  -184.73 (VIOLATED)
+
+
+1

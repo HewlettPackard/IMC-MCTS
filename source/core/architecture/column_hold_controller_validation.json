@@ -1,0 +1,69 @@
+{
+  "profile": "column_hold_v1",
+  "status": "digital_RTL_and_generic_gates_verified_ideal_interfaces",
+  "validated_sources": {
+    "core/algorithm/evaluator.py": "a8e5ccae6bf5367895b20b930ab88c77fa2cd9c77e4c0c791685bbfb4fd51ce4",
+    "core/architecture/analog_readout.py": "ade13d3064cdfb405bad1545cc35a253b62caefb9b6b2f243f7937a1bd70de6f",
+    "core/architecture/iteration_model.py": "b94811b840d5c0271a45e7f0c88f62197a9bbc9b1499b5dc72f955f27e98ed01",
+    "core/architecture/neural_mapping.py": "9a0b31e468dd06896acbe8cef55ea8038f6b42fc1709dc2583ce369a8789a702",
+    "core/architecture/tree_update_timing.py": "24eadda88c0d07c195a9266378d95ce7b12c6b0ce58c9dbc7a0dbb0e4614fcd9",
+    "core/architecture/ucb_arithmetic.py": "7ac2b66ae2d8b16c18addb5cf6b53cd9880217a382109c9107a5ad68da946642",
+    "core/simulator/tree_memory.py": "4b7a7544bd904f234b2909e7e28e5776101eb3a4f95b696c8b1643cce10c9618",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_fixed_scale.sv": "d2235571543cb0318fa1d2b71b9ab26d2e0be97b077debe500ef84e0f19b14f8",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_neural_sequencer.sv": "be088a583eb320879b0ae4a2e18b315063d978bc6f997e569b8790a7ffee4d44",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_round_divider.sv": "ca0ec9dae66448e91a3432dfc295568ea2d4d39574b264bd00a8e66243b3200b",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_shift_accumulator.sv": "f78bbabad55aa61fc3618ff6572d5d9e7c225dba9932956d8a4af85d0392de6e",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_sram_router.sv": "2f68cdb2c950238c36f46479cae0137df5a91c45f64c7ecc7ba726f5f135a7d3",
+    "rtl_synthesis/p02_search_control/p00_rtl/imc_cached_selector.sv": "81553412e6fd71b1916addfb33d069db2d2391d8d6f1689480b915f5a43c2f53",
+    "rtl_synthesis/p03_iteration_core/filelist.f": "c17d5bef751627490375b19811c3e0e2e955c3fe9f9c06c1f9cfc90a37655b75",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_isqrt.sv": "c740195f20a84d567626b8db81a81d70064ec506d70bea112286c8c34f04bc9d",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_iteration_core.sv": "352d373166e01fccd3aa6b86ec0ad8c7e5ba0bc06d63b5c9be26965361194f31",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_ln_table.sv": "a6bc7783b141cb52f6bb73896fd5c05522fbec6d130078d639400333c2b5c26e",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_q17_codec.sv": "01ee00551b6ebc3162410dabfa0185a5ead7797e95f7f5edc4e1d8798888625c",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_tree_update.sv": "215d86aa6b85e1ef33f93c4650ad7f9ed7f23f855fe4e209fb938bce477de668",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_ucb_score.sv": "b5313afd47e1334dd64e7a67855dbdce101c7370b0100a036cc2e2f72404a6e3",
+    "rtl_synthesis/p04_column_hold/filelist.f": "4f6278e90dbe2f7ce1ea85787dcb5a9a302d49340134a7128579e879b05cc7db",
+    "rtl_synthesis/p04_column_hold/p00_rtl/imc_buffered_iteration_core.sv": "f9a3843f7f6e86b8e47d253142d446686be236c4b502b24fc844722ad35b6c58",
+    "rtl_synthesis/p04_column_hold/p00_rtl/imc_buffered_neural_core.sv": "4cbd4ce0958c0dbdc803c8118298af6d8557dc94931fb4c1c5a6601e976b1f21",
+    "rtl_synthesis/p04_column_hold/p00_rtl/imc_buffered_neural_sequencer.sv": "60485964dac2de038ec1cd29e3be470af8d40279340cf4e56433274e4ff01011",
+    "rtl_synthesis/p04_column_hold/p00_rtl/imc_column_hold_control.sv": "b72f6ae88b3136579295e9e8d28b3f5de050af1c0a1eac042da5a401a664aad4",
+    "core/architecture/block_activity.py": "8f752c8afe758101ee0f0f83bdd162d4944a716d0c9c5517bef47191f33beb19"
+  },
+  "evidence": {
+    "path": "p03_experiments/p23_tree_update_integration/p00_runs/run_20260910_014700Z",
+    "metadata_sha256": "14af1e68f278ba9c84b5c34806879617aa9de3895ecde70f5fb82f62fa3309b6",
+    "snapshot_sha256": "972562d5d68187ef1e638231cff3903f9c12acb3b9ce4eec48df60ef643128ad"
+  },
+  "scope": "Buffered integer inference and complete placement-search controller with ideal SRAM/CAM/captured-column/ADC responders, nominal service cycles and tested stalls/errors/reset",
+  "excluded": [
+    "transistor/analog accuracy and retention",
+    "physical 500 MHz timing closure",
+    "whole-chip PPA",
+    "host Go rules, metadata and interfaces",
+    "trained task quality"
+  ],
+  "nominal_9x9_h96": {
+    "inference_cycles": 26701,
+    "capture_cycles": 81,
+    "array_enable_cycles": 405,
+    "maximum_unstalled_hold_cycles": 674
+  },
+  "tree_update_timing_profile": "registered_count_iterative_remainder_v2",
+  "generic_gate_scope": "Retained arithmetic/neural/selector evidence and Round 22 tree-update gates; no new whole-core generic gate count or physical closure claim",
+  "execution_profile": "complete_serial_q32_column_hold_v2",
+  "prior_neural_evidence": {
+    "path": "p03_experiments/p18_buffered_hardware/p00_runs/run_20260909_174927Z",
+    "metadata_sha256": "d14d8c392727cd78d85f8a7af355b0420fb66b0f1405ba0f48432aefc5595349",
+    "snapshot_sha256": "e1b75e604bec663575d36f286ed4c6d92c6c56ab173fab835ac9d2316e32ff0d"
+  },
+  "activity_extension": {
+    "path": "p03_experiments/p29_block_power/p00_runs/run_20260910_150558Z",
+    "metadata_sha256": "d2ac9ae745783178c5761d9a68daefd50de3e5586b21214db10cacef3385b08f",
+    "method": "New counters match retained FSM waveforms; algorithm, state, traffic and schedule match the previous validated simulator."
+  },
+  "software_extension": {
+    "path": "p03_experiments/p93_optimized_scaling/compatibility.json",
+    "sha256": "20adaa6c5b18ba98ddadbcb34c3faf71c2652899848fd6e731c8d0dca2c3bb10",
+    "scope": "Software admission-guard extension only. All previously accepted mappings execute identical code; new sized parallel hardware is not RTL or physically validated."
+  }
+}

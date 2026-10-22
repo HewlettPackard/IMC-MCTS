@@ -1,0 +1,11 @@
+{
+  "board_size": 9,
+  "iterations": 5000,
+  "model_id": "go_strong_v1",
+  "seed": 0,
+  "initial_board": "empty",
+  "hardware_profile": "ucb16_adc32_buffered_v2",
+  "cost_profile": "ucb16_adc32_buffered_estimate_v6",
+  "clock_mhz_assumed": 500,
+  "boundary": "Preloaded core; host rules/history, chip I/O, programming and startup calibration excluded"
+}

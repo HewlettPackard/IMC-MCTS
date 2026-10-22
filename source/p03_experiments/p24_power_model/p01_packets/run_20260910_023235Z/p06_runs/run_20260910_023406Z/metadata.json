@@ -1,0 +1,82 @@
+{
+  "mode": "glue",
+  "status": "passed",
+  "packet_manifest_sha256": "b7c867bd6261795a1e10572ac3c2c74d0000cbbac5f48e31c402c4f9d2d8cea9",
+  "synthesis_commit": "bf33a610a5f8cbd8f2aee9010d8063a73ac92ee6",
+  "results": [
+    {
+      "fixture": "driven_empty",
+      "instance": "glue",
+      "case": null,
+      "window": {
+        "start_ns": "7.100",
+        "end_ns": "228155.100",
+        "duration_ns": 228148,
+        "cycles": 114074,
+        "timescale_ns": "0.001",
+        "declared_signals": 1441,
+        "unknown_value_events": 0,
+        "status": "Functional zero-delay waveform; no SDF/glitch or post-layout timing claim"
+      },
+      "golden_state_and_transactions": "passed",
+      "activity_sha256": "6560cf46529160eb380f7c6c01c937718df2db92a5d329785e34b834a9e68670",
+      "physical_power_adopted": false
+    },
+    {
+      "fixture": "driven_ragged",
+      "instance": "glue",
+      "case": null,
+      "window": {
+        "start_ns": "7.100",
+        "end_ns": "664925.100",
+        "duration_ns": 664918,
+        "cycles": 332459,
+        "timescale_ns": "0.001",
+        "declared_signals": 1441,
+        "unknown_value_events": 0,
+        "status": "Functional zero-delay waveform; no SDF/glitch or post-layout timing claim"
+      },
+      "golden_state_and_transactions": "passed",
+      "activity_sha256": "e10d156d95d531d0938d241ffa29fa55f9cdc14760a35a5cf2dde5f4bc5c725f",
+      "physical_power_adopted": false
+    },
+    {
+      "fixture": "buffered_empty",
+      "instance": "glue",
+      "case": null,
+      "window": {
+        "start_ns": "7.100",
+        "end_ns": "228803.100",
+        "duration_ns": 228796,
+        "cycles": 114398,
+        "timescale_ns": "0.001",
+        "declared_signals": 1496,
+        "unknown_value_events": 0,
+        "status": "Functional zero-delay waveform; no SDF/glitch or post-layout timing claim"
+      },
+      "golden_state_and_transactions": "passed",
+      "activity_sha256": "e846472c1bdd19ac89386dfd9240e988e4b7a67dffc98db3de3c7a0b79483580",
+      "physical_power_adopted": false
+    },
+    {
+      "fixture": "buffered_ragged",
+      "instance": "glue",
+      "case": null,
+      "window": {
+        "start_ns": "7.100",
+        "end_ns": "666869.100",
+        "duration_ns": 666862,
+        "cycles": 333431,
+        "timescale_ns": "0.001",
+        "declared_signals": 1496,
+        "unknown_value_events": 0,
+        "status": "Functional zero-delay waveform; no SDF/glitch or post-layout timing claim"
+      },
+      "golden_state_and_transactions": "passed",
+      "activity_sha256": "6798198ebd7ece746ca6d975f6b8688940a760218d147b3679441472d43e60bd",
+      "physical_power_adopted": false
+    }
+  ],
+  "cell_model_sha256": {},
+  "target_db_sha256": null
+}

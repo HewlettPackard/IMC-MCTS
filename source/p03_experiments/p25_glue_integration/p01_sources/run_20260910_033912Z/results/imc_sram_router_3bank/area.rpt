@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : imc_sram_router_BANKS3_BANK_BYTE_W19_ADDR_W21
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 15:27:39 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                          348
+Number of nets:                           706
+Number of cells:                          546
+Number of combinational cells:            459
+Number of sequential cells:                87
+Number of macros/black boxes:               0
+Number of buf/inv:                        129
+Number of references:                      34
+
+Combinational area:               1264.320027
+Buf/Inv area:                      197.760007
+Noncombinational area:            1044.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                  2308.320027
+Total area:                       2308.320027
+1

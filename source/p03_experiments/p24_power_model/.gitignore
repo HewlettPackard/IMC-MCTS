@@ -1,0 +1,4 @@
+*.vvp
+**/work/
+**/raw.vcd
+**/activity.vcd

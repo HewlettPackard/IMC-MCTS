@@ -1,0 +1,60 @@
+{
+  "profile": "peripheral_22nm_estimate_v1",
+  "tool_record": {
+    "path": "p03_experiments/p35_component_ppa/p00_runs/run_20260910_202201Z/characterization.json",
+    "sha256": "3861006c860db58a3321eb240594a685c57765962a1686e14950d3a82a18c673"
+  },
+  "assumptions": {
+    "input_activity": {
+      "value": 0.5,
+      "unit": "fraction",
+      "source": "Explicit mean-activity assumption; not sampled workload switching"
+    },
+    "mean_conductance": {
+      "value": 0.5,
+      "unit": "G_on fraction",
+      "source": "Explicit uniform cell-code approximation; no conductance measurements"
+    },
+    "driver_idle_fraction": {
+      "value": 0.05,
+      "unit": "fraction of full-rate switching power",
+      "source": "Engineering standby allowance; borrowed 5% scale from New_Architecture!U40, not a measured driver leakage"
+    },
+    "adc_idle_fraction": {
+      "value": 0.25,
+      "unit": "fraction of native converter power",
+      "source": "New_Architecture!U52, applied as a standby allowance to the SAR proxy; not measured leakage"
+    },
+    "analog_supply_v": {
+      "value": 1.8,
+      "unit": "V",
+      "source": "New_Architecture!O40/O52 amplifier bias formulas; thick-oxide proxy retained at source voltage"
+    },
+    "frontend_bias_ua": {
+      "value": 12.0,
+      "unit": "uA per lane",
+      "source": "New_Architecture!O40 literal current, reused as a conditioning amplifier proxy"
+    },
+    "reference_bias_mw": {
+      "value": 0.52,
+      "unit": "mW",
+      "source": "New_Architecture!Q56 literal 2*0.26 shared bias, used once per core"
+    },
+    "layout_area_fraction": {
+      "value": 0.15,
+      "unit": "fraction of installed subtotal",
+      "source": "New_Architecture!D97 area margin, treated as a floorplanning allowance"
+    },
+    "clock_wire_power_fraction": {
+      "value": 0.1,
+      "unit": "fraction of digital workload energy",
+      "source": "Explicit engineering allowance for physical distribution; not a synthesis or layout result"
+    }
+  },
+  "boundary": "Approximate preloaded-core costs. Source-specific operating points, ideal analog correctness and engineering allowances. No calibrated full-chip PPA.",
+  "excluded": [
+    "Host I/O, Go rules and metadata",
+    "Weight programming and preload",
+    "Package, pads, ESD and off-chip memory"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "counts": {
+    "selected_headers": 27928,
+    "legal_mask_loads": 1745,
+    "expansion_attempts": 5000,
+    "created_nodes": 5000,
+    "neural_evaluations": 5000,
+    "backprop_nodes": 32928,
+    "cam_searches": 22928,
+    "cam_output_ids": 97567,
+    "child_sram_read_words": 20701,
+    "cam_filled_rows": 20701,
+    "cam_hits": 18959,
+    "cam_evicted_rows": 19680
+  },
+  "parents": {
+    "4": 8018,
+    "3": 6070,
+    "5": 5738,
+    "2": 404,
+    "6": 1747,
+    "9": 332,
+    "7": 579,
+    "8": 32,
+    "1": 8
+  },
+  "nodes": 5001,
+  "max_depth": 8
+}

@@ -1,0 +1,61 @@
+Information: Propagating switching activity (high effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort high
+Design : imc_isqrt
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 15:31:15 2026
+****************************************
+
+
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+
+Operating Conditions: tt_typical_max_1p00v_25c   Library: sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+imc_isqrt              Small             sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c
+
+
+Global Operating Voltage = 1    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1uW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  = 954.7769 uW   (83%)
+  Net Switching Power  = 200.7971 uW   (17%)
+                         ---------
+Total Dynamic Power    =   1.1556 mW  (100%)
+
+Cell Leakage Power     =  18.7766 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.8623            0.0000            0.0000            0.8623  (  73.42%)  i
+register       3.2907e-02        2.3588e-02            7.9431        6.4438e-02  (   5.49%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  5.9610e-02            0.1772           10.8335            0.2477  (  21.09%)
+--------------------------------------------------------------------------------------------------
+Total              0.9548 mW         0.2008 mW        18.7766 uW         1.1744 mW
+1

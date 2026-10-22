@@ -10,7 +10,7 @@ contact:
     affiliation: "Hewlett Packard Labs"
     email: "tergel.molom-ochir@hpe.com"
 repository-code: "https://github.com/HewlettPackard/IMC-MCTS"
-version: "0.1.0"
+version: "0.2.0rc1"
 license: MIT
 keywords:
   - in-memory computing

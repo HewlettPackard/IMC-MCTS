@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "profile": "imc_22nm_costs_v2",
+  "target_node_nm": 22,
+  "clock_mhz": 500,
+  "digital_source": {"node_nm": 65, "voltage_v": 1.0, "temperature_k": 298.15, "corner": "tt_typical_max_1p00v_25c"},
+  "digital_target": {"node_nm": 22, "voltage_v": 0.8, "voltage_status": "Modeling assumption to match native CACTI supply", "temperature_k": null, "status": "Target supply assumed; target library and temperature uncharacterized"},
+  "area": {"method": "geometric_standard_cell_area", "applications": 1, "factor": 0.1145562130177515, "status": "analytical_estimate"},
+  "dynamic_energy": {"method": "geometric_capacitance_voltage_squared", "applications": 1, "capacitance_ratio": 0.3384615384615385, "factor": 0.21661538461538468, "status": "Analytical scenario: C ratio = 22/65, V ratio = 0.8/1.0, unchanged 500 MHz; not characterized 22 nm silicon"},
+  "leakage": {"method": "native65_power_proxy", "applications": 1, "factor": 1.0, "status": "Carry native65 leakage power unchanged; target process/temperature unknown; not a measured target value or guaranteed bound"},
+  "delay": {"method": "controller_cycles_at_nominal_clock", "applications": 0, "factor": null, "physical_closure": false},
+  "legacy_power": {"factor": 0.09291133727810653, "adopted": false, "reason": "Historical fitted tables; voltage/frequency/activity basis and dynamic/leakage split unrecovered"},
+  "native_22nm": {"sram": "No node conversion; CACTI 0.8 V, 360 K", "cim_cells": "No node conversion; mentor workbook cell area only"},
+  "sources": [
+    "https://www.ti.com/lit/an/scaa035b/scaa035b.pdf",
+    "https://vcl.ece.ucdavis.edu/pubs/2017.02.VLSIintegration.TechScale/",
+    "https://www.synopsys.com/articles/understanding-power-profile.html"
+  ]
+}

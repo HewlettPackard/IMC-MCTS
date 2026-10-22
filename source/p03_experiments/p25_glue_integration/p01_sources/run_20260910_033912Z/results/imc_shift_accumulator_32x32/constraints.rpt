@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : imc_shift_accumulator_ENTRIES32_ADDR_W5
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 15:25:04 2026
+****************************************
+
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   imc_shift_accumulator_ENTRIES32_ADDR_W5     0.00    85.92   -85.92 (VIOLATED)
+
+
+1

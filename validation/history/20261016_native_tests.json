@@ -1,0 +1,17 @@
+{
+  "pattern": "test_*.py",
+  "discovered_tests": 304,
+  "executed_tests": 304,
+  "success": false,
+  "failures": [
+    [
+      "test_equivalent_preset_and_custom_case_has_one_identity (test_run_reproducibility.RunReproducibilityTests.test_equivalent_preset_and_custom_case_has_one_identity)",
+      "Traceback (most recent call last):\n  File \"/Volumes/Tergel_NVMe/IMC_MCTS_reproducibility_20261016_233029Z/validation/native_check/native_test_source/tests/test_run_reproducibility.py\", line 72, in test_equivalent_preset_and_custom_case_has_one_identity\n    self.assertEqual(preset.simulation['tree_sha256'],fixture['tree_sha256'])\nAssertionError: 'b2994c9396c2123ead4669b820b48ebfe40e86e7c69581a0a291801d9e4a5b05' != '98522bb7a6031ddf375a84bcf63bdb86a9bd64a3b01a6513254d02969255a96d'\n- b2994c9396c2123ead4669b820b48ebfe40e86e7c69581a0a291801d9e4a5b05\n+ 98522bb7a6031ddf375a84bcf63bdb86a9bd64a3b01a6513254d02969255a96d\n\n"
+    ]
+  ],
+  "errors": [],
+  "skipped": [],
+  "fixture_archive_sha256": "d338c59141d6b8488cd345cd018f8cda1535bde7d661a7bc868e3e4ef1ad8cb9",
+  "engine_and_tests_modified": false,
+  "fixture_strategy": "Original bytes temporarily extracted per unchanged test module to bound disk use."
+}

@@ -1,0 +1,50 @@
+\begin{table}[t]
+\centering
+\setlength{\tabcolsep}{3pt}
+\caption{\textcolor{blue}{Selected implementations of MCTS and related search methods on FPGA, GPU, neuromorphic and multi-core platforms. Performance entries retain each source's workload and comparison boundary; they do not define a common benchmark. Source types and qualifications are specified in the table notes. Dashes indicate information not included in this comparison. The modeled IMC-MCTS design combines CAM-assisted selection, crossbar neural evaluation and SRAM-resident tree updates with digital control and arithmetic.}}
+\label{tab:supp_prior_mcts_hw}
+\tiny
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.18\textwidth}p{0.10\textwidth}p{0.14\textwidth}p{0.16\textwidth}p{0.20\textwidth}p{0.10\textwidth}@{}}
+\toprule
+\raggedright \textcolor{blue}{\textbf{Work}} & \raggedright \textcolor{blue}{\textbf{Platform}} & \raggedright \textcolor{blue}{\textbf{Application}} & \raggedright \textcolor{blue}{\textbf{Reported outcome}} & \raggedright \textcolor{blue}{\textbf{Evaluation}} & \raggedright \textcolor{blue}{\textbf{Energy ratio}} \\
+\midrule
+\multicolumn{6}{c}{\textit{FPGA implementations}} \\
+\midrule
+\raggedright \textcolor{blue}{Meng et al.\ 2023\cite{meng2023framework}} & \raggedright \textcolor{blue}{CPU--FPGA} & \raggedright \textcolor{blue}{Atari games} & \raggedright \textcolor{blue}{Up to 6.8$\times$\textsuperscript{a}} & \raggedright \textcolor{blue}{Environment simulation} & \raggedright \textcolor{blue}{---} \\
+\raggedright \textcolor{blue}{Meng et al.\ 2022\cite{meng2022fpl}} & \raggedright \textcolor{blue}{CPU--FPGA} & \raggedright \textcolor{blue}{Pong; Gomoku (6)} & \raggedright \textcolor{blue}{Up to 3.02$\times$\textsuperscript{a}} & \raggedright \textcolor{blue}{Simulation / neural inference} & \raggedright \textcolor{blue}{---} \\
+\raggedright \textcolor{blue}{Carvalho 2019\cite{carvalho2019thesis}} & \raggedright \textcolor{blue}{Zynq SoC} & \raggedright \textcolor{blue}{Chess endgames (8)} & \raggedright \textcolor{blue}{Up to 98$\times$\textsuperscript{g}} & \raggedright \textcolor{blue}{Heuristic/random playouts; tablebases} & \raggedright \textcolor{blue}{---} \\
+\raggedright \textcolor{blue}{Qasemi et al.\ 2014\cite{qasemi2014blokus}} & \raggedright \textcolor{blue}{FPGA} & \raggedright \textcolor{blue}{Blokus Duo (14)} & \raggedright \textcolor{blue}{---} & \raggedright \textcolor{blue}{Pruned random playouts} & \raggedright \textcolor{blue}{---} \\
+\midrule
+\multicolumn{6}{c}{\textit{GPU implementations}} \\
+\midrule
+\raggedright \textcolor{blue}{Buzer \& Cazenave 2023\cite{buzer2023mcts}} & \raggedright \textcolor{blue}{GPU} & \raggedright \textcolor{blue}{Snake-in-the-Box} & \raggedright \textcolor{blue}{380--521$\times$\textsuperscript{b}} & \raggedright \textcolor{blue}{NMCS; random playouts} & \raggedright \textcolor{blue}{---} \\
+\raggedright \textcolor{blue}{Sun et al.\ 2022\cite{nagai2023amazon}} & \raggedright \textcolor{blue}{GPU} & \raggedright \textcolor{blue}{Amazons} & \raggedright \textcolor{blue}{---} & \raggedright \textcolor{blue}{---} & \raggedright \textcolor{blue}{---} \\
+\raggedright \textcolor{blue}{Thomas 2022\cite{thomas2022julia}} & \raggedright \textcolor{blue}{GPU} & \raggedright \textcolor{blue}{Neural MCTS} & \raggedright \textcolor{blue}{Up to 13$\times$\textsuperscript{c}} & \raggedright \textcolor{blue}{Neural evaluation} & \raggedright \textcolor{blue}{---} \\
+\raggedright \textcolor{blue}{Huang et al.\ 2022\cite{huang2022pmbs}} & \raggedright \textcolor{blue}{GPU} & \raggedright \textcolor{blue}{Robotic retrieval} & \raggedright \textcolor{blue}{$\sim$30$\times$\textsuperscript{e}} & \raggedright \textcolor{blue}{Physics rollouts; neural grasp classifier} & \raggedright \textcolor{blue}{---} \\
+\raggedright \textcolor{blue}{Johnson et al.\ 2016\cite{johnson2016cuda}} & \raggedright \textcolor{blue}{GPU} & \raggedright \textcolor{blue}{Go ($5,19$)} & \raggedright \textcolor{blue}{$\sim$72$\times$\textsuperscript{h}} & \raggedright \textcolor{blue}{PV-Split; liberty heuristic} & \raggedright \textcolor{blue}{---} \\
+\raggedright \textcolor{blue}{Rocki \& Suda 2011\cite{rocki2011parallel}} & \raggedright \textcolor{blue}{CPU--GPU} & \raggedright \textcolor{blue}{Reversi (8)} & \raggedright \textcolor{blue}{Playing strength\textsuperscript{i}} & \raggedright \textcolor{blue}{Random terminal playouts} & \raggedright \textcolor{blue}{---} \\
+\midrule
+\multicolumn{6}{c}{\textit{Other platforms}} \\
+\midrule
+\raggedright \textcolor{blue}{Ho et al.\ 2024\cite{ho2024neuromorphic}} & \raggedright \textcolor{blue}{Loihi 2} & \raggedright \textcolor{blue}{Path interdiction} & \raggedright \textcolor{blue}{Solution quality} & \raggedright \textcolor{blue}{Spiking shortest-path solver} & \raggedright \textcolor{blue}{$\sim$5--10$\times$\textsuperscript{f}} \\
+\raggedright \textcolor{blue}{Steinmetz \& Gini 2021\cite{steinmetz2020tog}} & \raggedright \textcolor{blue}{Multi-core CPU} & \raggedright \textcolor{blue}{Go ($9,19$)} & \raggedright \textcolor{blue}{Win rate} & \raggedright \textcolor{blue}{Stochastic playouts; RAVE variants} & \raggedright \textcolor{blue}{---} \\
+\midrule
+\textbf{This work} & \textcolor{blue}{Modeled core} & \textcolor{blue}{Go ($9\times9$)} & \textbf{---}\textsuperscript{$d$} & \textbf{NN eval.} & \textcolor{blue}{Fig.~3b,c} \\
+\bottomrule
+\end{tabular*}
+\par\vspace{0.3em}
+{\scriptsize \textcolor{blue}{For prior works, board sizes in the Application column denote the single dimension $N$} (i.e.\ $N{\times}N$); a range or comma-list denotes multiple sizes evaluated by that work.
+\textcolor{blue}{NMCS: nested Monte Carlo search; PV-Split: principal-variation search; RAVE: rapid action value estimation. Dashes indicate information not included in this comparison, rather than evidence of absence.}
+\par\smallskip
+\textcolor{blue}{$^{a}$ Maximum system throughput relative to the authors' CPU-only baselines; Meng 2022 separately reports up to 35$\times$ for in-tree operations.
+$^{b}$ Measured Table~6 range relative to one CPU core for NMCS.
+$^{c}$ Author project report: batched versus non-batched GPU-assisted search, with 128-neuron layers; the ratio depends on network size.
+$^{e}$ Different planning budgets and solution qualities; not a fixed-work latency ratio.
+$^{g}$ Restricted chess endgames, relative to the software-only implementation.
+$^{h}$ PV-Split versus sequential principal-variation search at ply~6 on $19\times19$ Go; not MCTS.
+$^{i}$ Playing results comparable to 100--200 CPU threads, rather than a timing speedup.}
+\par\smallskip
+\textcolor{blue}{$^{f}$ Author conference presentation\cite{ho2024presentation}: energy for one MCTS iteration on small TSPLib cases, with branching factor 0.75 and maximum depth 3; the CPU estimate subtracts idle energy. The accounting boundaries are not harmonized across studies.}
+\par\smallskip
+$^{d}$ \textcolor{blue}{For this work, baseline-specific energy and latency comparisons are given in main Fig.~3b,c; a single ratio is not assigned across this survey.} Prior works' speedups use heterogeneous baselines (per-platform CPU, GPU, single-threaded reference) that are not directly comparable.}
+\end{table}

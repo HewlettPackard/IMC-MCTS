@@ -1,0 +1,25 @@
+top=imc_buffered_iteration_glue
+parameters=BOARD_SIZE=9,HIDDEN=96,CAM_ENTRIES=1024,ADDR_W=21
+scope=top_level_glue_only_children_excluded
+technology=TSMC 65nm
+library=sc12_cln65gplus_base_rvt
+library_file=sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db
+library_sha256=3b52e440b0066db5c3cea89a4183efcbe3571c76068c26ef465937dd10075c78
+corner=tt_typical_max_1p00v_25c
+voltage=1.00 V
+temperature=25 C
+time_unit=1 ns
+capacitance_unit=1 pF
+area_unit=square micrometers
+clock_period_ns=2.0
+clock_uncertainty_ns=0.05
+clock_transition_ns=0.10
+input_output_delay_ns=0.20
+input_driver=BUF_X1M_A12TR/Y
+output_load_pf=0.01
+reset_exception=set_false_path -from rst_n (active-low asynchronous reset)
+compile=compile_ultra -no_autoungroup
+power=vectorless; no workload activity supplied; diagnostic only
+design_compiler=U-2022.12-SP7-1
+packet_manifest_sha256=823eb86ca0d0f187cd9a3984623082d455592d34b8053374a69de40efac3b4c8
+packet_sha256sum_validation=PASS

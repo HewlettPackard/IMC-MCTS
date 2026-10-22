@@ -1,0 +1,20 @@
+{
+  "designs": ["imc_selection_path", "imc_readout_path"],
+  "library_name": "sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c",
+  "library_sha256": "3b52e440b0066db5c3cea89a4183efcbe3571c76068c26ef465937dd10075c78",
+  "default_library_path": "/home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db",
+  "corner": "tt_typical_max_1p00v_25c",
+  "node_nm": 65,
+  "process": 1.0,
+  "voltage_v": 1.0,
+  "temperature_c": 25.0,
+  "clock_period_ns": 2.0,
+  "io_delay_ns": 0.2,
+  "clock_uncertainty_ns": 0.05,
+  "clock_transition_ns": 0.1,
+  "input_driver": "BUF_X1M_A12TR",
+  "output_load_pf": 0.01,
+  "wire_load_model": "Small",
+  "power_status": "VECTORLESS_ONLY",
+  "scope": "Two connected digital regions, excluding the analog array, ADCs, SRAM macros and whole MCTS controller."
+}

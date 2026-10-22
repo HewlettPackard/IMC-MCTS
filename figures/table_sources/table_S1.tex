@@ -1,0 +1,28 @@
+\begin{table}[t]
+\centering
+% CHANGED: Round 80, approved board-dependent memory and 2x-medium high budgets.
+% CHANGED: Round 93, all approved diagnostic configurations completed; analog/physical validation remains open.
+% CHANGED: Round 93, optimized board-sized architecture and verified numerical evidence.
+\caption{\textcolor{blue}{Board-dependent memory capacities and search budgets (iterations per move). The default is the $9\times9$ medium configuration with Go-strong weights, 16 UCB scorers and 32 shared ADCs; other board sizes are scaling experiments. All 18 seeded diagnostic searches completed with the current parallel architecture. High is twice medium; installed memories remain fixed across a board\textquotesingle s budgets. CAM caches child lists and is not the full tree store. Native 22-nm CACTI characterizations supply memory estimates; the 1{,}536-entry logical CAM is costed with a 2{,}048-entry physical proxy. One MiB equals 1{,}024 KiB. Budgets do not establish playing strength. Array accuracy and physical timing at these sizes remain unvalidated.}}
+\label{tab:supp_play_strength}
+\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrr@{}}
+\toprule
+\textcolor{blue}{\textbf{\shortstack{Board\\size}}} &
+\textcolor{blue}{\textbf{\shortstack{CAM\\entries}}} &
+\textcolor{blue}{\textbf{\shortstack{Node SRAM\\(KiB)}}} &
+\textcolor{blue}{\textbf{\shortstack{Child SRAM\\(KiB)}}} &
+\textcolor{blue}{\textbf{\shortstack{Total SRAM\\(MiB)}}} &
+\textcolor{blue}{\textbf{Low}} &
+\textcolor{blue}{\textbf{Medium}} &
+\textcolor{blue}{\textbf{High}} \\
+\midrule
+\textcolor{blue}{$2\times2$} & \textcolor{blue}{128} & \textcolor{blue}{192} & \textcolor{blue}{64} & \textcolor{blue}{0.25} & \textcolor{blue}{50} & \textcolor{blue}{200} & \textcolor{blue}{400} \\
+\textcolor{blue}{$3\times3$} & \textcolor{blue}{256} & \textcolor{blue}{384} & \textcolor{blue}{128} & \textcolor{blue}{0.5} & \textcolor{blue}{75} & \textcolor{blue}{500} & \textcolor{blue}{1{,}000} \\
+\textcolor{blue}{$5\times5$} & \textcolor{blue}{512} & \textcolor{blue}{768} & \textcolor{blue}{256} & \textcolor{blue}{1} & \textcolor{blue}{100} & \textcolor{blue}{1{,}000} & \textcolor{blue}{2{,}000} \\
+\textcolor{blue}{$9\times9$} & \textcolor{blue}{1{,}024} & \textcolor{blue}{1{,}536} & \textcolor{blue}{512} & \textcolor{blue}{2} & \textcolor{blue}{500} & \textcolor{blue}{5{,}000} & \textcolor{blue}{10{,}000} \\
+\textcolor{blue}{$13\times13$} & \textcolor{blue}{1{,}536} & \textcolor{blue}{2{,}048} & \textcolor{blue}{1{,}024} & \textcolor{blue}{3} & \textcolor{blue}{1{,}000} & \textcolor{blue}{7{,}500} & \textcolor{blue}{15{,}000} \\
+\textcolor{blue}{$19\times19$} & \textcolor{blue}{2{,}048} & \textcolor{blue}{3{,}584} & \textcolor{blue}{1{,}024} & \textcolor{blue}{4.5} & \textcolor{blue}{2{,}000} & \textcolor{blue}{10{,}000} & \textcolor{blue}{20{,}000} \\
+\bottomrule
+\end{tabular*}
+\end{table}

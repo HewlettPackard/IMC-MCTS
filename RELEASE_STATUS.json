@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0rc1",
+  "kind": "PUBLIC_CODE_REPOSITORY_UPDATE",
+  "external_distribution_allowed": true,
+  "publication_permission_status": "PROJECT_OWNER_AUTHORIZED_CODE_ONLY_REPOSITORY_UPDATE",
+  "technical_validation": "See VALIDATION.md for local checks and retained verification evidence, and repository Actions for current hosted status.",
+  "base_verified_package": "imc-mcts-reproducibility_20261019",
+  "base_manifest_sha256": "bc59ed0e2f40fc7bc201c871388546e064f4f5c3aff9ebedaeeb83ff09563469",
+  "execution_profile": "ucb16_adc32_buffered_v2",
+  "cost_profile": "ucb16_adc32_buffered_estimate_v6",
+  "simulator_arithmetic_changes": false,
+  "figure3d": "ON_HOLD_EXCLUDED",
+  "figure4a": "ARCHIVED_DATA_REPLOT_ONLY",
+  "external_artifacts_bundled": false,
+  "hosted_ci_status": "SEE_REPOSITORY_ACTIONS",
+  "prior_repository_security_clearance": {
+    "status": "COMPLETE_USER_CONFIRMED",
+    "basis": "Project owner confirms the original clearance for this same public repository passed.",
+    "independently_reaudited": false,
+    "fresh_blanket_review_required_by_this_checklist": false
+  },
+  "repository_update": "CODE_ONLY_UPDATE_TO_EXISTING_PUBLIC_REPOSITORY",
+  "excluded_raw_input_files": 34,
+  "excluded_standalone_model_files": {
+    "npz": 7,
+    "pkl": 7,
+    "bin": 2,
+    "total": 16
+  },
+  "model_containing_fixture_archives_excluded": 1,
+  "external_distribution_allowed_basis": "Authorization applies to this public code update only. All 34 optional raw inputs remain excluded and retain their separate distribution terms.",
+  "existing_baseline_attribution_context": {
+    "public_commit": "93b7ba4ea8edb96bb3f6dc34521f49d11fb6a571",
+    "python_AST_unchanged": true,
+    "new_pending_approval": false
+  },
+  "hosted_ci_url": "https://github.com/HewlettPackard/IMC-MCTS/actions"
+}

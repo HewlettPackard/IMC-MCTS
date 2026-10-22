@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : imc_isqrt
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 15:31:15 2026
+****************************************
+
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                          162
+Number of nets:                          1566
+Number of cells:                         1458
+Number of combinational cells:           1190
+Number of sequential cells:               268
+Number of macros/black boxes:               0
+Number of buf/inv:                        372
+Number of references:                      67
+
+Combinational area:               3319.200076
+Buf/Inv area:                      564.480020
+Noncombinational area:            3216.959999
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                  6536.160075
+Total area:                       6536.160075
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------
+imc_isqrt                         6536.1601    100.0  3319.2001  3216.9600  0.0000  imc_isqrt
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------
+Total                                                 3319.2001  3216.9600  0.0000
+
+1

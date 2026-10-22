@@ -1,0 +1,26 @@
+IMC-MCTS Studio: http://127.0.0.1:4784
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /api/plays HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /visuals.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /visuals.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /api/catalog HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /api/models HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /api/runs HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:56] "GET /api/plays HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:57] "GET /api/components?board=9&memory=cacti_22nm_lstp&readout=sustained_drive_v1&model=go_strong_v1 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:57] "GET /api/crossbar?size=256 HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:57] "GET /favicon.ico HTTP/1.1" 204 -
+127.0.0.1 - - [15/Sep/2026 14:26:57] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:26:57] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:48:03] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:48:03] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 14:48:03] "GET /api/plays HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:15:58] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:15:58] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2026 15:15:58] "GET /api/plays HTTP/1.1" 200 -

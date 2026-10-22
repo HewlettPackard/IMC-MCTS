@@ -1,29 +1,36 @@
 # Contributing
 
-Reproducibility reports, bug reports, and documentation corrections are
-welcome through GitHub Issues.
+Contributions should make the simulator easier to understand, run or verify while preserving the distinction between measured, modeled and assumed quantities. Follow the [code of conduct](CODE_OF_CONDUCT.md).
 
-## Before opening an issue
+## Set up and test
 
-1. Use a fresh checkout and the installation steps in `README.md`.
-2. Run `make check`.
-3. Include the commit SHA, Python version, operating system, command, complete
-   traceback, and the smallest input that reproduces the problem.
-4. For numerical differences, include hardware details, random seeds, and the
-   expected and observed values.
+Use a virtual environment with Python 3.12, then run:
 
-## Code contributions
+```sh
+make install
+make test
+```
 
-The project may include materials that need separate review before public
-release. Do not submit code or data that is confidential, employer-owned,
-export-controlled, patent sensitive, or incompatible with the repository
-license.
+The public suite covers release interfaces, artifact handling and packaging policies without private inputs. It is distinct from the full native simulator suite. With an approved external artifact store:
 
-Contact the maintainer in a GitHub Issue or at
-[tergel.molom-ochir@hpe.com](mailto:tergel.molom-ochir@hpe.com) before preparing
-a substantial pull request. By submitting a contribution, you represent that
-you have the right to submit it and agree that it may be distributed under the
-repository's current or future project license.
+```sh
+make test-full ARTIFACTS=/path/to/artifact-store
+```
 
-Pull requests should remain focused, preserve documented behavior, add tests
-for behavioral changes, and pass `make check`.
+For changes affecting numerical results, also run the relevant hero/scaling replay described in [REPRODUCIBILITY.md](REPRODUCIBILITY.md). Preserve seeds, configuration, units, accounting boundaries and source identities in the evidence. Never replace a failed result with a passing label or remove an integrity check to make a test pass.
+
+## Propose a change
+
+Open an issue for a substantial design change before implementing it. Keep pull requests focused and explain the problem, resulting behavior, tests run and limitations. Include a small regression test for a bug when it protects meaningful behavior. Avoid unrelated formatting or generated-output changes.
+
+Do not commit credentials, local environments, personal configuration, private weights or supplied artifacts awaiting distribution approval. Keep external inputs outside the source tree and use the checksum-checked artifact installer. Do not attach restricted material to a public issue or pull request.
+
+Original contributions use the repository's MIT license. Preserve existing attribution and third-party license terms; flag uncertain ownership or distribution rights for maintainer review. Use the established SPDX headers on original project source. Do not relabel third-party code as project-owned.
+
+## Architecture and documentation
+
+The Studio's current profile, architecture diagram, resource values, timing, energy and exports must agree. Keep old results labeled with their original profiles. Update relevant documentation when changing a public command, default or model assumption.
+
+`make figures` replots retained data with optional paper/render dependencies. It does not train models or rerun CPU/GPU benchmarks. Figure 3d remains outside this release's supported targets.
+
+GitHub CI runs the public release checks. Passing that workflow does not establish the full private-artifact replay or physical hardware accuracy. Include the full checks separately when they are relevant to a change.

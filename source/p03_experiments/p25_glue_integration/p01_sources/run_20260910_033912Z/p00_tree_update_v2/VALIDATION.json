@@ -1,0 +1,43 @@
+{
+  "top": "imc_tree_update",
+  "parameters": {
+    "BOARD_SIZE": 9,
+    "CAM_ENTRIES": 1024,
+    "NEURAL_BYTES": 16512,
+    "ADDR_W": 21
+  },
+  "rtl_sha256": {
+    "imc_round_divider.sv": "ca0ec9dae66448e91a3432dfc295568ea2d4d39574b264bd00a8e66243b3200b",
+    "imc_q17_codec.sv": "01ee00551b6ebc3162410dabfa0185a5ead7797e95f7f5edc4e1d8798888625c",
+    "imc_tree_update.sv": "215d86aa6b85e1ef33f93c4650ad7f9ed7f23f855fe4e209fb938bce477de668"
+  },
+  "repair_source_paths": [
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_round_divider.sv",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_q17_codec.sv",
+    "rtl_synthesis/p05_tree_update_timing/p00_rtl/imc_tree_update.sv"
+  ],
+  "repair_base_commit": "39680f4",
+  "validation": {
+    "module": {
+      "run": "p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z",
+      "checks_passed": 291,
+      "metadata_sha256": "b810760a81f6caffb65e80a5bb8721900af830382bdb0bf3b8b56f20e441553c"
+    },
+    "generic_gates": {
+      "run": "p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010512Z",
+      "checks_passed": 32,
+      "metadata_sha256": "962e4f013686c508d9b4e5991de7a324c3e6a29ef3f99611f425adaa502269dc"
+    },
+    "complete_cores": {
+      "run": "p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010446Z",
+      "checks_passed": 307,
+      "metadata_sha256": "e3545c47c36e52f2f5b4b3b15227587e7331d7e29e7909922c4097883904ce9a"
+    }
+  },
+  "added_cycles_per_nonempty_expansion": 35,
+  "extra_sram_transactions": 0,
+  "native_65nm_timing_validated": false,
+  "native_22nm_timing_validated": false,
+  "old_costs_reused": false,
+  "boundary": "Characterization candidate; original RTL, studio and result catalog remain on their preserved version until new reports are admitted."
+}

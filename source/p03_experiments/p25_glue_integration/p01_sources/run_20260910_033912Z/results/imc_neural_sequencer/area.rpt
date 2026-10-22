@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : area
+Design : imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 16:26:18 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                          578
+Number of nets:                         11571
+Number of cells:                        11106
+Number of combinational cells:           9343
+Number of sequential cells:              1760
+Number of macros/black boxes:               0
+Number of buf/inv:                       1274
+Number of references:                     177
+
+Combinational area:              27559.680235
+Buf/Inv area:                     2370.720065
+Noncombinational area:           21144.479989
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 48704.160224
+Total area:                      48704.160224
+1

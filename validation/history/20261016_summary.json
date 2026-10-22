@@ -1,0 +1,464 @@
+{
+  "prepared_utc": "2026-10-16T23:50:33.154858+00:00",
+  "extracted_archive_validation": true,
+  "dependency_installation": "Existing installed versions in tested_environment.json; no fresh online dependency installation was performed.",
+  "hero": {
+    "board_size": 9,
+    "iterations": 5000,
+    "model_id": "go_strong_v1",
+    "status": "PASS",
+    "cycles": 27593493,
+    "checked_hashes": [
+      "tree_sha256",
+      "node_sram_sha256",
+      "child_sram_sha256",
+      "events_sha256",
+      "neural_trace_sha256"
+    ],
+    "host_seconds": 17.060196250000445,
+    "hardware_latency_ms": 55.186986
+  },
+  "scaling": [
+    {
+      "board_size": 2,
+      "iterations": 50,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 131407,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 0.329700459002197,
+      "hardware_latency_ms": 0.262814
+    },
+    {
+      "board_size": 2,
+      "iterations": 200,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 602423,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 0.5254292919998989,
+      "hardware_latency_ms": 1.204846
+    },
+    {
+      "board_size": 2,
+      "iterations": 400,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 1303256,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 0.8960831250005867,
+      "hardware_latency_ms": 2.606512
+    },
+    {
+      "board_size": 3,
+      "iterations": 75,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 198049,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 0.37986458399973344,
+      "hardware_latency_ms": 0.396098
+    },
+    {
+      "board_size": 3,
+      "iterations": 500,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 1546989,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 1.1646596669997962,
+      "hardware_latency_ms": 3.093978
+    },
+    {
+      "board_size": 3,
+      "iterations": 1000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 3269476,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 2.2725152499988326,
+      "hardware_latency_ms": 6.538952
+    },
+    {
+      "board_size": 5,
+      "iterations": 100,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 306138,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 0.5463976249993721,
+      "hardware_latency_ms": 0.612276
+    },
+    {
+      "board_size": 5,
+      "iterations": 1000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 3619022,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 3.038025417001336,
+      "hardware_latency_ms": 7.238044
+    },
+    {
+      "board_size": 5,
+      "iterations": 2000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 7992108,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 6.099932582998008,
+      "hardware_latency_ms": 15.984216
+    },
+    {
+      "board_size": 9,
+      "iterations": 500,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 2554991,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 2.3430810829995607,
+      "hardware_latency_ms": 5.109982
+    },
+    {
+      "board_size": 9,
+      "iterations": 5000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 27322991,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 16.887584957999934,
+      "hardware_latency_ms": 54.645982
+    },
+    {
+      "board_size": 9,
+      "iterations": 10000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 66853167,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 41.00470454099923,
+      "hardware_latency_ms": 133.706334
+    },
+    {
+      "board_size": 13,
+      "iterations": 1000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 7854384,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 5.973792124997999,
+      "hardware_latency_ms": 15.708768
+    },
+    {
+      "board_size": 13,
+      "iterations": 7500,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 63780384,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 31.478825125002913,
+      "hardware_latency_ms": 127.560768
+    },
+    {
+      "board_size": 13,
+      "iterations": 15000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 128310384,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 61.72741620799934,
+      "hardware_latency_ms": 256.620768
+    },
+    {
+      "board_size": 19,
+      "iterations": 2000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 28056198,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 20.7724079169966,
+      "hardware_latency_ms": 56.112396
+    },
+    {
+      "board_size": 19,
+      "iterations": 10000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 153432198,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 73.925382292,
+      "hardware_latency_ms": 306.864396
+    },
+    {
+      "board_size": 19,
+      "iterations": 20000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 310152198,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 122.29608587500115,
+      "hardware_latency_ms": 620.304396
+    }
+  ],
+  "retained_data_checks": {
+    "saved_searches": 19,
+    "diagnostic_cases": 18,
+    "application_ledgers": 8,
+    "archived_processor_means": 8,
+    "ratio_records": 10,
+    "figure3d": "ON_HOLD_EXCLUDED",
+    "figure4a": "ARCHIVED_DATA_REPLOT_ONLY"
+  },
+  "figures": {
+    "status": "passed",
+    "frozen_inputs_checked": 43,
+    "figure3d": "ON_HOLD_EXCLUDED",
+    "targets": [
+      "plot_fig2de.py",
+      "plot_fig3a.py",
+      "plot_fig3b.py",
+      "plot_fig3c.py",
+      "plot_fig4.py",
+      "plot_extended_bottleneck.py"
+    ],
+    "derived_fig3c_ratios_match": true,
+    "scope": "Replot archived CSVs. No new search, training, benchmark, tournament or simulator cost calculation.",
+    "render_comparisons": [
+      {
+        "id": "Fig2d",
+        "pixels_match": true,
+        "reference_pixels": [
+          689,
+          452
+        ],
+        "regenerated_pixels": [
+          689,
+          452
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "Fig2e",
+        "pixels_match": true,
+        "reference_pixels": [
+          689,
+          452
+        ],
+        "regenerated_pixels": [
+          689,
+          452
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "Fig3a",
+        "pixels_match": true,
+        "reference_pixels": [
+          688,
+          359
+        ],
+        "regenerated_pixels": [
+          688,
+          359
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "Fig3b",
+        "pixels_match": true,
+        "reference_pixels": [
+          539,
+          369
+        ],
+        "regenerated_pixels": [
+          539,
+          369
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "Fig3c",
+        "pixels_match": true,
+        "reference_pixels": [
+          532,
+          367
+        ],
+        "regenerated_pixels": [
+          532,
+          367
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "Fig4a",
+        "pixels_match": true,
+        "reference_pixels": [
+          629,
+          369
+        ],
+        "regenerated_pixels": [
+          629,
+          369
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "Fig4b",
+        "pixels_match": true,
+        "reference_pixels": [
+          629,
+          369
+        ],
+        "regenerated_pixels": [
+          629,
+          369
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "ExtendedDataFig1",
+        "pixels_match": true,
+        "reference_pixels": [
+          692,
+          390
+        ],
+        "regenerated_pixels": [
+          692,
+          390
+        ],
+        "mean_absolute_difference": 0.0
+      }
+    ],
+    "all_rendered_pixels_match": true
+  },
+  "native_tests": {
+    "executed": 304,
+    "passed": 303,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0,
+    "known_preexisting_failure": "test_equivalent_preset_and_custom_case_has_one_identity (test_run_reproducibility.RunReproducibilityTests.test_equivalent_preset_and_custom_case_has_one_identity)"
+  },
+  "figure3d": "ON_HOLD_EXCLUDED",
+  "figure4a": "ARCHIVED_DATA_REPLOT_ONLY",
+  "native_engine_and_tests_edited": false,
+  "publicly_distributed": false,
+  "physical_validation": false,
+  "studio_launcher": {
+    "status": "PASS",
+    "current_health_profile": "ucb16_adc32_buffered_v2",
+    "tiny_search_iterations": 2,
+    "isolated_registry_created": true,
+    "frozen_source_index_unchanged": true,
+    "post_search_manifest_pass": true,
+    "test_server_stopped": true
+  }
+}

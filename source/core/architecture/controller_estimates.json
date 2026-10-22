@@ -1,0 +1,25 @@
+{
+  "profile": "single_child_controller_report_proxies_v1",
+  "status": "engineering_estimate_not_matching_synthesis",
+  "nominal_multiplier": 1.25,
+  "sensitivity_multipliers": [1.0, 1.25, 2.0],
+  "method": "Closest report-sized parent plus a whole-parent implementation allowance, applied to area, active dynamic, clock-only idle and leakage before the existing node conversion",
+  "allowance_basis": "25% is an explicit engineering reserve for changed single-child control and the 163rd neural input, not measured overhead. Applying it to whole parents also reserves capacity for registers, control and local wiring without separately adding already SRAM-priced per-node state.",
+  "sensitivity_status": "Uncalibrated scenarios, not confidence intervals or guaranteed lower/upper bounds",
+  "scope": {
+    "board_size": 9,
+    "hidden_size": 96,
+    "input_sizes": [162, 163],
+    "cam_entries": 1024,
+    "node_sram_bytes": 1572864,
+    "child_sram_bytes": 524288,
+    "neural_bytes": 16512
+  },
+  "owners": {
+    "u_sel": "Retained cache buffers, CAM interface and UCB handshake; remaining-action tests and linked-list walk change control",
+    "u_upd": "Retained seeded remainder, Q17 codec, board/path buffers and backprop; one-child allocation, action-mask scan and tail linking change control",
+    "top_level_glue": "Retained phase handshakes and shared-memory arbitration; four-cycle finish and capacity checks change control",
+    "u_nn": "Closest 162-input by 96-hidden report for the 163-input Go model; digital accumulation, precision and shared readout geometry unchanged; no exact parameter report"
+  },
+  "excluded": "Host Go legality/history, I/O, weight programming and physical signoff remain outside the cost claim; no new synthesized controller or delay result"
+}

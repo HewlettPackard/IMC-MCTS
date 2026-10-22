@@ -1,0 +1,2 @@
+node_nm,roadmap,bits,lanes,column_ohm,clock_hz,read_v,temp_k,vdd_v,area_um2,latency_ns,energy_pj,reported_leakage_w
+22,1,8,1,25000000,500000000,0.40000000000000002,360,0.84999999999999998,180.44759040000002,9.0000000000000018,0.088065363584144407,0

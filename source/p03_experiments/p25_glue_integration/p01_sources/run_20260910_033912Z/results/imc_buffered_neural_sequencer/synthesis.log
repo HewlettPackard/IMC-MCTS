@@ -1,0 +1,783 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+              Version U-2022.12-SP7-1 for linux64 - Nov 28, 2023 
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Current time:       Wed Sep  9 16:26:21 2026
+Hostname:           tr220-dt01.egr.duke.edu
+CPU Model:          AMD Ryzen Threadripper PRO 5945WX 12-Cores
+CPU Details:        Cores = 24 : Sockets = 1 : Cache Size = 512 KB : Freq = 4.10 GHz
+OS:                 Linux 4.18.0-553.120.1.el8_10.x86_64
+RAM:                251 GB (Free  15 GB)
+Swap:                 3 GB (Free   1 GB)
+Work Filesystem:    /home mounted to /dev/mapper/rhel-home
+Tmp Filesystem:     / mounted to /dev/mapper/rhel-root
+Work Disk:          3075 GB (Free 344 GB)
+Tmp Disk:           2461 GB (Free 2064 GB)
+
+CPU Load: 9%, Ram Free: 15 GB, Swap Free: 1 GB, Work Disk Free: 344 GB, Tmp Disk Free: 2064 GB
+# Synopsys Design Compiler batch flow for the IMC-MCTS RTL handoff.
+# Configuration is passed through environment variables by run_all.sh.
+proc require_env {name} {
+    if {![info exists ::env($name)] || $::env($name) eq ""} {
+        error "Required environment variable $name is not set"
+    }
+    return $::env($name)
+}
+set project_dir [file normalize [require_env PROJECT_DIR]]
+/home/tm431/synthesis0909
+set run_name    [require_env RUN_NAME]
+imc_buffered_neural_sequencer
+set top         [require_env TOP]
+imc_buffered_neural_sequencer
+set params      $::env(PARAMS)
+INPUTS=162,HIDDEN=96,ADDR_W=21,SRAM_BYTES=1572864
+set sequential  [expr {$::env(SEQUENTIAL) eq "1"}]
+1
+set result_dir  [file join $project_dir results $run_name]
+/home/tm431/synthesis0909/results/imc_buffered_neural_sequencer
+set target_db "/home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db"
+/home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db
+set target_library [list $target_db]
+/home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db
+set link_library   [list "*" $target_db]
+* /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db
+set_app_var search_path [list $project_dir]
+/home/tm431/synthesis0909
+file mkdir $result_dir
+define_design_lib WORK -path [file join $result_dir work]
+1
+set fp [open [file join $project_dir filelist.f] r]
+file15
+set rtl_files {}
+foreach line [split [read $fp] "\n"] {
+    set line [string trim $line]
+    if {$line ne "" && ![string match "#*" $line]} {
+        lappend rtl_files [file join $project_dir $line]
+    }
+}
+close $fp
+analyze -format sverilog $rtl_files
+Running PRESTO HDLC
+Compiling source file /home/tm431/synthesis0909/imc_shift_accumulator.sv
+Compiling source file /home/tm431/synthesis0909/imc_round_divider.sv
+Compiling source file /home/tm431/synthesis0909/imc_sram_router.sv
+Compiling source file /home/tm431/synthesis0909/imc_fixed_scale.sv
+Compiling source file /home/tm431/synthesis0909/imc_neural_sequencer.sv
+Compiling source file /home/tm431/synthesis0909/imc_cached_selector.sv
+Compiling source file /home/tm431/synthesis0909/imc_q17_codec.sv
+Compiling source file /home/tm431/synthesis0909/imc_tree_update.sv
+Compiling source file /home/tm431/synthesis0909/imc_ln_table.sv
+Compiling source file /home/tm431/synthesis0909/imc_isqrt.sv
+Compiling source file /home/tm431/synthesis0909/imc_ucb_score.sv
+Compiling source file /home/tm431/synthesis0909/imc_iteration_core.sv
+Compiling source file /home/tm431/synthesis0909/imc_column_hold_control.sv
+Compiling source file /home/tm431/synthesis0909/imc_buffered_neural_sequencer.sv
+Compiling source file /home/tm431/synthesis0909/imc_buffered_iteration_core.sv
+Compiling source file /home/tm431/synthesis0909/imc_buffered_neural_core.sv
+Compiling source file /home/tm431/synthesis0909/imc_neural_core.sv
+Presto compilation completed successfully.
+Loading db file '/home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db'
+1
+if {$params eq ""} {
+    elaborate $top
+} else {
+    elaborate $top -parameters $params
+}
+Loading db file '/opt/synopsys/syn/U-2022.12-SP7-1/libraries/syn/gtech.db'
+Loading db file '/opt/synopsys/syn/U-2022.12-SP7-1/libraries/syn/standard.sldb'
+  Loading link library 'sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  /home/tm431/synthesis0909/imc_buffered_neural_sequencer.sv:143: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/tm431/synthesis0909/imc_buffered_neural_sequencer.sv:144: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/tm431/synthesis0909/imc_buffered_neural_sequencer.sv:324: signed to unsigned part selection occurs. (VER-318)
+
+Statistics for case statements in always block at line 173 in file
+	'/home/tm431/synthesis0909/imc_buffered_neural_sequencer.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           219            |    user/user     |
+|           478            |    user/user     |
+===============================================
+
+Inferred memory devices in process
+	in routine imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864 line 502 in file
+		'/home/tm431/synthesis0909/imc_buffered_neural_sequencer.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| exponentials_q_reg  | Flip-flop |  96   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     state_q_reg     | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     board_q_reg     | Flip-flop |  21   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    neural_q_reg     | Flip-flop |  21   |  Y  | N  | Y  | N  | N  | N  | N  |
+| hidden_shift_q_reg  | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  logit_shift_q_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     layer_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     tile_q_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      row_q_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    column_q_reg     | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      bit_q_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     word_q_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     lane_q_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    settle_q_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    output_q_reg     | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    inputs_q_reg     | Flip-flop |  128  |  Y  | N  | Y  | N  | N  | N  | N  |
+|     codes_q_reg     | Flip-flop |  24   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   word_data_q_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  denominator_q_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    maximum_q_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   lut_index_q_reg   | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   value_code_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  result_error_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    logits_q_reg     | Flip-flop |  96   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+=====================================================================================================================
+|                                block name/line                                  | Inputs | Outputs | # sel inputs |
+=====================================================================================================================
+| imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864/210 |  128   |    1    |      7       |
+=====================================================================================================================
+Presto compilation completed successfully. (imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864)
+Elaborated 1 design.
+Current design is now 'imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864'.
+Information: Building the design 'imc_column_hold_control' instantiated from design 'imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864' with
+	the parameters "COLUMNS=128,ARRAYS=4". (HDL-193)
+Warning:  /home/tm431/synthesis0909/imc_column_hold_control.sv:69: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 43 in file
+	'/home/tm431/synthesis0909/imc_column_hold_control.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            54            |    user/user     |
+===============================================
+
+Inferred memory devices in process
+	in routine imc_column_hold_control_COLUMNS128_ARRAYS4 line 74 in file
+		'/home/tm431/synthesis0909/imc_column_hold_control.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     next_q_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     state_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     owner_q_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    columns_q_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (imc_column_hold_control_COLUMNS128_ARRAYS4)
+Information: Building the design 'imc_shift_accumulator'. (HDL-193)
+Warning:  /home/tm431/synthesis0909/imc_shift_accumulator.sv:56: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine imc_shift_accumulator line 61 in file
+		'/home/tm431/synthesis0909/imc_shift_accumulator.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    cmd_done_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    cmd_error_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      sum_q_reg      | Flip-flop | 1024  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+==============================================================
+|     block name/line      | Inputs | Outputs | # sel inputs |
+==============================================================
+| imc_shift_accumulator/48 |   32   |   32    |      5       |
+| imc_shift_accumulator/40 |   32   |   32    |      5       |
+==============================================================
+Presto compilation completed successfully. (imc_shift_accumulator)
+Information: Building the design 'imc_fixed_scale'. (HDL-193)
+Warning:  /home/tm431/synthesis0909/imc_fixed_scale.sv:24: signed to unsigned assignment occurs. (VER-318)
+Presto compilation completed successfully. (imc_fixed_scale)
+Information: Building the design 'imc_round_divider'. (HDL-193)
+Warning:  /home/tm431/synthesis0909/imc_round_divider.sv:62: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 36 in file
+	'/home/tm431/synthesis0909/imc_round_divider.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            55            |    user/user     |
+===============================================
+
+Inferred memory devices in process
+	in routine imc_round_divider line 98 in file
+		'/home/tm431/synthesis0909/imc_round_divider.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      error_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     state_q_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   numerator_q_reg   | Flip-flop |  48   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  denominator_q_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    quotient_reg     | Flip-flop |  48   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    remainder_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     count_q_reg     | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      done_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (imc_round_divider)
+1
+# elaborate leaves the newly parameterized instance as the current design.
+# Re-selecting by wildcard can accidentally match both it and its template.
+link
+
+  Linking design 'imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (5 designs)               /home/tm431/synthesis0909/results/imc_buffered_neural_sequencer/imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864.db, etc
+  sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (library) /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db
+
+1
+redirect -file [file join $result_dir check_design_precompile.rpt] {check_design}
+# Keep hierarchy available for the requested integrated area breakdown.
+set_ungroup [get_designs *] false
+1
+set clock_period     2.0
+2.0
+set clock_uncertainty 0.05
+0.05
+set clock_transition  0.10
+0.10
+set io_delay           0.20
+0.20
+set output_load_pf     0.01
+0.01
+set driver_cell "BUF_X1M_A12TR"
+BUF_X1M_A12TR
+set rst_ports [get_ports -quiet rst_n]
+{rst_n}
+if {$sequential} {
+    set clk_port [get_ports clk]
+    create_clock -name clk -period $clock_period $clk_port
+    set_clock_uncertainty $clock_uncertainty [get_clocks clk]
+    set_clock_transition $clock_transition [get_clocks clk]
+    set data_inputs [remove_from_collection [all_inputs] $clk_port]
+    if {[sizeof_collection $data_inputs] > 0} {
+        set_input_delay $io_delay -clock clk $data_inputs
+        set_driving_cell -lib_cell $driver_cell -pin Y $data_inputs
+    }
+    if {[sizeof_collection [all_outputs]] > 0} {
+        set_output_delay $io_delay -clock clk [all_outputs]
+    }
+} else {
+    set_max_delay $clock_period -from [all_inputs] -to [all_outputs]
+    if {[sizeof_collection [all_inputs]] > 0} {
+        set_driving_cell -lib_cell $driver_cell -pin Y [all_inputs]
+    }
+}
+Warning: Design rule attributes from the driving cell will be set on the port 'rst_n'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'start'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[20]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[19]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[18]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[17]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[16]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[15]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[14]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[13]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[12]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[11]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[10]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[9]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[8]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[7]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[6]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[5]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[4]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[3]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[2]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[1]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'board_base[0]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[20]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[19]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[18]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[17]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[16]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[15]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[14]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[13]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[12]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[11]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[10]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[9]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[8]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[7]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[6]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[5]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[4]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[3]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[2]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[1]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'neural_base[0]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'hidden_shift[5]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'hidden_shift[4]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'hidden_shift[3]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'hidden_shift[2]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'hidden_shift[1]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'hidden_shift[0]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'logit_shift[7]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'logit_shift[6]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'logit_shift[5]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'logit_shift[4]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'logit_shift[3]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'logit_shift[2]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'logit_shift[1]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'logit_shift[0]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'result_ready'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_req_ready'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_valid'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_error'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[31]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[30]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[29]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[28]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[27]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[26]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[25]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[24]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[23]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[22]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[21]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[20]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[19]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[18]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[17]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[16]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[15]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[14]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[13]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[12]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[11]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[10]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[9]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[8]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[7]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[6]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[5]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[4]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[3]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[2]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[1]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'mem_rsp_rdata[0]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'drive_ready'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'column_capture_ready'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_req_ready'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_valid'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_error'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[23]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[22]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[21]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[20]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[19]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[18]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[17]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[16]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[15]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[14]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[13]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[12]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[11]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[10]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[9]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[8]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[7]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[6]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[5]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[4]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[3]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[2]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[1]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'adc_rsp_codes[0]'. (UID-401)
+1
+if {[sizeof_collection [all_outputs]] > 0} {
+    set_load $output_load_pf [all_outputs]
+}
+1
+if {[sizeof_collection $rst_ports] > 0} {
+    # rst_n is an active-low asynchronous reset; exclude reset assertion paths.
+    set_false_path -from $rst_ports
+}
+1
+write_sdc [file join $result_dir applied.sdc]
+1
+compile_ultra -no_autoungroup
+Loading db file '/opt/synopsys/syn/U-2022.12-SP7-1/libraries/syn/dw_foundation.sldb'
+Information: Failed to find dw_foundation.sldb in the user defined search_path, load it from 'Synopsys Root'. (UISN-70)
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Performing leakage power optimization. (PWR-850)
+CPU Load: 9%, Ram Free: 15 GB, Swap Free: 1 GB, Work Disk Free: 344 GB, Tmp Disk Free: 2064 GB
+Analyzing: "/home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db"
+Library analysis succeeded.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | U-2022.12-DWBB_202212.5 |     *     |
+| Licensed DW Building Blocks        | U-2022.12-DWBB_202212.5 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler WLM                                                               |
+| Command Line | compile_ultra -no_autoungroup                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 4881                                   |
+| Number of User Hierarchies                              | 4                                      |
+| Sequential Cell Count                                   | 1804                                   |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 1339                                   |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 107 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864'
+
+Loaded alib file './alib-52/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db.alib'
+CPU Load: 10%, Ram Free: 15 GB, Swap Free: 1 GB, Work Disk Free: 344 GB, Tmp Disk Free: 2064 GB
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864'
+Information: Added key list 'DesignWare' to design 'imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864'. (DDB-72)
+ Implement Synthetic for 'imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864'.
+Information: Command 'do_operand_isolation' is obsolete and is being ignored.  Please refer to the replacement command 'set power_enable_datapath_gating true' instead. (INFO-118)
+  Processing 'imc_shift_accumulator'
+Information: Added key list 'DesignWare' to design 'imc_shift_accumulator'. (DDB-72)
+ Implement Synthetic for 'imc_shift_accumulator'.
+Information: Command 'do_operand_isolation' is obsolete and is being ignored.  Please refer to the replacement command 'set power_enable_datapath_gating true' instead. (INFO-118)
+  Processing 'imc_round_divider'
+Information: Added key list 'DesignWare' to design 'imc_round_divider'. (DDB-72)
+Information: The register 'numerator_q_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'numerator_q_reg[0]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'imc_round_divider'.
+Information: Command 'do_operand_isolation' is obsolete and is being ignored.  Please refer to the replacement command 'set power_enable_datapath_gating true' instead. (INFO-118)
+  Processing 'imc_fixed_scale'
+Information: Added key list 'DesignWare' to design 'imc_fixed_scale'. (DDB-72)
+ Implement Synthetic for 'imc_fixed_scale'.
+Information: Command 'do_operand_isolation' is obsolete and is being ignored.  Please refer to the replacement command 'set power_enable_datapath_gating true' instead. (INFO-118)
+  Processing 'imc_column_hold_control_COLUMNS128_ARRAYS4'
+Information: Added key list 'DesignWare' to design 'imc_column_hold_control_COLUMNS128_ARRAYS4'. (DDB-72)
+Information: The register 'columns_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'columns_q_reg[1]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'imc_column_hold_control_COLUMNS128_ARRAYS4'.
+Information: Command 'do_operand_isolation' is obsolete and is being ignored.  Please refer to the replacement command 'set power_enable_datapath_gating true' instead. (INFO-118)
+CPU Load: 10%, Ram Free: 15 GB, Swap Free: 1 GB, Work Disk Free: 344 GB, Tmp Disk Free: 2064 GB
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'TIELO_X1M_A12TR' in the library 'sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'TIEHI_X1M_A12TR' in the library 'sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Complementing port 'protocol_error' in design 'imc_column_hold_control_COLUMNS128_ARRAYS4'.
+	 The new name of the port is 'protocol_error_BAR'. (OPT-319)
+Information: Complementing port 'ready' in design 'imc_round_divider'.
+	 The new name of the port is 'ready_BAR'. (OPT-319)
+Information: Complementing port 'capture_req' in design 'imc_column_hold_control_COLUMNS128_ARRAYS4'.
+	 The new name of the port is 'capture_req_BAR'. (OPT-319)
+Information: The register 'row_q_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'row_q_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'row_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'row_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_column_hold/columns_q_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_column_hold/columns_q_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_column_hold/columns_q_reg[6]' is a constant and will be removed. (OPT-1206)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: Updating design information... (UID-85)
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+Information: The register 'column_q_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_column_hold/owner_q_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_column_hold/owner_q_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: Command 'do_operand_isolation' is obsolete and is being ignored.  Please refer to the replacement command 'set power_enable_datapath_gating true' instead. (INFO-118)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:35  115047.8      0.00       0.0     580.3                            872.1559
+    0:00:35  111551.5      0.18       3.9    1795.4                            842.5419
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:40   50188.3      1.14      25.5    1352.2                            187.8072
+    0:00:42   51923.0      0.00       0.0    1393.8                            206.9402
+    0:00:42   51923.0      0.00       0.0    1393.8                            206.9402
+    0:00:42   51923.0      0.00       0.0    1393.8                            206.9402
+    0:00:43   51551.5      0.27       6.6    1509.6                            204.5472
+    0:00:44   51500.6      0.27       5.8    1500.6                            204.3414
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:46   50869.4      0.25       2.9    1420.4                            196.2426
+    0:00:46   50855.5      0.00       0.0    1327.7                            196.0797
+    0:00:46   50855.5      0.00       0.0    1327.7                            196.0797
+    0:00:48   50053.0      0.00       0.0    1237.1                            186.1697
+    0:00:48   50053.0      0.00       0.0    1237.1                            186.1697
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:48   50096.2      0.00       0.0    1237.1                            186.5756
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:00:49   50113.0      0.00       0.0       0.4                            185.9737
+    0:00:49   50113.0      0.00       0.0       0.4                            185.9737
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:49   50113.0      0.00       0.0       0.4                            185.9737
+    0:00:49   50113.0      0.00       0.0       0.4                            185.9737
+    0:00:49   50113.0      0.00       0.0       0.4                            185.9737
+    0:00:49   50113.0      0.00       0.0       0.4                            185.9737
+    0:00:51   50018.9      0.00       0.0       0.0                            161.7355
+    0:00:51   50018.9      0.00       0.0       0.0                            161.7355
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+    0:00:51   50010.2      0.00       0.0       0.0                            161.7103
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:52   49998.7      0.00       0.0       0.0                            161.6751
+    0:00:54   49309.0      0.02       0.1       0.0                            144.9949
+    0:00:55   49446.7      0.00       0.0       0.4                            146.5913
+    0:00:55   49446.7      0.00       0.0       0.4                            146.5913
+    0:00:56   49361.3      0.00       0.0       0.4                            145.0322
+    0:00:57   49288.8      0.00       0.0       0.0                            143.9891
+    0:00:57   49288.8      0.00       0.0       0.0                            143.9891
+    0:00:57   49288.8      0.00       0.0       0.0                            143.9891
+    0:00:57   49288.8      0.00       0.0       0.0                            143.9891
+    0:00:57   49288.8      0.00       0.0       0.0                            143.9891
+    0:00:57   49288.8      0.00       0.0       0.0                            143.9891
+    0:00:59   49165.9      0.00       0.0     481.9                            142.3167
+CPU Load: 10%, Ram Free: 15 GB, Swap Free: 1 GB, Work Disk Free: 344 GB, Tmp Disk Free: 2064 GB
+Loading db file '/home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'u_divider/clk': 1776 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+CPU Load: 10%, Ram Free: 15 GB, Swap Free: 1 GB, Work Disk Free: 344 GB, Tmp Disk Free: 2064 GB
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+1
+set_fix_multiple_port_nets -all -buffer_constants
+1
+redirect -file [file join $result_dir check_design_postcompile.rpt] {check_design}
+redirect -file [file join $result_dir area.rpt] {report_area -nosplit}
+redirect -file [file join $result_dir area_hier.rpt] {report_area -hierarchy -nosplit}
+redirect -file [file join $result_dir timing.rpt] {report_timing -delay_type max -max_paths 20 -nworst 3 -input_pins -nets -transition_time -capacitance -nosplit}
+redirect -file [file join $result_dir constraints.rpt] {report_constraint -all_violators -nosplit}
+redirect -file [file join $result_dir clocks.rpt] {report_clock -attributes -skew}
+redirect -file [file join $result_dir cells.rpt] {report_reference -hierarchy -nosplit}
+redirect -file [file join $result_dir resources.rpt] {report_resources -hierarchy -nosplit}
+redirect -file [file join $result_dir power_vectorless.rpt] {report_power -analysis_effort high -nosplit}
+redirect -file [file join $result_dir qor.rpt] {report_qor -nosplit}
+change_names -rules verilog -hierarchy
+Warning: In the design imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864, net 'column_capture_columns[8]' is connecting multiple ports. (UCN-1)
+Warning: In the design imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864, net 'column_capture_columns[2]' is connecting multiple ports. (UCN-1)
+1
+write -format verilog -hierarchy -output [file join $result_dir mapped.v]
+Writing verilog file '/home/tm431/synthesis0909/results/imc_buffered_neural_sequencer/mapped.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write -format ddc -hierarchy -output [file join $result_dir mapped.ddc]
+Writing ddc file '/home/tm431/synthesis0909/results/imc_buffered_neural_sequencer/mapped.ddc'.
+1
+set details [open [file join $result_dir run_details.txt] w]
+file15
+puts $details "top=$top"
+puts $details "parameters=$params"
+puts $details "technology=TSMC 65nm"
+puts $details "library=sc12_cln65gplus_base_rvt"
+puts $details "corner=tt_typical_max_1p00v_25c"
+puts $details "voltage=1.00 V"
+puts $details "temperature=25 C"
+puts $details "time_unit=1 ns"
+puts $details "capacitance_unit=1 pF"
+puts $details "area_unit=square micrometers"
+puts $details "clock_period_ns=$clock_period"
+puts $details "clock_uncertainty_ns=$clock_uncertainty"
+puts $details "clock_transition_ns=$clock_transition"
+puts $details "input_output_delay_ns=$io_delay"
+puts $details "input_driver=$driver_cell/Y"
+puts $details "output_load_pf=$output_load_pf"
+puts $details "reset_exception=set_false_path -from rst_n (active-low asynchronous reset)"
+puts $details "compile=compile_ultra -no_autoungroup"
+puts $details "power=vectorless; no workload activity supplied"
+puts $details "design_compiler=U-2022.12-SP7-1"
+close $details
+exit
+
+Memory usage for this session 376 Mbytes.
+Memory usage for this session including child processes 377 Mbytes.
+CPU usage for this session 104 seconds ( 0.03 hours ).
+Elapsed time for this session 107 seconds ( 0.03 hours ).
+
+Thank you...

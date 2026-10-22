@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : area
+Design : imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 21:22:38 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                          960
+Number of nets:                          9615
+Number of cells:                         8755
+Number of combinational cells:           7746
+Number of sequential cells:              1007
+Number of macros/black boxes:               0
+Number of buf/inv:                       1547
+Number of references:                     205
+
+Combinational area:              23745.600051
+Buf/Inv area:                     2604.000081
+Noncombinational area:           12109.919979
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 35855.520030
+Total area:                      35855.520030
+1

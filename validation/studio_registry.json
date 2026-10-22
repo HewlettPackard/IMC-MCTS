@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "current_health_profile": "ucb16_adc32_buffered_v2",
+  "tiny_search_iterations": 2,
+  "isolated_registry_created": true,
+  "frozen_source_index_unchanged": true,
+  "post_search_manifest_pass": true,
+  "test_server_stopped": true
+}

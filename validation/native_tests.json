@@ -1,0 +1,14 @@
+{
+  "pattern": "test_*.py",
+  "discovered_tests": 311,
+  "executed_tests": 311,
+  "success": true,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "fixture_archive_sha256": "d338c59141d6b8488cd345cd018f8cda1535bde7d661a7bc868e3e4ef1ad8cb9",
+  "engine_modified": false,
+  "regression_tests_modified": true,
+  "regression_repair": "Exact discrete legacy state plus bounded float64 values; production hashes unchanged.",
+  "fixture_strategy": "Original historical input bytes temporarily extracted per test module to bound disk use."
+}

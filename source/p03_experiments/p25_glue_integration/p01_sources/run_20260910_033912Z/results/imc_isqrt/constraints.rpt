@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : imc_isqrt
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 15:31:15 2026
+****************************************
+
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   imc_isqrt                    0.00          25.28         -25.28  (VIOLATED)
+
+
+1

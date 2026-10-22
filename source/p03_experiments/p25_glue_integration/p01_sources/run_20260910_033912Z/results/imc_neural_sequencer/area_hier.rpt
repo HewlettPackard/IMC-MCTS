@@ -1,0 +1,46 @@
+ 
+****************************************
+Report : area
+Design : imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 16:26:18 2026
+****************************************
+
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                          578
+Number of nets:                         11571
+Number of cells:                        11106
+Number of combinational cells:           9343
+Number of sequential cells:              1760
+Number of macros/black boxes:               0
+Number of buf/inv:                       1274
+Number of references:                     177
+
+Combinational area:              27559.680235
+Buf/Inv area:                     2370.720065
+Noncombinational area:           21144.479989
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 48704.160224
+Total area:                      48704.160224
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------------------
+imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864 48704.1602   100.0  9004.3201  6982.5600 0.0000 imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864
+u_accumulator                     24454.0801     50.2  12142.0801  12312.0000  0.0000  imc_shift_accumulator
+u_divider                          3986.4000      8.2   2136.4800   1849.9200  0.0000  imc_round_divider
+u_scale                            4276.8000      8.8   4276.8000      0.0000  0.0000  imc_fixed_scale
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------------------
+Total                                                  27559.6802  21144.4800  0.0000
+
+1

@@ -1,0 +1,31 @@
+{
+  "url": "http://127.0.0.1:4784",
+  "pid": 46765,
+  "prior_4783_session": {
+    "id": "d46e7168f947",
+    "status": "complete",
+    "run": "run_20260915_173507Z"
+  },
+  "prior_process_stopped": false,
+  "health": {
+    "status": "ok",
+    "service": "IMC-MCTS Studio",
+    "profile": "complete_serial_q32_v2",
+    "cost_model_profile": "imc_22nm_costs_v2",
+    "loopback_only": true
+  },
+  "saved_user_sessions_present": [
+    "run_20260915_172809Z",
+    "run_20260915_172946Z",
+    "run_20260915_173123Z",
+    "run_20260915_173209Z",
+    "run_20260915_173507Z"
+  ],
+  "created_test_job": false,
+  "source_sha256": {
+    "p05_studio/p00_app/server.py": "6014481245b28e2aeddd499f1b222c94bac5506d024f9baba308aa37149ef2ef",
+    "p05_studio/p00_app/visualization.py": "258b14705e0c96973a196d9330c84f525b678a597ecd7b52f775dcad87c2df39",
+    "p05_studio/p00_app/placement_play.py": "7fd5ec207f68416f70454061679548a643e6905f9906b808f53accfcf3b5b98b",
+    "p05_studio/p00_app/pipeline.py": "4e0af4ee4f08a235ca55814885e255fcd4c52cdaa8db65a53c13f258f19bf2e3"
+  }
+}

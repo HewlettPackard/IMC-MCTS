@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "checks": {
+    "imc_iteration_glue_syntax": true,
+    "imc_iteration_glue_lint": true,
+    "imc_buffered_iteration_glue_syntax": true,
+    "imc_buffered_iteration_glue_lint": true
+  },
+  "packet": "p03_experiments/p24_power_model/p01_packets/run_20260910_023235Z"
+}

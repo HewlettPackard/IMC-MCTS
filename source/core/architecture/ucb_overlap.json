@@ -1,0 +1,19 @@
+{
+  "profile": "ucb4_ratio_first_overlap_v1",
+  "lanes": 4,
+  "arithmetic": "ucb_q32_ln256_v1",
+  "arithmetic_active_cycles": 169,
+  "batch_accepted_to_valid_base_cycles": 169,
+  "batch_reduction_cycles_per_child": 1,
+  "caller_request_and_capture_cycles": 2,
+  "single_accept_to_valid_cycles": 168,
+  "saved_cycles_per_batch": 54,
+  "timing_source": "rtl_synthesis/p06_ucb_overlap/p03_checks/run_20260917_151809Z/timing.json",
+  "timing_status": "Scorer and four-lane batch cycles checked in RTL; serial SRAM loading and whole-search control remain architectural service estimates",
+  "order": "Ratio division first; square root overlaps mean division; score waits for both completions",
+  "per_score_arithmetic": {"divider_bit_steps": 160, "sqrt_bit_pairs": 52},
+  "extra_hardware": "Two completion flags per scorer and changed FSM decode; existing divider, square root, tables, codec and score datapath retained",
+  "cost_status": "Changed UCB parents uncharacterized; original serialized active-power coefficients must not be scaled by shorter parent occupancy",
+  "memory": "Same single 32-bit port and four candidate slots; loads and batches still sequential, no prefetch",
+  "limits": "No new UCB lanes, rollout overlap, SRAM capacity, precision, server synthesis, physical timing closure or CPU benchmark claim"
+}

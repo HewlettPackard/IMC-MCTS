@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "cases": {
+    "custom_8e16a53600f2d66a": {
+      "execution_profile": "ucb16_adc32_buffered_v1",
+      "run": "run_20261004_221820Z",
+      "result_sha256": "daa947fceb698eb7d122ce1dacdb4ed4465ddd4049ae86cd0e27b014fcc07ab2",
+      "configuration_sha256": "6d255c073bb12352488ab462c19bf2cb30afaab11665bd392eac511120701423",
+      "execution_sha256": "60ec3fd9362affa40e20448587d78f133e9384cc668398ef3f33fb6fca4f8b03"
+    },
+    "custom_bd33d3af3536c726": {
+      "execution_profile": "ucb16_adc32_buffered_v1",
+      "run": "run_20261004_221820Z",
+      "result_sha256": "cf737ae62767e9a822c1713f78678f7edac2062221846ac21d6f24edfd1afd7e",
+      "configuration_sha256": "20c430bbe36a59ab96fc80eb5abed9be7a580c8eb26cf37395fe57cacc1c7884",
+      "execution_sha256": "91f164eaf262c6809dd7e80bfdc9d51e49a87aacff5d655a25772e99755bddee"
+    },
+    "custom_2f81bd95d856df43": {
+      "execution_profile": "ucb16_adc32_buffered_v1",
+      "run": "run_20261004_221821Z",
+      "result_sha256": "cd58738041a286fbce8084f5d33d78a7001ea297604613a064076c9c23b19f4c",
+      "configuration_sha256": "7cb5b61d68adbc727b811dfd448d89103350c82af8ac9d9b5e75339f5bdc52fe",
+      "execution_sha256": "3eade728980e1a7b8b8439492386707b99193d6655670ede28ec4d318cbca964"
+    },
+    "custom_2382b947305354de": {
+      "execution_profile": "ucb16_adc32_buffered_v2",
+      "run": "run_20261013_064936Z",
+      "result_sha256": "fb33eaaef94526911a21107357a6fc057063fad326a62596f30027c0cb0f863c",
+      "configuration_sha256": "8a3cbee039a3a287cfc0f929b919b4e9964bebdf3181c7e8c809ffa147f7abf6",
+      "execution_sha256": "479981fb1e957e3722686b27b4776b1829f7a3abd91a56f0b6662917dfd41321"
+    },
+    "custom_3d8518ef000aff57": {
+      "execution_profile": "ucb16_adc32_buffered_v2",
+      "run": "run_20261013_064937Z",
+      "result_sha256": "871f05677cc433080107898bd1234feb4c2315fd1c280ac6ae7a8722967ba0c6",
+      "configuration_sha256": "1fb39de2edae3055b8d326a05e031fd2f38769ac4748ebc2968712a5222a6af8",
+      "execution_sha256": "c499ea969e43baaed8c4b845ed1b397ed983a6db3bc9d4e43bb3e2a8000a6ada"
+    },
+    "custom_f73cb0b63f757252": {
+      "execution_profile": "ucb16_adc32_buffered_v2",
+      "run": "run_20261013_064937Z",
+      "result_sha256": "2ccc822f86bdef4c73a39390ca047472528bed302e4a1296f8190733309fff89",
+      "configuration_sha256": "eb5f8b1c6de79ea15395e5707a60b21236793e7b604974694fab15a00017023c",
+      "execution_sha256": "d09b427542cb4e81edc7d6247af9d9ecbf409ad6b2eeb14ff2aa913d9cba745b"
+    }
+  }
+}

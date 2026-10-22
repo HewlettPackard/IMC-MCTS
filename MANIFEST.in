@@ -1,0 +1,137 @@
+include README.md REPRODUCIBILITY.md VALIDATION.md THIRD_PARTY_NOTICES.md LICENSE
+include MANIFEST.json Makefile reproduce.py requirements*.txt tested_environment.json
+include RELEASE_STATUS.json DISTRIBUTION_INVENTORY.json DISTRIBUTION.md
+recursive-include LICENSES *
+recursive-include baselines *
+recursive-include configs *
+recursive-include data *
+recursive-include figures *
+recursive-include validation *
+recursive-include release_tests *.py
+recursive-include source *
+global-exclude *.py[cod] .DS_Store
+prune source/__pycache__
+prune source/build
+prune source/dist
+
+include CITATION.cff CODE_OF_CONDUCT.md CONTRIBUTING.md SECURITY.md .gitignore SBOM.cdx.json SBOM_SCOPE.md
+recursive-include .github *.yml
+recursive-include tools *.py
+exclude source/fixtures/historical_test_fixtures.tar.gz
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/FunctionUnit.cpp
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/FunctionUnit.h
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/InputParameter.h
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/MemCell.h
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/Param.cpp
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/Param.h
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/SarADC.cpp
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/SarADC.h
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/Technology.cpp
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/Technology.h
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/constant.h
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/formula.cpp
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/formula.h
+exclude source/p03_experiments/p09_digital_periphery/p00_runs/run_20260909_030820Z/p00_source/typedef.h
+exclude source/p03_experiments/p15_workbook_models/p01_sources/crossbar_reference.xlsx
+exclude source/p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/mapped.v
+exclude source/p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/mapped.v
+exclude source/p04_results/p03_models/archive_2x2_h16_centered_v1.npz
+exclude source/p04_results/p03_models/archive_3x3_h24_centered_v1.npz
+exclude source/p04_results/p03_models/archive_5x5_h32_centered_v1.npz
+exclude source/p04_results/p03_models/archive_9x9_h32_centered_v1.npz
+exclude source/p04_results/p03_models/archive_9x9_h96_centered_v1.npz
+exclude source/p04_results/p03_models/go_strong_v1.npz
+exclude source/p04_results/p03_models/go_weak_v1.npz
+
+include APPROVALS.md LICENSE_EXCEPTIONS.json
+recursive-include source *.license
+
+include .gitleaks.toml
+
+# Defense in depth: no raw trained models or array checkpoints in source archives.
+global-exclude *.BIN
+global-exclude *.BST
+global-exclude *.CAFFEMODEL
+global-exclude *.CBM
+global-exclude *.CHECKPOINT
+global-exclude *.CKPT
+global-exclude *.CKPT*
+global-exclude *.H5
+global-exclude *.HDF
+global-exclude *.HDF5
+global-exclude *.INDEX
+global-exclude *.JOBLIB
+global-exclude *.KERAS
+global-exclude *.MLMODEL
+global-exclude *.MLPACKAGE
+global-exclude *.MODEL
+global-exclude *.MSGPACK
+global-exclude *.NPY
+global-exclude *.NPZ
+global-exclude *.ONNX
+global-exclude *.PADDLE
+global-exclude *.PARAMS
+global-exclude *.PB
+global-exclude *.PBTXT
+global-exclude *.PDMODEL
+global-exclude *.PDOPT
+global-exclude *.PDPARAMS
+global-exclude *.PICKLE
+global-exclude *.PKL
+global-exclude *.PT
+global-exclude *.PTH
+global-exclude *.RDA
+global-exclude *.RDATA
+global-exclude *.RDS
+global-exclude *.SAFETENSORS
+global-exclude *.T7
+global-exclude *.TENSOR
+global-exclude *.TENSORS
+global-exclude *.TFLITE
+global-exclude *.UBJ
+global-exclude *.WEIGHT
+global-exclude *.WEIGHTS
+global-exclude *.bin
+global-exclude *.bst
+global-exclude *.caffemodel
+global-exclude *.cbm
+global-exclude *.checkpoint
+global-exclude *.ckpt
+global-exclude *.ckpt*
+global-exclude *.data-*-of-*
+global-exclude *.h5
+global-exclude *.hdf
+global-exclude *.hdf5
+global-exclude *.index
+global-exclude *.joblib
+global-exclude *.keras
+global-exclude *.mlmodel
+global-exclude *.mlpackage
+global-exclude *.model
+global-exclude *.msgpack
+global-exclude *.npy
+global-exclude *.npz
+global-exclude *.onnx
+global-exclude *.paddle
+global-exclude *.params
+global-exclude *.pb
+global-exclude *.pbtxt
+global-exclude *.pdmodel
+global-exclude *.pdopt
+global-exclude *.pdparams
+global-exclude *.pickle
+global-exclude *.pkl
+global-exclude *.pt
+global-exclude *.pth
+global-exclude *.rda
+global-exclude *.rdata
+global-exclude *.rds
+global-exclude *.safetensors
+global-exclude *.t7
+global-exclude *.tensor
+global-exclude *.tensors
+global-exclude *.tflite
+global-exclude *.ubj
+global-exclude *.weight
+global-exclude *.weights
+global-exclude checkpoint

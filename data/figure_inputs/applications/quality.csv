@@ -1,0 +1,9 @@
+application,domain,iterations,games,metric,p_nn,p_rand,raw_lift,effective_cells,sgg,source,source_sha256,status
+Connect Four,Strategy,50,5,head-to-head win rate,0.8,0.5,0.3,42,0.3703,cross_domain_sgg_all13.csv,483a4df8bffcfdbe213a78fadd3e9cbafb002ad68ccfad38f90a9a8863b248a6,archived functional result; exact checkpoint identity unavailable
+Othello,Strategy,50,5,head-to-head win rate,0.8,0.5,0.3,64,0.3,cross_domain_sgg_all13.csv,483a4df8bffcfdbe213a78fadd3e9cbafb002ad68ccfad38f90a9a8863b248a6,archived functional result; exact checkpoint identity unavailable
+Hex,Strategy,50,5,head-to-head win rate,0.8,0.5,0.3,121,0.2182,cross_domain_sgg_all13.csv,483a4df8bffcfdbe213a78fadd3e9cbafb002ad68ccfad38f90a9a8863b248a6,archived functional result; exact checkpoint identity unavailable
+Go,Strategy,50,5,head-to-head win rate,0.6,0.5,0.1,81,0.0889,cross_domain_sgg_all13.csv,483a4df8bffcfdbe213a78fadd3e9cbafb002ad68ccfad38f90a9a8863b248a6,archived functional result; exact checkpoint identity unavailable
+FrozenLake,Navigation,50,5,normalized score,1.0,0.85,0.15,64,0.15,cross_domain_sgg_all13.csv,483a4df8bffcfdbe213a78fadd3e9cbafb002ad68ccfad38f90a9a8863b248a6,archived functional result; exact checkpoint identity unavailable
+MiniGrid,Navigation,50,30,path efficiency,0.967,0.405,0.5614,64,0.5614,cross_domain_sgg_nn.csv,c3e6826b83797bf3e2a7986e98529e5e21a17cad9683e707a16223134cefdb8c,archived functional result; exact checkpoint identity unavailable
+HP Protein Folding,Science,50,30,optimality ratio,1.0,0.685,0.3148,169,0.1937,cross_domain_sgg_protein_nn.csv,877d7f5e459d17ce71dcc00d6ef4b9215f05fa080e24a59d53f9e1cf0f7b474c,archived functional result; exact checkpoint identity unavailable
+Minesweeper,Puzzle,80,30,fraction of cells revealed,0.933,0.789,0.1446,81,0.1147,cross_domain_sgg_nn.csv,c3e6826b83797bf3e2a7986e98529e5e21a17cad9683e707a16223134cefdb8c,archived functional result; exact checkpoint identity unavailable

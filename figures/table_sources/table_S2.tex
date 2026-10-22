@@ -1,0 +1,19 @@
+\begin{table}[!htbp]
+\centering
+\footnotesize
+% CHANGED: approved correction, projection table scope.
+\caption{\textcolor{blue}{Historical 4-nm projection, superseded as quantitative evidence. Values below retain the earlier 60.26-mW basis and do not derive from Supplementary Table~S3. They are not used to support a current CPU/GPU advantage ratio.}}
+\label{tab:supp_iso_process}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Component & 22-nm & Scaling (22 $\to$ 4 nm) & 4-nm \\
+\midrule
+CMOS logic (GLU/FSM/CAM ctrl) & $\sim$45\,mW & $\sim$4$\times$ reduction     & $\sim$11\,mW \\
+SRAM (Node/Children/backprop) & $\sim$13\,mW & $\sim$2.5$\times$ (memory)    & $\sim$5\,mW  \\
+RRAM crossbar (prog.\ state)  & $\sim$1.5\,mW & process-independent           & $\sim$1.5\,mW \\
+\midrule
+\textbf{Total (projected)}    & \textbf{60.26\,mW} & --- & \textbf{$\sim$15--25\,mW} \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : imc_selection_path
+Version: U-2022.12-SP7-1
+Date   : Tue Oct 13 00:56:38 2026
+****************************************
+
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   imc_selection_path       0.000000000    8012.714843750 -8012.714843750 (VIOLATED)
+
+
+1

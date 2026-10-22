@@ -1,0 +1,15 @@
+{
+  "pid": 18374,
+  "port": 4783,
+  "url": "http://127.0.0.1:4783",
+  "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair",
+  "command": [
+    "/Users/tmolomochir/miniforge3/bin/python",
+    "-B",
+    "-m",
+    "p05_studio.p00_app.server",
+    "--port",
+    "4783"
+  ],
+  "previous_studios_untouched": true
+}

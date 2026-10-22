@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "exceptions": {
+    "baselines/source_context/benchmark_gpu_traditional/__init__.py": "Existing first-public-release context. CC-BY-4.0 and upstream attribution are preserved; the individual copyright holder is not established here.",
+    "baselines/source_context/benchmark_gpu_traditional/benchmark.py": "Existing first-public-release context. The Python AST matches the cleared public version; only SPDX comments differ. Upstream CC-BY-4.0 attribution is preserved and no new individual copyright holder is asserted."
+  },
+  "not_permission_to_relicense": true,
+  "existing_public_commit": "93b7ba4ea8edb96bb3f6dc34521f49d11fb6a571",
+  "new_approval_required_by_this_record": false,
+  "scope": "Attribution context for already-public files with unchanged Python ASTs, not a new clearance request or permission to relicense."
+}

@@ -1,0 +1,1699 @@
+{
+  "profile": "ucb16_adc32_buffered_estimate_v6",
+  "scenario": "nominal",
+  "connected_synthesis": {
+    "clock_mhz": 500,
+    "clock_period_ns": 2.0,
+    "corner": "tt_typical_max_1p00v_25c",
+    "cost_profile": "ucb16_adc32_buffered_estimate_v6",
+    "current_stage_constraint_closure": "PASS",
+    "equivalence": "UNVERIFIED",
+    "library_sha256": "3b52e440b0066db5c3cea89a4183efcbe3571c76068c26ef465937dd10075c78",
+    "missing_native_evidence": [
+      "imc_selection_path/driver_resize.svf"
+    ],
+    "original_packet_acceptance": "UNVERIFIED",
+    "physical_implementation": "UNVERIFIED: no CTS, routed layout or physical signoff",
+    "power": "VECTORLESS_ONLY",
+    "power_scenario": "all_elapsed_vectorless",
+    "power_scenario_boundary": "Active and idle coefficients both equal native vectorless dynamic power over actual elapsed time; no inferred clock-only split or workload annotation",
+    "profile": "connected_native65_p08_resize_v1",
+    "report_precision": "Native top area uses six decimal places. Child area and hierarchy power are report-rounded; exclusive wrapper absorbs subtraction remainder. No extra child sum or clock floor is added.",
+    "result_commit": "08ff651423887134e8acb01bf8b25697361fd34d",
+    "scope": "Connected digital header-response selection and ADC-code readout regions; residual full-core control, offset correction, memories and analog circuits are separate",
+    "source_commit": "958c3d738214ada4f5b51c074e119c3b10f8c482",
+    "source_node_nm": 65,
+    "source_repository": "https://github.com/tmo324/synthesis0909",
+    "stage": "after_resize",
+    "target22_status": "Native65 inputs only; caller applies reviewed target22 assumptions once; no delay scaling",
+    "temperature_c": 25,
+    "timing_by_top": {
+      "imc_readout_path": {
+        "constraint_counts": {
+          "max_capacitance": 0,
+          "max_delay/setup": 0,
+          "max_transition": 0,
+          "min_delay/hold": 0
+        },
+        "hold_slack_ns": 0.113675,
+        "other_report_entries": {},
+        "setup_slack_ns": 0.000558019,
+        "warnings": [
+          "Warning: The following input ports have no clock_relative delay specified, the command set_input_delay without -clock option will be ignored. (TIM-216)"
+        ]
+      },
+      "imc_selection_path": {
+        "constraint_counts": {
+          "max_capacitance": 0,
+          "max_delay/setup": 0,
+          "max_transition": 0,
+          "min_delay/hold": 0
+        },
+        "hold_slack_ns": 0.0606843,
+        "other_report_entries": {
+          "max_leakage_power": 1
+        },
+        "setup_slack_ns": 1.43051e-06,
+        "warnings": [
+          "Warning: The following input ports have no clock_relative delay specified, the command set_input_delay without -clock option will be ignored. (TIM-216)"
+        ]
+      }
+    },
+    "tool_version": "U-2022.12-SP7-1",
+    "voltage_v": 1.0,
+    "characterization_sha256": "873c96bf58a6bf4cb6437a55eb88389573f82254e5dd32559edb4799d87daf73"
+  },
+  "components": [
+    {
+      "id": "child_sram",
+      "component": "Child Sram",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 414262.0,
+      "dynamic_energy_uj": 0.042860535400000004,
+      "standby_energy_uj": 19.925410675126802,
+      "energy_uj": 19.9682712105268,
+      "average_power_mw": 0.17373150284919797,
+      "source": "{'archive_sha256': 'bfed924722bb8ebfa0b224741d3955034e1ced7bd1371fbb5472c81c509df9a3', 'binary_sha256': 'd5d9b8039901cfd2b7ac1f5ae738fbd66d1b17e4f7f7dfebdf7bd89d34d8e810', 'cache_key': 'e80d4b95b3a3b3defec389050df1f1c67753527e88c085b69b0a487a512ba6f2', 'commit': '1ffd8dfb10303d306ecd8d215320aea07651e878', 'config_sha256': 'b2f77b9f2d4e560ee795d16a65b5b8369786d13c981c554c9665686fe04704af', 'evidence': 'p03_experiments/p08_cost_sources/p00_runs/run_20260909_025047Z/p01_cacti/macro_512k_lstp22', 'patch_sha256': 'e7d1ba57db391831e1967e28160643ede85b3581eb4fbc5b8c9a0e47a185562f', 'raw_output_sha256': {'memory.cfg': 'b2f77b9f2d4e560ee795d16a65b5b8369786d13c981c554c9665686fe04704af', 'memory.cfg.out': '4780332628023aaedb27c0c24b5497b8f3e8799828453a83082cfea64d32644d', 'stderr.txt.gz': 'f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837', 'stdout.txt.gz': '3787d8e4ee279c3a967876bedbbb84f377a9cc24aab143a1908152f3de8f7de4'}, 'technology_sha256': '3b1f3f74f1542ae12f3c6ec3fc90074b41c3376218e35088cd9fc54d6576b29b', 'tool': 'CACTI'}",
+      "assumptions": "Native 22 nm CACTI, all installed banks leak for the elapsed interval.",
+      "status": "native22_tool_estimate",
+      "details": {
+        "banks": 1,
+        "capacity_bytes": 524288,
+        "read_words": 471,
+        "write_words": 4850,
+        "dynamic_energy_nj": 42.8605354,
+        "leakage_energy_nj": 19925.4106751268,
+        "area_mm2": 0.414262,
+        "unit_energy_pj": {
+          "read": 11.1329,
+          "write": 7.75607
+        }
+      }
+    },
+    {
+      "id": "node_sram",
+      "component": "Node Sram",
+      "count": 3,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 1242786.0000000002,
+      "dynamic_energy_uj": 40.2344831044,
+      "standby_energy_uj": 59.776232025380395,
+      "energy_uj": 100.0107151297804,
+      "average_power_mw": 0.8701310021951261,
+      "source": "{'archive_sha256': 'bfed924722bb8ebfa0b224741d3955034e1ced7bd1371fbb5472c81c509df9a3', 'binary_sha256': 'd5d9b8039901cfd2b7ac1f5ae738fbd66d1b17e4f7f7dfebdf7bd89d34d8e810', 'cache_key': 'e80d4b95b3a3b3defec389050df1f1c67753527e88c085b69b0a487a512ba6f2', 'commit': '1ffd8dfb10303d306ecd8d215320aea07651e878', 'config_sha256': 'b2f77b9f2d4e560ee795d16a65b5b8369786d13c981c554c9665686fe04704af', 'evidence': 'p03_experiments/p08_cost_sources/p00_runs/run_20260909_025047Z/p01_cacti/macro_512k_lstp22', 'patch_sha256': 'e7d1ba57db391831e1967e28160643ede85b3581eb4fbc5b8c9a0e47a185562f', 'raw_output_sha256': {'memory.cfg': 'b2f77b9f2d4e560ee795d16a65b5b8369786d13c981c554c9665686fe04704af', 'memory.cfg.out': '4780332628023aaedb27c0c24b5497b8f3e8799828453a83082cfea64d32644d', 'stderr.txt.gz': 'f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837', 'stdout.txt.gz': '3787d8e4ee279c3a967876bedbbb84f377a9cc24aab143a1908152f3de8f7de4'}, 'technology_sha256': '3b1f3f74f1542ae12f3c6ec3fc90074b41c3376218e35088cd9fc54d6576b29b', 'tool': 'CACTI'}",
+      "assumptions": "Native 22 nm CACTI, all installed banks leak for the elapsed interval.",
+      "status": "native22_tool_estimate",
+      "details": {
+        "banks": 3,
+        "capacity_bytes": 1572864,
+        "read_words": 3217062,
+        "write_words": 569780,
+        "dynamic_energy_nj": 40234.4831044,
+        "leakage_energy_nj": 59776.23202538039,
+        "area_mm2": 1.2427860000000002,
+        "unit_energy_pj": {
+          "read": 11.1329,
+          "write": 7.75607
+        }
+      }
+    },
+    {
+      "id": "u_sel",
+      "component": "Selection control and cache buffers",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 25985.982004415644,
+      "dynamic_energy_uj": 913.2341702633603,
+      "standby_energy_uj": 65.76011874905168,
+      "energy_uj": 978.994289012412,
+      "average_power_mw": 8.51762014436408,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area.rpt",
+      "assumptions": "Connected digital area comes from native65 synthesis, with one target22 area conversion. Connected vectorless dynamic power is charged over elapsed time, with one stated target22 conversion; there is no characterized idle clock floor or workload calibration. Native65 leakage is carried unchanged. Existing selector budget reassigned as an engineering allowance for traversal, CAM/cache handling, first-unvisited selection and cross-batch result control. Candidate banks, loader, batch reduction and UCB lanes are owned by the connected region; this is not an exact characterized residual split of the older flat selector.",
+      "status": "synthesis_with_residual_engineering_estimate",
+      "details": {
+        "parent_multiplier": 1.25,
+        "board_geometry_factor": 1.0,
+        "native65_area_um2": 99926.880144,
+        "active_cycles": 12676085,
+        "children_included": [],
+        "cost_basis_status": "synthesis_with_residual_control_allocation",
+        "native65_part": {
+          "active_dynamic_mw": 18.381,
+          "area_um2": 101931.84190400015,
+          "dynamic_mw": 18.381,
+          "id": "u_sel",
+          "idle_dynamic_mw": 18.381,
+          "instance": "imc_selection_path/exclusive_wrapper",
+          "internal_mw": 17.305999999999997,
+          "leakage_mw": 0.24403599999999948,
+          "ownership": "Exclusive connected selection wrapper: inclusive top minus sixteen inclusive scorers; retains report rounding remainder",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 18.623000000000005,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area.rpt",
+          "switching_mw": 1.075000000000001,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 37.625875,
+          "idle_dynamic_mw": 36.4125,
+          "leakage_mw": 0.5721378749999995
+        },
+        "residual_control_allocation": {
+          "area_um2": 14309.056209969232,
+          "native65_area_um2": 124908.60018,
+          "status": "engineering_allocation_not_matching_synthesis",
+          "basis": "Existing selector budget reassigned as an engineering allowance for traversal, CAM/cache handling, first-unvisited selection and cross-batch result control. Candidate banks, loader, batch reduction and UCB lanes are owned by the connected region; this is not an exact characterized residual split of the older flat selector."
+        },
+        "allocation_breakdown": [
+          {
+            "part": "connected_native_region",
+            "area_um2": 11676.92579444641,
+            "dynamic_energy_uj": 457.63615007031154,
+            "standby_energy_uj": 28.04889702336794,
+            "status": "native65_synthesis_target22_estimate"
+          },
+          {
+            "part": "residual_control_allowance",
+            "area_um2": 14309.056209969232,
+            "dynamic_energy_uj": 455.59802019304874,
+            "standby_energy_uj": 37.71122172568374,
+            "status": "engineering_allocation_not_matching_synthesis"
+          }
+        ],
+        "energy_breakdown_uj": {
+          "activity_dependent": 6.663455153452305,
+          "elapsed_vectorless": 906.570715109908,
+          "leakage": 65.76011874905168
+        },
+        "activity_multiplier": 1.0
+      }
+    },
+    {
+      "id": "u_upd",
+      "component": "Shared expansion and backprop control",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 5134.3407380236695,
+      "dynamic_energy_uj": 102.24180746982404,
+      "standby_energy_uj": 17.261348191224503,
+      "energy_uj": 119.50315566104854,
+      "average_power_mw": 1.0397225983825105,
+      "source": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/power_vectorless.rpt",
+      "assumptions": "65-to-22 area and dynamic-energy policy; native65 leakage proxy. Parent multiplier 1.25",
+      "status": "engineering_estimate",
+      "details": {
+        "parent_multiplier": 1.25,
+        "board_geometry_factor": 1.0,
+        "native65_area_um2": 35855.52003,
+        "active_cycles": 2039584,
+        "children_included": [
+          {
+            "instance": "u_choice",
+            "design": "imc_round_divider_NUM_W32_DEN_W7",
+            "inclusive_area_um2": 1198.08,
+            "local_combinational_area_um2": 526.08,
+            "local_sequential_area_um2": 672.0,
+            "local_black_box_area_um2": 0.0
+          },
+          {
+            "instance": "u_codec",
+            "design": "imc_q17_codec",
+            "inclusive_area_um2": 5514.72,
+            "local_combinational_area_um2": 5514.72,
+            "local_sequential_area_um2": 0.0,
+            "local_black_box_area_um2": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "top_level_glue",
+      "component": "FSM and interconnect",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 1804.2603915443792,
+      "dynamic_energy_uj": 67.3937138197908,
+      "standby_energy_uj": 4.86971671156075,
+      "energy_uj": 72.26343053135156,
+      "average_power_mw": 0.6287191442307696,
+      "source": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/power_vectorless.rpt",
+      "assumptions": "65-to-22 area and dynamic-energy policy; native65 leakage proxy. Parent multiplier 1.25",
+      "status": "engineering_estimate",
+      "details": {
+        "parent_multiplier": 1.25,
+        "board_geometry_factor": 1.0,
+        "native65_area_um2": 12600.000255,
+        "active_cycles": 57468769,
+        "children_included": []
+      }
+    },
+    {
+      "id": "u_node_router",
+      "component": "Node SRAM router",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 264.4324007261539,
+      "dynamic_energy_uj": 7.215273216807324,
+      "standby_energy_uj": 0.5551942835552001,
+      "energy_uj": 7.770467500362524,
+      "average_power_mw": 0.06760600266522608,
+      "source": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/power_vectorless.rpt",
+      "assumptions": "65-to-22 area and dynamic-energy policy; native65 leakage proxy. Parent multiplier 1",
+      "status": "engineering_estimate",
+      "details": {
+        "parent_multiplier": 1,
+        "board_geometry_factor": 1.0,
+        "native65_area_um2": 2308.320027,
+        "active_cycles": 7573684,
+        "children_included": []
+      }
+    },
+    {
+      "id": "u_child_router",
+      "component": "Child SRAM router",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 203.83674628828405,
+      "dynamic_energy_uj": 6.832108926819905,
+      "standby_energy_uj": 0.5376663090102002,
+      "energy_uj": 7.369775235830105,
+      "average_power_mw": 0.06411982859620767,
+      "source": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/power_vectorless.rpt",
+      "assumptions": "65-to-22 area and dynamic-energy policy; native65 leakage proxy. Parent multiplier 1",
+      "status": "engineering_estimate",
+      "details": {
+        "parent_multiplier": 1,
+        "board_geometry_factor": 1.0,
+        "native65_area_um2": 1779.360027,
+        "active_cycles": 10642,
+        "children_included": []
+      }
+    },
+    {
+      "id": "u_nn",
+      "component": "Neural digital control, registers and correction",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 17281.913808200596,
+      "dynamic_energy_uj": 517.2904788462737,
+      "standby_energy_uj": 43.54967161273405,
+      "energy_uj": 560.8401504590078,
+      "average_power_mw": 4.879521174875068,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_readout_path/area.rpt",
+      "assumptions": "Connected digital area comes from native65 synthesis, with one target22 area conversion. Connected vectorless dynamic power is charged over elapsed time, with one stated target22 conversion; there is no characterized idle clock floor or workload calibration. Native65 leakage is carried unchanged. Old neural parent excluding its inclusive accumulator and 24 code registers; 65 offset-register bits retained. One old combinational-bank area is a sizing allowance for offset sum/shift/subtraction, not a characterized bare ALU. Connected readout exclusively owns result banks, staging and eight accumulator banks.",
+      "status": "synthesis_with_residual_engineering_estimate",
+      "details": {
+        "area_multiplier": 2.557386291623148,
+        "added_register_bits": 169,
+        "native65_proxy_area_um2": 99644.2813615,
+        "resources": {
+          "array_count": 2,
+          "array_dimensions": [
+            {
+              "layer": 1,
+              "rows": 244,
+              "columns": 96,
+              "count": 1,
+              "cells": 23424,
+              "cell": "1T1M",
+              "cell_bits": 8
+            },
+            {
+              "layer": 2,
+              "rows": 96,
+              "columns": 3,
+              "count": 1,
+              "cells": 288,
+              "cell": "1T1M",
+              "cell_bits": 8
+            }
+          ],
+          "adc_lanes": 32,
+          "adc_bits": 12,
+          "adc_slot_bits": 16,
+          "adc_register_bits": 1024,
+          "adc_result_banks": 2,
+          "readout_bus_bits": 128,
+          "shift_add_lanes": 8,
+          "accumulator_words": 96,
+          "accumulator_register_bits": 3072,
+          "accumulator_words_per_bank": 12,
+          "installed_row_drivers": 340,
+          "installed_column_routes": 99
+        },
+        "children_included": [
+          {
+            "instance": "u_accumulator",
+            "design": "imc_shift_accumulator",
+            "inclusive_area_um2": 24454.0801,
+            "local_combinational_area_um2": 12142.0801,
+            "local_sequential_area_um2": 12312.0,
+            "local_black_box_area_um2": 0.0
+          },
+          {
+            "instance": "u_divider",
+            "design": "imc_round_divider",
+            "inclusive_area_um2": 3986.4,
+            "local_combinational_area_um2": 2136.48,
+            "local_sequential_area_um2": 1849.92,
+            "local_black_box_area_um2": 0.0
+          },
+          {
+            "instance": "u_scale",
+            "design": "imc_fixed_scale",
+            "inclusive_area_um2": 4276.8,
+            "local_combinational_area_um2": 4276.8,
+            "local_sequential_area_um2": 0.0,
+            "local_black_box_area_um2": 0.0
+          }
+        ],
+        "reference_resources": {
+          "array_count": 2,
+          "array_dimensions": [
+            {
+              "layer": 1,
+              "rows": 244,
+              "columns": 96,
+              "count": 1,
+              "cells": 23424,
+              "cell": "1T1M",
+              "cell_bits": 8
+            },
+            {
+              "layer": 2,
+              "rows": 96,
+              "columns": 3,
+              "count": 1,
+              "cells": 288,
+              "cell": "1T1M",
+              "cell_bits": 8
+            }
+          ],
+          "adc_lanes": 8,
+          "adc_bits": 12,
+          "adc_slot_bits": 16,
+          "adc_register_bits": 128,
+          "adc_result_banks": 1,
+          "readout_bus_bits": 32,
+          "shift_add_lanes": 1,
+          "accumulator_words": 96,
+          "accumulator_register_bits": 3072,
+          "accumulator_words_per_bank": 96,
+          "installed_row_drivers": 340,
+          "installed_column_routes": 99
+        },
+        "readout_staging_bits": 512,
+        "cost_basis_status": "synthesis_with_residual_control_allocation",
+        "native65_part": {
+          "active_dynamic_mw": 15.263,
+          "area_um2": 104753.280035,
+          "dynamic_mw": 15.263,
+          "id": "u_nn",
+          "idle_dynamic_mw": 15.263,
+          "instance": "imc_readout_path",
+          "internal_mw": 14.16,
+          "leakage_mw": 0.246301,
+          "ownership": "Inclusive connected readout; result banks, staging and eight accumulator banks included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_readout_path/vectorless_power.rpt",
+          "reported_total_mw": 15.509,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_readout_path/area.rpt",
+          "switching_mw": 1.103,
+          "top": "imc_readout_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 20.89639912849203,
+          "idle_dynamic_mw": 20.43083051731498,
+          "leakage_mw": 0.37889859458042374
+        },
+        "residual_control_allocation": {
+          "area_um2": 5281.774746202959,
+          "native65_area_um2": 46106.401451875,
+          "status": "engineering_allocation_not_matching_synthesis",
+          "basis": "Old neural parent excluding its inclusive accumulator and 24 code registers; 65 offset-register bits retained. One old combinational-bank area is a sizing allowance for offset sum/shift/subtraction, not a characterized bare ALU. Connected readout exclusively owns result banks, staging and eight accumulator banks."
+        },
+        "allocation_breakdown": [
+          {
+            "part": "connected_native_region",
+            "area_um2": 12000.139061997636,
+            "dynamic_energy_uj": 380.00655886639277,
+            "standby_energy_uj": 28.309230546938,
+            "status": "native65_synthesis_target22_estimate"
+          },
+          {
+            "part": "residual_control_allowance",
+            "area_um2": 5281.774746202959,
+            "dynamic_energy_uj": 137.28391997988092,
+            "standby_energy_uj": 15.240441065796052,
+            "status": "engineering_allocation_not_matching_synthesis"
+          }
+        ],
+        "energy_breakdown_uj": {
+          "activity_dependent": 8.619208475616059,
+          "elapsed_vectorless": 508.6712703706577,
+          "leakage": 43.54967161273405
+        },
+        "active_cycles": 42733100,
+        "activity_multiplier": 1.0
+      }
+    },
+    {
+      "id": "u_ucb_00",
+      "component": "UCB scorer 1",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10454.455044260358,
+      "dynamic_energy_uj": 87.09054202415264,
+      "standby_energy_uj": 60.844714366135996,
+      "energy_uj": 147.93525639028863,
+      "average_power_mw": 1.2870926153846154,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 31271,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 87.09054202415264,
+        "active_cycles": 5284799,
+        "idle_cycles": 52183970,
+        "native65_part": {
+          "active_dynamic_mw": 3.4979999999999998,
+          "area_um2": 91260.4805,
+          "dynamic_mw": 3.4979999999999998,
+          "id": "u_ucb_00",
+          "idle_dynamic_mw": 3.4979999999999998,
+          "instance": "u_batch/genblk1[0].u_score",
+          "internal_mw": 2.941,
+          "leakage_mw": 0.529372,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 4.028,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.557,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.4979999999999998,
+          "idle_dynamic_mw": 3.4979999999999998,
+          "leakage_mw": 0.529372
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_01",
+      "component": "UCB scorer 2",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10312.918551952665,
+      "dynamic_energy_uj": 85.07386566510282,
+      "standby_energy_uj": 59.329837615296,
+      "energy_uj": 144.40370328039882,
+      "average_power_mw": 1.2563667692307696,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 26352,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 85.07386566510282,
+        "active_cycles": 4453488,
+        "idle_cycles": 53015281,
+        "native65_part": {
+          "active_dynamic_mw": 3.4170000000000003,
+          "area_um2": 90024.9605,
+          "dynamic_mw": 3.4170000000000003,
+          "id": "u_ucb_01",
+          "idle_dynamic_mw": 3.4170000000000003,
+          "instance": "u_batch/genblk1[1].u_score",
+          "internal_mw": 2.914,
+          "leakage_mw": 0.516192,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.932,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.503,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.4170000000000003,
+          "idle_dynamic_mw": 3.4170000000000003,
+          "leakage_mw": 0.516192
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_02",
+      "component": "UCB scorer 3",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10231.152909349115,
+      "dynamic_energy_uj": 85.2481463381071,
+      "standby_energy_uj": 58.907901913298005,
+      "energy_uj": 144.1560482514051,
+      "average_power_mw": 1.2542120769230771,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 26352,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 85.2481463381071,
+        "active_cycles": 4453488,
+        "idle_cycles": 53015281,
+        "native65_part": {
+          "active_dynamic_mw": 3.424,
+          "area_um2": 89311.2005,
+          "dynamic_mw": 3.424,
+          "id": "u_ucb_02",
+          "idle_dynamic_mw": 3.424,
+          "instance": "u_batch/genblk1[2].u_score",
+          "internal_mw": 2.92,
+          "leakage_mw": 0.512521,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.937,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.504,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.424,
+          "idle_dynamic_mw": 3.424,
+          "leakage_mw": 0.512521
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_03",
+      "component": "UCB scorer 4",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10159.999754319528,
+      "dynamic_energy_uj": 84.79999603609602,
+      "standby_energy_uj": 58.205288743504,
+      "energy_uj": 143.0052847796,
+      "average_power_mw": 1.2442,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 26352,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 84.79999603609602,
+        "active_cycles": 4453488,
+        "idle_cycles": 53015281,
+        "native65_part": {
+          "active_dynamic_mw": 3.4059999999999997,
+          "area_um2": 88690.0805,
+          "dynamic_mw": 3.4059999999999997,
+          "id": "u_ucb_03",
+          "idle_dynamic_mw": 3.4059999999999997,
+          "instance": "u_batch/genblk1[3].u_score",
+          "internal_mw": 2.908,
+          "leakage_mw": 0.506408,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.912,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.498,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.4059999999999997,
+          "idle_dynamic_mw": 3.4059999999999997,
+          "leakage_mw": 0.506408
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_04",
+      "component": "UCB scorer 5",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10203.219522366866,
+      "dynamic_energy_uj": 84.70040708009357,
+      "standby_energy_uj": 58.02150362024201,
+      "energy_uj": 142.72191070033557,
+      "average_power_mw": 1.2417345384615388,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 26202,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 84.70040708009357,
+        "active_cycles": 4428138,
+        "idle_cycles": 53040631,
+        "native65_part": {
+          "active_dynamic_mw": 3.402,
+          "area_um2": 89067.3605,
+          "dynamic_mw": 3.402,
+          "id": "u_ucb_04",
+          "idle_dynamic_mw": 3.402,
+          "instance": "u_batch/genblk1[4].u_score",
+          "internal_mw": 2.908,
+          "leakage_mw": 0.5048090000000001,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.906,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.494,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.402,
+          "idle_dynamic_mw": 3.402,
+          "leakage_mw": 0.5048090000000001
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_05",
+      "component": "UCB scorer 6",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10272.283172071007,
+      "dynamic_energy_uj": 84.82489327509664,
+      "standby_energy_uj": 59.446039466213996,
+      "energy_uj": 144.27093274131065,
+      "average_power_mw": 1.2552116153846156,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 26202,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 84.82489327509664,
+        "active_cycles": 4428138,
+        "idle_cycles": 53040631,
+        "native65_part": {
+          "active_dynamic_mw": 3.407,
+          "area_um2": 89670.2405,
+          "dynamic_mw": 3.407,
+          "id": "u_ucb_05",
+          "idle_dynamic_mw": 3.407,
+          "instance": "u_batch/genblk1[5].u_score",
+          "internal_mw": 2.913,
+          "leakage_mw": 0.517203,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.924,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.494,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.407,
+          "idle_dynamic_mw": 3.407,
+          "leakage_mw": 0.517203
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_06",
+      "component": "UCB scorer 7",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10228.953430059173,
+      "dynamic_energy_uj": 82.23558041903264,
+      "standby_energy_uj": 58.950428802358,
+      "energy_uj": 141.18600922139063,
+      "average_power_mw": 1.2283716153846156,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 26202,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 82.23558041903264,
+        "active_cycles": 4428138,
+        "idle_cycles": 53040631,
+        "native65_part": {
+          "active_dynamic_mw": 3.303,
+          "area_um2": 89292.0005,
+          "dynamic_mw": 3.303,
+          "id": "u_ucb_06",
+          "idle_dynamic_mw": 3.303,
+          "instance": "u_batch/genblk1[6].u_score",
+          "internal_mw": 2.877,
+          "leakage_mw": 0.512891,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.816,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.426,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.303,
+          "idle_dynamic_mw": 3.303,
+          "leakage_mw": 0.512891
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_07",
+      "component": "UCB scorer 8",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10268.10416142012,
+      "dynamic_energy_uj": 84.6008181240911,
+      "standby_energy_uj": 59.10237622759399,
+      "energy_uj": 143.7031943516851,
+      "average_power_mw": 1.2502720769230773,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 26202,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 84.6008181240911,
+        "active_cycles": 4428138,
+        "idle_cycles": 53040631,
+        "native65_part": {
+          "active_dynamic_mw": 3.3979999999999997,
+          "area_um2": 89633.7605,
+          "dynamic_mw": 3.3979999999999997,
+          "id": "u_ucb_07",
+          "idle_dynamic_mw": 3.3979999999999997,
+          "instance": "u_batch/genblk1[7].u_score",
+          "internal_mw": 2.913,
+          "leakage_mw": 0.5142129999999999,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.912,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.485,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.3979999999999997,
+          "idle_dynamic_mw": 3.3979999999999997,
+          "leakage_mw": 0.5142129999999999
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_08",
+      "component": "UCB scorer 9",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10436.309340118345,
+      "dynamic_energy_uj": 84.2771540170831,
+      "standby_energy_uj": 61.3076827692,
+      "energy_uj": 145.58483678628312,
+      "average_power_mw": 1.2666430769230772,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 26202,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 84.2771540170831,
+        "active_cycles": 4428138,
+        "idle_cycles": 53040631,
+        "native65_part": {
+          "active_dynamic_mw": 3.3850000000000002,
+          "area_um2": 91102.0805,
+          "dynamic_mw": 3.3850000000000002,
+          "id": "u_ucb_08",
+          "idle_dynamic_mw": 3.3850000000000002,
+          "instance": "u_batch/genblk1[8].u_score",
+          "internal_mw": 2.902,
+          "leakage_mw": 0.5334,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.919,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.483,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.3850000000000002,
+          "idle_dynamic_mw": 3.3850000000000002,
+          "leakage_mw": 0.5334
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_09",
+      "component": "UCB scorer 10",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10185.018831242605,
+      "dynamic_energy_uj": 84.40164021208619,
+      "standby_energy_uj": 57.907140769932,
+      "energy_uj": 142.3087809820182,
+      "average_power_mw": 1.238140153846154,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 24595,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 84.40164021208619,
+        "active_cycles": 4156555,
+        "idle_cycles": 53312214,
+        "native65_part": {
+          "active_dynamic_mw": 3.39,
+          "area_um2": 88908.4805,
+          "dynamic_mw": 3.39,
+          "id": "u_ucb_09",
+          "idle_dynamic_mw": 3.39,
+          "instance": "u_batch/genblk1[9].u_score",
+          "internal_mw": 2.902,
+          "leakage_mw": 0.503814,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.894,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.488,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.39,
+          "idle_dynamic_mw": 3.39,
+          "leakage_mw": 0.503814
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_10",
+      "component": "UCB scorer 11",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10316.932601656807,
+      "dynamic_energy_uj": 84.82489327509664,
+      "standby_energy_uj": 59.29754016711799,
+      "energy_uj": 144.12243344221463,
+      "average_power_mw": 1.2539196153846155,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 24595,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 84.82489327509664,
+        "active_cycles": 4156555,
+        "idle_cycles": 53312214,
+        "native65_part": {
+          "active_dynamic_mw": 3.407,
+          "area_um2": 90060.0005,
+          "dynamic_mw": 3.407,
+          "id": "u_ucb_10",
+          "idle_dynamic_mw": 3.407,
+          "instance": "u_batch/genblk1[10].u_score",
+          "internal_mw": 2.911,
+          "leakage_mw": 0.5159109999999999,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.922,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.496,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.407,
+          "idle_dynamic_mw": 3.407,
+          "leakage_mw": 0.5159109999999999
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_11",
+      "component": "UCB scorer 12",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10237.58638627219,
+      "dynamic_energy_uj": 84.20246230008127,
+      "standby_energy_uj": 58.670326022252,
+      "energy_uj": 142.87278832233326,
+      "average_power_mw": 1.243047230769231,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 24595,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 84.20246230008127,
+        "active_cycles": 4156555,
+        "idle_cycles": 53312214,
+        "native65_part": {
+          "active_dynamic_mw": 3.382,
+          "area_um2": 89367.3605,
+          "dynamic_mw": 3.382,
+          "id": "u_ucb_11",
+          "idle_dynamic_mw": 3.382,
+          "instance": "u_batch/genblk1[11].u_score",
+          "internal_mw": 2.898,
+          "leakage_mw": 0.510454,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.893,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.484,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.382,
+          "idle_dynamic_mw": 3.382,
+          "leakage_mw": 0.510454
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_12",
+      "component": "UCB scorer 13",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10213.44710106509,
+      "dynamic_energy_uj": 84.32694849508434,
+      "standby_energy_uj": 58.412176311904,
+      "energy_uj": 142.73912480698834,
+      "average_power_mw": 1.241884307692308,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 24595,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 84.32694849508434,
+        "active_cycles": 4156555,
+        "idle_cycles": 53312214,
+        "native65_part": {
+          "active_dynamic_mw": 3.387,
+          "area_um2": 89156.6405,
+          "dynamic_mw": 3.387,
+          "id": "u_ucb_12",
+          "idle_dynamic_mw": 3.387,
+          "instance": "u_batch/genblk1[12].u_score",
+          "internal_mw": 2.904,
+          "leakage_mw": 0.508208,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.895,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.483,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.387,
+          "idle_dynamic_mw": 3.387,
+          "leakage_mw": 0.508208
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_13",
+      "component": "UCB scorer 14",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10461.328417041423,
+      "dynamic_energy_uj": 84.97427670910034,
+      "standby_energy_uj": 61.719389030315995,
+      "energy_uj": 146.69366573941633,
+      "average_power_mw": 1.2762903076923078,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 24595,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 84.97427670910034,
+        "active_cycles": 4156555,
+        "idle_cycles": 53312214,
+        "native65_part": {
+          "active_dynamic_mw": 3.413,
+          "area_um2": 91320.4805,
+          "dynamic_mw": 3.413,
+          "id": "u_ucb_13",
+          "idle_dynamic_mw": 3.413,
+          "instance": "u_batch/genblk1[13].u_score",
+          "internal_mw": 2.917,
+          "leakage_mw": 0.536982,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.95,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.496,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.413,
+          "idle_dynamic_mw": 3.413,
+          "leakage_mw": 0.536982
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_14",
+      "component": "UCB scorer 15",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10212.237387455623,
+      "dynamic_energy_uj": 84.65061260209234,
+      "standby_energy_uj": 58.313789779376,
+      "energy_uj": 142.96440238146835,
+      "average_power_mw": 1.243844307692308,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 24595,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 84.65061260209234,
+        "active_cycles": 4156555,
+        "idle_cycles": 53312214,
+        "native65_part": {
+          "active_dynamic_mw": 3.4,
+          "area_um2": 89146.0805,
+          "dynamic_mw": 3.4,
+          "id": "u_ucb_14",
+          "idle_dynamic_mw": 3.4,
+          "instance": "u_batch/genblk1[14].u_score",
+          "internal_mw": 2.911,
+          "leakage_mw": 0.507352,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.907,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.489,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.4,
+          "idle_dynamic_mw": 3.4,
+          "leakage_mw": 0.507352
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "u_ucb_15",
+      "component": "UCB scorer 16",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 10404.85678627219,
+      "dynamic_energy_uj": 83.92859267107448,
+      "standby_energy_uj": 60.484040371892014,
+      "energy_uj": 144.4126330429665,
+      "average_power_mw": 1.2564444615384618,
+      "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+      "assumptions": "Native connected UCB lane area; target22 area/dynamic conversion applied once. Default vectorless dynamic power over elapsed time; native65 leakage proxy. No workload calibration or measured idle split.",
+      "status": "native65_synthesis_target22_estimate",
+      "details": {
+        "scores": 24595,
+        "activity_dependent_energy_uj": 0.0,
+        "elapsed_vectorless_energy_uj": 83.92859267107448,
+        "active_cycles": 4156555,
+        "idle_cycles": 53312214,
+        "native65_part": {
+          "active_dynamic_mw": 3.3709999999999996,
+          "area_um2": 90827.5205,
+          "dynamic_mw": 3.3709999999999996,
+          "id": "u_ucb_15",
+          "idle_dynamic_mw": 3.3709999999999996,
+          "instance": "u_batch/genblk1[15].u_score",
+          "internal_mw": 2.901,
+          "leakage_mw": 0.5262340000000001,
+          "ownership": "Inclusive scorer; divider, sqrt, log and value children included once",
+          "power_method": "all_elapsed_vectorless_no_clock_split",
+          "power_source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/vectorless_power.rpt",
+          "reported_total_mw": 3.898,
+          "source": "rtl_synthesis/p09_connected_results/after_resize/imc_selection_path/area_hier.rpt",
+          "switching_mw": 0.47,
+          "top": "imc_selection_path"
+        },
+        "power_defaults_mw": {
+          "active_dynamic_mw": 3.3709999999999996,
+          "idle_dynamic_mw": 3.3709999999999996,
+          "leakage_mw": 0.5262340000000001
+        },
+        "cost_basis_status": "connected_hierarchy_partition"
+      }
+    },
+    {
+      "id": "cam_macro",
+      "component": "CAM key/payload macro",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 25267.899999999998,
+      "dynamic_energy_uj": 1.0899371057800002,
+      "standby_energy_uj": 1.5973409862288601,
+      "energy_uj": 2.68727809200886,
+      "average_power_mw": 0.023380334560575502,
+      "source": "p03_experiments/p35_component_ppa/p00_runs/run_20260910_202201Z/cam_1024_lstp/stdout.txt",
+      "assumptions": "Native 22 nm CACTI associative-cache proxy; all-match interface approximated.",
+      "status": "native22_tool_proxy",
+      "details": {
+        "rows": 1024,
+        "physical_rows": 1024,
+        "key_bits": 36,
+        "payload_bits": 32,
+        "unit_energy_pj": {
+          "search": 22.9657,
+          "read": 2.26152,
+          "write": 3.13174
+        }
+      }
+    },
+    {
+      "id": "cim_arrays",
+      "component": "8-bit 1T1M cell arrays",
+      "count": 2,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 1005.3888000000001,
+      "dynamic_energy_uj": 0.056405857132127805,
+      "standby_energy_uj": 0,
+      "energy_uj": 0.056405857132127805,
+      "average_power_mw": 0.0004907522652184164,
+      "source": "Mentor workbook New_Architecture C14,L14:L15,O16:O17",
+      "assumptions": "One cell per weight, workbook cell geometry proxy. Mean activity/conductance with sustained drive. Idle bias off; off-current omitted. 256 reliable levels unvalidated.",
+      "status": "engineering_estimate",
+      "details": {
+        "arrays": [
+          {
+            "layer": 1,
+            "rows": 244,
+            "columns": 96,
+            "count": 1,
+            "cells": 23424,
+            "cell": "1T1M",
+            "cell_bits": 8
+          },
+          {
+            "layer": 2,
+            "rows": 96,
+            "columns": 3,
+            "count": 1,
+            "cells": 288,
+            "cell": "1T1M",
+            "cell_bits": 8
+          }
+        ],
+        "input_activity": 0.5,
+        "mean_conductance": 0.5,
+        "bursts_per_evaluation": 176,
+        "array_active_cycles_per_evaluation": 8736,
+        "source_reference_cycles": 44720
+      }
+    },
+    {
+      "id": "row_drivers",
+      "component": "Binary row drivers and selection",
+      "count": 340,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 2928.6520499999997,
+      "dynamic_energy_uj": 0.2428660109375004,
+      "standby_energy_uj": 20.617482097197268,
+      "energy_uj": 20.86034810813477,
+      "average_power_mw": 0.18149290885397917,
+      "source": "Mentor workbook C26:C27,D28,O26,P31",
+      "assumptions": "One installed driver per row; workbook load proxy, 5% standby allowance.",
+      "status": "engineering_estimate",
+      "details": {}
+    },
+    {
+      "id": "sample_hold",
+      "component": "External conditioning and sample/hold",
+      "count": 32,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 4428.132392156863,
+      "dynamic_energy_uj": 377.6813582659764,
+      "standby_energy_uj": 45.33028322213647,
+      "energy_uj": 423.0116414881129,
+      "average_power_mw": 3.6803610800164597,
+      "source": "Mentor workbook C26,C40:C43,O40,U40; published ADC input capacitance",
+      "assumptions": "970 fF external hold-cap budget; amplifier area/bias scale with load relative to old 85 fF proxy. 15 cycles acquisition+hold. Settling/noise not validated; ADC internal CDAC counted only in ADC.",
+      "status": "engineering_estimate",
+      "details": {}
+    },
+    {
+      "id": "adc_lanes",
+      "component": "12-bit ADC lanes",
+      "count": 32,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 3136000.0,
+      "dynamic_energy_uj": 2577.389808,
+      "standby_energy_uj": 1132.09924576,
+      "energy_uj": 3709.48905376,
+      "average_power_mw": 32.27395608352077,
+      "source": "https://jsts.org/jsts/XmlViewer/f391663",
+      "assumptions": "Retain source 65 nm, 1.2 V area and energy as an analog macro budget. No unjustified geometric shrink. 10.9 ENOB is not ideal 12-bit conversion proof. Default ADC standby allowance: 25% of published active power during nonconverting lane time (engineering assumption, not measured standby); startup calibration excluded.",
+      "status": "unshrunk_native65_ADC_budget_for_22nm_target",
+      "details": {
+        "event_energy_pj": 49.0,
+        "one_lane_area_um2": 98000.0,
+        "conversions": 52599792,
+        "occupied_lane_ms": 1367.594592,
+        "idle_lane_ms": 2310.406624,
+        "scheduled_service_ns": 26,
+        "adc_idle_fraction": 0.25,
+        "adc_standby_assumption": "ADC standby assumed at 25% of published active power during nonconverting lane time; engineering estimate, not measured idle power.",
+        "adc_standby_source": "User-selected engineering allowance: 25% of the cited ADC native active power during nonconverting lane time; not a measured standby value or a NeuroSim-derived fraction."
+      }
+    },
+    {
+      "id": "analog_mux",
+      "component": "Column mux, references and common bias",
+      "count": 99,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 440.1885675,
+      "dynamic_energy_uj": 1.57799376,
+      "standby_energy_uj": 795.36776296,
+      "energy_uj": 796.9457567200001,
+      "average_power_mw": 6.933729141823101,
+      "source": "Mentor workbook C26,C40,D28,O26,Q56; ADC D9",
+      "assumptions": "One route per installed column; 32 ADC reference buffers plus common bias. Source voltages retained; 12-bit accuracy unvalidated.",
+      "status": "engineering_estimate",
+      "details": {}
+    },
+    {
+      "id": "physical_overhead",
+      "component": "Physical area and distribution allowance",
+      "count": 1,
+      "counted": true,
+      "scope": "preloaded_core",
+      "area_um2": 756358.7746943667,
+      "dynamic_energy_uj": 296.83683817863465,
+      "standby_energy_uj": 0,
+      "energy_uj": 296.83683817863465,
+      "average_power_mw": 2.5825926267764205,
+      "source": "Workbook D97; explicit clock/wire engineering assumption",
+      "assumptions": "Global routing/clock-distribution allowance, not an extracted readout-bus model. Register clock-pin power remains in digital parents; no separate bus-wire estimate is added.",
+      "status": "engineering_estimate",
+      "details": {
+        "method": "global_dynamic_allowance",
+        "readout_transfers": 6701904,
+        "readout_bus_bits": 128,
+        "readout_capacitance_ff_per_bit": 0,
+        "readout_voltage_v": 0.8,
+        "readout_rise_probability": 0.25,
+        "readout_wire_energy_uj": 0.0,
+        "global_dynamic_allowance_uj": 296.83683817863465,
+        "dynamic_fraction": 0.1,
+        "dynamic_energy_uj": 296.83683817863465,
+        "boundary": "Global routing/clock-distribution allowance, not an extracted readout-bus model. Register clock-pin power remains in digital parents; no separate bus-wire estimate is added.",
+        "physical_validation": "unvalidated; capacitance and switching probability are assumptions, not extracted layout",
+        "base_area_um2": 5042391.831295778,
+        "area_fraction": 0.15
+      }
+    }
+  ],
+  "estimated_owners": 31,
+  "latency_ms": 114.937538,
+  "core_area_mm2": 5.798750605990144,
+  "core_energy_uj": 9419.688582164446,
+  "core_energy_mj": 9.419688582164447,
+  "core_average_power_mw": 81.95484909520549,
+  "average_energy_uj_per_iteration": 1.8839377164328892,
+  "average_energy_mj_per_iteration": 0.0018839377164328894,
+  "iterations": 5000,
+  "whole_chip_energy_uj": null,
+  "whole_chip_area_mm2": null,
+  "excluded": [
+    "Host task rules, terminal checks, feature encoding and value calibration",
+    "Host I/O, pads and ESD",
+    "Weight programming, preload and ADC startup calibration"
+  ],
+  "status": "Task-specific diagnostic census and executable peripheral schedule; complete application hardware and trained quality unvalidated",
+  "precision": "Ideal cell-code arithmetic; source ADC achieved 10.9 ENOB, not ideal 12-bit accuracy",
+  "new_hardware": {
+    "ucb_lanes": 16,
+    "adc_lanes": 32,
+    "candidate_operand_bits": 4096,
+    "adc_result_bits": 1024,
+    "readout_staging_bits": 512,
+    "readout_bus_bits": 128,
+    "accumulator_lanes": 8,
+    "connected_digital_area_source": "native65_synthesis",
+    "residual_controls": "engineering_allocation"
+  },
+  "cost_method": "Connected native65 digital area and vectorless power; one declared target22 conversion, native65 leakage and residual-control allocations. Super-T, ADC and SRAM sources retained.",
+  "projection_profile": "application_shape_projection_ucb16_adc32_v1",
+  "application": "Minesweeper",
+  "configuration": {
+    "key": "minesweeper",
+    "name": "Minesweeper",
+    "board": 9,
+    "inputs": 244,
+    "hidden": 96,
+    "outputs": 3,
+    "input_bits": 8,
+    "tier": 9,
+    "domain": "Puzzle"
+  },
+  "workload": {
+    "iterations": 5000,
+    "value_policy": "constant 0.5 diagnostic; terminal values from host rules",
+    "rule_source": "generalizability.games",
+    "tree_selection": "legacy functional floating-point UCB1",
+    "neural_evaluations": 4231,
+    "nodes": 4851,
+    "max_depth": 5
+  },
+  "memory_admission": {
+    "board_size": 9,
+    "node_sram_bytes": 1572864,
+    "child_sram_bytes": 524288,
+    "cam_entries": 1024,
+    "node_base": 53260,
+    "node_stride": 108,
+    "path_entries": 5001,
+    "neural_bytes": 16756,
+    "execution_profile": "ucb16_adc32_buffered_v2",
+    "sram_bank_bytes": 524288,
+    "node_capacity": 14070,
+    "edge_capacity": 131072
+  },
+  "phase_cycles": {
+    "selection": 12676085,
+    "expansion": 1477700,
+    "neural": 42733100,
+    "backpropagation": 561884,
+    "commit": 20000
+  },
+  "operation_counts": {
+    "selected_headers": 11676,
+    "legal_mask_loads": 432,
+    "expansion_attempts": 5000,
+    "created_nodes": 4850,
+    "neural_evaluations": 4231,
+    "backprop_nodes": 16526,
+    "cam_searches": 6676,
+    "cam_output_ids": 413502,
+    "child_sram_read_words": 471,
+    "cam_filled_rows": 471,
+    "cam_hits": 6615,
+    "node_sram_read_words": 3217062,
+    "node_sram_write_words": 569780,
+    "child_sram_write_words": 4850,
+    "ucb_operations": 413502,
+    "neural_neural_start": 4231,
+    "neural_sram_request_handshakes": 528875,
+    "neural_turn_input_latches": 4231,
+    "neural_accumulator_clears": 418869,
+    "neural_offset_sum_clears": 8462,
+    "neural_offset_input_adds": 1438540,
+    "neural_dac_bit_drives": 11508320,
+    "neural_array_pulses": 744656,
+    "neural_mux_groups": 1827792,
+    "neural_adc_conversions": 52599792,
+    "neural_samples": 52599792,
+    "neural_adc_request_handshakes": 1827792,
+    "neural_adc_groups": 1827792,
+    "neural_readout_words": 6701904,
+    "neural_shift_adds": 52599792,
+    "neural_offset_shifts": 8462,
+    "neural_offset_subtracts": 418869,
+    "neural_hidden_activations": 406176,
+    "neural_logit_rescales": 12693,
+    "neural_max_comparisons": 8462,
+    "neural_lut_addresses": 12693,
+    "neural_exponential_sums": 12693,
+    "neural_divide_setups": 12693,
+    "neural_divide_bits": 609264,
+    "neural_probability_rounds": 12693,
+    "neural_divider_completion_handshakes": 12693,
+    "neural_value_formations": 4231,
+    "neural_neural_result_capture": 4231
+  },
+  "parent_histogram": {
+    "81": 4919,
+    "9": 1607,
+    "4": 150
+  },
+  "neural_schedule": {
+    "profile": {
+      "model": "application_shape_projection_ucb16_adc32_v1",
+      "board_size": 9,
+      "input_size": 244,
+      "hidden_size": 96,
+      "outputs": 3,
+      "array_rows": 256,
+      "array_columns": 128,
+      "active_rows": 16,
+      "adc_lanes": 3,
+      "adc_bits": 12,
+      "dac_bits": 1,
+      "weight_bits": 8,
+      "weight_magnitude_bits": 7,
+      "cell_bits": 8,
+      "weight_slices": 2,
+      "sign_branches": 2,
+      "hidden_bits": 8,
+      "accumulator_bits": 32,
+      "logit_fraction_bits": 12,
+      "probability_fraction_bits": 16,
+      "value_fraction_bits": 17,
+      "lut_fraction_bits": 30,
+      "lut_index_fraction_bits": 8,
+      "lut_max_argument": 16,
+      "divider_numerator_bits": 48,
+      "storage": {
+        "inputs": {
+          "offset": 0,
+          "bytes": 244
+        },
+        "hidden": {
+          "offset": 244,
+          "bytes": 96
+        },
+        "logits": {
+          "offset": 340,
+          "bytes": 12
+        },
+        "probabilities": {
+          "offset": 352,
+          "bytes": 12
+        },
+        "value": {
+          "offset": 364,
+          "bytes": 4
+        },
+        "exp_lut": {
+          "offset": 368,
+          "bytes": 16388
+        }
+      },
+      "storage_bytes": 16756,
+      "clock_mhz": 500,
+      "service_cycles": {
+        "sram_word": 2,
+        "drive": 1,
+        "array_settle": 3,
+        "mux": 1,
+        "sample_hold": 1,
+        "adc_group": 13,
+        "readout_word": 1,
+        "shift_add": 1,
+        "digital": 1,
+        "divide_bit": 1
+      },
+      "provenance": {
+        "differential_dac_adc": "submitted supplement Note 4.3: differential pairs, 1-bit DAC, 8-bit ADC",
+        "weight_cell_bits": "legacy crossbar_hardware.py supert_specs: 8-bit weight, 4-bit cell; candidate only",
+        "geometry_and_sharing": "proposed 256x128 arrays, one active array and shared ADC bank; three lanes retains legacy lane count",
+        "active_rows": "derived ideal bound: 16 * (2**4-1) = 240 <= 2**8-1",
+        "array_service": "ceil(legacy board_config.crossbar_delay_ns=5 / 2)=3; uncalibrated",
+        "adc_service": "proposed SAR: one setup plus eight one-cycle decisions; uncalibrated",
+        "other_services": "SRAM service from selected memory profile; other digital/link services remain one-cycle assumptions",
+        "precision": "proposed power-of-two quantization and integer LUT/divider; not paper-validated accuracy"
+      },
+      "analog_model": "ideal baseline-cancelled cell-code currents; no off-current, noise, drift, or wire effects",
+      "timing_status": "serialized_service_model_uncalibrated",
+      "ppa_status": "unavailable_for_new_neural_geometry",
+      "layer_input_bits": [
+        8,
+        8
+      ],
+      "input_packing": "precomputed_feature_codes",
+      "arrays": [
+        {
+          "layer": 1,
+          "rows": 244,
+          "columns": 96,
+          "count": 1,
+          "cells": 23424,
+          "cell": "1T1M",
+          "cell_bits": 8
+        },
+        {
+          "layer": 2,
+          "rows": 96,
+          "columns": 3,
+          "count": 1,
+          "cells": 288,
+          "cell": "1T1M",
+          "cell_bits": 8
+        }
+      ],
+      "shape_status": "Declared application dimensions; exact archived checkpoint shapes unverified",
+      "input_status": "Binary base features; enhanced features bounded by unsigned eight-bit codes",
+      "numerical_status": "Integer dot-product checked; application value interpretation and trained quality unverified",
+      "readout_activity": {
+        "profile": "sustained_drive_v1",
+        "arrays": [
+          {
+            "layer": 1,
+            "array_id": 0,
+            "bursts": 128,
+            "mapped_columns": 96,
+            "array_active_cycles": 7680
+          },
+          {
+            "layer": 2,
+            "array_id": 1,
+            "bursts": 48,
+            "mapped_columns": 3,
+            "array_active_cycles": 1056
+          }
+        ],
+        "array_read_bursts": 176,
+        "adc_conversions": 12432,
+        "adc_groups": 432,
+        "array_active_cycles": 8736,
+        "array_active_ns": 17472,
+        "energy_status": "8-bit cell currents, 12-bit analog chain and physical timing uncharacterized"
+      }
+    },
+    "resources": {
+      "array_count": 2,
+      "array_dimensions": [
+        {
+          "layer": 1,
+          "rows": 244,
+          "columns": 96,
+          "count": 1,
+          "cells": 23424,
+          "cell": "1T1M",
+          "cell_bits": 8
+        },
+        {
+          "layer": 2,
+          "rows": 96,
+          "columns": 3,
+          "count": 1,
+          "cells": 288,
+          "cell": "1T1M",
+          "cell_bits": 8
+        }
+      ],
+      "adc_lanes": 32,
+      "adc_bits": 12,
+      "adc_slot_bits": 16,
+      "adc_register_bits": 1024,
+      "adc_result_banks": 2,
+      "readout_bus_bits": 128,
+      "shift_add_lanes": 8,
+      "accumulator_words": 96,
+      "accumulator_register_bits": 3072,
+      "accumulator_words_per_bank": 12,
+      "installed_row_drivers": 340,
+      "installed_column_routes": 99
+    },
+    "operations": {
+      "neural_start": 1,
+      "sram_request_handshakes": 125,
+      "node_sram_read_words": 94,
+      "turn_input_latches": 1,
+      "accumulator_clears": 99,
+      "offset_sum_clears": 2,
+      "offset_input_adds": 340,
+      "dac_bit_drives": 2720,
+      "array_pulses": 176,
+      "mux_groups": 432,
+      "adc_conversions": 12432,
+      "samples": 12432,
+      "adc_request_handshakes": 432,
+      "adc_groups": 432,
+      "readout_words": 1584,
+      "shift_adds": 12432,
+      "offset_shifts": 2,
+      "offset_subtracts": 99,
+      "hidden_activations": 96,
+      "node_sram_write_words": 31,
+      "logit_rescales": 3,
+      "max_comparisons": 2,
+      "lut_addresses": 3,
+      "exponential_sums": 3,
+      "divide_setups": 3,
+      "divide_bits": 144,
+      "probability_rounds": 3,
+      "divider_completion_handshakes": 3,
+      "value_formations": 1,
+      "neural_result_capture": 1
+    },
+    "cycles": 9917,
+    "storage_bytes": 16756
+  },
+  "assumptions": [
+    "Declared matrix dimensions awaiting exact checkpoint recovery",
+    "Eight-bit stored task-state cells; task metadata handled by host",
+    "Next existing memory tier for 8x8 and 11x11; single-port service retained",
+    "Three-output processing allowance, not a verified per-task value implementation",
+    "Binary base features and eight-bit enhanced features; actual distributions unverified",
+    "Mean analog activity and conductance, source digital power proxies, ideal 12-bit codes"
+  ]
+}

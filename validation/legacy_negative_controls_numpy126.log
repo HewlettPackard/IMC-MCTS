@@ -1,0 +1,12 @@
+test_board_shape_and_integer_aliases_are_rejected (test_legacy_reference.LegacyReferenceTests) ... ok
+test_corrupted_value_fixture_is_rejected (test_legacy_reference.LegacyReferenceTests) ... ok
+test_discrete_changes_are_rejected (test_legacy_reference.LegacyReferenceTests) ... ok
+test_meaningful_value_change_is_rejected (test_legacy_reference.LegacyReferenceTests) ... ok
+test_nonfinite_and_unvisited_nonzero_values_are_rejected (test_legacy_reference.LegacyReferenceTests) ... ok
+test_roundoff_is_tolerated_without_changing_discrete_state (test_legacy_reference.LegacyReferenceTests) ... ok
+test_visited_set_is_checked_independently (test_legacy_reference.LegacyReferenceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.015s
+
+OK

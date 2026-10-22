@@ -1,0 +1,641 @@
+// Complete serialized placement-MCTS iteration controller.
+// Host preloads root/boards/LUT and cell arrays; reset also clears CAM and banks.
+// One job per coordinated reset. Live progress commits after full backpropagation.
+// PPA role: complete_digital_core_including_selection_update_UCB_neural_and_routers
+// SPDX-License-Identifier: MIT
+`default_nettype none
+module imc_iteration_core #(
+    parameter int BOARD_SIZE = 9,
+    parameter int CAM_ENTRIES = 1024,
+    parameter int HIDDEN = 96,
+    parameter int ADDR_W = 21,
+    parameter int ROW_W = (CAM_ENTRIES < 2) ? 1 : $clog2(CAM_ENTRIES),
+    parameter int ROW_COUNT_W = $clog2(CAM_ENTRIES + 1)
+) (
+    input  logic                          clk,
+    input  logic                          rst_n,
+    input  logic                          start,
+    output logic                          ready,
+    input  logic [31:0]                   root_id,
+    input  logic [31:0]                   initial_nodes,
+    input  logic [31:0]                   initial_edges,
+    input  logic [31:0]                   iteration_limit,
+    input  logic [31:0]                   node_limit,
+    input  logic [31:0]                   edge_limit,
+    input  logic [31:0]                   path_limit,
+    input  logic [31:0]                   seed,
+    input  logic [63:0]                   exploration_constant,
+    input  logic [5:0]                    hidden_shift,
+    input  logic signed [7:0]             logit_shift,
+    output logic                          result_valid,
+    input  logic                          result_ready,
+    output logic [7:0]                    result_error,
+    output logic                          iteration_done,
+    output logic [63:0]                   cycle_count,
+    output logic [31:0]                   iterations_completed,
+    output logic [31:0]                   allocated_nodes,
+    output logic [31:0]                   allocated_edges,
+    output logic [31:0]                   selected_node,
+    output logic [31:0]                   current_depth,
+    output logic [31:0]                   last_value,
+    output logic [31:0]                   random_state,
+    output logic [3:0]                    debug_phase,
+    output logic [1:0]                    debug_owner,
+    output logic                          cam_req_valid,
+    input  logic                          cam_req_ready,
+    output logic [1:0]                    cam_req_op,
+    output logic [ROW_W-1:0]              cam_req_row,
+    output logic [31:0]                   cam_req_parent,
+    output logic [31:0]                   cam_req_child,
+    input  logic                          cam_rsp_valid,
+    output logic                          cam_rsp_ready,
+    input  logic                          cam_rsp_error,
+    input  logic [CAM_ENTRIES-1:0]        cam_rsp_matches,
+    input  logic [31:0]                   cam_rsp_parent,
+    input  logic [31:0]                   cam_rsp_child,
+    input  logic                          cam_rsp_row_valid,
+    output logic [5:0]                    sel_state,
+    output logic [ROW_COUNT_W-1:0]        cache_rows_used,
+    output logic [ROW_W-1:0]              cache_row_head,
+    output logic [ROW_W-1:0]              cache_row_tail,
+    output logic                          drive_valid,
+    input  logic                          drive_ready,
+    output logic                          array_enable,
+    output logic [3:0]                    array_id,
+    output logic [7:0]                    row_start,
+    output logic [4:0]                    row_count,
+    output logic [15:0]                   row_bits,
+    output logic [2:0]                    input_bit,
+    output logic [7:0]                    column_start,
+    output logic [1:0]                    column_count,
+    output logic                          mux_select,
+    output logic                          sample_hold,
+    output logic                          adc_req_valid,
+    input  logic                          adc_req_ready,
+    input  logic                          adc_rsp_valid,
+    output logic                          adc_rsp_ready,
+    input  logic                          adc_rsp_error,
+    input  logic [23:0]                   adc_rsp_codes,
+    output logic                          hidden_saturated,
+    output logic                          logit_saturated,
+    output logic [5:0]                    nn_state,
+    output logic [5:0]                    upd_state,
+    output logic [3:0]                    ucb_state,
+    output logic [2:0]                    node_bank_valid,
+    input  logic [2:0]                    node_bank_ready,
+    output logic [2:0]                    node_bank_write,
+    output logic [50:0]                   node_bank_addr,
+    output logic [95:0]                   node_bank_wdata,
+    input  logic [2:0]                    node_bank_rsp_valid,
+    input  logic [95:0]                   node_bank_rdata,
+    output logic                          child_bank_valid,
+    input  logic                          child_bank_ready,
+    output logic                          child_bank_write,
+    output logic [16:0]                   child_bank_addr,
+    output logic [31:0]                   child_bank_wdata,
+    input  logic                          child_bank_rsp_valid,
+    input  logic [31:0]                   child_bank_rdata
+);
+
+    localparam int BOARD_BYTES = 4 * ((2 * BOARD_SIZE * BOARD_SIZE + 31) / 32);
+    localparam int NEURAL_BASE = 4 * (BOARD_SIZE * BOARD_SIZE + 1) + BOARD_BYTES + 16 + 16 * CAM_ENTRIES;
+    localparam int NEURAL_BYTES = 4 * ((HIDDEN + 3) / 4) + 16416;
+    localparam int NODE_BASE = NEURAL_BASE + NEURAL_BYTES;
+    localparam int NODE_STRIDE = 24 + BOARD_BYTES;
+    localparam int NODE_CAPACITY = (1572864-NODE_BASE)/NODE_STRIDE;
+    typedef enum logic [3:0] {
+        ST_IDLE, ST_SELECT_START, ST_SELECT_WAIT, ST_EXPAND_START, ST_EXPAND_WAIT,
+        ST_NEURAL_START, ST_NEURAL_WAIT, ST_BACKPROP_START, ST_BACKPROP_WAIT,
+        ST_ITERATION, ST_RESULT
+    } phase_e;
+    phase_e phase_q, phase_d;
+    logic used_q, used_d;
+    logic [31:0] root_q, root_d, limit_q, limit_d, nodes_limit_q, nodes_limit_d;
+    logic [31:0] edges_limit_q, edges_limit_d, path_limit_q, path_limit_d;
+    logic [31:0] iterations_d, nodes_d, edges_d, selected_d, depth_d, value_d, random_d, random_next;
+    logic [63:0] exploration_q, exploration_d, cycles_d;
+    logic [5:0] hidden_q, hidden_d;
+    logic signed [7:0] logit_q, logit_d;
+    logic [7:0] error_d;
+    logic iteration_d;
+    logic sel_start;
+    logic sel_ready;
+    logic [31:0] sel_root_id;
+    logic [31:0] sel_nodes_used;
+    logic [31:0] sel_edges_used;
+    logic [31:0] sel_path_limit;
+    logic [63:0] sel_exploration_constant;
+    logic sel_result_valid;
+    logic sel_result_ready;
+    logic [31:0] sel_leaf_id;
+    logic [31:0] sel_path_depth;
+    logic [3:0] sel_result_error;
+    logic sel_poisoned;
+    logic sel_node_req_valid;
+    logic sel_node_req_ready;
+    logic sel_node_req_write;
+    logic [ADDR_W-1:0] sel_node_req_addr;
+    logic [31:0] sel_node_req_wdata;
+    logic sel_node_rsp_valid;
+    logic sel_node_rsp_ready;
+    logic [31:0] sel_node_rsp_rdata;
+    logic sel_node_rsp_error;
+    logic sel_child_req_valid;
+    logic sel_child_req_ready;
+    logic [ADDR_W-1:0] sel_child_req_addr;
+    logic sel_child_rsp_valid;
+    logic sel_child_rsp_ready;
+    logic [31:0] sel_child_rsp_rdata;
+    logic sel_child_rsp_error;
+    logic score_req_valid;
+    logic score_req_ready;
+    logic [31:0] score_parent_visits;
+    logic [31:0] score_child_visits;
+    logic [63:0] score_child_value;
+    logic [63:0] score_exploration;
+    logic score_rsp_valid;
+    logic score_rsp_ready;
+    logic [63:0] score_rsp_value;
+    logic score_rsp_error;
+    logic nn_start;
+    logic nn_ready;
+    logic [ADDR_W-1:0] nn_board_base;
+    logic [ADDR_W-1:0] nn_neural_base;
+    logic [5:0] nn_hidden_shift;
+    logic signed [7:0] nn_logit_shift;
+    logic nn_result_valid;
+    logic nn_result_ready;
+    logic [31:0] nn_value_code;
+    logic [3:0] nn_result_error;
+    logic nn_mem_req_valid;
+    logic nn_mem_req_ready;
+    logic [ADDR_W-1:0] nn_mem_req_addr;
+    logic nn_mem_req_write;
+    logic [31:0] nn_mem_req_wdata;
+    logic nn_mem_rsp_valid;
+    logic nn_mem_rsp_ready;
+    logic nn_mem_rsp_error;
+    logic [31:0] nn_mem_rsp_rdata;
+    logic upd_start;
+    logic upd_ready;
+    logic upd_backpropagate;
+    logic [31:0] upd_selected_node;
+    logic [31:0] upd_nodes_used;
+    logic [31:0] upd_edges_used;
+    logic [31:0] upd_selected_depth;
+    logic [31:0] upd_node_limit;
+    logic [31:0] upd_edge_limit;
+    logic [31:0] upd_path_limit;
+    logic [31:0] upd_choice_word;
+    logic [31:0] upd_value_q17;
+    logic upd_result_valid;
+    logic upd_result_ready;
+    logic [31:0] upd_result_node;
+    logic [31:0] upd_result_nodes_used;
+    logic [31:0] upd_result_edges_used;
+    logic [31:0] upd_result_depth;
+    logic [31:0] upd_nodes_changed;
+    logic [3:0] upd_result_error;
+    logic upd_poisoned;
+    logic upd_node_req_valid;
+    logic upd_node_req_ready;
+    logic upd_node_req_write;
+    logic [ADDR_W-1:0] upd_node_req_addr;
+    logic [31:0] upd_node_req_wdata;
+    logic upd_node_rsp_valid;
+    logic upd_node_rsp_ready;
+    logic [31:0] upd_node_rsp_rdata;
+    logic upd_node_rsp_error;
+    logic upd_child_req_valid;
+    logic upd_child_req_ready;
+    logic upd_child_req_write;
+    logic [ADDR_W-1:0] upd_child_req_addr;
+    logic [31:0] upd_child_req_wdata;
+    logic upd_child_rsp_valid;
+    logic upd_child_rsp_ready;
+    logic [31:0] upd_child_rsp_rdata;
+    logic upd_child_rsp_error;
+    logic node_router_req_valid;
+    logic node_router_req_ready;
+    logic [ADDR_W-1:0] node_router_req_addr;
+    logic node_router_req_write;
+    logic [31:0] node_router_req_wdata;
+    logic node_router_rsp_valid;
+    logic node_router_rsp_ready;
+    logic node_router_rsp_error;
+    logic [31:0] node_router_rsp_rdata;
+    logic child_router_req_valid;
+    logic child_router_req_ready;
+    logic [ADDR_W-1:0] child_router_req_addr;
+    logic child_router_req_write;
+    logic [31:0] child_router_req_wdata;
+    logic child_router_rsp_valid;
+    logic child_router_rsp_ready;
+    logic child_router_rsp_error;
+    logic [31:0] child_router_rsp_rdata;
+
+    assign ready = rst_n && phase_q == ST_IDLE && !used_q;
+    assign result_valid = rst_n && phase_q == ST_RESULT;
+    assign debug_phase = phase_q;
+    assign debug_owner = (phase_q == ST_SELECT_START || phase_q == ST_SELECT_WAIT) ? 2'd1 :
+        (phase_q == ST_EXPAND_START || phase_q == ST_EXPAND_WAIT || phase_q == ST_BACKPROP_START || phase_q == ST_BACKPROP_WAIT) ? 2'd2 :
+        (phase_q == ST_NEURAL_START || phase_q == ST_NEURAL_WAIT) ? 2'd3 : 2'd0;
+    assign sel_start = phase_q == ST_SELECT_START;
+    assign sel_result_ready = phase_q == ST_SELECT_WAIT;
+    assign sel_root_id = root_q;
+    assign sel_nodes_used = allocated_nodes;
+    assign sel_edges_used = allocated_edges;
+    assign sel_path_limit = path_limit_q;
+    assign sel_exploration_constant = exploration_q;
+    assign upd_start = phase_q == ST_EXPAND_START || phase_q == ST_BACKPROP_START;
+    assign upd_backpropagate = phase_q == ST_BACKPROP_START || phase_q == ST_BACKPROP_WAIT;
+    assign upd_selected_node = selected_node;
+    assign upd_nodes_used = allocated_nodes;
+    assign upd_edges_used = allocated_edges;
+    assign upd_selected_depth = current_depth;
+    assign upd_node_limit = nodes_limit_q;
+    assign upd_edge_limit = edges_limit_q;
+    assign upd_path_limit = path_limit_q;
+    assign upd_choice_word = random_next;
+    assign upd_value_q17 = last_value;
+    assign upd_result_ready = phase_q == ST_EXPAND_WAIT || phase_q == ST_BACKPROP_WAIT;
+    assign nn_start = phase_q == ST_NEURAL_START;
+    assign nn_board_base = ADDR_W'(NODE_BASE+24) + ADDR_W'(selected_node)*ADDR_W'(NODE_STRIDE);
+    assign nn_neural_base = ADDR_W'(NEURAL_BASE);
+    assign nn_hidden_shift = hidden_q;
+    assign nn_logit_shift = logit_q;
+    assign nn_result_ready = phase_q == ST_NEURAL_WAIT;
+
+    always_comb begin
+        random_next = random_state ^ (random_state << 13);
+        random_next = random_next ^ (random_next >> 17);
+        random_next = random_next ^ (random_next << 5);
+        phase_d = phase_q;
+        used_d = used_q;
+        root_d = root_q;
+        limit_d = limit_q;
+        nodes_limit_d = nodes_limit_q;
+        edges_limit_d = edges_limit_q;
+        path_limit_d = path_limit_q;
+        exploration_d = exploration_q;
+        hidden_d = hidden_q;
+        logit_d = logit_q;
+        iterations_d = iterations_completed;
+        nodes_d = allocated_nodes;
+        edges_d = allocated_edges;
+        selected_d = selected_node;
+        depth_d = current_depth;
+        value_d = last_value;
+        random_d = random_state;
+        cycles_d = cycle_count;
+        error_d = result_error;
+        iteration_d = 1'b0;
+        if (phase_q != ST_IDLE && phase_q != ST_RESULT) cycles_d = cycle_count + 64'd1;
+        unique case (phase_q)
+            ST_IDLE: if (start && ready) begin
+                used_d = 1'b1;
+                root_d = root_id;
+                limit_d = iteration_limit;
+                nodes_limit_d = node_limit;
+                edges_limit_d = edge_limit;
+                path_limit_d = path_limit;
+                exploration_d = exploration_constant;
+                hidden_d = hidden_shift;
+                logit_d = logit_shift;
+                iterations_d = '0;
+                nodes_d = initial_nodes;
+                edges_d = initial_edges;
+                selected_d = root_id;
+                depth_d = '0;
+                value_d = '0;
+                random_d = seed == '0 ? 32'h6d2b79f5 : seed;
+                cycles_d = '0;
+                error_d = '0;
+                phase_d = ST_SELECT_START;
+                if (iteration_limit == '0 || initial_nodes == '0 || initial_nodes > node_limit ||
+                    node_limit > 32'(NODE_CAPACITY) || root_id >= initial_nodes || initial_edges > edge_limit ||
+                    edge_limit > 32'd131072 || path_limit == '0 || path_limit > 32'(BOARD_SIZE*BOARD_SIZE+1) ||
+                    exploration_constant[63] || exploration_constant > 64'h4020000000000000) begin
+                    error_d = 8'h01;
+                    phase_d = ST_RESULT;
+                end
+            end
+            ST_SELECT_START: if (sel_ready) phase_d = ST_SELECT_WAIT;
+            ST_SELECT_WAIT: if (sel_result_valid) begin
+                selected_d = sel_leaf_id;
+                depth_d = sel_path_depth;
+                phase_d = ST_EXPAND_START;
+                if (sel_result_error != '0 || sel_poisoned) begin error_d = {4'd1, sel_result_error}; phase_d = ST_RESULT; end
+            end
+            ST_EXPAND_START: if (upd_ready) phase_d = ST_EXPAND_WAIT;
+            ST_EXPAND_WAIT: if (upd_result_valid) begin
+                selected_d = upd_result_node;
+                nodes_d = upd_result_nodes_used;
+                edges_d = upd_result_edges_used;
+                depth_d = upd_result_depth;
+                if (upd_nodes_changed != '0) random_d = random_next;
+                phase_d = ST_NEURAL_START;
+                if (upd_result_error != '0 || upd_poisoned) begin error_d = {4'd2, upd_result_error}; phase_d = ST_RESULT; end
+            end
+            ST_NEURAL_START: if (nn_ready) phase_d = ST_NEURAL_WAIT;
+            ST_NEURAL_WAIT: if (nn_result_valid) begin
+                value_d = nn_value_code;
+                phase_d = ST_BACKPROP_START;
+                if (nn_result_error != '0) begin error_d = {4'd3, nn_result_error}; phase_d = ST_RESULT; end
+            end
+            ST_BACKPROP_START: if (upd_ready) phase_d = ST_BACKPROP_WAIT;
+            ST_BACKPROP_WAIT: if (upd_result_valid) begin
+                depth_d = upd_result_depth;
+                phase_d = ST_ITERATION;
+                if (upd_result_error != '0 || upd_poisoned) begin error_d = {4'd4, upd_result_error}; phase_d = ST_RESULT; end
+            end
+            ST_ITERATION: begin
+                iterations_d = iterations_completed + 32'd1;
+                iteration_d = 1'b1;
+                if (iterations_d == limit_q) phase_d = ST_RESULT;
+                else phase_d = ST_SELECT_START;
+            end
+            ST_RESULT: if (result_ready) phase_d = ST_IDLE;
+            default: begin error_d = 8'h7f; phase_d = ST_RESULT; end
+        endcase
+    end
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            phase_q <= ST_IDLE;
+            used_q <= 1'b0;
+            root_q <= '0;
+            limit_q <= '0;
+            nodes_limit_q <= '0;
+            edges_limit_q <= '0;
+            path_limit_q <= '0;
+            exploration_q <= '0;
+            hidden_q <= '0;
+            logit_q <= '0;
+            iterations_completed <= '0;
+            allocated_nodes <= '0;
+            allocated_edges <= '0;
+            selected_node <= '0;
+            current_depth <= '0;
+            last_value <= '0;
+            random_state <= '0;
+            cycle_count <= '0;
+            result_error <= '0;
+            iteration_done <= 1'b0;
+        end else begin
+            phase_q <= phase_d;
+            used_q <= used_d;
+            root_q <= root_d;
+            limit_q <= limit_d;
+            nodes_limit_q <= nodes_limit_d;
+            edges_limit_q <= edges_limit_d;
+            path_limit_q <= path_limit_d;
+            exploration_q <= exploration_d;
+            hidden_q <= hidden_d;
+            logit_q <= logit_d;
+            iterations_completed <= iterations_d;
+            allocated_nodes <= nodes_d;
+            allocated_edges <= edges_d;
+            selected_node <= selected_d;
+            current_depth <= depth_d;
+            last_value <= value_d;
+            random_state <= random_d;
+            cycle_count <= cycles_d;
+            result_error <= error_d;
+            iteration_done <= iteration_d;
+        end
+    end
+    assign node_router_req_valid = debug_owner == 2'd1 ? sel_node_req_valid : debug_owner == 2'd2 ? upd_node_req_valid : debug_owner == 2'd3 ? nn_mem_req_valid : '0;
+    assign node_router_req_write = debug_owner == 2'd1 ? sel_node_req_write : debug_owner == 2'd2 ? upd_node_req_write : debug_owner == 2'd3 ? nn_mem_req_write : '0;
+    assign node_router_req_addr = debug_owner == 2'd1 ? sel_node_req_addr : debug_owner == 2'd2 ? upd_node_req_addr : debug_owner == 2'd3 ? nn_mem_req_addr : '0;
+    assign node_router_req_wdata = debug_owner == 2'd1 ? sel_node_req_wdata : debug_owner == 2'd2 ? upd_node_req_wdata : debug_owner == 2'd3 ? nn_mem_req_wdata : '0;
+    assign node_router_rsp_ready = debug_owner == 2'd1 ? sel_node_rsp_ready : debug_owner == 2'd2 ? upd_node_rsp_ready : debug_owner == 2'd3 ? nn_mem_rsp_ready : '0;
+    assign sel_node_req_ready = debug_owner == 2'd1 && node_router_req_ready;
+    assign sel_node_rsp_valid = debug_owner == 2'd1 && node_router_rsp_valid;
+    assign sel_node_rsp_rdata = node_router_rsp_rdata;
+    assign sel_node_rsp_error = node_router_rsp_error;
+    assign upd_node_req_ready = debug_owner == 2'd2 && node_router_req_ready;
+    assign upd_node_rsp_valid = debug_owner == 2'd2 && node_router_rsp_valid;
+    assign upd_node_rsp_rdata = node_router_rsp_rdata;
+    assign upd_node_rsp_error = node_router_rsp_error;
+    assign nn_mem_req_ready = debug_owner == 2'd3 && node_router_req_ready;
+    assign nn_mem_rsp_valid = debug_owner == 2'd3 && node_router_rsp_valid;
+    assign nn_mem_rsp_rdata = node_router_rsp_rdata;
+    assign nn_mem_rsp_error = node_router_rsp_error;
+    imc_sram_router #(.BANKS(3), .BANK_BYTE_W(19), .ADDR_W(ADDR_W)) u_node_router (
+        .clk(clk),
+        .rst_n(rst_n),
+        .req_valid(node_router_req_valid),
+        .req_ready(node_router_req_ready),
+        .req_addr(node_router_req_addr),
+        .req_write(node_router_req_write),
+        .req_wdata(node_router_req_wdata),
+        .rsp_valid(node_router_rsp_valid),
+        .rsp_ready(node_router_rsp_ready),
+        .rsp_error(node_router_rsp_error),
+        .rsp_rdata(node_router_rsp_rdata),
+        .bank_valid(node_bank_valid),
+        .bank_ready(node_bank_ready),
+        .bank_write(node_bank_write),
+        .bank_addr(node_bank_addr),
+        .bank_wdata(node_bank_wdata),
+        .bank_rsp_valid(node_bank_rsp_valid),
+        .bank_rdata(node_bank_rdata)
+    );
+    assign child_router_req_valid = debug_owner == 2'd1 ? sel_child_req_valid : debug_owner == 2'd2 ? upd_child_req_valid : '0;
+    assign child_router_req_write = debug_owner == 2'd1 ? '0 : debug_owner == 2'd2 ? upd_child_req_write : '0;
+    assign child_router_req_addr = debug_owner == 2'd1 ? sel_child_req_addr : debug_owner == 2'd2 ? upd_child_req_addr : '0;
+    assign child_router_req_wdata = debug_owner == 2'd1 ? '0 : debug_owner == 2'd2 ? upd_child_req_wdata : '0;
+    assign child_router_rsp_ready = debug_owner == 2'd1 ? sel_child_rsp_ready : debug_owner == 2'd2 ? upd_child_rsp_ready : '0;
+    assign sel_child_req_ready = debug_owner == 2'd1 && child_router_req_ready;
+    assign sel_child_rsp_valid = debug_owner == 2'd1 && child_router_rsp_valid;
+    assign sel_child_rsp_rdata = child_router_rsp_rdata;
+    assign sel_child_rsp_error = child_router_rsp_error;
+    assign upd_child_req_ready = debug_owner == 2'd2 && child_router_req_ready;
+    assign upd_child_rsp_valid = debug_owner == 2'd2 && child_router_rsp_valid;
+    assign upd_child_rsp_rdata = child_router_rsp_rdata;
+    assign upd_child_rsp_error = child_router_rsp_error;
+    imc_sram_router #(.BANKS(1), .BANK_BYTE_W(19), .ADDR_W(ADDR_W)) u_child_router (
+        .clk(clk),
+        .rst_n(rst_n),
+        .req_valid(child_router_req_valid),
+        .req_ready(child_router_req_ready),
+        .req_addr(child_router_req_addr),
+        .req_write(child_router_req_write),
+        .req_wdata(child_router_req_wdata),
+        .rsp_valid(child_router_rsp_valid),
+        .rsp_ready(child_router_rsp_ready),
+        .rsp_error(child_router_rsp_error),
+        .rsp_rdata(child_router_rsp_rdata),
+        .bank_valid(child_bank_valid),
+        .bank_ready(child_bank_ready),
+        .bank_write(child_bank_write),
+        .bank_addr(child_bank_addr),
+        .bank_wdata(child_bank_wdata),
+        .bank_rsp_valid(child_bank_rsp_valid),
+        .bank_rdata(child_bank_rdata)
+    );
+    imc_cached_selector #(.BOARD_SIZE(BOARD_SIZE), .CAM_ENTRIES(CAM_ENTRIES), .NEURAL_BYTES(NEURAL_BYTES), .ADDR_W(ADDR_W)) u_sel (
+        .clk(clk),
+        .rst_n(rst_n),
+        .start(sel_start),
+        .ready(sel_ready),
+        .root_id(sel_root_id),
+        .nodes_used(sel_nodes_used),
+        .edges_used(sel_edges_used),
+        .path_limit(sel_path_limit),
+        .exploration_constant(sel_exploration_constant),
+        .result_valid(sel_result_valid),
+        .result_ready(sel_result_ready),
+        .leaf_id(sel_leaf_id),
+        .path_depth(sel_path_depth),
+        .result_error(sel_result_error),
+        .poisoned(sel_poisoned),
+        .node_req_valid(sel_node_req_valid),
+        .node_req_ready(sel_node_req_ready),
+        .node_req_write(sel_node_req_write),
+        .node_req_addr(sel_node_req_addr),
+        .node_req_wdata(sel_node_req_wdata),
+        .node_rsp_valid(sel_node_rsp_valid),
+        .node_rsp_ready(sel_node_rsp_ready),
+        .node_rsp_rdata(sel_node_rsp_rdata),
+        .node_rsp_error(sel_node_rsp_error),
+        .child_req_valid(sel_child_req_valid),
+        .child_req_ready(sel_child_req_ready),
+        .child_req_addr(sel_child_req_addr),
+        .child_rsp_valid(sel_child_rsp_valid),
+        .child_rsp_ready(sel_child_rsp_ready),
+        .child_rsp_rdata(sel_child_rsp_rdata),
+        .child_rsp_error(sel_child_rsp_error),
+        .cam_req_valid(cam_req_valid),
+        .cam_req_ready(cam_req_ready),
+        .cam_req_op(cam_req_op),
+        .cam_req_row(cam_req_row),
+        .cam_req_parent(cam_req_parent),
+        .cam_req_child(cam_req_child),
+        .cam_rsp_valid(cam_rsp_valid),
+        .cam_rsp_ready(cam_rsp_ready),
+        .cam_rsp_error(cam_rsp_error),
+        .cam_rsp_matches(cam_rsp_matches),
+        .cam_rsp_parent(cam_rsp_parent),
+        .cam_rsp_child(cam_rsp_child),
+        .cam_rsp_row_valid(cam_rsp_row_valid),
+        .score_req_valid(score_req_valid),
+        .score_req_ready(score_req_ready),
+        .score_parent_visits(score_parent_visits),
+        .score_child_visits(score_child_visits),
+        .score_child_value(score_child_value),
+        .score_exploration(score_exploration),
+        .score_rsp_valid(score_rsp_valid),
+        .score_rsp_ready(score_rsp_ready),
+        .score_rsp_value(score_rsp_value),
+        .score_rsp_error(score_rsp_error),
+        .debug_state(sel_state),
+        .cache_rows_used(cache_rows_used),
+        .cache_row_head(cache_row_head),
+        .cache_row_tail(cache_row_tail)
+    );
+    imc_tree_update #(.BOARD_SIZE(BOARD_SIZE), .CAM_ENTRIES(CAM_ENTRIES), .NEURAL_BYTES(NEURAL_BYTES), .ADDR_W(ADDR_W)) u_upd (
+        .clk(clk),
+        .rst_n(rst_n),
+        .start(upd_start),
+        .ready(upd_ready),
+        .backpropagate(upd_backpropagate),
+        .selected_node(upd_selected_node),
+        .nodes_used(upd_nodes_used),
+        .edges_used(upd_edges_used),
+        .selected_depth(upd_selected_depth),
+        .node_limit(upd_node_limit),
+        .edge_limit(upd_edge_limit),
+        .path_limit(upd_path_limit),
+        .choice_word(upd_choice_word),
+        .value_q17(upd_value_q17),
+        .result_valid(upd_result_valid),
+        .result_ready(upd_result_ready),
+        .result_node(upd_result_node),
+        .result_nodes_used(upd_result_nodes_used),
+        .result_edges_used(upd_result_edges_used),
+        .result_depth(upd_result_depth),
+        .nodes_changed(upd_nodes_changed),
+        .result_error(upd_result_error),
+        .poisoned(upd_poisoned),
+        .node_req_valid(upd_node_req_valid),
+        .node_req_ready(upd_node_req_ready),
+        .node_req_write(upd_node_req_write),
+        .node_req_addr(upd_node_req_addr),
+        .node_req_wdata(upd_node_req_wdata),
+        .node_rsp_valid(upd_node_rsp_valid),
+        .node_rsp_ready(upd_node_rsp_ready),
+        .node_rsp_rdata(upd_node_rsp_rdata),
+        .node_rsp_error(upd_node_rsp_error),
+        .child_req_valid(upd_child_req_valid),
+        .child_req_ready(upd_child_req_ready),
+        .child_req_write(upd_child_req_write),
+        .child_req_addr(upd_child_req_addr),
+        .child_req_wdata(upd_child_req_wdata),
+        .child_rsp_valid(upd_child_rsp_valid),
+        .child_rsp_ready(upd_child_rsp_ready),
+        .child_rsp_rdata(upd_child_rsp_rdata),
+        .child_rsp_error(upd_child_rsp_error),
+        .debug_state(upd_state)
+    );
+    imc_neural_sequencer #(.INPUTS(2*BOARD_SIZE*BOARD_SIZE), .HIDDEN(HIDDEN), .ADDR_W(ADDR_W)) u_nn (
+        .clk(clk),
+        .rst_n(rst_n),
+        .start(nn_start),
+        .ready(nn_ready),
+        .board_base(nn_board_base),
+        .neural_base(nn_neural_base),
+        .hidden_shift(nn_hidden_shift),
+        .logit_shift(nn_logit_shift),
+        .result_valid(nn_result_valid),
+        .result_ready(nn_result_ready),
+        .value_code(nn_value_code),
+        .result_error(nn_result_error),
+        .mem_req_valid(nn_mem_req_valid),
+        .mem_req_ready(nn_mem_req_ready),
+        .mem_req_addr(nn_mem_req_addr),
+        .mem_req_write(nn_mem_req_write),
+        .mem_req_wdata(nn_mem_req_wdata),
+        .mem_rsp_valid(nn_mem_rsp_valid),
+        .mem_rsp_ready(nn_mem_rsp_ready),
+        .mem_rsp_error(nn_mem_rsp_error),
+        .mem_rsp_rdata(nn_mem_rsp_rdata),
+        .drive_valid(drive_valid),
+        .drive_ready(drive_ready),
+        .array_enable(array_enable),
+        .array_id(array_id),
+        .row_start(row_start),
+        .row_count(row_count),
+        .row_bits(row_bits),
+        .input_bit(input_bit),
+        .column_start(column_start),
+        .column_count(column_count),
+        .mux_select(mux_select),
+        .sample_hold(sample_hold),
+        .adc_req_valid(adc_req_valid),
+        .adc_req_ready(adc_req_ready),
+        .adc_rsp_valid(adc_rsp_valid),
+        .adc_rsp_ready(adc_rsp_ready),
+        .adc_rsp_error(adc_rsp_error),
+        .adc_rsp_codes(adc_rsp_codes),
+        .hidden_saturated(hidden_saturated),
+        .logit_saturated(logit_saturated),
+        .debug_state(nn_state)
+    );
+    imc_ucb_score u_ucb (
+        .clk(clk),
+        .rst_n(rst_n),
+        .score_req_valid(score_req_valid),
+        .score_req_ready(score_req_ready),
+        .score_parent_visits(score_parent_visits),
+        .score_child_visits(score_child_visits),
+        .score_child_value(score_child_value),
+        .score_exploration(score_exploration),
+        .score_rsp_valid(score_rsp_valid),
+        .score_rsp_ready(score_rsp_ready),
+        .score_rsp_value(score_rsp_value),
+        .score_rsp_error(score_rsp_error),
+        .debug_state(ucb_state)
+    );
+endmodule
+`default_nettype wire

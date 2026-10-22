@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "command": [
+    "/Users/tmolomochir/miniforge3/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "exit_code": 0,
+  "changed_sources": [],
+  "benchmarks_executed": false
+}

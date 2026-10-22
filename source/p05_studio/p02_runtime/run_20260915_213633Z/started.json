@@ -1,0 +1,19 @@
+{
+  "pid": 16187,
+  "url": "http://127.0.0.1:4784",
+  "health": {
+    "status": "ok",
+    "service": "IMC-MCTS Studio",
+    "profile": "single_child_placement_q32_v1",
+    "cost_model_profile": "imc_22nm_costs_v2",
+    "loopback_only": true
+  },
+  "sessions_preserved": true,
+  "proxy_components": [
+    "u_sel",
+    "u_nn",
+    "u_upd",
+    "top_level_glue"
+  ],
+  "area_mm2": 1.998229538950732
+}

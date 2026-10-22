@@ -1,0 +1,34 @@
+\begin{table*}[!htbp]
+\centering
+% CHANGED: Round 103, task quality separated from 5000-iteration hardware projections.
+\caption{\textcolor{blue}{\textbf{Recorded search quality and projected preloaded-core costs.} Quality uses the budgets and sample counts of Fig.~\ref{fig:generalisation}a. Guided performance $P_{\mathrm{nn}}$ denotes task performance, not neural-classifier accuracy. Area counts installed capacity; energy covers one complete 5{,}000-iteration decision. ADC standby uses a 25\% active-power allowance during nonconverting intervals. Network dimensions parameterize the cost projections. Only Go uses the verified Go-strong checkpoint and the primary $9\times9$ medium configuration. The other hardware rows are diagnostic projections, separate from the quality results. Host rules, feature encoding, I/O and weight programming are excluded.}}
+\label{edt:generalisation}
+\begingroup\color{blue}
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ll l c c c cc c}
+\toprule
+\textbf{Domain} & \textbf{Application} & \textbf{Input features} & \textbf{Board} & \textbf{Network} & \textbf{Guided} & \textbf{Area} & \textbf{Energy} & \textbf{SGG} \\
+& & & \textbf{($N\times N$)} & \textbf{(In$\to$H$\to$Out)} & \textbf{($P_{\mathrm{nn}}$, \%)} & \textbf{(mm$^2$)} & \textbf{(mJ/decision)} & \\
+\midrule
+\multicolumn{9}{c}{\textit{Two-player games (head-to-head win rate)}} \\
+\midrule
+Strategy & Connect Four & \{empty,R,Y\} & 8 & 129$\to$96$\to$3 & 80.0 & 5.7971 & 2.916 & +0.37 \\
+Strategy & Othello & \{empty,B,W\} & 8 & 129$\to$96$\to$3 & 80.0 & 5.7971 & 3.023 & +0.30 \\
+Strategy & Hex & stone + edge dist. & 11 & 485$\to$96$\to$3 & 80.0 & 6.8292 & 19.412 & +0.22 \\
+Strategy & Go & \{empty,B,W\} + turn & 9 & 163$\to$96$\to$3 & 60.0 & 5.7976 & 3.704 & +0.09 \\
+\midrule
+\multicolumn{9}{c}{\textit{Single-player tasks (normalized task metrics)}} \\
+\midrule
+Navigation & FrozenLake & terrain + agent & 8 & 129$\to$96$\to$3 & 100.0 & 5.7971 & 2.939 & +0.15 \\
+Navigation & MiniGrid & wall/goal + agent & 8 & 129$\to$96$\to$3 & 96.7 & 5.7971 & 3.827 & +0.56 \\
+Science & HP Protein Fold & H/P + sequence & 13 & 344$\to$128$\to$3 & 100.0 & 6.8472 & 18.476 & +0.19 \\
+Puzzle & Minesweeper & cell + adjacency & 9 & 244$\to$96$\to$3 & 93.3 & 5.7988 & 9.420 & +0.11 \\
+\bottomrule
+\end{tabular}%
+}
+\par\vspace{0.3em}
+{\scriptsize Connect Four uses a $6\times7$ playing area in an $8\times8$ hardware tier. Single-player metrics are normalized score (FrozenLake), path efficiency (MiniGrid), optimality ratio (HP protein folding) and fraction of safe cells revealed (Minesweeper). Feature families and dimensions for the non-Go cost projections are assumptions rather than recovered checkpoint specifications; Supplementary Note~9 defines their precision, memory tiers and output-processing allowance.}
+\endgroup
+\end{table*}

@@ -1,0 +1,36 @@
+\begin{table}[t]
+\centering
+% CHANGED: approved correction, source-derived complete owning-component ledger.
+% CHANGED: approved correction, full-width revised table tab:supp_validation_status.
+% CHANGED: Round 93, optimized board-sized architecture and verified numerical evidence.
+\caption{\textcolor{blue}{Installed modeled-core area and average power for the primary empty-board $9\times9$ Go-strong search at 5{,}000 iterations. The current design has 16 UCB scorers, 32 ADCs, two offset-encoded arrays and 2\,MiB SRAM. Average power uses the 55.186986-ms search interval; ADC standby uses a 25\% active-power allowance during nonconverting intervals. Values derive from the primary component ledger and remain engineering estimates, not physical measurements.}}
+\label{tab:supp_validation_status}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrr@{}}
+\toprule
+\textcolor{blue}{\textbf{Owning component}} & \textcolor{blue}{\textbf{Area (mm$^2$)}} & \textcolor{blue}{\textbf{Avg. power (mW)}} \\
+\midrule
+\textcolor{blue}{Child SRAM (one 512-KiB bank)} & \textcolor{blue}{0.414262} & \textcolor{blue}{0.176619} \\
+\textcolor{blue}{Node SRAM (three 512-KiB banks)} & \textcolor{blue}{1.242786} & \textcolor{blue}{1.174879} \\
+\textcolor{blue}{Selection path and residual control} & \textcolor{blue}{0.025986} & \textcolor{blue}{8.576463} \\
+\textcolor{blue}{UCB scorers (16)} & \textcolor{blue}{0.164599} & \textcolor{blue}{20.037675} \\
+\textcolor{blue}{Shared expansion and backprop control} & \textcolor{blue}{0.005134} & \textcolor{blue}{1.050413} \\
+\textcolor{blue}{FSM and interconnect} & \textcolor{blue}{0.001804} & \textcolor{blue}{0.628719} \\
+\textcolor{blue}{Node SRAM router} & \textcolor{blue}{0.000264} & \textcolor{blue}{0.070260} \\
+\textcolor{blue}{Child SRAM router} & \textcolor{blue}{0.000204} & \textcolor{blue}{0.064139} \\
+\textcolor{blue}{Readout path and residual neural control} & \textcolor{blue}{0.017282} & \textcolor{blue}{4.853231} \\
+\textcolor{blue}{CAM key/payload macro} & \textcolor{blue}{0.025268} & \textcolor{blue}{0.033108} \\
+\textcolor{blue}{8-bit 1T1M cell arrays} & \textcolor{blue}{0.000676} & \textcolor{blue}{0.000109} \\
+\textcolor{blue}{Binary row drivers and selection} & \textcolor{blue}{0.002231} & \textcolor{blue}{0.138425} \\
+\textcolor{blue}{External conditioning and sample/hold} & \textcolor{blue}{0.004428} & \textcolor{blue}{1.175040} \\
+\textcolor{blue}{12-bit ADC lanes} & \textcolor{blue}{3.136000} & \textcolor{blue}{19.622234} \\
+\textcolor{blue}{Column mux, references and common bias} & \textcolor{blue}{0.000440} & \textcolor{blue}{6.923262} \\
+\textcolor{blue}{Physical area and distribution allowance} & \textcolor{blue}{0.756205} & \textcolor{blue}{2.587184} \\
+\midrule
+\textcolor{blue}{\textbf{Modeled-core total}} & \textcolor{blue}{\textbf{5.797569}} & \textcolor{blue}{\textbf{67.111759}} \\
+\bottomrule
+\end{tabular*}
+\par\vspace{0.3em}
+{\scriptsize \textcolor{blue}{Connected selection/readout regions use native 65-nm synthesis evidence; surrounding control and offset correction retain engineering allocations with a 25\% reserve. The selection wrapper excludes the sixteen separately counted UCB scorers, and connected readout includes its banks and staging. Native 22-nm CACTI costs include SRAM cells and periphery. Digital area, vectorless power and leakage follow Note~3.2; CAM and analog parts remain analytical estimates. The physical allowance includes 15\% of pre-allowance area and 10\% of digital dynamic energy. Host Go rules/history, chip I/O and weight programming are excluded. Shared expansion/backpropagation control is counted once. Rounding may affect displayed sums.}}
+\end{table}

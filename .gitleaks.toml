@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: Copyright Hewlett Packard Enterprise Development LP
+# SPDX-License-Identifier: MIT
+
+# Retain upstream rules. These nine exact values are public reproducibility
+# digests: eight CACTI cache identifiers and one historical source-file SHA-256.
+# Do not replace this list with a generic hexadecimal, path or field-name ignore.
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "Nine reviewed public CACTI/source SHA-256 values; no wildcard exclusions"
+regexTarget = "secret"
+regexes = [
+    '^173fdeaaafb031000ce0c0d34159890faf702b545cfb0c3d31cda05c49a4dcb6$',
+    '^20c420795f44ae3446ca23c8520a2c2dce3d497aa9ade33a233a0aba0b31d24c$',
+    '^2650dfd16498761aff7b6a63c9ee4b781ca04f3e9fb3f7d682042a8edadccf7e$',
+    '^29a58022e5fa53de62e6ae5b811c0d11306da67ffcb76bdbc83cb63ccda443b3$',
+    '^3df4b11956581794496359d1d7c11c78ed2182c7bb6d7fff4b706e505f0b27b9$',
+    '^415cd1fc2278c4e17c7d8bcc5cc66cd47b479833417cd19349b6e3c74b85fe61$',
+    '^508b8cf7e40ed0ced94e40ae235a4afdc836ea9d64182cb67ede1abbac8c8b26$',
+    '^e80d4b95b3a3b3defec389050df1f1c67753527e88c085b69b0a487a512ba6f2$',
+    '^ea00734d47b6609f7723b9a68e36f1c09ac91329575c118fcfbd5467f69ef8a7$',
+]

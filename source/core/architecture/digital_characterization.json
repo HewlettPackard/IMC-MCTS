@@ -1,0 +1,2014 @@
+{
+  "schema_version": 3,
+  "profile": "tsmc65_modules_tree_update_v2_glue_v1",
+  "source_import": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z",
+  "repository": "https://github.com/tmo324/synthesis0909.git",
+  "commit": "00c20e8b0352b71915072172530b6c5f069fed68",
+  "source_files": {
+    "p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010327Z/metadata.json": "b810760a81f6caffb65e80a5bb8721900af830382bdb0bf3b8b56f20e441553c",
+    "p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010446Z/metadata.json": "e3545c47c36e52f2f5b4b3b15227587e7331d7e29e7909922c4097883904ce9a",
+    "p03_experiments/p22_tree_update_timing/p00_runs/run_20260910_010512Z/metadata.json": "962e4f013686c508d9b4e5991de7a324c3e6a29ef3f99611f425adaa502269dc",
+    "p03_experiments/p24_power_model/p01_packets/run_20260910_023235Z/manifest.json": "b7c867bd6261795a1e10572ac3c2c74d0000cbbac5f48e31c402c4f9d2d8cea9",
+    "p03_experiments/p24_power_model/p01_packets/run_20260910_023235Z/p04_glue/imc_buffered_iteration_glue.sv": "7285696a9bb7d82a265e2d96da73e4e25399fe364e04ebe80f3f6c3cee1f71c8",
+    "p03_experiments/p24_power_model/p01_packets/run_20260910_023235Z/p04_glue/imc_iteration_glue.sv": "0c6ca7e741c3caac6653be9bd619202500ebb71c1755c9dd9092afe86a2a48a2",
+    "p03_experiments/p24_power_model/p01_packets/run_20260910_023235Z/p06_runs/run_20260910_023406Z/metadata.json": "8ccd8ef9f32554fa456a3bda4d167f49d9b6ad3348480048ee3ba19ff6a95df7",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/filelist.f": "7c808c08043c9d4845c9141269ba52787ecc902cd3eaccdd569f3531019e0252",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_buffered_iteration_core.sv": "f9a3843f7f6e86b8e47d253142d446686be236c4b502b24fc844722ad35b6c58",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_buffered_neural_core.sv": "4cbd4ce0958c0dbdc803c8118298af6d8557dc94931fb4c1c5a6601e976b1f21",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_buffered_neural_sequencer.sv": "60485964dac2de038ec1cd29e3be470af8d40279340cf4e56433274e4ff01011",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_cached_selector.sv": "81553412e6fd71b1916addfb33d069db2d2391d8d6f1689480b915f5a43c2f53",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_column_hold_control.sv": "b72f6ae88b3136579295e9e8d28b3f5de050af1c0a1eac042da5a401a664aad4",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_fixed_scale.sv": "d2235571543cb0318fa1d2b71b9ab26d2e0be97b077debe500ef84e0f19b14f8",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_isqrt.sv": "c740195f20a84d567626b8db81a81d70064ec506d70bea112286c8c34f04bc9d",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_iteration_core.sv": "352d373166e01fccd3aa6b86ec0ad8c7e5ba0bc06d63b5c9be26965361194f31",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_ln_table.sv": "a6bc7783b141cb52f6bb73896fd5c05522fbec6d130078d639400333c2b5c26e",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_neural_core.sv": "572dc2af8e6137ea5a0de446088b437b2e3bea7b8c58075758cd32c10f0f9233",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_neural_sequencer.sv": "be088a583eb320879b0ae4a2e18b315063d978bc6f997e569b8790a7ffee4d44",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_q17_codec.sv": "01ee00551b6ebc3162410dabfa0185a5ead7797e95f7f5edc4e1d8798888625c",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_round_divider.sv": "ca0ec9dae66448e91a3432dfc295568ea2d4d39574b264bd00a8e66243b3200b",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_shift_accumulator.sv": "f78bbabad55aa61fc3618ff6572d5d9e7c225dba9932956d8a4af85d0392de6e",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_sram_router.sv": "2f68cdb2c950238c36f46479cae0137df5a91c45f64c7ecc7ba726f5f135a7d3",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_tree_update.sv": "44df1979d3bbd0d64a901ed4fa1990f26663631656012d5aa9f718c7bf6d8cc0",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/imc_ucb_score.sv": "b5313afd47e1334dd64e7a67855dbdce101c7370b0100a036cc2e2f72404a6e3",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/import_manifest.json": "e08be5822171a28369a872de8cf648db67e2540f8b59d60619cbcd2490c17efb",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/VALIDATION.json": "fbbbbbfcc0542981ccb955f96ca8ac7363b06373a8b3968a7d9eea71b201ef76",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/filelist.f": "b9010813cf3190bdd4f39f8c8d62973e156f512fc391178e2ad32bf358c88f57",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/imc_q17_codec.sv": "01ee00551b6ebc3162410dabfa0185a5ead7797e95f7f5edc4e1d8798888625c",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/imc_round_divider.sv": "ca0ec9dae66448e91a3432dfc295568ea2d4d39574b264bd00a8e66243b3200b",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/imc_tree_update.sv": "215d86aa6b85e1ef33f93c4650ad7f9ed7f23f855fe4e209fb938bce477de668",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/area.rpt": "dcd7c6898a460a8e4a5a48a48b2c7356ff8a52131bf6234dfa7d714904680065",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/area_hier.rpt": "b382e157ebecb9c0421143a751ea6e05d00f809dbefbd43113defab3d1dc1ce2",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/check_design_postcompile.rpt": "9385631e960021572c05ce10be180709112c46927ad897accc21f704f1af2582",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/constraints.rpt": "1c0dd8bfedd951a41db1c8f08bb7f73b33cb5bb21dcae33fe03d868a45cc5ac3",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/power_vectorless.rpt": "276010d7892a9ee3681a901bbaf638e855b64a98a4d3760deed001efd2510a63",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/qor.rpt": "85523243ae348c60d013a676f77ac1118a49f15ef465a5c7ef4dcc45abadc2ed",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/run_details.txt": "79dcc048b44f2a8eb8e122d7825810582db891aa12f8bc6cf1e778c84c29e0af",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/synthesis.log": "f8674c2f4eb56ad5e311d08d2fa580faf4693d0cfcd03dd0fc5e2ae5a5270cc6",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/VALIDATION.json": "4ea6fd029a5c8b099e6e842f510741af414a195811c5dec704c61f7de997dc22",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/manifest.json": "823eb86ca0d0f187cd9a3984623082d455592d34b8053374a69de40efac3b4c8",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p04_glue/imc_buffered_iteration_glue.sv": "7285696a9bb7d82a265e2d96da73e4e25399fe364e04ebe80f3f6c3cee1f71c8",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p04_glue/imc_iteration_glue.sv": "0c6ca7e741c3caac6653be9bd619202500ebb71c1755c9dd9092afe86a2a48a2",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p05_flow/synth_glue.tcl": "e0858c7b121412054755949130874f54089de8eb5b051f6569a7a44fda35e6d7",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/area.rpt": "274af2806d2855fbc282a76bc8f7ca28672c70f4791c575722c79fc4b0d7f31f",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/check_design_postcompile.rpt": "eeaf113786d3229c6a678fdcc47944be4fe5d3277f36cf332de2a400680b5da7",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/constraints.rpt": "a95dda847053dd1e22ac34323743c0d4707efdefbbcf542f964a3d035c23bafb",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/mapped.v": "b9ef222cf8a246b00ad422c68f28d6caf14663c6e0c64cd0ab90f810e2da2fe8",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/power_vectorless.rpt": "87d83d7707bacfc334490d4481fcb3f2bf87ebf677bba19df255522c2281f813",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/qor.rpt": "95ac3e8ca4176d3a52d51f1884a16481d615aa5b08858ce1bb82970f541bd536",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/run_details.txt": "feba14a58edf8229dc15af27126016fbb6c05ea3f1262920e0860eb2a96beb21",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/synthesis.log": "e1f201a99435d38c911cf33a8529a9ff6333b757da98839a8f1effe4fe069ef7",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/units.rpt": "a844ac0777604fc445f4d4a5f1a60a889e8b67bd8c11028dd6486d346089e50e",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/area.rpt": "f9634a674c7e03519cd162329445548d3ca429505da7470136521a3ea950c629",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/check_design_postcompile.rpt": "12a5b0f29080b028e0a493e5266504d7b2077fcf97050779035da5fcfca57423",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/constraints.rpt": "5055264c09792efefef4fdd5c5db57a7c3c9f2b15b4171593066360b0adf8d08",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/mapped.v": "14914b56022dbbbca77abc1522f8269e3f864e893077ae9f8ab858430328424d",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/power_vectorless.rpt": "b5f07bbaf31348726bbc107e104aa29390901c02803194cc49bca9f3fde4a856",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/qor.rpt": "7b57e0c61b1fe9fab76c678da6b2cfdcdb37c539a5ff3444d2ad957de3bdf259",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/run_details.txt": "027a82ddccd068a421267d1ca252adacd21fd9d2f5a3eabefb690e4e98ba55dd",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/synthesis.log": "fcdff28dc426b39a2b77da01c1b2448d9e0be1500c23ec2c9baf84e353f29637",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/units.rpt": "5da6e07b6434b6b9c43f011e0e3a382e037de2b9492a5bbd1c85c8ae9366496b",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/area.rpt": "39f173526a83c997aa68696f0d7ed187af568013347e249c2ad57f11c2bcf5cd",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/area_hier.rpt": "7b54bb03a95d69ee00723e27d1daa0748350fd0e4f7c0be3ff7691d0b2ce67ef",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/check_design_postcompile.rpt": "a36e2eb8477295322429a0d2e3314a1b8c4e832cc60fe8475fb9fec179d950e1",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/constraints.rpt": "f8e9dd08eb411146b7fded8da834a4153618769221cbdeea0973cb60d6c23889",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/power_vectorless.rpt": "c5f064a8ca50802733a58444a6f62a848f9e4ae2ce12d73de746134175d0b3ea",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/qor.rpt": "0ca2dad95c84937250c3d1686e8cc07bf75e1139771ddb5ab3dac931151c96ec",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/run_details.txt": "aebe92daccaa8d4ab753ddee30087a7f2acb2a92b7bbec8bc1a1695c489a1a90",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/synthesis.log": "66a929e9c921d7201f1d572d2bffec5ed289207f0d4857a057d1ed212a33a7bd",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/area.rpt": "15f5a63da13feb0686f41521bb208690454bddcb02a320d042a8e30057062f92",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/area_hier.rpt": "d70a0a805b3e3305b7b87f4e9db3fcc381357e1f64be596e8e100d604ff6b8ec",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/check_design_postcompile.rpt": "67ef33ec724aff5a9fef28d1f8aa142dd29399b50f44be1539487231b1a43db8",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/constraints.rpt": "bb3350198d7ce1b7ba7ca94b153fdec5f7679131d33ee272dffd4075d16b8137",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/power_vectorless.rpt": "3db39e8e839defd078235c5ebbfeda2275acdfabdaf44c31bd578d18360596c8",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/qor.rpt": "0476888b72e728d5b84582889346ab145a6aa98e5e7af835771722875e02f076",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/run_details.txt": "cc6b67c13454b2b1d1a70f4760bc2b4e4d16c68e7e20a19b9fb2f4b6f61626b5",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/synthesis.log": "95922fb977e25297cd0659bb880dd8a6169c3aabd1e1ad8656988397a66f9752",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/area.rpt": "423d5f4647d5a5a575f0eaa1892086f76ad6fb54b3333e648599a394b45aa255",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/area_hier.rpt": "95ab01f2595ad8d6040dd32b9954c796af9ad8631436782db06e0ad61a77217f",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/check_design_postcompile.rpt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/constraints.rpt": "6a25ecab64aad5fb1a30566cbe40285e38c28982f8484085db2df885ad7915c6",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/power_vectorless.rpt": "ff1d8463ee9703ffcdbcf1023387c2634c8d2b3d518f1038d71575524d2673f9",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/qor.rpt": "29950ea9222437c8b80097a1d207a64a0f5ce5c9e688953ee02fc67c60d0b4e9",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/run_details.txt": "13c286cd44f953f2bf300f4e36c9367fc6e545d08f6384afa2ff0771c451c5b1",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/synthesis.log": "1ef96e6e487a6c30fca8f066160bab4a583c90c9ba9c25d7a379cde5b57cb4b2",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/area.rpt": "0f75f47336b179de640e2cf9d17fd2d3b2939db7ca545b8f5976a1286b949cd6",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/area_hier.rpt": "ab067bf1fa8db19ca7cd5af8e217d76331097cd48d0acf5b71238ee1c44a207d",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/check_design_postcompile.rpt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/constraints.rpt": "bd229e76bd650f1cacbbb6adbc078e1592d1d6e865e0a00de3ac7aa9749c88d6",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/power_vectorless.rpt": "a0162495bb4709f6fd5871b56b355681dc5350eac4ba9a7a5aac689822adcff9",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/qor.rpt": "dba8c3d86b009bb2d5ea0f884fd29e051da1c1d080d5badce994a3b7357be892",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/run_details.txt": "4ce3cc52917c705de5cdcc35af26daa76889f071fca2bcae37063d1404ac7af6",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/synthesis.log": "3a2425f6bdf64e405886ead4426d85bfc1ce912ea6d602d3911b7727b99384c8",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/area.rpt": "9a2f0899008359cae97196d11a671072c981231673147eb129e3633c3df06b9f",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/area_hier.rpt": "ee1e37fb064c766f8324313973d317d5c5d29ca072a3c94e3b24bb025f3cdbaa",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/check_design_postcompile.rpt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/constraints.rpt": "bdeb3b79110f9e41c7e7a3be7053a1207483708afcfe62aa1292f329fa66c98a",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/power_vectorless.rpt": "cd5189929e7b5b2c12b03e2ce49ab595c6ee28de4417929903615ebb98a6a82a",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/qor.rpt": "91c7ffa02f28acf4467399cb1352dffb404cc2749ec26a2e1b2057519f610a9b",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/run_details.txt": "2618f47a1321061a5a52728d44f033b0e73d99b2d9bdfc84c47d28f007de307a",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/synthesis.log": "fefae2b367ae8eec7847e80d37fb1ed123724316941665012ce707b83447a600",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/area.rpt": "59221ef7c9a8f8c6cd65d5dde85a84b42dbc0e32c8402d8c60d44da035774054",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/area_hier.rpt": "9f3ecf3360930b3b51fcc11b2bb479007fb6540ea8b13909621d6cdf0ddef02e",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/check_design_postcompile.rpt": "f1df097d07c72df8ac782b582421a2e41f379b7e0110571e962a418a73daef30",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/constraints.rpt": "4a4e2a14907c47478137cc2c55d8af1e92f066c265fb664e8ec6d97c90c954a1",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/power_vectorless.rpt": "58aa198517397ba850c1d12b579f71d0adea3a68f1350df0ac212109d2becf8d",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/qor.rpt": "f97a34e8da69270e10b2693e98602a2eaf7dcf4a8a97f17070ffd11ea1ef2bdf",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/run_details.txt": "af7fc960d3b0f2ac757f3487252e2577546a95e26461ef65c6268ee3fcc517b1",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/synthesis.log": "57ce42e12280d9215557952b35b1832e1707b9c031f319dba767d3135e82dff2",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/area.rpt": "1f68f9b04638f77dc3094da1967849e0521be446ade6ac0165139c41e902a9f6",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/area_hier.rpt": "180ca9fdaba7179127866db402e3efd350ebe1e18cd5013167bc89cbac4fc1b5",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/check_design_postcompile.rpt": "a619ae333f3b49bd7dcf8f38a04a40729d80cf542f9d63e14c2d4664cd043c8a",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/constraints.rpt": "7012f3cad38a3ea1ed31b55c8d64a4dc250a73d32c732a974c205d784f032fde",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/power_vectorless.rpt": "3f4e650382b50e1343b0105bf216e4fd9e15649b4226b9c3bc958cf2c1dc4504",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/qor.rpt": "e5aa9d0b1c1b0078cc916d409e719f71226ba8e3da67e281d9ef4ef1b6111d98",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/run_details.txt": "9690f451f8a7257b9759e3cf247a903bd52de310fd6fff671fd869b5b86c49ec",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/synthesis.log": "df964bfe94c6ab4d70b0ce4c14acddad08d8bd7366f8d89acb9f77465de310dd",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/area.rpt": "0f0cb67ce7dcef85f6ec219b535f10078adb1ff91894af3765cbe3d94bb7660d",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/area_hier.rpt": "4d991b79ba481cddb9b6c5ce52c579a69e4469bb83a2713a20199b685bbc7232",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/check_design_postcompile.rpt": "f362b622fe3e07cf4d2d32d447785e48d28ca5d70724cb9c424ba86b14c713ff",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/constraints.rpt": "3aec4585753d325522be388258bda70beb237965d5d1e3ae202eafb6c14f72f1",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/power_vectorless.rpt": "c3df718c405b1a54ddbb6e15c04e1347fd65781eafee0e0eb4586d8534927e48",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/qor.rpt": "26859aa432b54db87d6342a125722756232adbb5ccac234e944ca9027200500a",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/run_details.txt": "1bb15926ce423b6ca07794672bcebf73f372620c49919896c1e02e028101c780",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/synthesis.log": "e31c4cb38c005515b269bd1604a8375fd7f1cf9cc26d3040e4d52adc184ed23f",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/area.rpt": "474b7ded8e5e93939db8abf774329cae4adf181e5501502f6314dfd12247db0a",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/area_hier.rpt": "cee2e4c61877ff367fc6585847c8516e9aa869b7b3ea2ffbdbb37e7947659ba1",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/check_design_postcompile.rpt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/constraints.rpt": "3ee3ff5a520d92cf49abafb7408e7d97afe32ad4ba2aec514e62b83fdadf9a5d",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/power_vectorless.rpt": "6eafd7c303a47e4682d9f3628211494c7a4c4ce19c451b38a44edc993cd337b5",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/qor.rpt": "d3cf3c2c5ae8223d550b274d895f5934c973cec9492906adc1c800f54cc10d84",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/run_details.txt": "d87f95660753fd436343aef26336f5ec5f9d69a14444002a0248a3dc53ddcc68",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/synthesis.log": "89bcb3dd475644254cd0f45f2d25187569c9f5303c16f2581ccf4ff645764bf4",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/area.rpt": "05926c44ec13616f9d3aa554ef0057f65a793253d7dd7866658ce4c0f9cb0014",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/area_hier.rpt": "48ea7bf5ab4c967aea5375a359c27726be7483c6631bc24768b91803bdd443e4",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/check_design_postcompile.rpt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/constraints.rpt": "24ab551fecfb13d6fc845bc86d6c142f5a168873ef3f62f5dbe7bf662823e069",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/power_vectorless.rpt": "29806d188a92b5b3a91f4959e9e7addae085bfb3632d06b7dc440f0e2a8d12e4",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/qor.rpt": "29d25a403f7330b45b677c8aa96775abb9ba543d6864fa6c68b88d5390967c33",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/run_details.txt": "630ec7fc644d08e21c3a6189f4c2587d725391555d2078bae367df00d55ae1fd",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/synthesis.log": "a2b7a23f88da160d7b3fc27b06e21c8480ac329851198d0dc7f611685b1814de",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/area.rpt": "d4c4c08a87b40ee0c6e98469bd05329a7f3d6a372dda2e20b0fb12e428f72ffd",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/area_hier.rpt": "6be8d1b308554b9577dccefc1a6f2c3bdf95d43a20581cc4afd6cc31060a29c5",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/check_design_postcompile.rpt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/constraints.rpt": "d6362a5c5c1fb4939137e3c45ca8ffbaea3b7290a2979f46ea697d98c0e676fa",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/power_vectorless.rpt": "747e743d8040d8cf9be323e2aa739cc0d4ac10449685fcbe883a33f317af063c",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/qor.rpt": "b03f294bc064f1e25e174acdc2e2fb8804457c4445c688a464edca2e2dedfa28",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/run_details.txt": "c9091388a1264eccd6cd9500acfee161d0a8b5089fb9aa04b68ebf8800af236e",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/synthesis.log": "281398429528a09f11dd4c7040ab1d0d6752eb058d38342d1c88dcf0d98991fd",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/area.rpt": "e8245b57d20699ff9d8187c40094d93e93d2f35dda49eb71dd2d0f19380e32b4",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/area_hier.rpt": "e18674464cf7be662d6a2ed8277bac44cf25e62ee54db8b3e55c8bb855e7c430",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/check_design_postcompile.rpt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/constraints.rpt": "35300f57225340f9397ad776434775f4ca80808e731f7a5c1832fd44fec6e6f8",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/power_vectorless.rpt": "ff3ff6fb744cce9f13cc67e35bd13d3b838e8f8aad6c67b4877d8b318164f126",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/qor.rpt": "f826f0e64ca76fe2cff10917e3c8f583771e97ec7cde3d4a1131456c5534ec5c",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/run_details.txt": "233702e463fd66981a48e9e1bb9ddee808681cd3ba2c413dbc54c88c62a160b8",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/synthesis.log": "a3b62594f4184213864070adb9decf18af837a6e16464f1ef48bb702d42cefdd",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/area.rpt": "c4bbc9a1299efdde828930b64b1fa7178bb562d96d2a9dcfd18c4bb95e684279",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/area_hier.rpt": "5533d30ebb3c2779631c2bdb137ab520dabf97c115375766c20473e01f767845",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/check_design_postcompile.rpt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/constraints.rpt": "7b695d1c09db14bf7ca6c34a22460cbe549c7865a90c232c57a2f92f0700a292",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/power_vectorless.rpt": "76385ee9d9d880abd217593d4cb8075d692fcef3c9ec6fae8037a6a981c14d7c",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/qor.rpt": "5376d12caa82fd43811615a08d83378db64876ea9c7bd6235acaa584d3a9fe5c",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/run_details.txt": "853b7ce628df625a00dac97408f3df368b1f1d439f0f111fa59854648513a1be",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/synthesis.log": "8db005316f1b9e1216840f10ba110d21aa6d13f76255ed3e9d5c004cb0b4c274",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/area.rpt": "b10ce611a7bcaf1e1bd80313a11a46cad8a37dd2a356709d6381f728740f20c8",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/area_hier.rpt": "0ae3ab69ece26d3af15a4140694b9539e6d7132c30f7ad271870290bd0c45ee5",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/check_design_postcompile.rpt": "dec8773dc3426a15b0532f638dc710304b76b0a66ba881f69d3bce03f0e8d19a",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/constraints.rpt": "4adf530233ac61b32fb9c74c2e394a02f6b2328b098e2cbc17f12debc32b837c",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/power_vectorless.rpt": "35313f2fe8b221e5756517c1c2de8dce01cd6625463d5af0273c5b69b5a7d437",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/qor.rpt": "4e26b8ea58911d878a7f4d40870f41590972daa6677455d3d577198ee9e3d8ae",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/run_details.txt": "79dcc048b44f2a8eb8e122d7825810582db891aa12f8bc6cf1e778c84c29e0af",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/synthesis.log": "65663b4f6a39370dec2df04797f6a3ecfc7b61c22f08f77bf5770b003ffdfdad",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/area.rpt": "4dd820ad1a5c2f6ee60881bac07eb25bb6272d0d54113ae1113a785c17baaad8",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/area_hier.rpt": "0c31ecb02ca0f7bffba3f4467660cb725e62b42ec97e3cc421a2499ad21415e7",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/check_design_postcompile.rpt": "b5f319b10572add72a2c2717c7050d29c712d69d004616bf933cb01981ce7b2a",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/constraints.rpt": "3a5cb874d4db715efd122f5860c9553ebd7d407bdeeffd2a065d743c003b2213",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/power_vectorless.rpt": "31591ad55f4361be0e3369e6590bea08587919cd313b6b997fe307d172b5a307",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/qor.rpt": "4bbbb06ae6e0e337b6f05e989b5eb1bd2a2536be24779daaa9152f738dededb7",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/run_details.txt": "8eb423af0c1ace5587a5cf4c3bd836d9c83e2157b8e38d912ae711d9a205129b",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/synthesis.log": "0d2a0507f3274bdd53f0c074ab2a265a640350d985c3e04fb434c4205bda47b1",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/synth/run_all.sh": "c4ed82eb290a993579d50a6656474c63aedb2432828f2f196d0c617d80164269",
+    "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/synth/run_dc.tcl": "6daa37f82b52f74191d3f1251e7e933e80430855ec8ef400ac0bfa9e4540a3ac",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_fixed_scale.sv": "d2235571543cb0318fa1d2b71b9ab26d2e0be97b077debe500ef84e0f19b14f8",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_neural_core.sv": "572dc2af8e6137ea5a0de446088b437b2e3bea7b8c58075758cd32c10f0f9233",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_neural_sequencer.sv": "be088a583eb320879b0ae4a2e18b315063d978bc6f997e569b8790a7ffee4d44",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_round_divider.sv": "ca0ec9dae66448e91a3432dfc295568ea2d4d39574b264bd00a8e66243b3200b",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_shift_accumulator.sv": "f78bbabad55aa61fc3618ff6572d5d9e7c225dba9932956d8a4af85d0392de6e",
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_sram_router.sv": "2f68cdb2c950238c36f46479cae0137df5a91c45f64c7ecc7ba726f5f135a7d3",
+    "rtl_synthesis/p02_search_control/p00_rtl/imc_cached_selector.sv": "81553412e6fd71b1916addfb33d069db2d2391d8d6f1689480b915f5a43c2f53",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_isqrt.sv": "c740195f20a84d567626b8db81a81d70064ec506d70bea112286c8c34f04bc9d",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_iteration_core.sv": "352d373166e01fccd3aa6b86ec0ad8c7e5ba0bc06d63b5c9be26965361194f31",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_ln_table.sv": "a6bc7783b141cb52f6bb73896fd5c05522fbec6d130078d639400333c2b5c26e",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_q17_codec.sv": "01ee00551b6ebc3162410dabfa0185a5ead7797e95f7f5edc4e1d8798888625c",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_tree_update.sv": "215d86aa6b85e1ef33f93c4650ad7f9ed7f23f855fe4e209fb938bce477de668",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_ucb_score.sv": "b5313afd47e1334dd64e7a67855dbdce101c7370b0100a036cc2e2f72404a6e3",
+    "rtl_synthesis/p03_iteration_core/p01_tests/tb_imc_iteration_core.sv": "f41ce51e0232fb1cb2756a54a88b437c2da39de5dbf8a12c74902794d3911701",
+    "rtl_synthesis/p04_column_hold/p00_rtl/imc_buffered_iteration_core.sv": "f9a3843f7f6e86b8e47d253142d446686be236c4b502b24fc844722ad35b6c58",
+    "rtl_synthesis/p04_column_hold/p00_rtl/imc_buffered_neural_core.sv": "4cbd4ce0958c0dbdc803c8118298af6d8557dc94931fb4c1c5a6601e976b1f21",
+    "rtl_synthesis/p04_column_hold/p00_rtl/imc_buffered_neural_sequencer.sv": "60485964dac2de038ec1cd29e3be470af8d40279340cf4e56433274e4ff01011",
+    "rtl_synthesis/p04_column_hold/p00_rtl/imc_column_hold_control.sv": "b72f6ae88b3136579295e9e8d28b3f5de050af1c0a1eac042da5a401a664aad4",
+    "rtl_synthesis/p04_column_hold/p01_tests/tb_imc_buffered_iteration_core.sv": "875913dbef4dde263ec76e59ab3380e18e63b5fd1926a8420d88bcbffd95021f"
+  },
+  "cases": {
+    "imc_tree_update_v2": {
+      "top": "imc_tree_update",
+      "parameters": {
+        "BOARD_SIZE": 9,
+        "CAM_ENTRIES": 1024,
+        "NEURAL_BYTES": 16512,
+        "ADDR_W": 21
+      },
+      "sequential": true,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_tree_update",
+        "parameters": "BOARD_SIZE=9,CAM_ENTRIES=1024,NEURAL_BYTES=16512,ADDR_W=21",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 35855.52003,
+        "combinational_um2": 23745.600051,
+        "sequential_um2": 12109.919979,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [
+        {
+          "instance": "u_choice",
+          "design": "imc_round_divider_NUM_W32_DEN_W7",
+          "inclusive_area_um2": 1198.08,
+          "local_combinational_area_um2": 526.08,
+          "local_sequential_area_um2": 672.0,
+          "local_black_box_area_um2": 0.0
+        },
+        {
+          "instance": "u_codec",
+          "design": "imc_q17_codec",
+          "inclusive_area_um2": 5514.72,
+          "local_combinational_area_um2": 5514.72,
+          "local_sequential_area_um2": 0.0,
+          "local_black_box_area_um2": 0.0
+        }
+      ],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 4.3517,
+        "internal_mw": 3.5853,
+        "switching_mw": 0.766366,
+        "leakage_mw": 0.1201442,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.93,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 0,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_leakage_power",
+          "multiport_net"
+        ],
+        "warning_codes": [
+          "LINT-28",
+          "LINT-31",
+          "LINT-52",
+          "PWR-414",
+          "PWR-415",
+          "TIM-134",
+          "UCN-1",
+          "UID-401",
+          "UISN-40",
+          "VER-318",
+          "VO-4"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p00_tree_update_v2/results/imc_tree_update_v2/synthesis.log"
+      }
+    },
+    "imc_buffered_iteration_glue": {
+      "top": "imc_buffered_iteration_glue",
+      "parameters": {
+        "BOARD_SIZE": 9,
+        "HIDDEN": 96,
+        "CAM_ENTRIES": 1024,
+        "ADDR_W": 21
+      },
+      "sequential": true,
+      "ownership": "Glue only; six installed parents excluded",
+      "rtl_status": "matches_active_sources",
+      "design": "imc_buffered_iteration_glue",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_buffered_iteration_glue",
+        "parameters": "BOARD_SIZE=9,HIDDEN=96,CAM_ENTRIES=1024,ADDR_W=21",
+        "scope": "top_level_glue_only_children_excluded",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "library_file": "sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db",
+        "library_sha256": "3b52e440b0066db5c3cea89a4183efcbe3571c76068c26ef465937dd10075c78",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied; diagnostic only",
+        "design_compiler": "U-2022.12-SP7-1",
+        "packet_manifest_sha256": "823eb86ca0d0f187cd9a3984623082d455592d34b8053374a69de40efac3b4c8",
+        "packet_sha256sum_validation": "PASS"
+      },
+      "area": {
+        "cell_um2": 12598.080255,
+        "combinational_um2": 6356.160039,
+        "sequential_um2": 6241.920216,
+        "units_basis": "Native report_units plus declared square-micrometer cell area; library SHA-256 recorded in run_details.txt",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 2.1603,
+        "internal_mw": 1.848,
+        "switching_mw": 0.3122933,
+        "leakage_mw": 0.0338852,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.93,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 2,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_capacitance",
+          "max_leakage_power",
+          "multiport_net"
+        ],
+        "warning_codes": [
+          "LINT-29",
+          "LINT-31",
+          "LINT-52",
+          "PWR-414",
+          "PWR-415",
+          "UCN-1",
+          "UID-401",
+          "UISN-40",
+          "VER-318",
+          "VO-4"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim",
+        "constraint_violation_counts": {
+          "max_capacitance": 2,
+          "max_leakage_power": 1,
+          "multiport_net": 2179
+        },
+        "warning_notes": "Projected boundary has feedthrough, shared-output and constant aliases; multiport and zero-leakage-objective violations retained. Physical signoff is not established."
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/area.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/synthesis.log",
+        "units.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_buffered_20260910_032945Z/units.rpt"
+      }
+    },
+    "imc_iteration_glue": {
+      "top": "imc_iteration_glue",
+      "parameters": {
+        "BOARD_SIZE": 9,
+        "HIDDEN": 96,
+        "CAM_ENTRIES": 1024,
+        "ADDR_W": 21
+      },
+      "sequential": true,
+      "ownership": "Glue only; six installed parents excluded",
+      "rtl_status": "matches_active_sources",
+      "design": "imc_iteration_glue",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_iteration_glue",
+        "parameters": "BOARD_SIZE=9,HIDDEN=96,CAM_ENTRIES=1024,ADDR_W=21",
+        "scope": "top_level_glue_only_children_excluded",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "library_file": "sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db",
+        "library_sha256": "3b52e440b0066db5c3cea89a4183efcbe3571c76068c26ef465937dd10075c78",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied; diagnostic only",
+        "design_compiler": "U-2022.12-SP7-1",
+        "packet_manifest_sha256": "823eb86ca0d0f187cd9a3984623082d455592d34b8053374a69de40efac3b4c8",
+        "packet_sha256sum_validation": "PASS"
+      },
+      "area": {
+        "cell_um2": 12600.000255,
+        "combinational_um2": 6358.08004,
+        "sequential_um2": 6241.920216,
+        "units_basis": "Native report_units plus declared square-micrometer cell area; library SHA-256 recorded in run_details.txt",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 2.1655,
+        "internal_mw": 1.849,
+        "switching_mw": 0.3164311,
+        "leakage_mw": 0.0338947,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.93,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 2,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_capacitance",
+          "max_leakage_power",
+          "multiport_net"
+        ],
+        "warning_codes": [
+          "LINT-29",
+          "LINT-31",
+          "LINT-52",
+          "PWR-414",
+          "PWR-415",
+          "UCN-1",
+          "UID-401",
+          "UISN-40",
+          "VER-318",
+          "VO-4"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim",
+        "constraint_violation_counts": {
+          "max_capacitance": 2,
+          "max_leakage_power": 1,
+          "multiport_net": 2166
+        },
+        "warning_notes": "Projected boundary has feedthrough, shared-output and constant aliases; multiport and zero-leakage-objective violations retained. Physical signoff is not established."
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/area.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/synthesis.log",
+        "units.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/p01_power_activity/p06_runs/glue_driven_20260910_032903Z/units.rpt"
+      }
+    },
+    "imc_buffered_neural_sequencer": {
+      "top": "imc_buffered_neural_sequencer",
+      "parameters": {
+        "INPUTS": 162,
+        "HIDDEN": 96,
+        "ADDR_W": 21,
+        "SRAM_BYTES": 1572864
+      },
+      "sequential": true,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_buffered_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_buffered_neural_sequencer",
+        "parameters": "INPUTS=162,HIDDEN=96,ADDR_W=21,SRAM_BYTES=1572864",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 49165.920238,
+        "combinational_um2": 27837.600247,
+        "sequential_um2": 21328.319991,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [
+        {
+          "instance": "u_accumulator",
+          "design": "imc_shift_accumulator",
+          "inclusive_area_um2": 24414.2401,
+          "local_combinational_area_um2": 12102.2401,
+          "local_sequential_area_um2": 12312.0,
+          "local_black_box_area_um2": 0.0
+        },
+        {
+          "instance": "u_column_hold",
+          "design": "imc_column_hold_control_COLUMNS128_ARRAYS4",
+          "inclusive_area_um2": 448.32,
+          "local_combinational_area_um2": 280.32,
+          "local_sequential_area_um2": 168.0,
+          "local_black_box_area_um2": 0.0
+        },
+        {
+          "instance": "u_divider",
+          "design": "imc_round_divider",
+          "inclusive_area_um2": 3984.0,
+          "local_combinational_area_um2": 2135.52,
+          "local_sequential_area_um2": 1848.48,
+          "local_black_box_area_um2": 0.0
+        },
+        {
+          "instance": "u_scale",
+          "design": "imc_fixed_scale",
+          "inclusive_area_um2": 4251.84,
+          "local_combinational_area_um2": 4251.84,
+          "local_sequential_area_um2": 0.0,
+          "local_black_box_area_um2": 0.0
+        }
+      ],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 6.0119,
+        "internal_mw": 5.5987,
+        "switching_mw": 0.4131671,
+        "leakage_mw": 0.1400118,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.92,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 1,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_capacitance",
+          "max_leakage_power",
+          "multiport_net"
+        ],
+        "warning_codes": [
+          "ELAB-311",
+          "LINT-28",
+          "LINT-31",
+          "LINT-33",
+          "LINT-52",
+          "PWR-414",
+          "PWR-415",
+          "TIM-134",
+          "UCN-1",
+          "UID-401",
+          "UISN-40",
+          "VER-318",
+          "VO-4"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_buffered_neural_sequencer/synthesis.log"
+      }
+    },
+    "imc_cached_selector": {
+      "top": "imc_cached_selector",
+      "parameters": {
+        "BOARD_SIZE": 9,
+        "CAM_ENTRIES": 1024,
+        "NEURAL_BYTES": 16512,
+        "ADDR_W": 21
+      },
+      "sequential": true,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_cached_selector_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_cached_selector",
+        "parameters": "BOARD_SIZE=9,CAM_ENTRIES=1024,NEURAL_BYTES=16512,ADDR_W=21",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 99926.880144,
+        "combinational_um2": 44155.680163,
+        "sequential_um2": 55771.199982,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 15.3959,
+        "internal_mw": 14.6103,
+        "switching_mw": 0.7855743000000001,
+        "leakage_mw": 0.2624815,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.93,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 5,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_capacitance",
+          "max_leakage_power",
+          "multiport_net"
+        ],
+        "warning_codes": [
+          "LINT-31",
+          "LINT-52",
+          "PWR-414",
+          "PWR-415",
+          "TIM-134",
+          "UCN-1",
+          "UID-401",
+          "UISN-40",
+          "VER-318",
+          "VO-4"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_cached_selector/synthesis.log"
+      }
+    },
+    "imc_column_hold_control": {
+      "top": "imc_column_hold_control",
+      "parameters": {
+        "COLUMNS": 128,
+        "ARRAYS": 4
+      },
+      "sequential": true,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_column_hold_control_COLUMNS128_ARRAYS4",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_column_hold_control",
+        "parameters": "COLUMNS=128,ARRAYS=4",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 599.520003,
+        "combinational_um2": 371.520003,
+        "sequential_um2": 228.0,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 0.071547,
+        "internal_mw": 0.0618005,
+        "switching_mw": 0.0097465,
+        "leakage_mw": 0.0014338,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.55,
+        "critical_slack_ns": 0.37,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 0,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_leakage_power"
+        ],
+        "warning_codes": [
+          "ELAB-311",
+          "PWR-414",
+          "PWR-415",
+          "UID-401",
+          "UISN-40"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_column_hold_control/synthesis.log"
+      }
+    },
+    "imc_fixed_scale": {
+      "top": "imc_fixed_scale",
+      "parameters": {},
+      "sequential": false,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_fixed_scale",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_fixed_scale",
+        "parameters": "",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 3761.760006,
+        "combinational_um2": 3761.760006,
+        "sequential_um2": 0.0,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 1.1003,
+        "internal_mw": 0.2871612,
+        "switching_mw": 0.8130931,
+        "leakage_mw": 0.0122219,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "input-to-output max delay",
+        "critical_path_ns": 2.0,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 0,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_leakage_power"
+        ],
+        "warning_codes": [
+          "PWR-414",
+          "PWR-80",
+          "UID-401",
+          "UISN-40",
+          "VER-318"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_fixed_scale/synthesis.log"
+      }
+    },
+    "imc_isqrt": {
+      "top": "imc_isqrt",
+      "parameters": {},
+      "sequential": true,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_isqrt",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_isqrt",
+        "parameters": "",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 6536.160075,
+        "combinational_um2": 3319.200076,
+        "sequential_um2": 3216.959999,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 1.1556,
+        "internal_mw": 0.9547768999999999,
+        "switching_mw": 0.2007971,
+        "leakage_mw": 0.018776599999999997,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.93,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 0,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_leakage_power"
+        ],
+        "warning_codes": [
+          "ELAB-311",
+          "PWR-414",
+          "PWR-415",
+          "UID-401",
+          "UISN-40"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_isqrt/synthesis.log"
+      }
+    },
+    "imc_ln_table": {
+      "top": "imc_ln_table",
+      "parameters": {},
+      "sequential": false,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_ln_table",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_ln_table",
+        "parameters": "",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 5295.35996,
+        "combinational_um2": 5295.35996,
+        "sequential_um2": 0.0,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 0.9592948,
+        "internal_mw": 0.2390258,
+        "switching_mw": 0.720269,
+        "leakage_mw": 0.015579,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "input-to-output max delay",
+        "critical_path_ns": 1.45,
+        "critical_slack_ns": 0.55,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 0,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_leakage_power"
+        ],
+        "warning_codes": [
+          "LINT-31",
+          "LINT-52",
+          "PWR-80",
+          "UCN-1",
+          "UID-401",
+          "UISN-40",
+          "VO-4"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ln_table/synthesis.log"
+      }
+    },
+    "imc_neural_sequencer": {
+      "top": "imc_neural_sequencer",
+      "parameters": {
+        "INPUTS": 162,
+        "HIDDEN": 96,
+        "ADDR_W": 21,
+        "SRAM_BYTES": 1572864
+      },
+      "sequential": true,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_neural_sequencer",
+        "parameters": "INPUTS=162,HIDDEN=96,ADDR_W=21,SRAM_BYTES=1572864",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 48704.160224,
+        "combinational_um2": 27559.680235,
+        "sequential_um2": 21144.479989,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [
+        {
+          "instance": "u_accumulator",
+          "design": "imc_shift_accumulator",
+          "inclusive_area_um2": 24454.0801,
+          "local_combinational_area_um2": 12142.0801,
+          "local_sequential_area_um2": 12312.0,
+          "local_black_box_area_um2": 0.0
+        },
+        {
+          "instance": "u_divider",
+          "design": "imc_round_divider",
+          "inclusive_area_um2": 3986.4,
+          "local_combinational_area_um2": 2136.48,
+          "local_sequential_area_um2": 1849.92,
+          "local_black_box_area_um2": 0.0
+        },
+        {
+          "instance": "u_scale",
+          "design": "imc_fixed_scale",
+          "inclusive_area_um2": 4276.8,
+          "local_combinational_area_um2": 4276.8,
+          "local_sequential_area_um2": 0.0,
+          "local_black_box_area_um2": 0.0
+        }
+      ],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 5.9508,
+        "internal_mw": 5.5492,
+        "switching_mw": 0.40161290000000005,
+        "leakage_mw": 0.1400685,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.75,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 1,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_capacitance",
+          "max_leakage_power"
+        ],
+        "warning_codes": [
+          "LINT-28",
+          "LINT-31",
+          "LINT-33",
+          "LINT-52",
+          "PWR-414",
+          "PWR-415",
+          "TIM-134",
+          "UCN-1",
+          "UID-401",
+          "UISN-40",
+          "VER-318",
+          "VO-4"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_neural_sequencer/synthesis.log"
+      }
+    },
+    "imc_q17_codec": {
+      "top": "imc_q17_codec",
+      "parameters": {},
+      "sequential": false,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_q17_codec",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_q17_codec",
+        "parameters": "",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 4026.719957,
+        "combinational_um2": 4026.719957,
+        "sequential_um2": 0.0,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 1.5408,
+        "internal_mw": 0.34974079999999996,
+        "switching_mw": 1.191,
+        "leakage_mw": 0.0111328,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "input-to-output max delay",
+        "critical_path_ns": 2.0,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 0,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_leakage_power",
+          "multiport_net"
+        ],
+        "warning_codes": [
+          "LINT-31",
+          "LINT-52",
+          "PWR-414",
+          "PWR-80",
+          "UCN-1",
+          "UID-401",
+          "UISN-40",
+          "VER-318",
+          "VO-4"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_q17_codec/synthesis.log"
+      }
+    },
+    "imc_round_divider_48x32": {
+      "top": "imc_round_divider",
+      "parameters": {
+        "NUM_W": 48,
+        "DEN_W": 32
+      },
+      "sequential": true,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_round_divider_NUM_W48_DEN_W32",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_round_divider",
+        "parameters": "NUM_W=48,DEN_W=32",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 4327.680017,
+        "combinational_um2": 2286.240017,
+        "sequential_um2": 2041.44,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 0.7179875,
+        "internal_mw": 0.606501,
+        "switching_mw": 0.11148659999999999,
+        "leakage_mw": 0.0132861,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.93,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 0,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_leakage_power"
+        ],
+        "warning_codes": [
+          "PWR-414",
+          "PWR-415",
+          "UID-401",
+          "UISN-40",
+          "VER-318"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_48x32/synthesis.log"
+      }
+    },
+    "imc_round_divider_80x32": {
+      "top": "imc_round_divider",
+      "parameters": {
+        "NUM_W": 80,
+        "DEN_W": 32
+      },
+      "sequential": true,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_round_divider_NUM_W80_DEN_W32",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_round_divider",
+        "parameters": "NUM_W=80,DEN_W=32",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 5918.400031,
+        "combinational_um2": 3092.640035,
+        "sequential_um2": 2825.759996,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 0.9706260999999999,
+        "internal_mw": 0.8332603000000001,
+        "switching_mw": 0.1373658,
+        "leakage_mw": 0.0176541,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.92,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 0,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_leakage_power"
+        ],
+        "warning_codes": [
+          "PWR-414",
+          "PWR-415",
+          "UID-401",
+          "UISN-40",
+          "VER-318"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_round_divider_80x32/synthesis.log"
+      }
+    },
+    "imc_shift_accumulator_32x32": {
+      "top": "imc_shift_accumulator",
+      "parameters": {
+        "ENTRIES": 32,
+        "ADDR_W": 5
+      },
+      "sequential": true,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_shift_accumulator_ENTRIES32_ADDR_W5",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_shift_accumulator",
+        "parameters": "ENTRIES=32,ADDR_W=5",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 23693.759846,
+        "combinational_um2": 11381.759846,
+        "sequential_um2": 12312.0,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 3.7892,
+        "internal_mw": 3.2604,
+        "switching_mw": 0.5288356,
+        "leakage_mw": 0.059320700000000004,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.71,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 0,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_leakage_power"
+        ],
+        "warning_codes": [
+          "PWR-414",
+          "PWR-415",
+          "TIM-134",
+          "UID-401",
+          "UISN-40",
+          "VER-318"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_shift_accumulator_32x32/synthesis.log"
+      }
+    },
+    "imc_sram_router_1bank": {
+      "top": "imc_sram_router",
+      "parameters": {
+        "BANKS": 1,
+        "BANK_BYTE_W": 19,
+        "ADDR_W": 21
+      },
+      "sequential": true,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_sram_router_BANKS1_BANK_BYTE_W19_ADDR_W21",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_sram_router",
+        "parameters": "BANKS=1,BANK_BYTE_W=19,ADDR_W=21",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 1779.360027,
+        "combinational_um2": 735.360027,
+        "sequential_um2": 1044.0,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 0.3408893,
+        "internal_mw": 0.2953191,
+        "switching_mw": 0.0455702,
+        "leakage_mw": 0.0046779000000000005,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 0.91,
+        "critical_slack_ns": 0.81,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 0,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_leakage_power"
+        ],
+        "warning_codes": [
+          "ELAB-311",
+          "PWR-414",
+          "PWR-415",
+          "UID-401",
+          "UISN-40",
+          "VER-318"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_1bank/synthesis.log"
+      }
+    },
+    "imc_sram_router_3bank": {
+      "top": "imc_sram_router",
+      "parameters": {
+        "BANKS": 3,
+        "BANK_BYTE_W": 19,
+        "ADDR_W": 21
+      },
+      "sequential": true,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_sram_router_BANKS3_BANK_BYTE_W19_ADDR_W21",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_sram_router",
+        "parameters": "BANKS=3,BANK_BYTE_W=19,ADDR_W=21",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 2308.320027,
+        "combinational_um2": 1264.320027,
+        "sequential_um2": 1044.0,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 0.38534160000000006,
+        "internal_mw": 0.3082772,
+        "switching_mw": 0.0770644,
+        "leakage_mw": 0.0048304,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.48,
+        "critical_slack_ns": 0.43,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 0,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_leakage_power"
+        ],
+        "warning_codes": [
+          "ELAB-311",
+          "PWR-414",
+          "PWR-415",
+          "UID-401",
+          "UISN-40",
+          "VER-318"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_sram_router_3bank/synthesis.log"
+      }
+    },
+    "imc_tree_update": {
+      "top": "imc_tree_update",
+      "parameters": {
+        "BOARD_SIZE": 9,
+        "CAM_ENTRIES": 1024,
+        "NEURAL_BYTES": 16512,
+        "ADDR_W": 21
+      },
+      "sequential": true,
+      "rtl_status": "historical_replaced_by_v2",
+      "design": "imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_tree_update",
+        "parameters": "BOARD_SIZE=9,CAM_ENTRIES=1024,NEURAL_BYTES=16512,ADDR_W=21",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 69793.440287,
+        "combinational_um2": 58104.960379,
+        "sequential_um2": 11688.479908,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [
+        {
+          "instance": "u_codec",
+          "design": "imc_q17_codec",
+          "inclusive_area_um2": 4995.36,
+          "local_combinational_area_um2": 4995.36,
+          "local_sequential_area_um2": 0.0,
+          "local_black_box_area_um2": 0.0
+        }
+      ],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 6.0625,
+        "internal_mw": 4.3007,
+        "switching_mw": 1.7619,
+        "leakage_mw": 0.4149645,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 3.78,
+        "critical_slack_ns": -1.84,
+        "violating_setup_paths": 386,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 3,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_capacitance",
+          "max_leakage_power",
+          "multiport_net"
+        ],
+        "warning_codes": [
+          "LINT-28",
+          "LINT-31",
+          "LINT-52",
+          "PWR-414",
+          "PWR-415",
+          "UCN-1",
+          "UID-401",
+          "UISN-40",
+          "VER-318",
+          "VO-4"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_tree_update/synthesis.log"
+      }
+    },
+    "imc_ucb_score": {
+      "top": "imc_ucb_score",
+      "parameters": {},
+      "sequential": true,
+      "rtl_status": "matches_active_sources",
+      "design": "imc_ucb_score",
+      "source_node_nm": 65,
+      "environment": {
+        "top": "imc_ucb_score",
+        "parameters": "",
+        "technology": "TSMC 65nm",
+        "library": "sc12_cln65gplus_base_rvt",
+        "corner": "tt_typical_max_1p00v_25c",
+        "voltage": "1.00 V",
+        "temperature": "25 C",
+        "time_unit": "1 ns",
+        "capacitance_unit": "1 pF",
+        "area_unit": "square micrometers",
+        "clock_period_ns": "2.0",
+        "clock_uncertainty_ns": "0.05",
+        "clock_transition_ns": "0.10",
+        "input_output_delay_ns": "0.20",
+        "input_driver": "BUF_X1M_A12TR/Y",
+        "output_load_pf": "0.01",
+        "reset_exception": "set_false_path -from rst_n (active-low asynchronous reset)",
+        "compile": "compile_ultra -no_autoungroup",
+        "power": "vectorless; no workload activity supplied",
+        "design_compiler": "U-2022.12-SP7-1"
+      },
+      "area": {
+        "cell_um2": 90935.040461,
+        "combinational_um2": 80938.080533,
+        "sequential_um2": 9996.959929,
+        "units_basis": "run_details.txt declaration; no report_units or library hash supplied",
+        "status": "Standalone mapped standard cells; wire-load estimate, no physical layout"
+      },
+      "hierarchy": [
+        {
+          "instance": "u_divider",
+          "design": "imc_round_divider_NUM_W80_DEN_W32",
+          "inclusive_area_um2": 5894.8801,
+          "local_combinational_area_um2": 3075.3601,
+          "local_sequential_area_um2": 2819.52,
+          "local_black_box_area_um2": 0.0
+        },
+        {
+          "instance": "u_high",
+          "design": "imc_ln_table_0",
+          "inclusive_area_um2": 11914.0801,
+          "local_combinational_area_um2": 11914.0801,
+          "local_sequential_area_um2": 0.0,
+          "local_black_box_area_um2": 0.0
+        },
+        {
+          "instance": "u_low",
+          "design": "imc_ln_table_1",
+          "inclusive_area_um2": 7909.4401,
+          "local_combinational_area_um2": 7909.4401,
+          "local_sequential_area_um2": 0.0,
+          "local_black_box_area_um2": 0.0
+        },
+        {
+          "instance": "u_sqrt",
+          "design": "imc_isqrt",
+          "inclusive_area_um2": 5644.32,
+          "local_combinational_area_um2": 2957.7601,
+          "local_sequential_area_um2": 2686.56,
+          "local_black_box_area_um2": 0.0
+        },
+        {
+          "instance": "u_value",
+          "design": "imc_q17_codec",
+          "inclusive_area_um2": 3029.76,
+          "local_combinational_area_um2": 3029.76,
+          "local_sequential_area_um2": 0.0,
+          "local_black_box_area_um2": 0.0
+        }
+      ],
+      "power": {
+        "method": "vectorless",
+        "source_node_nm": 65,
+        "voltage_v": 1.0,
+        "dynamic_mw": 8.1313,
+        "internal_mw": 4.8086,
+        "switching_mw": 3.3227,
+        "leakage_mw": 0.5348745,
+        "workload_energy_uj": null,
+        "target_22nm_power_mw": null,
+        "status": "Unannotated switching; includes register clock-pin power. Diagnostic only, no workload or 22 nm adoption."
+      },
+      "timing": {
+        "constraint_ns": 2.0,
+        "constraint_kind": "clock period",
+        "critical_path_ns": 1.93,
+        "critical_slack_ns": 0.0,
+        "violating_setup_paths": 0,
+        "status": "Rounded standalone synthesis timing at 65 nm; system/22 nm closure unvalidated"
+      },
+      "checks": {
+        "max_capacitance_violations": 0,
+        "max_transition_violations": 0,
+        "constraint_categories": [
+          "max_leakage_power"
+        ],
+        "warning_codes": [
+          "ELAB-311",
+          "LINT-28",
+          "LINT-31",
+          "LINT-33",
+          "LINT-52",
+          "PWR-414",
+          "PWR-415",
+          "UCN-1",
+          "UCN-4",
+          "UID-401",
+          "UISN-40",
+          "VER-318",
+          "VO-4"
+        ],
+        "check_design_return": "1",
+        "status": "Reports retained with warnings; no physical signoff claim"
+      },
+      "reports": {
+        "run_details.txt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/run_details.txt",
+        "area.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/area.rpt",
+        "area_hier.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/area_hier.rpt",
+        "qor.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/qor.rpt",
+        "power_vectorless.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/power_vectorless.rpt",
+        "constraints.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/constraints.rpt",
+        "check_design_postcompile.rpt": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/check_design_postcompile.rpt",
+        "synthesis.log": "p03_experiments/p25_glue_integration/p01_sources/run_20260910_033912Z/results/imc_ucb_score/synthesis.log"
+      }
+    }
+  },
+  "missing_cases": [],
+  "area_conversion": {
+    "source_node_nm": 65,
+    "target_node_nm": 22,
+    "factor": 0.1145562130177515,
+    "applications": 1,
+    "method": "Geometric standard-cell area estimate; not a 22 nm synthesis or layout result"
+  },
+  "power_conversion": {
+    "applications": 0,
+    "factor": null,
+    "status": "No validated 65-to-22 power model supplied"
+  }
+}

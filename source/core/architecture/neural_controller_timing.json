@@ -1,0 +1,40 @@
+{
+  "model": "rtl_serial_v1",
+  "cycles": {
+    "sram_request": 1,
+    "adc_request": 1,
+    "divider_completion": 1
+  },
+  "conditions": {
+    "inputs": 162,
+    "hidden": 96,
+    "outputs": 3,
+    "active_rows": 16,
+    "adc_lanes": 3,
+    "array_settle_cycles": 3,
+    "adc_response_cycles": 9,
+    "sram_response_cycles": 2,
+    "external_stalls": false,
+    "neural_owns_sram_port": true,
+    "reset_coordinated_with_sram_and_adc": true
+  },
+  "start_to_result_cycles": 26620,
+  "cycle_boundary": "start accepted through result_valid; excludes result backpressure and preloaded board/LUT setup",
+  "status": "digital RTL and generic-netlist verification with ideal ADC codes; physical timing and analog accuracy unvalidated",
+  "evidence": {
+    "path": "p03_experiments/p10_neural_sequence/p00_runs/run_20260909_035710Z",
+    "metadata_sha256": "5fe5445a9693567694ef98e084feec2c71d1531fd573fade338b0a7a32525718",
+    "source_snapshot_sha256": "d9d083c0f236c04bd853e7e402da77cf1e3c22a4d3abc52358b548c29c64d3b2",
+    "rtl_source_sha256": {
+      "rtl_synthesis/p01_mapped_core/filelist.f": "e3c5a2f5f6bd86a49b5f3472a649f62176000130fcc2e82cce95e9af2ca585ef",
+      "rtl_synthesis/p01_mapped_core/p00_rtl/imc_fixed_scale.sv": "d2235571543cb0318fa1d2b71b9ab26d2e0be97b077debe500ef84e0f19b14f8",
+      "rtl_synthesis/p01_mapped_core/p00_rtl/imc_neural_core.sv": "572dc2af8e6137ea5a0de446088b437b2e3bea7b8c58075758cd32c10f0f9233",
+      "rtl_synthesis/p01_mapped_core/p00_rtl/imc_neural_sequencer.sv": "be088a583eb320879b0ae4a2e18b315063d978bc6f997e569b8790a7ffee4d44",
+      "rtl_synthesis/p01_mapped_core/p00_rtl/imc_round_divider.sv": "ca0ec9dae66448e91a3432dfc295568ea2d4d39574b264bd00a8e66243b3200b",
+      "rtl_synthesis/p01_mapped_core/p00_rtl/imc_shift_accumulator.sv": "f78bbabad55aa61fc3618ff6572d5d9e7c225dba9932956d8a4af85d0392de6e",
+      "rtl_synthesis/p01_mapped_core/p00_rtl/imc_sram_router.sv": "2f68cdb2c950238c36f46479cae0137df5a91c45f64c7ecc7ba726f5f135a7d3",
+      "rtl_synthesis/p01_mapped_core/p01_tests/tb_imc_fixed_scale.sv": "dc47b4383be5354bd0fceb32063fe22b053a242200803d210bfe64fb7f3a2000",
+      "rtl_synthesis/p01_mapped_core/p01_tests/tb_imc_neural_core.sv": "0ae0208a26e190dde5db06837fe70491f344c5609f5f48ffb67b8bd8c478536d"
+    }
+  }
+}

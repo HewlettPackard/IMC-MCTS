@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : imc_shift_accumulator_ENTRIES32_ADDR_W5
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 15:25:04 2026
+****************************************
+
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                           61
+Number of nets:                          5062
+Number of cells:                         5035
+Number of combinational cells:           4009
+Number of sequential cells:              1026
+Number of macros/black boxes:               0
+Number of buf/inv:                       1247
+Number of references:                     100
+
+Combinational area:              11381.759846
+Buf/Inv area:                     2118.240068
+Noncombinational area:           12312.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 23693.759846
+Total area:                      23693.759846
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------
+imc_shift_accumulator_ENTRIES32_ADDR_W5 23693.7598   100.0 11381.7598 12312.0000 0.0000 imc_shift_accumulator_ENTRIES32_ADDR_W5
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------
+Total                                                  11381.7598  12312.0000  0.0000
+
+1

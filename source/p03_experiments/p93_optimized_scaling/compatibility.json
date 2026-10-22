@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "scope": "Software admission-guard extension only. All previously accepted mappings execute identical code; new sized parallel hardware is not RTL or physically validated.",
+  "checks": {
+    "only_admission_guard_and_error_text_changed": true,
+    "existing_nine_trained_cycle_tree_activity_and_output_regression_passed": true
+  },
+  "prior_evidence": {
+    "path": "p03_experiments/p81_board_sizing/p00_runs/run_20260917_163651Z/compatibility.json",
+    "sha256": "acc1bbb386ebc16f24dfb2ed0266672214b2567710d788747bf71cf0f936d2b0"
+  },
+  "reference_cases": [
+    "2_full_sustained_drive_v1_hp",
+    "2_full_sustained_drive_v1_lstp",
+    "2_full_column_hold_v1_hp",
+    "2_full_column_hold_v1_lstp",
+    "2_single_sustained_drive_v1_hp",
+    "2_single_sustained_drive_v1_lstp",
+    "2_single_column_hold_v1_hp",
+    "2_single_column_hold_v1_lstp",
+    "3_full_sustained_drive_v1_hp",
+    "3_full_sustained_drive_v1_lstp",
+    "3_full_column_hold_v1_hp",
+    "3_full_column_hold_v1_lstp",
+    "3_single_sustained_drive_v1_hp",
+    "3_single_sustained_drive_v1_lstp",
+    "3_single_column_hold_v1_hp",
+    "3_single_column_hold_v1_lstp",
+    "5_full_sustained_drive_v1_hp",
+    "5_full_sustained_drive_v1_lstp",
+    "5_full_column_hold_v1_hp",
+    "5_full_column_hold_v1_lstp",
+    "5_single_sustained_drive_v1_hp",
+    "5_single_sustained_drive_v1_lstp",
+    "5_single_column_hold_v1_hp",
+    "5_single_column_hold_v1_lstp",
+    "9_full_sustained_drive_v1_hp",
+    "9_full_sustained_drive_v1_lstp",
+    "9_full_column_hold_v1_hp",
+    "9_full_column_hold_v1_lstp",
+    "9_single_sustained_drive_v1_hp",
+    "9_single_sustained_drive_v1_lstp",
+    "9_single_column_hold_v1_hp",
+    "9_single_column_hold_v1_lstp"
+  ],
+  "validated_sources": {
+    "core/architecture/neural_mapping.py": "9a0b31e468dd06896acbe8cef55ea8038f6b42fc1709dc2583ce369a8789a702",
+    "core/architecture/iteration_model.py": "b94811b840d5c0271a45e7f0c88f62197a9bbc9b1499b5dc72f955f27e98ed01",
+    "core/architecture/analog_readout.py": "ade13d3064cdfb405bad1545cc35a253b62caefb9b6b2f243f7937a1bd70de6f",
+    "core/architecture/digital_costs.py": "29d5ec136bd0e8014d66d550bc73784ff7a62094271e70a522612029ef65e4d3",
+    "core/architecture/block_power.py": "45b91227424616c0966675eabc181067fd991e3a7debff5dce426325691190b9",
+    "core/architecture/complete_costs.py": "6a4bd4870fe9552500196f6778419ef75fea4fd2d81f694d078888b5f7186b43",
+    "core/architecture/component_inventory.py": "ca5ddc71c30e9a5509f5721a2f90ae9c26475f78436cfff4a883132c2b52e88b",
+    "core/architecture/go_simulation.py": "491524342b4b22b82adf76871d490e197998b3551b0bd626aedb35618b9750be"
+  }
+}

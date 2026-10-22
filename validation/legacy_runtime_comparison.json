@@ -1,0 +1,61 @@
+{
+  "exact_structure_fields": {
+    "ids": true,
+    "parents": true,
+    "visits": true,
+    "players": true,
+    "boards": true,
+    "child_offsets": true,
+    "children": true
+  },
+  "nodes": 6562,
+  "visited_nodes": 5000,
+  "same_neural_input_boards": true,
+  "same_cycles": true,
+  "same_configuration_sha256": false,
+  "same_evaluator": false,
+  "same_source_sha256": true,
+  "changed_node_values": 826,
+  "max_absolute_value_difference": 1.0658141036401503e-14,
+  "max_relative_value_difference": 4.0707694571154663e-16,
+  "max_value_ulp_difference": 3,
+  "first_changed_node": {
+    "id": 3,
+    "numpy126_hex": "0x1.f59e800a42160p+4",
+    "numpy235_hex": "0x1.f59e800a4215fp+4"
+  },
+  "neural_evaluations": 5000,
+  "changed_neural_outputs": 818,
+  "max_neural_output_absolute_difference": 2.220446049250313e-16,
+  "first_changed_neural_output_index": 8,
+  "initializer": {
+    "raw1": {
+      "elements": 15552,
+      "different": 2121,
+      "max_absolute_difference": 2.609024107869118e-15,
+      "max_relative_difference": 8.544597397543796e-14,
+      "max_ulp_difference": 752
+    },
+    "raw2": {
+      "elements": 288,
+      "different": 55,
+      "max_absolute_difference": 8.881784197001252e-16,
+      "max_relative_difference": 2.4084564528703248e-15,
+      "max_ulp_difference": 19
+    },
+    "weights1": {
+      "elements": 15552,
+      "different": 2046,
+      "max_absolute_difference": 2.896988204881268e-16,
+      "max_relative_difference": 8.533283047176286e-14,
+      "max_ulp_difference": 668
+    },
+    "weights2": {
+      "elements": 288,
+      "different": 53,
+      "max_absolute_difference": 1.1102230246251565e-16,
+      "max_relative_difference": 2.415118862424933e-15,
+      "max_ulp_difference": 13
+    }
+  }
+}

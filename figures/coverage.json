@@ -1,0 +1,225 @@
+[
+  {
+    "id": "Fig1a",
+    "status": "SUPPLIED_DIAGRAM",
+    "canonical_asset": "manuscript/Figures/fig01_decomposition/1d_mcts_phases.pdf",
+    "packaged_asset": "figures/supplied/fig01_decomposition/1d_mcts_phases.pdf",
+    "generated_asset": null
+  },
+  {
+    "id": "Fig1b",
+    "status": "SUPPLIED_DIAGRAM",
+    "canonical_asset": "manuscript/Figures/fig01_decomposition/1b_primitive_mapping.pdf",
+    "packaged_asset": "figures/supplied/fig01_decomposition/1b_primitive_mapping.pdf",
+    "generated_asset": null
+  },
+  {
+    "id": "Fig1c",
+    "status": "SUPPLIED_DIAGRAM",
+    "canonical_asset": "manuscript/Figures/fig01_decomposition/1c_imc_landscape.pdf",
+    "packaged_asset": "figures/supplied/fig01_decomposition/1c_imc_landscape.pdf",
+    "generated_asset": null
+  },
+  {
+    "id": "Fig2abc",
+    "status": "SUPPLIED_CONCEPTUAL_DIAGRAM",
+    "canonical_asset": "manuscript/Figures/fig02_architecture/2ab_architecture_full.pdf",
+    "packaged_asset": "figures/supplied/fig02_architecture/2ab_architecture_full.pdf",
+    "generated_asset": null
+  },
+  {
+    "id": "Fig2d",
+    "status": "REPLOT_FROM_ARCHIVED_NUMERIC_INPUT",
+    "canonical_asset": "manuscript/Figures/ed_fig01_resources/1a_area_breakdown.pdf",
+    "packaged_asset": "figures/expected/ed_fig01_resources/1a_area_breakdown.pdf",
+    "generated_asset": "figures/generated/1a_area_breakdown.pdf"
+  },
+  {
+    "id": "Fig2e",
+    "status": "REPLOT_FROM_ARCHIVED_NUMERIC_INPUT",
+    "canonical_asset": "manuscript/Figures/ed_fig01_resources/1b_power_breakdown.pdf",
+    "packaged_asset": "figures/expected/ed_fig01_resources/1b_power_breakdown.pdf",
+    "generated_asset": "figures/generated/1b_power_breakdown.pdf"
+  },
+  {
+    "id": "Fig3a",
+    "status": "REPLOT_FROM_ARCHIVED_NUMERIC_INPUT",
+    "canonical_asset": "manuscript/Figures/fig04_energy/4a_energy_scaling.pdf",
+    "packaged_asset": "figures/expected/fig04_energy/4a_energy_scaling.pdf",
+    "generated_asset": "figures/generated/fig3a_iteration_energy.pdf"
+  },
+  {
+    "id": "Fig3b",
+    "status": "REPLOT_FROM_ARCHIVED_NUMERIC_INPUT",
+    "canonical_asset": "manuscript/Figures/fig04_energy/4b_pareto_scatter.pdf",
+    "packaged_asset": "figures/expected/fig04_energy/4b_pareto_scatter.pdf",
+    "generated_asset": "figures/generated/fig3b_energy_latency.pdf"
+  },
+  {
+    "id": "Fig3c",
+    "status": "REPLOT_FROM_ARCHIVED_NUMERIC_INPUT",
+    "canonical_asset": "manuscript/Figures/ed_fig03_gain/gain_bars.pdf",
+    "packaged_asset": "figures/expected/ed_fig03_gain/gain_bars.pdf",
+    "generated_asset": "figures/generated/fig3c_stacked.pdf"
+  },
+  {
+    "id": "Fig4a",
+    "status": "REPLOT_ONLY_ARCHIVED_QUALITY",
+    "canonical_asset": "manuscript/Figures/fig05_generalisation/5b_sgg_bars.pdf",
+    "packaged_asset": "figures/expected/fig05_generalisation/5b_sgg_bars.pdf",
+    "generated_asset": "figures/generated/5b_sgg_bars.pdf"
+  },
+  {
+    "id": "Fig4b",
+    "status": "REPLOT_DIAGNOSTIC_PROJECTIONS",
+    "canonical_asset": "manuscript/Figures/fig05_generalisation/5c_energy_bars.pdf",
+    "packaged_asset": "figures/expected/fig05_generalisation/5c_energy_bars.pdf",
+    "generated_asset": "figures/generated/5c_energy_bars.pdf"
+  },
+  {
+    "id": "ExtendedDataFig1",
+    "status": "REPLOT_FROM_ARCHIVED_NUMERIC_INPUT",
+    "canonical_asset": "manuscript/Figures/ed_fig02_bottlenecks/bottleneck_scaling.pdf",
+    "packaged_asset": "figures/expected/ed_fig02_bottlenecks/bottleneck_scaling.pdf",
+    "generated_asset": "figures/generated/fig_01_bottleneck_scaling.pdf"
+  },
+  {
+    "id": "Fig3d",
+    "status": "ON_HOLD",
+    "packaged_asset": null,
+    "generated_asset": null,
+    "note": "No regeneration target, tournament records or Elo plot are included."
+  },
+  {
+    "id": "ExtendedDataTable1",
+    "status": "EXACT_APPROVED_LATEX_EXTRACT",
+    "label": "edt:phase_breakdown",
+    "packaged_asset": "figures/table_sources/extended_data_table_1.tex",
+    "source": "manuscript/sections/05_backmatter.tex",
+    "source_lines": [
+      78,
+      100
+    ],
+    "note": "Reproduces supplied table text; not an independent literature audit or new experiment."
+  },
+  {
+    "id": "ExtendedDataTable2",
+    "status": "EXACT_APPROVED_LATEX_EXTRACT",
+    "label": "edt:scaling",
+    "packaged_asset": "figures/table_sources/extended_data_table_2.tex",
+    "source": "manuscript/sections/05_backmatter.tex",
+    "source_lines": [
+      102,
+      119
+    ],
+    "note": "Reproduces supplied table text; not an independent literature audit or new experiment."
+  },
+  {
+    "id": "ExtendedDataTable3",
+    "status": "EXACT_APPROVED_LATEX_EXTRACT",
+    "label": "edt:generalisation",
+    "packaged_asset": "figures/table_sources/extended_data_table_3.tex",
+    "source": "manuscript/sections/05_backmatter.tex",
+    "source_lines": [
+      121,
+      154
+    ],
+    "note": "Reproduces supplied table text; not an independent literature audit or new experiment."
+  },
+  {
+    "id": "ExtendedDataTable4",
+    "status": "EXACT_APPROVED_LATEX_EXTRACT",
+    "label": "edt:prior_work",
+    "packaged_asset": "figures/table_sources/extended_data_table_4.tex",
+    "source": "manuscript/sections/05_backmatter.tex",
+    "source_lines": [
+      156,
+      176
+    ],
+    "note": "Reproduces supplied table text; not an independent literature audit or new experiment."
+  },
+  {
+    "id": "TableS1",
+    "status": "EXACT_APPROVED_LATEX_EXTRACT",
+    "label": "tab:supp_play_strength",
+    "packaged_asset": "figures/table_sources/table_S1.tex",
+    "source": "supplement/main.tex",
+    "source_lines": [
+      215,
+      242
+    ],
+    "note": "Reproduces supplied table text; not an independent literature audit or new experiment."
+  },
+  {
+    "id": "TableS2",
+    "status": "EXACT_APPROVED_LATEX_EXTRACT",
+    "label": "tab:supp_iso_process",
+    "packaged_asset": "figures/table_sources/table_S2.tex",
+    "source": "supplement/main.tex",
+    "source_lines": [
+      259,
+      277
+    ],
+    "note": "Reproduces supplied table text; not an independent literature audit or new experiment."
+  },
+  {
+    "id": "TableS3",
+    "status": "EXACT_APPROVED_LATEX_EXTRACT",
+    "label": "tab:supp_validation_status",
+    "packaged_asset": "figures/table_sources/table_S3.tex",
+    "source": "supplement/main.tex",
+    "source_lines": [
+      336,
+      371
+    ],
+    "note": "Reproduces supplied table text; not an independent literature audit or new experiment."
+  },
+  {
+    "id": "TableS4",
+    "status": "EXACT_APPROVED_LATEX_EXTRACT",
+    "label": "tab:supp_noise_robustness",
+    "packaged_asset": "figures/table_sources/table_S4.tex",
+    "source": "supplement/main.tex",
+    "source_lines": [
+      388,
+      404
+    ],
+    "note": "Reproduces supplied table text; not an independent literature audit or new experiment."
+  },
+  {
+    "id": "TableS5",
+    "status": "EXACT_APPROVED_LATEX_EXTRACT",
+    "label": "tab:supp_crossbar_vs_digital",
+    "packaged_asset": "figures/table_sources/table_S5.tex",
+    "source": "supplement/main.tex",
+    "source_lines": [
+      458,
+      478
+    ],
+    "note": "Reproduces supplied table text; not an independent literature audit or new experiment."
+  },
+  {
+    "id": "TableS6",
+    "status": "EXACT_APPROVED_LATEX_EXTRACT",
+    "label": "tab:supp_prior_mcts_hw",
+    "packaged_asset": "figures/table_sources/table_S6.tex",
+    "source": "supplement/main.tex",
+    "source_lines": [
+      487,
+      536
+    ],
+    "note": "Reproduces supplied table text; not an independent literature audit or new experiment."
+  },
+  {
+    "id": "TableS7",
+    "status": "EXACT_APPROVED_LATEX_EXTRACT",
+    "label": "supp:application_protocol",
+    "packaged_asset": "figures/table_sources/table_S7.tex",
+    "source": "supplement/main.tex",
+    "source_lines": [
+      572,
+      592
+    ],
+    "note": "Reproduces supplied table text; not an independent literature audit or new experiment."
+  }
+]

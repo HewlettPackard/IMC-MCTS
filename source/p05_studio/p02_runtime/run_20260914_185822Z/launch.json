@@ -1,0 +1,21 @@
+{
+  "pid": 24516,
+  "prior_pid": 18374,
+  "prior_session": {
+    "job": null
+  },
+  "url": "http://127.0.0.1:4783",
+  "paper_models": [
+    "Go-strong",
+    "Go-weak",
+    "Connect Four",
+    "Othello",
+    "Hex",
+    "Go",
+    "FrozenLake",
+    "MiniGrid",
+    "HP Protein Fold",
+    "Minesweeper"
+  ],
+  "started_utc": "2026-09-14T18:58:22.449734+00:00"
+}

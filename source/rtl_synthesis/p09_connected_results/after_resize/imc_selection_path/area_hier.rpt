@@ -1,0 +1,184 @@
+ 
+****************************************
+Report : area
+Design : imc_selection_path
+Version: U-2022.12-SP7-1
+Date   : Tue Oct 13 00:56:33 2026
+****************************************
+
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                        18833
+Number of nets:                        365495
+Number of cells:                       327643
+Number of combinational cells:         308882
+Number of sequential cells:             18664
+Number of macros/black boxes:               0
+Number of buf/inv:                      52273
+Number of references:                      96
+
+Combinational area:            1312782.249514
+Buf/Inv area:                   116228.642098
+Noncombinational area:          225988.320390
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:               1538770.569904
+Total area:                    1538770.569904
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area                Local cell area
+                                  ---------------------  --------------------------------- 
+Hierarchical cell                 Absolute      Percent  Combi-        Noncombi-    Black-
+                                  Total         Total    national      national     boxes   Design
+--------------------------------  ------------  -------  ------------  -----------  ------  ------------------------------------
+imc_selection_path                1538770.5699    100.0    26820.9600   47485.4419  0.0000  imc_selection_path
+u_batch                           1464464.1680     95.2    10753.4402   16872.0000  0.0000  imc_ucb_batch16_overlap
+u_batch/genblk1[0].u_score          91260.4805      5.9    52221.1203    4554.7199  0.0000  imc_ucb_score_overlap_15
+u_batch/genblk1[0].u_score/u_divider
+                                     5906.4001      0.4     3080.6401    2825.7600  0.0000  imc_round_divider_NUM_W80_DEN_W32_15
+u_batch/genblk1[0].u_score/u_high   11942.4001      0.8    11942.4001       0.0000  0.0000  imc_ln_table_30
+u_batch/genblk1[0].u_score/u_low     7911.3601      0.5     7911.3601       0.0000  0.0000  imc_ln_table_31
+u_batch/genblk1[0].u_score/u_sqrt    5686.0800      0.4     2968.3201    2717.7600  0.0000  imc_isqrt_15
+u_batch/genblk1[0].u_score/u_value
+                                     3038.4000      0.2     3038.4000       0.0000  0.0000  imc_q17_codec_15
+u_batch/genblk1[10].u_score         90060.0005      5.9    51253.4403    4551.3599  0.0000  imc_ucb_score_overlap_5
+u_batch/genblk1[10].u_score/u_divider
+                                     5919.8401      0.4     3091.6801    2828.1600  0.0000  imc_round_divider_NUM_W80_DEN_W32_5
+u_batch/genblk1[10].u_score/u_high
+                                    11797.9201      0.8    11797.9201       0.0000  0.0000  imc_ln_table_10
+u_batch/genblk1[10].u_score/u_low    7808.1601      0.5     7808.1601       0.0000  0.0000  imc_ln_table_11
+u_batch/genblk1[10].u_score/u_sqrt
+                                     5702.4000      0.4     2976.4801    2725.9200  0.0000  imc_isqrt_5
+u_batch/genblk1[10].u_score/u_value
+                                     3026.8800      0.2     3026.8800       0.0000  0.0000  imc_q17_codec_5
+u_batch/genblk1[11].u_score         89367.3605      5.8    50897.7603    4542.2400  0.0000  imc_ucb_score_overlap_4
+u_batch/genblk1[11].u_score/u_divider
+                                     5894.8801      0.4     3068.6401    2826.2400  0.0000  imc_round_divider_NUM_W80_DEN_W32_4
+u_batch/genblk1[11].u_score/u_high
+                                    11450.4001      0.7    11450.4001       0.0000  0.0000  imc_ln_table_8
+u_batch/genblk1[11].u_score/u_low    7850.4001      0.5     7850.4001       0.0000  0.0000  imc_ln_table_9
+u_batch/genblk1[11].u_score/u_sqrt
+                                     5701.9200      0.4     2988.4801    2713.4400  0.0000  imc_isqrt_4
+u_batch/genblk1[11].u_score/u_value
+                                     3029.7600      0.2     3029.7600       0.0000  0.0000  imc_q17_codec_4
+u_batch/genblk1[12].u_score         89156.6405      5.8    51024.0003    4549.9199  0.0000  imc_ucb_score_overlap_3
+u_batch/genblk1[12].u_score/u_divider
+                                     5908.3201      0.4     3082.5601    2825.7600  0.0000  imc_round_divider_NUM_W80_DEN_W32_3
+u_batch/genblk1[12].u_score/u_high
+                                    10978.0801      0.7    10978.0801       0.0000  0.0000  imc_ln_table_6
+u_batch/genblk1[12].u_score/u_low    7991.0401      0.5     7991.0401       0.0000  0.0000  imc_ln_table_7
+u_batch/genblk1[12].u_score/u_sqrt
+                                     5689.9200      0.4     2968.3201    2721.6000  0.0000  imc_isqrt_3
+u_batch/genblk1[12].u_score/u_value
+                                     3015.3600      0.2     3015.3600       0.0000  0.0000  imc_q17_codec_3
+u_batch/genblk1[13].u_score         91320.4805      5.9    52050.7203    4557.1199  0.0000  imc_ucb_score_overlap_2
+u_batch/genblk1[13].u_score/u_divider
+                                     5903.0401      0.4     3077.7601    2825.2800  0.0000  imc_round_divider_NUM_W80_DEN_W32_2
+u_batch/genblk1[13].u_score/u_high
+                                    12100.8001      0.8    12100.8001       0.0000  0.0000  imc_ln_table_4
+u_batch/genblk1[13].u_score/u_low    7983.3601      0.5     7983.3601       0.0000  0.0000  imc_ln_table_5
+u_batch/genblk1[13].u_score/u_sqrt
+                                     5700.0000      0.4     2975.5201    2724.4800  0.0000  imc_isqrt_2
+u_batch/genblk1[13].u_score/u_value
+                                     3025.4400      0.2     3025.4400       0.0000  0.0000  imc_q17_codec_2
+u_batch/genblk1[14].u_score         89146.0805      5.8    50689.9203    4554.7199  0.0000  imc_ucb_score_overlap_1
+u_batch/genblk1[14].u_score/u_divider
+                                     5902.0801      0.4     3076.3201    2825.7600  0.0000  imc_round_divider_NUM_W80_DEN_W32_1
+u_batch/genblk1[14].u_score/u_high
+                                    11309.7601      0.7    11309.7601       0.0000  0.0000  imc_ln_table_2
+u_batch/genblk1[14].u_score/u_low    7960.8001      0.5     7960.8001       0.0000  0.0000  imc_ln_table_3
+u_batch/genblk1[14].u_score/u_sqrt
+                                     5705.2800      0.4     2981.2801    2724.0000  0.0000  imc_isqrt_1
+u_batch/genblk1[14].u_score/u_value
+                                     3023.5200      0.2     3023.5200       0.0000  0.0000  imc_q17_codec_1
+u_batch/genblk1[15].u_score         90827.5205      5.9    51515.5202    4555.1999  0.0000  imc_ucb_score_overlap_0
+u_batch/genblk1[15].u_score/u_divider
+                                     5897.7601      0.4     3073.4401    2824.3200  0.0000  imc_round_divider_NUM_W80_DEN_W32_0
+u_batch/genblk1[15].u_score/u_high
+                                    12397.4402      0.8    12397.4402       0.0000  0.0000  imc_ln_table_0
+u_batch/genblk1[15].u_score/u_low    7751.5201      0.5     7751.5201       0.0000  0.0000  imc_ln_table_1
+u_batch/genblk1[15].u_score/u_sqrt
+                                     5699.0400      0.4     2973.1201    2725.9200  0.0000  imc_isqrt_0
+u_batch/genblk1[15].u_score/u_value
+                                     3011.0400      0.2     3011.0400       0.0000  0.0000  imc_q17_codec_0
+u_batch/genblk1[1].u_score          90024.9605      5.9    51121.4403    4563.8399  0.0000  imc_ucb_score_overlap_14
+u_batch/genblk1[1].u_score/u_divider
+                                     5914.5601      0.4     3088.8001    2825.7600  0.0000  imc_round_divider_NUM_W80_DEN_W32_14
+u_batch/genblk1[1].u_score/u_high   11703.8401      0.8    11703.8401       0.0000  0.0000  imc_ln_table_28
+u_batch/genblk1[1].u_score/u_low     7993.4401      0.5     7993.4401       0.0000  0.0000  imc_ln_table_29
+u_batch/genblk1[1].u_score/u_sqrt    5695.6800      0.4     2975.0401    2720.6400  0.0000  imc_isqrt_14
+u_batch/genblk1[1].u_score/u_value
+                                     3032.1600      0.2     3032.1600       0.0000  0.0000  imc_q17_codec_14
+u_batch/genblk1[2].u_score          89311.2005      5.8    50910.7202    4549.9199  0.0000  imc_ucb_score_overlap_13
+u_batch/genblk1[2].u_score/u_divider
+                                     5908.3201      0.4     3083.5201    2824.8000  0.0000  imc_round_divider_NUM_W80_DEN_W32_13
+u_batch/genblk1[2].u_score/u_high   11280.4801      0.7    11280.4801       0.0000  0.0000  imc_ln_table_26
+u_batch/genblk1[2].u_score/u_low     7929.1201      0.5     7929.1201       0.0000  0.0000  imc_ln_table_27
+u_batch/genblk1[2].u_score/u_sqrt    5704.3200      0.4     2975.0401    2729.2800  0.0000  imc_isqrt_13
+u_batch/genblk1[2].u_score/u_value
+                                     3028.3200      0.2     3028.3200       0.0000  0.0000  imc_q17_codec_13
+u_batch/genblk1[3].u_score          88690.0805      5.8    50517.6003    4550.4000  0.0000  imc_ucb_score_overlap_12
+u_batch/genblk1[3].u_score/u_divider
+                                     5904.4801      0.4     3079.2001    2825.2800  0.0000  imc_round_divider_NUM_W80_DEN_W32_12
+u_batch/genblk1[3].u_score/u_high   11181.1201      0.7    11181.1201       0.0000  0.0000  imc_ln_table_24
+u_batch/genblk1[3].u_score/u_low     7824.9601      0.5     7824.9601       0.0000  0.0000  imc_ln_table_25
+u_batch/genblk1[3].u_score/u_sqrt    5698.0800      0.4     2972.6401    2725.4400  0.0000  imc_isqrt_12
+u_batch/genblk1[3].u_score/u_value
+                                     3013.4400      0.2     3013.4400       0.0000  0.0000  imc_q17_codec_12
+u_batch/genblk1[4].u_score          89067.3605      5.8    50865.1203    4546.0799  0.0000  imc_ucb_score_overlap_11
+u_batch/genblk1[4].u_score/u_divider
+                                     5900.1601      0.4     3074.4001    2825.7600  0.0000  imc_round_divider_NUM_W80_DEN_W32_11
+u_batch/genblk1[4].u_score/u_high   11229.6001      0.7    11229.6001       0.0000  0.0000  imc_ln_table_22
+u_batch/genblk1[4].u_score/u_low     7796.6401      0.5     7796.6401       0.0000  0.0000  imc_ln_table_23
+u_batch/genblk1[4].u_score/u_sqrt    5700.0000      0.4     2970.2401    2729.7600  0.0000  imc_isqrt_11
+u_batch/genblk1[4].u_score/u_value
+                                     3029.7600      0.2     3029.7600       0.0000  0.0000  imc_q17_codec_11
+u_batch/genblk1[5].u_score          89670.2405      5.8    51221.7603    4560.9599  0.0000  imc_ucb_score_overlap_10
+u_batch/genblk1[5].u_score/u_divider
+                                     5900.6401      0.4     3074.8801    2825.7600  0.0000  imc_round_divider_NUM_W80_DEN_W32_10
+u_batch/genblk1[5].u_score/u_high   11531.0401      0.7    11531.0401       0.0000  0.0000  imc_ln_table_20
+u_batch/genblk1[5].u_score/u_low     7741.9201      0.5     7741.9201       0.0000  0.0000  imc_ln_table_21
+u_batch/genblk1[5].u_score/u_sqrt    5698.5600      0.4     2981.7601    2716.8000  0.0000  imc_isqrt_10
+u_batch/genblk1[5].u_score/u_value
+                                     3015.3600      0.2     3015.3600       0.0000  0.0000  imc_q17_codec_10
+u_batch/genblk1[6].u_score          89292.0005      5.8    50509.4403    4555.6799  0.0000  imc_ucb_score_overlap_9
+u_batch/genblk1[6].u_score/u_divider
+                                     5906.4001      0.4     3081.6001    2824.8000  0.0000  imc_round_divider_NUM_W80_DEN_W32_9
+u_batch/genblk1[6].u_score/u_high   11691.3601      0.8    11691.3601       0.0000  0.0000  imc_ln_table_18
+u_batch/genblk1[6].u_score/u_low     7908.9601      0.5     7908.9601       0.0000  0.0000  imc_ln_table_19
+u_batch/genblk1[6].u_score/u_sqrt    5687.5200      0.4     2967.8401    2719.6800  0.0000  imc_isqrt_9
+u_batch/genblk1[6].u_score/u_value
+                                     3032.6400      0.2     3032.6400       0.0000  0.0000  imc_q17_codec_9
+u_batch/genblk1[7].u_score          89633.7605      5.8    51149.7603    4556.1599  0.0000  imc_ucb_score_overlap_8
+u_batch/genblk1[7].u_score/u_divider
+                                     5907.3601      0.4     3077.2801    2830.0800  0.0000  imc_round_divider_NUM_W80_DEN_W32_8
+u_batch/genblk1[7].u_score/u_high   11311.2001      0.7    11311.2001       0.0000  0.0000  imc_ln_table_16
+u_batch/genblk1[7].u_score/u_low     7977.1201      0.5     7977.1201       0.0000  0.0000  imc_ln_table_17
+u_batch/genblk1[7].u_score/u_sqrt    5700.9600      0.4     2966.4001    2734.5600  0.0000  imc_isqrt_8
+u_batch/genblk1[7].u_score/u_value
+                                     3031.2000      0.2     3031.2000       0.0000  0.0000  imc_q17_codec_8
+u_batch/genblk1[8].u_score          91102.0805      5.9    51619.2003    4552.3199  0.0000  imc_ucb_score_overlap_7
+u_batch/genblk1[8].u_score/u_divider
+                                     5904.4801      0.4     3080.1601    2824.3200  0.0000  imc_round_divider_NUM_W80_DEN_W32_7
+u_batch/genblk1[8].u_score/u_high   12290.4001      0.8    12290.4001       0.0000  0.0000  imc_ln_table_14
+u_batch/genblk1[8].u_score/u_low     8008.8001      0.5     8008.8001       0.0000  0.0000  imc_ln_table_15
+u_batch/genblk1[8].u_score/u_sqrt    5699.0400      0.4     2976.9601    2722.0800  0.0000  imc_isqrt_7
+u_batch/genblk1[8].u_score/u_value
+                                     3027.8400      0.2     3027.8400       0.0000  0.0000  imc_q17_codec_7
+u_batch/genblk1[9].u_score          88908.4805      5.8    51127.2003    4541.7599  0.0000  imc_ucb_score_overlap_6
+u_batch/genblk1[9].u_score/u_divider
+                                     5911.6801      0.4     3086.4001    2825.2800  0.0000  imc_round_divider_NUM_W80_DEN_W32_6
+u_batch/genblk1[9].u_score/u_high   10835.0401      0.7    10835.0401       0.0000  0.0000  imc_ln_table_12
+u_batch/genblk1[9].u_score/u_low     7761.1201      0.5     7761.1201       0.0000  0.0000  imc_ln_table_13
+u_batch/genblk1[9].u_score/u_sqrt    5713.9200      0.4     2989.9201    2724.0000  0.0000  imc_isqrt_6
+u_batch/genblk1[9].u_score/u_value
+                                     3017.7600      0.2     3017.7600       0.0000  0.0000  imc_q17_codec_6
+--------------------------------  ------------  -------  ------------  -----------  ------  ------------------------------------
+Total                                                    1312782.2495  225988.3204  0.0000
+
+1

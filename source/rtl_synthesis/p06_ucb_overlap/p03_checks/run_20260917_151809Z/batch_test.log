@@ -1,0 +1,14 @@
+batch count=1 latency=170 error=0
+batch count=2 latency=171 error=0
+batch count=3 latency=172 error=0
+batch count=4 latency=173 error=0
+batch count=2 latency=171 error=0
+batch count=4 latency=173 error=0
+batch count=4 latency=173 error=0
+batch count=4 latency=173 error=0
+batch count=4 latency=169 error=1
+batch count=0 latency=0 error=1
+batch count=5 latency=0 error=1
+batch count=4 latency=173 error=0
+tb_imc_ucb_batch_overlap PASS
+p01_tests/tb_imc_ucb_batch_overlap.sv:92: $finish called at 18950000 (1ps)

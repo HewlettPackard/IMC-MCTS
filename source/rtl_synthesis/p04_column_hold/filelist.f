@@ -1,0 +1,14 @@
+p00_rtl/imc_column_hold_control.sv
+../p03_iteration_core/../p01_mapped_core/p00_rtl/imc_shift_accumulator.sv
+../p03_iteration_core/../p01_mapped_core/p00_rtl/imc_round_divider.sv
+../p03_iteration_core/../p01_mapped_core/p00_rtl/imc_sram_router.sv
+../p03_iteration_core/../p01_mapped_core/p00_rtl/imc_fixed_scale.sv
+p00_rtl/imc_buffered_neural_sequencer.sv
+../p03_iteration_core/../p02_search_control/p00_rtl/imc_cached_selector.sv
+../p03_iteration_core/p00_rtl/imc_q17_codec.sv
+../p03_iteration_core/p00_rtl/imc_tree_update.sv
+../p03_iteration_core/p00_rtl/imc_ln_table.sv
+../p03_iteration_core/p00_rtl/imc_isqrt.sv
+../p03_iteration_core/p00_rtl/imc_ucb_score.sv
+p00_rtl/imc_buffered_iteration_core.sv
+p00_rtl/imc_buffered_neural_core.sv

@@ -1,0 +1,140 @@
+{
+  "cacti_22nm_hp": {
+    "bank_bytes": 524288,
+    "banks": {
+      "child_sram": 1,
+      "node_sram": 3
+    },
+    "clock_mhz": 500,
+    "macro": {
+      "access_ns": 0.771699,
+      "area_mm2": 0.382952,
+      "banks": 1,
+      "capacity_bytes": 524288,
+      "cycle_ns": 0.393025,
+      "ecc": false,
+      "flavor": "hp",
+      "gate_leakage_mw": 0.269996,
+      "height_mm": 0.748683,
+      "leakage_mw": 138.710996,
+      "port": "one_read_write",
+      "read_energy_nj": 0.00968358,
+      "subarray": {
+        "columns": 512,
+        "rows": 128
+      },
+      "subthreshold_leakage_mw": 138.441,
+      "tags": false,
+      "technology_nm": 22,
+      "temperature_k": 360.0,
+      "tiling": {
+        "Ndbl": 16.0,
+        "Ndcm": 16.0,
+        "Ndsam_level_1": 4.0,
+        "Ndsam_level_2": 1.0,
+        "Ndwl": 4.0,
+        "Nspd": 64.0
+      },
+      "voltage_v": 0.8,
+      "width_mm": 0.511501,
+      "word_bytes": 4,
+      "write_energy_nj": 0.00672363
+    },
+    "macro_service_cycles": 1,
+    "routing_cycles": 1,
+    "routing_status": "one serialized cycle assumed; area and energy uncharacterized",
+    "scaling": {
+      "applications": 0,
+      "factor": 1,
+      "source_node_nm": 22,
+      "target_node_nm": 22
+    },
+    "source": {
+      "archive_sha256": "bfed924722bb8ebfa0b224741d3955034e1ced7bd1371fbb5472c81c509df9a3",
+      "binary_sha256": "d5d9b8039901cfd2b7ac1f5ae738fbd66d1b17e4f7f7dfebdf7bd89d34d8e810",
+      "cache_key": "415cd1fc2278c4e17c7d8bcc5cc66cd47b479833417cd19349b6e3c74b85fe61",
+      "commit": "1ffd8dfb10303d306ecd8d215320aea07651e878",
+      "config_sha256": "46cfa79ac24dd657157aa00a006d0a28e0a2922827ec14e864dd28865a841e29",
+      "evidence": "p03_experiments/p08_cost_sources/p00_runs/run_20260909_025047Z/p01_cacti/macro_512k_hp22",
+      "patch_sha256": "e7d1ba57db391831e1967e28160643ede85b3581eb4fbc5b8c9a0e47a185562f",
+      "raw_output_sha256": {
+        "memory.cfg": "46cfa79ac24dd657157aa00a006d0a28e0a2922827ec14e864dd28865a841e29",
+        "memory.cfg.out": "935cfcf3d0eaff04a9c1e74635da69e71b8340f8f00dac5f26581c847c70949e",
+        "stderr.txt.gz": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
+        "stdout.txt.gz": "49aa5ece2a44212e588bd595190cc5cca1fb145b3b0a93ee52876ba5a66bba55"
+      },
+      "technology_sha256": "3b1f3f74f1542ae12f3c6ec3fc90074b41c3376218e35088cd9fc54d6576b29b",
+      "tool": "CACTI"
+    },
+    "status": "partial_sram_tool_estimate"
+  },
+  "cacti_22nm_lstp": {
+    "bank_bytes": 524288,
+    "banks": {
+      "child_sram": 1,
+      "node_sram": 3
+    },
+    "clock_mhz": 500,
+    "macro": {
+      "access_ns": 1.89215,
+      "area_mm2": 0.414262,
+      "banks": 1,
+      "capacity_bytes": 524288,
+      "cycle_ns": 1.91559,
+      "ecc": false,
+      "flavor": "lstp",
+      "gate_leakage_mw": 0.0630806,
+      "height_mm": 0.83002,
+      "leakage_mw": 0.1733586,
+      "port": "one_read_write",
+      "read_energy_nj": 0.0111329,
+      "subarray": {
+        "columns": 1024,
+        "rows": 64
+      },
+      "subthreshold_leakage_mw": 0.110278,
+      "tags": false,
+      "technology_nm": 22,
+      "temperature_k": 360.0,
+      "tiling": {
+        "Ndbl": 32.0,
+        "Ndcm": 16.0,
+        "Ndsam_level_1": 8.0,
+        "Ndsam_level_2": 1.0,
+        "Ndwl": 2.0,
+        "Nspd": 64.0
+      },
+      "voltage_v": 0.8,
+      "width_mm": 0.499099,
+      "word_bytes": 4,
+      "write_energy_nj": 0.00775607
+    },
+    "macro_service_cycles": 1,
+    "routing_cycles": 1,
+    "routing_status": "one serialized cycle assumed; area and energy uncharacterized",
+    "scaling": {
+      "applications": 0,
+      "factor": 1,
+      "source_node_nm": 22,
+      "target_node_nm": 22
+    },
+    "source": {
+      "archive_sha256": "bfed924722bb8ebfa0b224741d3955034e1ced7bd1371fbb5472c81c509df9a3",
+      "binary_sha256": "d5d9b8039901cfd2b7ac1f5ae738fbd66d1b17e4f7f7dfebdf7bd89d34d8e810",
+      "cache_key": "e80d4b95b3a3b3defec389050df1f1c67753527e88c085b69b0a487a512ba6f2",
+      "commit": "1ffd8dfb10303d306ecd8d215320aea07651e878",
+      "config_sha256": "b2f77b9f2d4e560ee795d16a65b5b8369786d13c981c554c9665686fe04704af",
+      "evidence": "p03_experiments/p08_cost_sources/p00_runs/run_20260909_025047Z/p01_cacti/macro_512k_lstp22",
+      "patch_sha256": "e7d1ba57db391831e1967e28160643ede85b3581eb4fbc5b8c9a0e47a185562f",
+      "raw_output_sha256": {
+        "memory.cfg": "b2f77b9f2d4e560ee795d16a65b5b8369786d13c981c554c9665686fe04704af",
+        "memory.cfg.out": "4780332628023aaedb27c0c24b5497b8f3e8799828453a83082cfea64d32644d",
+        "stderr.txt.gz": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
+        "stdout.txt.gz": "3787d8e4ee279c3a967876bedbbb84f377a9cc24aab143a1908152f3de8f7de4"
+      },
+      "technology_sha256": "3b1f3f74f1542ae12f3c6ec3fc90074b41c3376218e35088cd9fc54d6576b29b",
+      "tool": "CACTI"
+    },
+    "status": "partial_sram_tool_estimate"
+  }
+}

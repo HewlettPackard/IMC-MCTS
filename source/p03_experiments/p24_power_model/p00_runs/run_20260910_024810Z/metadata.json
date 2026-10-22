@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "checks": {
+    "http_9x9_six_modules": true,
+    "http_3x3_parameter_gaps": true,
+    "http_buffered_parent_difference": true,
+    "v2_area_and_timing_limits_visible": true,
+    "module_coverage_visible": true,
+    "buffer_control_in_parent_not_added_twice": true,
+    "live_costs_match_installed_ledger": true,
+    "live_power_stays_unpriced": true,
+    "reload_preserves_module_costs": true,
+    "export_matches_saved_run": true,
+    "same_trained_go_configuration": true,
+    "go_state_and_traffic_preserved": true,
+    "go_exact_v2_cycle_delta": true,
+    "trained_go_integration": true,
+    "live_timing_limits": true,
+    "v2_controller_profile": true,
+    "complete_and_live_area_match": true,
+    "csv_area_matches_json": true,
+    "csv_native_timing": true,
+    "whole_chip_not_fabricated": true,
+    "ledger_and_missing_energy_visible": true,
+    "ledger_csv_identity": true,
+    "ledger_csv_energy": true,
+    "live_ledger_profile": true,
+    "live_ledger_energy": true,
+    "mobile_no_page_overflow": true,
+    "no_browser_errors": true
+  },
+  "browser_errors": [],
+  "source_sha256": {
+    "p05_studio/p00_app/server.py": "1562af397f5b5dd36fa9e472169cf6ac2e6cfaae74c48872f9c4880f086dc7e1",
+    "p05_studio/p00_app/placement_play.py": "ba387717b6174b2a10d8dd5c5c9066636d62200e5e73fe30bde3904f56e055be",
+    "p05_studio/p01_static/index.html": "d7d5a24edcffe32913fd5e11f890b04b1337ce48b582240e2c51e53213efb1cf",
+    "p05_studio/p01_static/style.css": "93806adbe55274a4ddb96f18fd702803371c7e59180a6977ca4ccd5e07158bbc",
+    "p05_studio/p01_static/app.js": "c509571fec7f753b01689b08a8ffa5074d9e4f7a7683233efb63dd71f06a09ef"
+  }
+}

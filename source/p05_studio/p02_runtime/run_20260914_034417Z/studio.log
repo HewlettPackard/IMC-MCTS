@@ -1,0 +1,83 @@
+IMC-MCTS Studio: http://127.0.0.1:4783
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /visuals.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /api/catalog HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /api/models HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /api/runs HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /favicon.ico HTTP/1.1" 204 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /api/plays HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /api/components?board=9&memory=cacti_22nm_lstp&readout=sustained_drive_v1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:43] "GET /api/crossbar?size=256 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:44] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:44:44] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:58:19] "GET /api/runs HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:58:19] "GET /api/plays HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:58:20] "GET /api/runs HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:58:20] "GET /api/plays HTTP/1.1" 200 -
+127.0.0.1 - - [13/Sep/2026 23:58:39] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /visuals.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /api/catalog HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /api/models HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /api/runs HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /api/plays HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /api/components?board=9&memory=cacti_22nm_lstp&readout=sustained_drive_v1 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /api/crossbar?size=256 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 00:02:20] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:37] "GET /visuals.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:37] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:37] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:37] "GET /api/catalog HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:37] "GET /api/models HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:37] "GET /api/runs HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:37] "GET /api/plays HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:38] "GET /api/components?board=9&memory=cacti_22nm_lstp&readout=sustained_drive_v1 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:38] "GET /api/crossbar?size=256 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:38] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:16:38] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:45:51] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:56:07] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:57:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:57:16] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:57:16] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:57:16] "GET /visuals.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:57:16] "GET /api/catalog HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:57:16] "GET /api/models HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:57:16] "GET /api/runs HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:57:16] "GET /api/plays HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:57:17] "GET /api/components?board=9&memory=cacti_22nm_lstp&readout=sustained_drive_v1&model=random_diagnostic HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:57:17] "GET /api/crossbar?size=256 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:57:17] "GET /api/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:57:17] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:58:22] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [14/Sep/2026 14:58:22] "GET /api/session HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p05_studio/p00_app/server.py", line 405, in <module>
+    if __name__=='__main__':
+                             
+  File "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p03_reference_repair/p05_studio/p00_app/server.py", line 400, in serve
+    server=ThreadingHTTPServer(('127.0.0.1',port),Handler); server.studio=Studio(runs)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tmolomochir/miniforge3/lib/python3.12/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tmolomochir/miniforge3/lib/python3.12/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

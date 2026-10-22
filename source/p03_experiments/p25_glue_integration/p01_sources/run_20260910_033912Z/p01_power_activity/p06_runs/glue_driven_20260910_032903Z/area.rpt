@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : imc_iteration_glue
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 23:29:37 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                         5890
+Number of nets:                          5664
+Number of cells:                         2789
+Number of combinational cells:           2250
+Number of sequential cells:               539
+Number of macros/black boxes:               0
+Number of buf/inv:                        709
+Number of references:                     107
+
+Combinational area:               6358.080040
+Buf/Inv area:                     1088.160038
+Noncombinational area:            6241.920216
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 12600.000255
+Total area:                      12600.000255
+1

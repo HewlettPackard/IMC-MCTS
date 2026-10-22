@@ -1,0 +1,21 @@
+{
+  "scope": "Connected digital paths; not full MCTS core or analog validation",
+  "rtl_source_sha256": {
+    "rtl_synthesis/p01_mapped_core/p00_rtl/imc_round_divider.sv": "ca0ec9dae66448e91a3432dfc295568ea2d4d39574b264bd00a8e66243b3200b",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_q17_codec.sv": "01ee00551b6ebc3162410dabfa0185a5ead7797e95f7f5edc4e1d8798888625c",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_ln_table.sv": "a6bc7783b141cb52f6bb73896fd5c05522fbec6d130078d639400333c2b5c26e",
+    "rtl_synthesis/p03_iteration_core/p00_rtl/imc_isqrt.sv": "c740195f20a84d567626b8db81a81d70064ec506d70bea112286c8c34f04bc9d",
+    "rtl_synthesis/p06_ucb_overlap/p00_rtl/imc_ucb_score_overlap.sv": "9c7b6cf3dee536d31fae5fef8a1c46e2c72e36bab4c214a5e518fc2af2bf68c3",
+    "rtl_synthesis/p07_parallel_characterization/p00_rtl/imc_candidate_banks.sv": "fe7dd932f9258aee71fd857bbbc6cbd9b1cc7c4af2dbe2d1f8591edad5b83e4f",
+    "rtl_synthesis/p07_parallel_characterization/p00_rtl/imc_shift_add_lane.sv": "cc8a318a29bc3d6fb41094a92d98f37b94cd5caf9beed18268b8e9aa342ac2f6",
+    "rtl_synthesis/p07_parallel_characterization/p00_rtl/imc_accumulator_bank.sv": "830719c3cced882c64b6cc0ff9a8b69fa746e851fd212617a05bff9be6c2aa8b",
+    "rtl_synthesis/p07_parallel_characterization/p00_rtl/imc_parallel_accumulators.sv": "d8b91e965afe62e4d73295623b21c5d95cb87b6a730fca406d902b8b96c23de1",
+    "rtl_synthesis/p07_parallel_characterization/p00_rtl/imc_parallel_result_banks.sv": "2ceec033323443e30a726de9d5f5eb31d91a9336e9762dae3a1e6073f8dc4dab",
+    "rtl_synthesis/p07_parallel_characterization/p00_rtl/imc_ucb_batch16_overlap.sv": "03d9c23d05e414fc93663f2f202a5ae1568eb724b865a2226afd5dc293c3680f",
+    "rtl_synthesis/p08_connected_paths/p00_rtl/imc_selection_path.sv": "62573ef72e9427ae9124f67229ba1724c86ec56e266c2733cf9cef9675dceb7a",
+    "rtl_synthesis/p08_connected_paths/p00_rtl/imc_readout_path.sv": "0a3bb4bbfd7cd719e99a353a25f80a5d49d3b86a1ba9e1eeb5489d84faf5e486"
+  },
+  "retained_trained_input_run": "/Users/tmolomochir/Documents/ChatGPT/HPE/p14_parallel_cost_repair/p10_integrity_activity/p02_runs/run_20261010_054749Z",
+  "activity_power_scope": "Three predetermined RTL windows, not full-move weighting or gate-level power",
+  "physical_results": "PENDING"
+}

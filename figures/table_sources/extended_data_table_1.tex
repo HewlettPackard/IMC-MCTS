@@ -1,0 +1,23 @@
+\begin{table*}[!htbp]
+\centering
+\caption{\textbf{MCTS phase breakdown on central processing unit (CPU) vs.\ graphics processing unit (GPU) at $9{\times}9$ Go (5{,}000 iterations).} Bold cells mark the per-platform bottleneck. Measured on AMD Ryzen Threadripper PRO 5945WX and NVIDIA H100 80\,GB High Bandwidth Memory 3 (HBM3). \textcolor{blue}{The traditional GPU column uses GPU-Max (8 trees, 128 playouts); its backpropagation row (2{,}482\,ms, 68.2\%) reflects per-iteration Compute Unified Device Architecture (CUDA) kernel-launch overhead and global-memory counter-update contention in the \texttt{mcts\_numba\_cuda} reference. The neural GPU column uses single-position search: CUDA Basic Linear Algebra Subprograms (cuBLAS) evaluates one leaf at a time, while the host CPU updates tree statistics. The reported 0.14\,ms backpropagation time therefore describes a different execution path.} The Other/overhead row collects scheduler, launch, measurement and rounding overhead not attributable to one MCTS phase.}
+\label{edt:phase_breakdown}
+\footnotesize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+\textbf{Phase} & \multicolumn{2}{c}{\textbf{Traditional MCTS}} & \multicolumn{2}{c}{\textbf{Neural MCTS}} & \textbf{Bottleneck} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+               & \textbf{CPU (AMD)} & \textcolor{blue}{\textbf{\shortstack{H100\\GPU-Max}}} & \textbf{CPU (AMD)} & \textcolor{blue}{\textbf{\shortstack{H100\\single-position}}} & \\
+\midrule
+Selection      & 5.88\,ms (5.3\%)     & 188.5\,ms (5.2\%)         & 7.43\,ms (11.6\%)    & 4.04\,ms (1.7\%)      & Hash lookup \\
+Expansion      & 8.68\,ms (7.8\%)     & 556.8\,ms (15.3\%)        & 5.63\,ms (8.8\%)     & 7.42\,ms (3.1\%)      & Thread divergence \\
+Rollout        & \textbf{95.5\,ms (86.3\%)}    & 281.6\,ms (7.7\%)         & \textbf{50.6\,ms (78.8\%)}    & \textbf{227.8\,ms (95.0\%)}    & Compute-bound \\
+Backprop       & 0.11\,ms (0.1\%)     & \textbf{2{,}482.2\,ms (68.2\%)}       & 0.12\,ms (0.2\%)     & 0.14\,ms (0.1\%)      & Memory bandwidth \\
+Other/overhead & 0.43\,ms (0.4\%)     & 129.9\,ms (3.6\%)         & 0.52\,ms (0.8\%)     & 0.40\,ms (0.2\%)      & Scheduler/launch \\
+\midrule
+\textbf{Total} & \textbf{110.6\,ms}   & \textbf{3{,}639.0\,ms}       & \textbf{64.3\,ms}    & \textbf{239.8\,ms}    & --- \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

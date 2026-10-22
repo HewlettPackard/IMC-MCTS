@@ -1,0 +1,679 @@
+{
+  "phase": "complete_core_gates",
+  "status": "passed",
+  "started_utc": "2026-09-09T06:05:47.369956+00:00",
+  "starting_checkpoint": "e9314636d73e28d0c94553afbbc7d002b849ce6a",
+  "python": "3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:38:53) [Clang 18.1.8 ]",
+  "commands": [
+    {
+      "check": "version_iverilog",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-V"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "version_vvp",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "-V"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "version_verilator",
+      "argv": [
+        "/opt/homebrew/bin/verilator",
+        "--version"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "version_yosys",
+      "argv": [
+        "/opt/homebrew/bin/yosys",
+        "-V"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_lint",
+      "argv": [
+        "/opt/homebrew/bin/verilator",
+        "--lint-only",
+        "-Wall",
+        "--top-module",
+        "imc_iteration_core",
+        "-GBOARD_SIZE=2",
+        "-GCAM_ENTRIES=7",
+        "-GHIDDEN=5",
+        "-f",
+        "filelist.f"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_synth",
+      "argv": [
+        "/opt/homebrew/bin/yosys",
+        "-Q",
+        "-T",
+        "-s",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/small.ys"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_s0_f0_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_iteration_core",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/small_s0_f0.vvp",
+        "-Ptb_imc_iteration_core.BOARD_SIZE=2",
+        "-Ptb_imc_iteration_core.CAM_ENTRIES=7",
+        "-Ptb_imc_iteration_core.HIDDEN=5",
+        "-Ptb_imc_iteration_core.STALL=0",
+        "-Ptb_imc_iteration_core.FAULT=0",
+        "-DIMC_POST_SYNTH",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/small.gates.v",
+        "p01_tests/tb_imc_iteration_core.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_s0_f0_test",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/small_s0_f0.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/small",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/small_s0_f0.events.csv",
+        "+COUNT=1679",
+        "+ADC=468",
+        "+ITERATIONS=12",
+        "+HIDDEN_SHIFT=0",
+        "+LOGIT_SHIFT=7",
+        "+NODES=55581",
+        "+EDGES=131072",
+        "+PATH=5"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_s1_f0_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_iteration_core",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/small_s1_f0.vvp",
+        "-Ptb_imc_iteration_core.BOARD_SIZE=2",
+        "-Ptb_imc_iteration_core.CAM_ENTRIES=7",
+        "-Ptb_imc_iteration_core.HIDDEN=5",
+        "-Ptb_imc_iteration_core.STALL=1",
+        "-Ptb_imc_iteration_core.FAULT=0",
+        "-DIMC_POST_SYNTH",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/small.gates.v",
+        "p01_tests/tb_imc_iteration_core.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "small_s1_f0_test",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/small_s1_f0.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/small",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/small_s1_f0.events.csv",
+        "+COUNT=1679",
+        "+ADC=468",
+        "+ITERATIONS=12",
+        "+HIDDEN_SHIFT=0",
+        "+LOGIT_SHIFT=7",
+        "+NODES=55581",
+        "+EDGES=131072",
+        "+PATH=5"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "ragged_lint",
+      "argv": [
+        "/opt/homebrew/bin/verilator",
+        "--lint-only",
+        "-Wall",
+        "--top-module",
+        "imc_iteration_core",
+        "-GBOARD_SIZE=9",
+        "-GCAM_ENTRIES=1024",
+        "-GHIDDEN=96",
+        "-f",
+        "filelist.f"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "ragged_synth",
+      "argv": [
+        "/opt/homebrew/bin/yosys",
+        "-Q",
+        "-T",
+        "-s",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/ragged.ys"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "ragged_s0_f0_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_iteration_core",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/ragged_s0_f0.vvp",
+        "-Ptb_imc_iteration_core.BOARD_SIZE=9",
+        "-Ptb_imc_iteration_core.CAM_ENTRIES=1024",
+        "-Ptb_imc_iteration_core.HIDDEN=96",
+        "-Ptb_imc_iteration_core.STALL=0",
+        "-Ptb_imc_iteration_core.FAULT=0",
+        "-DIMC_POST_SYNTH",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/ragged.gates.v",
+        "p01_tests/tb_imc_iteration_core.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "ragged_s0_f0_test",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/ragged_s0_f0.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/ragged",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/ragged_s0_f0.events.csv",
+        "+COUNT=1461",
+        "+ADC=11277",
+        "+ITERATIONS=7",
+        "+HIDDEN_SHIFT=3",
+        "+LOGIT_SHIFT=1",
+        "+NODES=32075",
+        "+EDGES=131072",
+        "+PATH=82"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "ragged_s1_f0_compile",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tb_imc_iteration_core",
+        "-o",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/ragged_s1_f0.vvp",
+        "-Ptb_imc_iteration_core.BOARD_SIZE=9",
+        "-Ptb_imc_iteration_core.CAM_ENTRIES=1024",
+        "-Ptb_imc_iteration_core.HIDDEN=96",
+        "-Ptb_imc_iteration_core.STALL=1",
+        "-Ptb_imc_iteration_core.FAULT=0",
+        "-DIMC_POST_SYNTH",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/ragged.gates.v",
+        "p01_tests/tb_imc_iteration_core.sv"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    },
+    {
+      "check": "ragged_s1_f0_test",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/ragged_s1_f0.vvp",
+        "+FIXTURE=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/ragged",
+        "+EVENTS=/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/p03_experiments/p12_complete_core/p00_runs/run_20260909_060547Z/p01_checks/ragged_s1_f0.events.csv",
+        "+COUNT=1461",
+        "+ADC=11277",
+        "+ITERATIONS=7",
+        "+HIDDEN_SHIFT=3",
+        "+LOGIT_SHIFT=1",
+        "+NODES=32075",
+        "+EDGES=131072",
+        "+PATH=82"
+      ],
+      "cwd": "/Users/tmolomochir/Documents/PROJECTS_Graduate/01_Research/HPE Labs/IMC-MCTS-repair/p01_working_copy/rtl_synthesis/p03_iteration_core",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_s": 600
+    }
+  ],
+  "checks": {
+    "tools_present": true,
+    "version_iverilog": true,
+    "version_vvp": true,
+    "version_verilator": true,
+    "version_yosys": true,
+    "small_lint": true,
+    "small_synth": true,
+    "small_s0_f0_compile": true,
+    "small_s0_f0_test": true,
+    "small_s0_f0_completed": true,
+    "small_s0_f0_iteration_1_phase_cycles": true,
+    "small_s0_f0_iteration_2_phase_cycles": true,
+    "small_s0_f0_iteration_3_phase_cycles": true,
+    "small_s0_f0_iteration_4_phase_cycles": true,
+    "small_s0_f0_iteration_5_phase_cycles": true,
+    "small_s0_f0_iteration_6_phase_cycles": true,
+    "small_s0_f0_iteration_7_phase_cycles": true,
+    "small_s0_f0_iteration_8_phase_cycles": true,
+    "small_s0_f0_iteration_9_phase_cycles": true,
+    "small_s0_f0_iteration_10_phase_cycles": true,
+    "small_s0_f0_iteration_11_phase_cycles": true,
+    "small_s0_f0_iteration_12_phase_cycles": true,
+    "small_s1_f0_compile": true,
+    "small_s1_f0_test": true,
+    "small_s1_f0_completed": true,
+    "ragged_lint": true,
+    "ragged_synth": true,
+    "ragged_s0_f0_compile": true,
+    "ragged_s0_f0_test": true,
+    "ragged_s0_f0_completed": true,
+    "ragged_s0_f0_iteration_1_phase_cycles": true,
+    "ragged_s0_f0_iteration_2_phase_cycles": true,
+    "ragged_s0_f0_iteration_3_phase_cycles": true,
+    "ragged_s0_f0_iteration_4_phase_cycles": true,
+    "ragged_s0_f0_iteration_5_phase_cycles": true,
+    "ragged_s0_f0_iteration_6_phase_cycles": true,
+    "ragged_s0_f0_iteration_7_phase_cycles": true,
+    "ragged_s1_f0_compile": true,
+    "ragged_s1_f0_test": true,
+    "ragged_s1_f0_completed": true,
+    "tested_sources_unchanged": true
+  },
+  "benchmarks_executed": false,
+  "physical_ppa_adopted": false,
+  "results": [
+    {
+      "case": "small",
+      "stall": 0,
+      "fault": 0,
+      "generic_netlist": true,
+      "iterations": [
+        {
+          "iteration": 1,
+          "cycle_end": 979,
+          "selected_node": 0,
+          "nodes": 1,
+          "edges": 0,
+          "value_q17": 65535
+        },
+        {
+          "iteration": 2,
+          "cycle_end": 2146,
+          "selected_node": 4,
+          "nodes": 5,
+          "edges": 4,
+          "value_q17": 65365
+        },
+        {
+          "iteration": 3,
+          "cycle_end": 3327,
+          "selected_node": 1,
+          "nodes": 5,
+          "edges": 4,
+          "value_q17": 65535
+        },
+        {
+          "iteration": 4,
+          "cycle_end": 4721,
+          "selected_node": 2,
+          "nodes": 5,
+          "edges": 4,
+          "value_q17": 65277
+        },
+        {
+          "iteration": 5,
+          "cycle_end": 6386,
+          "selected_node": 3,
+          "nodes": 5,
+          "edges": 4,
+          "value_q17": 65025
+        },
+        {
+          "iteration": 6,
+          "cycle_end": 8703,
+          "selected_node": 6,
+          "nodes": 8,
+          "edges": 7,
+          "value_q17": 65535
+        },
+        {
+          "iteration": 7,
+          "cycle_end": 11020,
+          "selected_node": 9,
+          "nodes": 11,
+          "edges": 10,
+          "value_q17": 65280
+        },
+        {
+          "iteration": 8,
+          "cycle_end": 13337,
+          "selected_node": 12,
+          "nodes": 14,
+          "edges": 13,
+          "value_q17": 65878
+        },
+        {
+          "iteration": 9,
+          "cycle_end": 15654,
+          "selected_node": 15,
+          "nodes": 17,
+          "edges": 16,
+          "value_q17": 65025
+        },
+        {
+          "iteration": 10,
+          "cycle_end": 18003,
+          "selected_node": 11,
+          "nodes": 17,
+          "edges": 16,
+          "value_q17": 65107
+        },
+        {
+          "iteration": 11,
+          "cycle_end": 20386,
+          "selected_node": 5,
+          "nodes": 17,
+          "edges": 16,
+          "value_q17": 65535
+        },
+        {
+          "iteration": 12,
+          "cycle_end": 22851,
+          "selected_node": 8,
+          "nodes": 17,
+          "edges": 16,
+          "value_q17": 65025
+        }
+      ]
+    },
+    {
+      "case": "small",
+      "stall": 1,
+      "fault": 0,
+      "generic_netlist": true,
+      "iterations": [
+        {
+          "iteration": 1,
+          "cycle_end": 1130,
+          "selected_node": 0,
+          "nodes": 1,
+          "edges": 0,
+          "value_q17": 65535
+        },
+        {
+          "iteration": 2,
+          "cycle_end": 2576,
+          "selected_node": 4,
+          "nodes": 5,
+          "edges": 4,
+          "value_q17": 65365
+        },
+        {
+          "iteration": 3,
+          "cycle_end": 4024,
+          "selected_node": 1,
+          "nodes": 5,
+          "edges": 4,
+          "value_q17": 65535
+        },
+        {
+          "iteration": 4,
+          "cycle_end": 5674,
+          "selected_node": 2,
+          "nodes": 5,
+          "edges": 4,
+          "value_q17": 65277
+        },
+        {
+          "iteration": 5,
+          "cycle_end": 7624,
+          "selected_node": 3,
+          "nodes": 5,
+          "edges": 4,
+          "value_q17": 65025
+        },
+        {
+          "iteration": 6,
+          "cycle_end": 10344,
+          "selected_node": 6,
+          "nodes": 8,
+          "edges": 7,
+          "value_q17": 65535
+        },
+        {
+          "iteration": 7,
+          "cycle_end": 13074,
+          "selected_node": 9,
+          "nodes": 11,
+          "edges": 10,
+          "value_q17": 65280
+        },
+        {
+          "iteration": 8,
+          "cycle_end": 15804,
+          "selected_node": 12,
+          "nodes": 14,
+          "edges": 13,
+          "value_q17": 65878
+        },
+        {
+          "iteration": 9,
+          "cycle_end": 18534,
+          "selected_node": 15,
+          "nodes": 17,
+          "edges": 16,
+          "value_q17": 65025
+        },
+        {
+          "iteration": 10,
+          "cycle_end": 21309,
+          "selected_node": 11,
+          "nodes": 17,
+          "edges": 16,
+          "value_q17": 65107
+        },
+        {
+          "iteration": 11,
+          "cycle_end": 24129,
+          "selected_node": 5,
+          "nodes": 17,
+          "edges": 16,
+          "value_q17": 65535
+        },
+        {
+          "iteration": 12,
+          "cycle_end": 27113,
+          "selected_node": 8,
+          "nodes": 17,
+          "edges": 16,
+          "value_q17": 65025
+        }
+      ]
+    },
+    {
+      "case": "ragged",
+      "stall": 0,
+      "fault": 0,
+      "generic_netlist": true,
+      "iterations": [
+        {
+          "iteration": 1,
+          "cycle_end": 26708,
+          "selected_node": 0,
+          "nodes": 1,
+          "edges": 0,
+          "value_q17": 67301
+        },
+        {
+          "iteration": 2,
+          "cycle_end": 53707,
+          "selected_node": 1,
+          "nodes": 4,
+          "edges": 3,
+          "value_q17": 70186
+        },
+        {
+          "iteration": 3,
+          "cycle_end": 80874,
+          "selected_node": 2,
+          "nodes": 4,
+          "edges": 3,
+          "value_q17": 67096
+        },
+        {
+          "iteration": 4,
+          "cycle_end": 108263,
+          "selected_node": 3,
+          "nodes": 4,
+          "edges": 3,
+          "value_q17": 70463
+        },
+        {
+          "iteration": 5,
+          "cycle_end": 136106,
+          "selected_node": 5,
+          "nodes": 6,
+          "edges": 5,
+          "value_q17": 69667
+        },
+        {
+          "iteration": 6,
+          "cycle_end": 163949,
+          "selected_node": 6,
+          "nodes": 8,
+          "edges": 7,
+          "value_q17": 69609
+        },
+        {
+          "iteration": 7,
+          "cycle_end": 191792,
+          "selected_node": 9,
+          "nodes": 10,
+          "edges": 9,
+          "value_q17": 71235
+        }
+      ]
+    },
+    {
+      "case": "ragged",
+      "stall": 1,
+      "fault": 0,
+      "generic_netlist": true,
+      "iterations": [
+        {
+          "iteration": 1,
+          "cycle_end": 29960,
+          "selected_node": 0,
+          "nodes": 1,
+          "edges": 0,
+          "value_q17": 67301
+        },
+        {
+          "iteration": 2,
+          "cycle_end": 60424,
+          "selected_node": 1,
+          "nodes": 4,
+          "edges": 3,
+          "value_q17": 70186
+        },
+        {
+          "iteration": 3,
+          "cycle_end": 90994,
+          "selected_node": 2,
+          "nodes": 4,
+          "edges": 3,
+          "value_q17": 67096
+        },
+        {
+          "iteration": 4,
+          "cycle_end": 121774,
+          "selected_node": 3,
+          "nodes": 4,
+          "edges": 3,
+          "value_q17": 70463
+        },
+        {
+          "iteration": 5,
+          "cycle_end": 153173,
+          "selected_node": 5,
+          "nodes": 6,
+          "edges": 5,
+          "value_q17": 69667
+        },
+        {
+          "iteration": 6,
+          "cycle_end": 184584,
+          "selected_node": 6,
+          "nodes": 8,
+          "edges": 7,
+          "value_q17": 69609
+        },
+        {
+          "iteration": 7,
+          "cycle_end": 215994,
+          "selected_node": 9,
+          "nodes": 10,
+          "edges": 9,
+          "value_q17": 71235
+        }
+      ]
+    }
+  ],
+  "finished_utc": "2026-09-09T06:25:08.968261+00:00"
+}

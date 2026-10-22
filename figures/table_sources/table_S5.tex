@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+% CHANGED: approved correction, historical MAC table.
+\caption{\textcolor{blue}{Primitive-level comparison under separate device and workload conditions. The entry labelled ``Ours\textquotesingle\textquotesingle{} and ratios derived from it are not verified for the present mapping or accounting boundary; they do not represent a complete-search or complete-chip comparison.}}
+\label{tab:supp_crossbar_vs_digital}
+\setlength{\tabcolsep}{3pt}
+\footnotesize
+\begin{tabular}{l ccccc}
+\toprule
+                  & \textbf{ISAAC}\cite{shafiee2016isaac} & \textbf{Eyeriss}\cite{chen2017eyeriss} & \textbf{TPU v1}\cite{jouppi2017tpu} & \textbf{DiP}\cite{abdelmaksoud2025dip} & \textbf{Ours} \\
+\midrule
+Node              & 32\,nm           & 65\,nm           & 28\,nm          & 22\,nm        & 22\,nm \\
+Paradigm          & Analog IMC     & Digital          & Digital         & Digital       & Analog IMC \\
+pJ/MAC            & 1.5--2.0         & 8.3--20          & 0.43--2.0       & 1.0$^{a}$     & \textbf{0.308} \\
+TOPS/W            & 0.5--0.7         & 0.12             & 2.3             & 9.6$^{b}$     & \textcolor{blue}{\textbf{6.49}$^{d}$} \\
+Rel.\ energy$^{c}$ & 4.9--6.5$\times$ & 27--65$\times$ & 1.4--6.5$\times$ & 3.2$\times$ & \textbf{1$\times$} \\
+\bottomrule
+\end{tabular}
+\par\vspace{0.3em}
+{\scriptsize $^{a}$ DiP at low utilization ($<$10\%) for small networks. $\quad$ $^{b}$ DiP peak for large workloads (4{,}096 PEs). $\quad$ $^{c}$ Relative to this work at MCTS scale; higher is worse. \textcolor{blue}{$^{d}$ Arithmetic conversion of the historical 0.308-pJ/MAC entry, counting a multiply and an add as two operations: $2/0.308=6.49$\,TOPS/W. Its reciprocal, 3.25, has units of TMAC/s/W. This conversion does not validate the underlying energy estimate; operation definitions and operating conditions in the other columns have not been harmonized.}}
+\end{table}

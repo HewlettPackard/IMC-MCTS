@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : imc_cached_selector_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 15:58:37 2026
+****************************************
+
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                         1884
+Number of nets:                         19985
+Number of cells:                        18475
+Number of combinational cells:          13830
+Number of sequential cells:              4645
+Number of macros/black boxes:               0
+Number of buf/inv:                       2315
+Number of references:                     178
+
+Combinational area:              44155.680163
+Buf/Inv area:                     3935.520106
+Noncombinational area:           55771.199982
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 99926.880144
+Total area:                      99926.880144
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------
+imc_cached_selector_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21 99926.8801   100.0 44155.6802 55771.2000 0.0000 imc_cached_selector_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------
+Total                                                  44155.6802  55771.2000  0.0000
+
+1

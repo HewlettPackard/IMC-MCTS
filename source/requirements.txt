@@ -1,0 +1,4 @@
+# Runtime dependencies for the CPU-only public package.
+# Prefer `python -m pip install -e .` so package metadata remains the single
+# source of truth. Optional extras live in `pyproject.toml`.
+numpy>=1.22

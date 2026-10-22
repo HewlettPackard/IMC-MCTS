@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : area
+Design : imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 19:55:09 2026
+****************************************
+
+Library(s) Used:
+
+    sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c (File: /home/PDK/TSMC65/ARM/core_fb/db/sc12_cln65gplus_base_rvt_tt_typical_max_1p00v_25c.db)
+
+Number of ports:                          875
+Number of nets:                         16295
+Number of cells:                        15445
+Number of combinational cells:          14493
+Number of sequential cells:               951
+Number of macros/black boxes:               0
+Number of buf/inv:                       3217
+Number of references:                     374
+
+Combinational area:              58104.960379
+Buf/Inv area:                     7347.360130
+Noncombinational area:           11688.479908
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 69793.440287
+Total area:                      69793.440287
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  -------------
+imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21 69793.4403   100.0 53109.6004 11688.4799 0.0000 imc_tree_update_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21
+u_codec                            4995.3600      7.2   4995.3600      0.0000  0.0000  imc_q17_codec
+--------------------------------  ----------  -------  ----------  ----------  ------  -------------
+Total                                                  58104.9604  11688.4799  0.0000
+
+1

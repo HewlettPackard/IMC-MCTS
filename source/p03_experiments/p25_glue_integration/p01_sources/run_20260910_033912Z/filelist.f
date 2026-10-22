@@ -1,0 +1,17 @@
+imc_shift_accumulator.sv
+imc_round_divider.sv
+imc_sram_router.sv
+imc_fixed_scale.sv
+imc_neural_sequencer.sv
+imc_cached_selector.sv
+imc_q17_codec.sv
+imc_tree_update.sv
+imc_ln_table.sv
+imc_isqrt.sv
+imc_ucb_score.sv
+imc_iteration_core.sv
+imc_column_hold_control.sv
+imc_buffered_neural_sequencer.sv
+imc_buffered_iteration_core.sv
+imc_buffered_neural_core.sv
+imc_neural_core.sv

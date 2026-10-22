@@ -1,0 +1,470 @@
+{
+  "prepared_utc": "2026-10-19T01:35:39.188556+00:00",
+  "validation_location": "Refreshed package assembly with isolated native-test and Studio copies; final archive transport checks recorded separately in the preparation dossier.",
+  "dependency_installation": "Existing tested dependencies; no fresh online dependency installation.",
+  "hero": {
+    "board_size": 9,
+    "iterations": 5000,
+    "model_id": "go_strong_v1",
+    "status": "PASS",
+    "cycles": 27593493,
+    "checked_hashes": [
+      "tree_sha256",
+      "node_sram_sha256",
+      "child_sram_sha256",
+      "events_sha256",
+      "neural_trace_sha256"
+    ],
+    "host_seconds": 17.563834749998932,
+    "hardware_latency_ms": 55.186986
+  },
+  "scaling": [
+    {
+      "board_size": 2,
+      "iterations": 50,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 131407,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 0.41376370799844153,
+      "hardware_latency_ms": 0.262814
+    },
+    {
+      "board_size": 2,
+      "iterations": 200,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 602423,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 0.6226477500022156,
+      "hardware_latency_ms": 1.204846
+    },
+    {
+      "board_size": 2,
+      "iterations": 400,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 1303256,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 0.7615759159998561,
+      "hardware_latency_ms": 2.606512
+    },
+    {
+      "board_size": 3,
+      "iterations": 75,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 198049,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 0.33210125000186963,
+      "hardware_latency_ms": 0.396098
+    },
+    {
+      "board_size": 3,
+      "iterations": 500,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 1546989,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 0.8957930840006156,
+      "hardware_latency_ms": 3.093978
+    },
+    {
+      "board_size": 3,
+      "iterations": 1000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 3269476,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 1.6348582919999899,
+      "hardware_latency_ms": 6.538952
+    },
+    {
+      "board_size": 5,
+      "iterations": 100,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 306138,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 0.41562395799701335,
+      "hardware_latency_ms": 0.612276
+    },
+    {
+      "board_size": 5,
+      "iterations": 1000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 3619022,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 2.177003959001013,
+      "hardware_latency_ms": 7.238044
+    },
+    {
+      "board_size": 5,
+      "iterations": 2000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 7992108,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 6.044507665999845,
+      "hardware_latency_ms": 15.984216
+    },
+    {
+      "board_size": 9,
+      "iterations": 500,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 2554991,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 2.831315415998688,
+      "hardware_latency_ms": 5.109982
+    },
+    {
+      "board_size": 9,
+      "iterations": 5000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 27322991,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 19.180143000001408,
+      "hardware_latency_ms": 54.645982
+    },
+    {
+      "board_size": 9,
+      "iterations": 10000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 66853167,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 48.365805292000005,
+      "hardware_latency_ms": 133.706334
+    },
+    {
+      "board_size": 13,
+      "iterations": 1000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 7854384,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 8.475965583998914,
+      "hardware_latency_ms": 15.708768
+    },
+    {
+      "board_size": 13,
+      "iterations": 7500,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 63780384,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 41.311217166999995,
+      "hardware_latency_ms": 127.560768
+    },
+    {
+      "board_size": 13,
+      "iterations": 15000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 128310384,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 95.60934466600156,
+      "hardware_latency_ms": 256.620768
+    },
+    {
+      "board_size": 19,
+      "iterations": 2000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 28056198,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 31.10134087500046,
+      "hardware_latency_ms": 56.112396
+    },
+    {
+      "board_size": 19,
+      "iterations": 10000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 153432198,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 95.82020870799897,
+      "hardware_latency_ms": 306.864396
+    },
+    {
+      "board_size": 19,
+      "iterations": 20000,
+      "model_id": "random_diagnostic",
+      "status": "PASS",
+      "cycles": 310152198,
+      "checked_hashes": [
+        "tree_sha256",
+        "node_sram_sha256",
+        "child_sram_sha256",
+        "events_sha256",
+        "neural_trace_sha256"
+      ],
+      "host_seconds": 114.54326716599826,
+      "hardware_latency_ms": 620.304396
+    }
+  ],
+  "retained_data_checks": {
+    "saved_searches": 19,
+    "diagnostic_cases": 18,
+    "application_ledgers": 8,
+    "archived_processor_means": 8,
+    "ratio_records": 10,
+    "figure3d": "ON_HOLD_EXCLUDED",
+    "figure4a": "ARCHIVED_DATA_REPLOT_ONLY"
+  },
+  "figures": {
+    "status": "passed",
+    "frozen_inputs_checked": 43,
+    "figure3d": "ON_HOLD_EXCLUDED",
+    "targets": [
+      "plot_fig2de.py",
+      "plot_fig3a.py",
+      "plot_fig3b.py",
+      "plot_fig3c.py",
+      "plot_fig4.py",
+      "plot_extended_bottleneck.py"
+    ],
+    "derived_fig3c_ratios_match": true,
+    "scope": "Replot archived CSVs. No new search, training, benchmark, tournament or simulator cost calculation.",
+    "render_comparisons": [
+      {
+        "id": "Fig2d",
+        "pixels_match": true,
+        "reference_pixels": [
+          689,
+          452
+        ],
+        "regenerated_pixels": [
+          689,
+          452
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "Fig2e",
+        "pixels_match": true,
+        "reference_pixels": [
+          689,
+          452
+        ],
+        "regenerated_pixels": [
+          689,
+          452
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "Fig3a",
+        "pixels_match": true,
+        "reference_pixels": [
+          688,
+          359
+        ],
+        "regenerated_pixels": [
+          688,
+          359
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "Fig3b",
+        "pixels_match": true,
+        "reference_pixels": [
+          539,
+          369
+        ],
+        "regenerated_pixels": [
+          539,
+          369
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "Fig3c",
+        "pixels_match": true,
+        "reference_pixels": [
+          532,
+          367
+        ],
+        "regenerated_pixels": [
+          532,
+          367
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "Fig4a",
+        "pixels_match": true,
+        "reference_pixels": [
+          629,
+          369
+        ],
+        "regenerated_pixels": [
+          629,
+          369
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "Fig4b",
+        "pixels_match": true,
+        "reference_pixels": [
+          629,
+          369
+        ],
+        "regenerated_pixels": [
+          629,
+          369
+        ],
+        "mean_absolute_difference": 0.0
+      },
+      {
+        "id": "ExtendedDataFig1",
+        "pixels_match": true,
+        "reference_pixels": [
+          692,
+          390
+        ],
+        "regenerated_pixels": [
+          692,
+          390
+        ],
+        "mean_absolute_difference": 0.0
+      }
+    ],
+    "all_rendered_pixels_match": true
+  },
+  "native_tests": {
+    "executed": 311,
+    "passed": 311,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "legacy_runtime_validation": {
+    "Python 3.10.4 / NumPy 1.26.4 / OpenBLAS": "6 reproducibility tests and 7 negative-control tests passed",
+    "Python 3.12.11 / NumPy 2.3.5 / Accelerate": "311 full native tests passed; active checkout 6-test reproducibility module also passed",
+    "production_raw_hashes_unchanged": true,
+    "contract": "Exact complete discrete search, visits, boards, ordering, completion and cycles; all visited values rtol=1e-14, atol=2e-14; all values finite and unvisited values zero."
+  },
+  "studio_launcher": {
+    "status": "PASS",
+    "current_health_profile": "ucb16_adc32_buffered_v2",
+    "tiny_search_iterations": 2,
+    "isolated_registry_created": true,
+    "frozen_source_index_unchanged": true,
+    "post_search_manifest_pass": true,
+    "test_server_stopped": true
+  },
+  "native_engine_edited": false,
+  "native_regression_tests_edited": true,
+  "figure3d": "ON_HOLD_EXCLUDED",
+  "figure4a": "ARCHIVED_DATA_REPLOT_ONLY",
+  "publicly_distributed": false,
+  "physical_validation": false
+}

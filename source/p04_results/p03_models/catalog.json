@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "models": [
+    {
+      "id": "archive_2x2_h16_centered_v1",
+      "label": "Archived 2\u00d72, 16 hidden units",
+      "board_size": 2,
+      "hidden_units": 16,
+      "hardware_hidden_units": 32,
+      "available": true,
+      "file": "p04_results/p03_models/archive_2x2_h16_centered_v1.npz",
+      "sha256": "af2928ee14e81a594bee65692658da7c203efed357f15ab2609606d59f7cb7f2",
+      "original_path": "generalizability/weights/models/weights_2x2/best_improved_model.pkl",
+      "original_sha256": "828fd25663389d3e5636985d4d07d8d23e317e42e6dc22b8013b8077854edc5d",
+      "original_snapshot": "p03_experiments/p15_workbook_models/p01_sources/archive_2x2_h16_centered_v1.pkl",
+      "transform": "centered_50_then_zero_pad_hidden",
+      "input_encoding": "interleaved_absolute_black_white",
+      "turn_indicator": false,
+      "output_order": [
+        "white",
+        "draw",
+        "black"
+      ],
+      "saved_metadata_unverified": {
+        "accuracy": 0.463,
+        "epoch": 0,
+        "loss": 1.068546790599823,
+        "architecture": "two_layer_memristor_crossbar"
+      },
+      "status": "archived_checkpoint_mapping_candidate",
+      "task_quality": "not_revalidated",
+      "training_provenance": "Original producer not recovered; chosen centered interpretation matches archived trainer contract"
+    },
+    {
+      "id": "archive_3x3_h24_centered_v1",
+      "label": "Archived 3\u00d73, 24 hidden units",
+      "board_size": 3,
+      "hidden_units": 24,
+      "hardware_hidden_units": 32,
+      "available": true,
+      "file": "p04_results/p03_models/archive_3x3_h24_centered_v1.npz",
+      "sha256": "68067ab0f4d508ebbf28ea90da23eae10dd2c8e7409b93aa20ad79725da4c2a2",
+      "original_path": "generalizability/weights/models/weights_3x3/best_improved_model.pkl",
+      "original_sha256": "da6b69e1c94faca7a1a7b84f99f30214de62cba4404d7a36f75487d0604058a6",
+      "original_snapshot": "p03_experiments/p15_workbook_models/p01_sources/archive_3x3_h24_centered_v1.pkl",
+      "transform": "centered_50_then_zero_pad_hidden",
+      "input_encoding": "interleaved_absolute_black_white",
+      "turn_indicator": false,
+      "output_order": [
+        "white",
+        "draw",
+        "black"
+      ],
+      "saved_metadata_unverified": {
+        "accuracy": 0.8355,
+        "epoch": 1997,
+        "loss": 0.5164868042812449,
+        "architecture": "two_layer_memristor_crossbar"
+      },
+      "status": "archived_checkpoint_mapping_candidate",
+      "task_quality": "not_revalidated",
+      "training_provenance": "Original producer not recovered; chosen centered interpretation matches archived trainer contract"
+    },
+    {
+      "id": "archive_5x5_h32_centered_v1",
+      "label": "Archived 5\u00d75, 32 hidden units",
+      "board_size": 5,
+      "hidden_units": 32,
+      "hardware_hidden_units": 96,
+      "available": true,
+      "file": "p04_results/p03_models/archive_5x5_h32_centered_v1.npz",
+      "sha256": "e3e1ec6dbc318ccd91e354e965b79db545bf9fbc1a3f8528227b5d63bc83b1a3",
+      "original_path": "generalizability/weights/models/weights_5x5/best_improved_model.pkl",
+      "original_sha256": "5f4dd0339e189fa781f754141b21944fa9446070ce7b5ebc8b73d20881496210",
+      "original_snapshot": "p03_experiments/p15_workbook_models/p01_sources/archive_5x5_h32_centered_v1.pkl",
+      "transform": "centered_50_then_zero_pad_hidden",
+      "input_encoding": "interleaved_absolute_black_white",
+      "turn_indicator": false,
+      "output_order": [
+        "white",
+        "draw",
+        "black"
+      ],
+      "saved_metadata_unverified": {
+        "accuracy": 0.817,
+        "epoch": 1989,
+        "loss": 0.49268207252062396,
+        "architecture": "two_layer_memristor_crossbar"
+      },
+      "status": "archived_checkpoint_mapping_candidate",
+      "task_quality": "not_revalidated",
+      "training_provenance": "Original producer not recovered; chosen centered interpretation matches archived trainer contract"
+    },
+    {
+      "id": "archive_9x9_h32_centered_v1",
+      "label": "Archived 9\u00d79, 32 hidden units",
+      "board_size": 9,
+      "hidden_units": 32,
+      "hardware_hidden_units": 96,
+      "available": true,
+      "file": "p04_results/p03_models/archive_9x9_h32_centered_v1.npz",
+      "sha256": "c758f898c2674a9c868b59a879ebaea5cdb517c92cd724627cc22a6fc9e1ad91",
+      "original_path": "generalizability/weights/models/weights_9x9/best_improved_model.pkl",
+      "original_sha256": "80c37180e397f0d31b5da48987a481819a12eeb752c60faa454bdcfef78d6739",
+      "original_snapshot": "p03_experiments/p15_workbook_models/p01_sources/archive_9x9_h32_centered_v1.pkl",
+      "transform": "centered_50_then_zero_pad_hidden",
+      "input_encoding": "interleaved_absolute_black_white",
+      "turn_indicator": false,
+      "output_order": [
+        "white",
+        "draw",
+        "black"
+      ],
+      "saved_metadata_unverified": {
+        "accuracy": 0.8206,
+        "epoch": 1823,
+        "loss": 0.4616733394740205,
+        "architecture": "two_layer_memristor_crossbar"
+      },
+      "status": "archived_checkpoint_mapping_candidate",
+      "task_quality": "not_revalidated",
+      "training_provenance": "Original producer not recovered; chosen centered interpretation matches archived trainer contract"
+    },
+    {
+      "id": "archive_9x9_h96_centered_v1",
+      "label": "Archived 9\u00d79, 96 hidden units",
+      "board_size": 9,
+      "hidden_units": 96,
+      "hardware_hidden_units": 96,
+      "available": true,
+      "file": "p04_results/p03_models/archive_9x9_h96_centered_v1.npz",
+      "sha256": "54a215e5f13db5e9bf90edfa4d7470af93af9b6bcac8e5df77de9cfbe681f946",
+      "original_path": "generalizability/weights/models/weights_9x9/model_at_66.00percent.pkl",
+      "original_sha256": "ff6d96aec78cf4447fb093d6e9fcc80dc9532dcd4ccd7e0840e6ce65dd7fd5eb",
+      "original_snapshot": "p03_experiments/p15_workbook_models/p01_sources/archive_9x9_h96_centered_v1.pkl",
+      "transform": "centered_50_then_zero_pad_hidden",
+      "input_encoding": "interleaved_absolute_black_white",
+      "turn_indicator": false,
+      "output_order": [
+        "white",
+        "draw",
+        "black"
+      ],
+      "saved_metadata_unverified": {
+        "accuracy": 0.66,
+        "epoch": 96,
+        "loss": 0.993709515273571,
+        "architecture": "two_layer_memristor_crossbar"
+      },
+      "status": "archived_checkpoint_mapping_candidate",
+      "task_quality": "not_revalidated",
+      "training_provenance": "Original producer not recovered; chosen centered interpretation matches archived trainer contract"
+    },
+    {
+      "id": "archive_9x9_turn_bit",
+      "label": "Archived 9\u00d79 self-play (turn input)",
+      "board_size": 9,
+      "available": false,
+      "reason": "163 inputs include a turn bit; the current crossbar encoder accepts 162. Requires a separately validated mapping."
+    }
+  ]
+}

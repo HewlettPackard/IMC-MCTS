@@ -1,0 +1,91 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : imc_cached_selector_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 15:58:37 2026
+****************************************
+
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   n12071                       0.46           0.46           0.00  (VIOLATED: increase significant digits)
+   n16567                       0.04           0.04           0.00  (VIOLATED: increase significant digits)
+   n16840                       0.07           0.07           0.00  (VIOLATED: increase significant digits)
+   n21182                       0.07           0.08           0.00  (VIOLATED: increase significant digits)
+   n16845                       0.27           0.27           0.00  (VIOLATED: increase significant digits)
+
+   -----------------------------------------------------------------
+   Total                      5                  -0.01  
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   imc_cached_selector_BOARD_SIZE9_CAM_ENTRIES1024_NEURAL_BYTES16512_ADDR_W21     0.00   366.58  -366.58 (VIOLATED)
+
+
+   multiport_net
+
+                             Required        Actual
+   Net                          Cost           Cost          Violation
+   -----------------------------------------------------------------
+   leaf_id[0]                   0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[1]                   0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[2]                   0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[3]                   0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[4]                   0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[5]                   0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[6]                   0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[7]                   0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[8]                   0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[9]                   0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[10]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[11]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[12]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[13]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[14]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[15]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[16]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[17]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[18]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[19]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[20]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[21]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[22]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[23]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[24]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[25]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[26]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[27]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[28]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[29]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[30]                  0.00           1.00          -1.00  (VIOLATED)
+   leaf_id[31]                  0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[2]             0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[3]             0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[4]             0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[5]             0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[6]             0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[7]             0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[8]             0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[9]             0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[10]            0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[11]            0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[12]            0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[13]            0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[14]            0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[15]            0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[16]            0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[17]            0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[18]            0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[19]            0.00           1.00          -1.00  (VIOLATED)
+   node_req_addr[20]            0.00           1.00          -1.00  (VIOLATED)
+
+
+1

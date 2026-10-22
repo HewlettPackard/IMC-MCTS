@@ -1,0 +1,30 @@
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12-SP7-1
+Date:        Wed Sep  9 15:30:22 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     15
+    Shorted outputs (LINT-31)                                       7
+    Constant outputs (LINT-52)                                      8
+--------------------------------------------------------------------------------
+
+Warning: In design 'imc_ln_table', output port 'value[55]' is connected directly to output port 'value[48]'. (LINT-31)
+Warning: In design 'imc_ln_table', output port 'value[55]' is connected directly to output port 'value[49]'. (LINT-31)
+Warning: In design 'imc_ln_table', output port 'value[55]' is connected directly to output port 'value[50]'. (LINT-31)
+Warning: In design 'imc_ln_table', output port 'value[55]' is connected directly to output port 'value[51]'. (LINT-31)
+Warning: In design 'imc_ln_table', output port 'value[55]' is connected directly to output port 'value[52]'. (LINT-31)
+Warning: In design 'imc_ln_table', output port 'value[55]' is connected directly to output port 'value[53]'. (LINT-31)
+Warning: In design 'imc_ln_table', output port 'value[55]' is connected directly to output port 'value[54]'. (LINT-31)
+Warning: In design 'imc_ln_table', output port 'value[55]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_ln_table', output port 'value[54]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_ln_table', output port 'value[53]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_ln_table', output port 'value[52]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_ln_table', output port 'value[51]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_ln_table', output port 'value[50]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_ln_table', output port 'value[49]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'imc_ln_table', output port 'value[48]' is connected directly to 'logic 0'. (LINT-52)
+1

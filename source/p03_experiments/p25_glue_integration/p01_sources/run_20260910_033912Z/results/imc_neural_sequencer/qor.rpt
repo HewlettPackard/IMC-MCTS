@@ -1,0 +1,83 @@
+ 
+****************************************
+Report : qor
+Design : imc_neural_sequencer_INPUTS162_HIDDEN96_ADDR_W21_SRAM_BYTES1572864
+Version: U-2022.12-SP7-1
+Date   : Wed Sep  9 16:26:19 2026
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              39.00
+  Critical Path Length:          1.75
+  Critical Path Slack:           0.00
+  Critical Path Clk Period:      2.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          3
+  Hierarchical Port Count:        301
+  Leaf Cell Count:              11103
+  Buf/Inv Cell Count:            1274
+  Buf Cell Count:                 181
+  Inv Cell Count:                1093
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:      9343
+  Sequential Cell Count:         1760
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    27559.680235
+  Noncombinational Area: 21144.479989
+  Buf/Inv Area:           2370.720065
+  Total Buffer Area:           697.92
+  Total Inverter Area:        1672.80
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:             48704.160224
+  Design Area:           48704.160224
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         11319
+  Nets With Violations:             1
+  Max Trans Violations:             0
+  Max Cap Violations:               1
+  -----------------------------------
+
+
+  Hostname: tr220-dt01.egr.duke.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    4.68
+  Logic Optimization:                 10.08
+  Mapping Optimization:               13.20
+  -----------------------------------------
+  Overall Compile Time:               59.72
+  Overall Compile Wall Clock Time:    61.05
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

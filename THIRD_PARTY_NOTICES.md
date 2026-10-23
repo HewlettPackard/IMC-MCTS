@@ -55,3 +55,12 @@ The project owner confirms that the original repository security clearance is co
 ## Python runtime dependencies
 
 The default runtime and public test extra require NumPy only (BSD-3-Clause metadata; its wheel may contain separately licensed bundled components). The fresh SBOM inventories actual installed Python distributions; it does not replace wheel-level native-library or corporate license review. Plotting and PDF-render dependencies remain optional. Their licenses remain with their respective upstream projects.
+
+## Documentation build and theme dependencies
+
+The documentation uses Sphinx 9.1.0 and PyData Sphinx Theme 0.16.1 under their
+BSD licenses. The theme bundles Bootstrap 5.3.3 (MIT) and Font Awesome Free 6.5.2
+(CC-BY-4.0 for icons, SIL-OFL-1.1 for fonts and MIT for code). Complete matching
+license texts are retained in docs/_static/licenses/ and in the published site.
+Their generated attribution notices are preserved. These dependencies are
+installed to build the documentation; they are not relicensed by the project.

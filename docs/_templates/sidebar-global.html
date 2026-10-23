@@ -1,0 +1,7 @@
+{# Global navigation for this small, single-section documentation site. #}
+<nav class="bd-docs-nav bd-links" id="bd-docs-nav" aria-label="Documentation navigation">
+  <div class="bd-toc-item navbar-nav">
+    {{ generate_toctree_html("sidebar", startdepth=0, show_nav_level=1,
+        maxdepth=1, collapse=False, includehidden=True, titles_only=True) }}
+  </div>
+</nav>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="786" viewBox="0 0 760 786" role="img" aria-labelledby="tutorial-mapping-title tutorial-mapping-description">
+  <title id="tutorial-mapping-title">How the four MCTS phases use the IMC-MCTS core</title>
+  <desc id="tutorial-mapping-description">Conceptual service mapping for the nine-by-nine reference. Host rule processing, including legality, captures, ko, passes and history, is outside the modeled core. A phase finite-state machine coordinates selection, expansion, evaluation and backup. Selection uses a CAM cache and sixteen UCB scorers. Expansion uses child-allocation logic. Evaluation uses two RRAM arrays, 163 by 96 and 96 by 3, with thirty-two shared ADCs and eight accumulation lanes. Expansion and backup use one shared update controller connected to two mebibytes of tree SRAM. The diagram shows functional relationships, not a cycle timeline or a complete physical implementation.</desc>
+  <defs>
+    <marker id="tutorial-mapping-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#087f75"/></marker>
+    <marker id="tutorial-mapping-control-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#536c72"/></marker>
+    <pattern id="tutorial-mapping-memory-grid" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" fill="none" stroke="#99c7bb" stroke-width=".8"/></pattern>
+    <style>
+      text{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#142e35;font-size:16px} .tutorial-mapping-small{font-size:13px;fill:#536c72}.tutorial-mapping-label{font-size:14px;font-weight:600}.tutorial-mapping-phase{font-size:17px;font-weight:600}.tutorial-mapping-number{font-size:12px;fill:#087f75;font-weight:650}.tutorial-mapping-block{fill:#fff;stroke:#789991;stroke-width:1.4}.tutorial-mapping-memory{fill:#edf6f2;stroke:#087f75;stroke-width:1.5}.tutorial-mapping-data{fill:none;stroke:#087f75;stroke-width:1.8;marker-end:url(#tutorial-mapping-arrow)}.tutorial-mapping-control{fill:none;stroke:#536c72;stroke-width:1.2;stroke-dasharray:5 4;marker-end:url(#tutorial-mapping-control-arrow)}
+    </style>
+  </defs>
+  <rect width="760" height="786" fill="#fff"/>
+  <rect x="183" y="19" width="472" height="64" rx="3" fill="#fff" stroke="#81968e" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="419" y="45" text-anchor="middle" class="tutorial-mapping-label">Host rule processing</text>
+  <text x="419" y="66" text-anchor="middle" class="tutorial-mapping-small">Legality · captures · ko · passes · history</text>
+  <text x="35" y="46" class="tutorial-mapping-small">OUTSIDE CORE</text>
+  <rect x="20" y="103" width="720" height="628" rx="4" fill="#fbfdfb" stroke="#a8bdb6" stroke-width="1.3"/>
+  <path d="M419 83V126" class="tutorial-mapping-data"/>
+  <text x="35" y="129" class="tutorial-mapping-small">MODELED CORE</text>
+  <rect x="263" y="126" width="312" height="49" rx="2" class="tutorial-mapping-block"/>
+  <text x="419" y="156" text-anchor="middle" class="tutorial-mapping-label">Phase finite-state machine</text>
+  <path d="M575 151H710V602H655" class="tutorial-mapping-control"/>
+  <path d="M710 226H655" class="tutorial-mapping-control"/>
+  <path d="M710 350H655" class="tutorial-mapping-control"/>
+  <path d="M710 472H655" class="tutorial-mapping-control"/>
+  <text x="696" y="202" text-anchor="end" class="tutorial-mapping-small">control</text>
+  <text x="35" y="221" class="tutorial-mapping-number">01</text>
+  <text x="35" y="246" class="tutorial-mapping-phase">Selection</text>
+  <text x="35" y="269" class="tutorial-mapping-small">Find and score</text>
+  <path d="M157 246H205" class="tutorial-mapping-data"/>
+  <rect x="205" y="214" width="170" height="78" rx="2" class="tutorial-mapping-memory"/>
+  <rect x="218" y="227" width="28" height="49" fill="url(#tutorial-mapping-memory-grid)"/>
+  <text x="258" y="244" class="tutorial-mapping-label">CAM cache</text>
+  <text x="258" y="266" class="tutorial-mapping-small">1,024 entries</text>
+  <path d="M375 253H408" class="tutorial-mapping-data"/>
+  <rect x="408" y="214" width="247" height="78" rx="2" class="tutorial-mapping-block"/>
+  <text x="531" y="243" text-anchor="middle" class="tutorial-mapping-label">16 parallel UCB scorers</text>
+  <text x="531" y="267" text-anchor="middle" class="tutorial-mapping-small">2 × (16 × 128-bit) candidate banks</text>
+  <path d="M290 292V305H686V686H655" class="tutorial-mapping-data"/>
+  <text x="35" y="330" class="tutorial-mapping-number">02</text>
+  <text x="35" y="355" class="tutorial-mapping-phase">Expansion</text>
+  <text x="35" y="378" class="tutorial-mapping-small">Allocate one child</text>
+  <path d="M157 355H205" class="tutorial-mapping-data"/>
+  <rect x="205" y="327" width="450" height="65" rx="2" class="tutorial-mapping-block"/>
+  <text x="430" y="354" text-anchor="middle" class="tutorial-mapping-label">Child-allocation logic</text>
+  <text x="430" y="377" text-anchor="middle" class="tutorial-mapping-small">One untried legal action per expansion</text>
+  <path d="M655 371H670V627H311V642" class="tutorial-mapping-data"/>
+  <text x="35" y="446" class="tutorial-mapping-number">03</text>
+  <text x="35" y="471" class="tutorial-mapping-phase">Evaluation</text>
+  <text x="35" y="494" class="tutorial-mapping-small">Estimate leaf value</text>
+  <path d="M157 471H205" class="tutorial-mapping-data"/>
+  <rect x="205" y="426" width="231" height="99" rx="2" class="tutorial-mapping-memory"/>
+  <rect x="218" y="440" width="39" height="70" fill="url(#tutorial-mapping-memory-grid)"/>
+  <text x="270" y="450" class="tutorial-mapping-label">Two RRAM arrays</text>
+  <text x="270" y="476" class="tutorial-mapping-small">163 × 96</text>
+  <text x="270" y="500" class="tutorial-mapping-small">96 × 3</text>
+  <path d="M436 474H463" class="tutorial-mapping-data"/>
+  <rect x="463" y="426" width="192" height="99" rx="2" class="tutorial-mapping-block"/>
+  <text x="559" y="452" text-anchor="middle" class="tutorial-mapping-label">32 shared ADCs</text>
+  <text x="559" y="477" text-anchor="middle" class="tutorial-mapping-small">Buffered 128-bit readout</text>
+  <text x="559" y="501" text-anchor="middle" class="tutorial-mapping-small">8 accumulation lanes</text>
+  <path d="M559 525V546H300V572" class="tutorial-mapping-data"/>
+  <text x="321" y="544" class="tutorial-mapping-small">leaf value</text>
+  <text x="35" y="572" class="tutorial-mapping-number">04</text>
+  <text x="35" y="597" class="tutorial-mapping-phase" style="font-size:15px">Backpropagation</text>
+  <text x="35" y="620" class="tutorial-mapping-small">Update path statistics</text>
+  <path d="M181 597H205" class="tutorial-mapping-data"/>
+  <rect x="205" y="572" width="450" height="47" rx="2" class="tutorial-mapping-block"/>
+  <text x="430" y="602" text-anchor="middle" class="tutorial-mapping-label">Path traversal and value updates</text>
+  <path d="M300 619V642" class="tutorial-mapping-data"/>
+  <rect x="205" y="642" width="450" height="69" rx="2" class="tutorial-mapping-memory"/>
+  <path d="M417 642V711" stroke="#087f75" stroke-width="1"/>
+  <text x="311" y="671" text-anchor="middle" class="tutorial-mapping-label">Shared update</text>
+  <text x="311" y="692" text-anchor="middle" class="tutorial-mapping-label">controller</text>
+  <text x="536" y="671" text-anchor="middle" class="tutorial-mapping-label">Tree SRAM · 2 MiB</text>
+  <text x="536" y="693" text-anchor="middle" class="tutorial-mapping-small">Nodes, edges and path data</text>
+  <path d="M396 679H438" class="tutorial-mapping-data"/>
+  <text x="35" y="755" class="tutorial-mapping-small">Teal: data / functional relationship</text>
+  <text x="405" y="755" class="tutorial-mapping-small">Dashed: coordination / boundary</text>
+  <text x="35" y="777" class="tutorial-mapping-small">Conceptual mapping of the 9 × 9 reference. Not a cycle schedule or physical layout.</text>
+</svg>

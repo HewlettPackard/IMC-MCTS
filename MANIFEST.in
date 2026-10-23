@@ -135,3 +135,7 @@ global-exclude *.ubj
 global-exclude *.weight
 global-exclude *.weights
 global-exclude checkpoint
+
+# Documentation sources, approved diagrams and build dependencies.
+recursive-include docs *
+include requirements-docs.txt

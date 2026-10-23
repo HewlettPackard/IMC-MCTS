@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="figures/brand/imc-mcts-logo-reversed.svg">
+    <img src="figures/brand/imc-mcts-logo.svg" alt="IMC-MCTS" width="600">
+  </picture>
+</p>
+
 # IMC-MCTS
 
 [![CI](https://github.com/HewlettPackard/IMC-MCTS/actions/workflows/ci.yml/badge.svg)](https://github.com/HewlettPackard/IMC-MCTS/actions/workflows/ci.yml)
@@ -5,6 +12,8 @@
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue)](pyproject.toml)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Citation](https://img.shields.io/badge/citation-CFF-blue)](CITATION.cff)
+
+**[Documentation and visual tutorial](https://hewlettpackard.github.io/IMC-MCTS/)**.
 
 A research simulator for mapping Monte Carlo tree search onto CAM selection, SRAM tree storage and crossbar neural evaluation, with an interactive Studio and scripts for reproducing retained results.
 

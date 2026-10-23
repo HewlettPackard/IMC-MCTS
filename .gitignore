@@ -135,3 +135,7 @@ historical_test_fixtures.tar.gz
 *.weight
 *.weights
 checkpoint
+
+# Documentation build products
+_build/
+.docs-venv/

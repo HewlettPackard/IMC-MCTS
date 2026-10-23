@@ -1,0 +1,118 @@
+<section class="tutorial-walkthrough" id="tutorial-walkthrough" aria-labelledby="tutorial-walkthrough-heading" data-tutorial-step="0">
+  <div class="tutorial-heading-row">
+    <h3 id="tutorial-walkthrough-heading">One MCTS iteration</h3>
+    <span class="tutorial-example-label">Illustrative example</span>
+  </div>
+  <p class="tutorial-disclaimer">An abstract three-action tree with illustrative decimal arithmetic. This is not a trained game trace or an engine replay.</p>
+  <p class="tutorial-scroll-hint">On narrow screens, scroll the diagram and score table sideways.</p>
+  <nav class="tutorial-step-nav" aria-label="Search iteration stages">
+    <button type="button" class="tutorial-step-button" data-tutorial-go="0" aria-current="step"><span>0</span> Start</button>
+    <button type="button" class="tutorial-step-button" data-tutorial-go="1"><span>1</span> Select</button>
+    <button type="button" class="tutorial-step-button" data-tutorial-go="2"><span>2</span> Expand</button>
+    <button type="button" class="tutorial-step-button" data-tutorial-go="3"><span>3</span> Evaluate</button>
+    <button type="button" class="tutorial-step-button" data-tutorial-go="4"><span>4</span> Back up</button>
+  </nav>
+  <div class="tutorial-tree-scroll" tabindex="0" role="region" aria-label="Search tree diagram; scroll horizontally on a narrow screen">
+    <svg class="tutorial-tree" viewBox="0 0 720 438" role="img" aria-labelledby="tutorial-tree-title tutorial-tree-description">
+      <title id="tutorial-tree-title">Starting tree for one MCTS iteration</title>
+      <desc id="tutorial-tree-description">Fully expanded Black root R has 13 visits and a total value of 7.35. Its White children are A with 8 visits and value 3.20, B with 3 visits and value 1.35, and C with 1 visit and value 0.60. C has an untried action.</desc>
+      <defs>
+        <marker id="tutorial-arrow-data" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" class="tutorial-arrow-fill"/></marker>
+        <pattern id="tutorial-evaluator-grid" width="13" height="13" patternUnits="userSpaceOnUse"><path d="M 13 0 H 0 V 13" class="tutorial-grid-line" fill="none"/></pattern>
+      </defs>
+      <text x="28" y="28" class="tutorial-figure-kicker">SEARCH TREE</text>
+      <g class="tutorial-edges">
+        <path d="M 338 80 L 141 197" class="tutorial-edge"/>
+        <path d="M 360 92 L 360 197" class="tutorial-edge"/>
+        <path d="M 382 80 L 579 197" class="tutorial-edge tutorial-selected-edge"/>
+        <path d="M 600 247 L 600 345" class="tutorial-edge tutorial-new-node tutorial-selected-edge"/>
+      </g>
+      <text x="162" y="139" class="tutorial-edge-label">action A</text>
+      <text x="373" y="151" class="tutorial-edge-label">action B</text>
+      <text x="504" y="139" class="tutorial-edge-label tutorial-path-label">action C</text>
+      <g class="tutorial-backup-only" aria-hidden="true">
+        <path d="M 559 178 L 455 116" class="tutorial-backup-arrow" marker-end="url(#tutorial-arrow-data)"/>
+        <text x="495" y="115" class="tutorial-value-label">+0.75</text>
+        <path d="M 631 331 L 631 272" class="tutorial-backup-arrow" marker-end="url(#tutorial-arrow-data)"/>
+        <text x="650" y="310" class="tutorial-value-label">+0.25</text>
+      </g>
+      <g class="tutorial-node tutorial-root-node" id="tutorial-node-r">
+        <circle cx="360" cy="65" r="29" class="tutorial-node-ring"/>
+        <circle cx="360" cy="65" r="23" class="tutorial-stone-black"/>
+        <text x="360" y="71" class="tutorial-node-letter tutorial-letter-on-black">R</text>
+        <text x="399" y="58" class="tutorial-node-side">Black to move</text>
+        <text x="399" y="82" class="tutorial-node-stats" id="tutorial-stats-r">n = 13 · w = 7.35</text>
+      </g>
+      <g class="tutorial-node" id="tutorial-node-a">
+        <circle cx="120" cy="222" r="29" class="tutorial-node-ring"/>
+        <circle cx="120" cy="222" r="23" class="tutorial-stone-white"/>
+        <text x="120" y="228" class="tutorial-node-letter">A</text>
+        <text x="120" y="272" class="tutorial-node-side tutorial-text-centered">White to move</text>
+        <text x="120" y="296" class="tutorial-node-stats tutorial-text-centered">n = 8 · w = 3.20</text>
+      </g>
+      <g class="tutorial-node" id="tutorial-node-b">
+        <circle cx="360" cy="222" r="29" class="tutorial-node-ring"/>
+        <circle cx="360" cy="222" r="23" class="tutorial-stone-white"/>
+        <text x="360" y="228" class="tutorial-node-letter">B</text>
+        <text x="360" y="272" class="tutorial-node-side tutorial-text-centered">White to move</text>
+        <text x="360" y="296" class="tutorial-node-stats tutorial-text-centered">n = 3 · w = 1.35</text>
+      </g>
+      <g class="tutorial-node tutorial-selected-node" id="tutorial-node-c">
+        <circle cx="600" cy="222" r="29" class="tutorial-node-ring"/>
+        <circle cx="600" cy="222" r="23" class="tutorial-stone-white"/>
+        <text x="600" y="228" class="tutorial-node-letter">C</text>
+        <text x="553" y="212" class="tutorial-node-side tutorial-text-end">White to move</text>
+        <text x="553" y="238" class="tutorial-node-stats tutorial-text-end" id="tutorial-stats-c">n = 1 · w = 0.60</text>
+      </g>
+      <g class="tutorial-untried-only">
+        <circle cx="600" cy="369" r="23" class="tutorial-untried-node"/>
+        <text x="600" y="375" class="tutorial-untried-mark">?</text>
+        <path d="M 600 252 V 338" class="tutorial-untried-edge"/>
+        <text x="554" y="373" class="tutorial-node-side tutorial-text-end">untried action</text>
+      </g>
+      <g class="tutorial-node tutorial-new-node" id="tutorial-node-d">
+        <circle cx="600" cy="369" r="29" class="tutorial-node-ring"/>
+        <circle cx="600" cy="369" r="23" class="tutorial-stone-black"/>
+        <text x="600" y="375" class="tutorial-node-letter tutorial-letter-on-black">D</text>
+        <text x="600" y="414" class="tutorial-node-stats tutorial-text-centered" id="tutorial-stats-d">n = 0 · w = 0.00</text>
+        <text x="645" y="373" class="tutorial-node-side">Black</text>
+      </g>
+      <g class="tutorial-evaluation-only" aria-hidden="true">
+        <rect x="59" y="341" width="59" height="59" class="tutorial-evaluator-array"/>
+        <rect x="59" y="341" width="59" height="59" fill="url(#tutorial-evaluator-grid)"/>
+        <text x="136" y="359" class="tutorial-evaluator-label">Neural evaluation</text>
+        <text x="136" y="385" class="tutorial-evaluator-value">v(D) = 0.75</text>
+        <path d="M 327 370 H 549" class="tutorial-evaluation-arrow" marker-end="url(#tutorial-arrow-data)"/>
+        <text x="433" y="355" class="tutorial-node-side tutorial-text-centered">Black value at D</text>
+      </g>
+    </svg>
+  </div>
+  <div class="tutorial-stage-copy" aria-live="polite" aria-atomic="true">
+    <p class="tutorial-stage-count" id="tutorial-stage-count">Step 0 of 4</p>
+    <h4 id="tutorial-stage-title">Start with visits and values</h4>
+    <p id="tutorial-stage-body">Each node stores its visit count <i>n</i> and accumulated value <i>w</i> for the player to move at that node. The root is Black and has no untried actions. Its children are White. C has an untried action.</p>
+    <p class="tutorial-stage-equation" id="tutorial-stage-equation">Mean return = w / n lies between 0 and 1; accumulated w can exceed 1.</p>
+  </div>
+  <div class="tutorial-controls" aria-label="Walkthrough controls">
+    <button type="button" id="tutorial-previous" disabled>← Previous</button>
+    <button type="button" id="tutorial-next">Next: selection →</button>
+    <button type="button" id="tutorial-restart">Restart</button>
+  </div>
+  <noscript><p class="tutorial-no-script">JavaScript is off, so this shows the starting tree. The explanations below describe the remaining steps.</p></noscript>
+  <div class="tutorial-score-block">
+    <h4 id="tutorial-score-heading">Why select C?</h4>
+    <p class="tutorial-score-intro">Selection scores use the starting tree, before expansion. From Black’s perspective, <span class="tutorial-math">Q = 1 − w<sub>child</sub> / n<sub>child</sub></span>. Add an exploration bonus with <span class="tutorial-math">c = 1.414</span> and <span class="tutorial-math">N = 13</span>.</p>
+    <div class="tutorial-table-scroll" tabindex="0" role="region" aria-label="Selection score table; scroll horizontally on a narrow screen">
+      <table class="tutorial-score-table" aria-labelledby="tutorial-score-heading">
+        <caption>UCB = Q + c √(ln N / n). Scores are rounded to three decimals.</caption>
+        <thead><tr><th scope="col">Child</th><th scope="col">Visits n</th><th scope="col">Parent’s Q</th><th scope="col">Exploration</th><th scope="col">UCB score</th></tr></thead>
+        <tbody>
+          <tr data-tutorial-score="A"><th scope="row">A</th><td>8</td><td data-tutorial-metric="q">0.600</td><td data-tutorial-metric="bonus">0.801</td><td data-tutorial-metric="score">1.401</td></tr>
+          <tr data-tutorial-score="B"><th scope="row">B</th><td>3</td><td data-tutorial-metric="q">0.550</td><td data-tutorial-metric="bonus">1.307</td><td data-tutorial-metric="score">1.857</td></tr>
+          <tr data-tutorial-score="C"><th scope="row">C</th><td>1</td><td data-tutorial-metric="q">0.400</td><td data-tutorial-metric="bonus">2.265</td><td data-tutorial-metric="score">2.665</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tutorial-takeaway">Selecting a branch for exploration is different from choosing the final move. After this iteration, A still has the most root-child visits: 8, compared with B’s 3 and C’s 2.</p>
+  </div>
+</section>

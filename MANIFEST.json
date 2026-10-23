@@ -11,14 +11,19 @@
       "sha256": "3116d4f3d67ddb5ad1d45f64ef01e55e60daf919d22b5a72f474c91269c8e568"
     },
     {
+      "path": ".github/workflows/docs.yml",
+      "bytes": 1695,
+      "sha256": "c7ccdcacc962a09513e8053f685c0b42316b8566414f14453129b2c938208fee"
+    },
+    {
       "path": ".github/workflows/secret-scan.yml",
       "bytes": 1390,
       "sha256": "cdc8b961b764a63577c77e6a3f159b5adabf62dab8f88570aaef33ba1ad9032e"
     },
     {
       "path": ".gitignore",
-      "bytes": 3357,
-      "sha256": "bb16e9891b8217671fc94a5c34fa62a94144df024570c48aaef0052c6b0318c3"
+      "bytes": 3409,
+      "sha256": "428bb5158cec82590a77e55957f845a05e39079403be8cb4c83114117e709741"
     },
     {
       "path": ".gitleaks.toml",
@@ -77,8 +82,8 @@
     },
     {
       "path": "MANIFEST.in",
-      "bytes": 5312,
-      "sha256": "e8aee19ca63841fb3a31d37782ebcb0f7affbb571559c58615a3c6efd49bfaf3"
+      "bytes": 5435,
+      "sha256": "64ec3abc46bce348c4632141903b162e37cf242f45cc411421200ab3742ab4ea"
     },
     {
       "path": "Makefile",
@@ -87,8 +92,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4270,
-      "sha256": "e41aa7574f7872e8b93efab2a120c73236e2a84d774aa064c3cfa5da3db22e8a"
+      "bytes": 4581,
+      "sha256": "5ad3cc1c7be386053a21b1a9b00df63678e90c688056fbf8c023cb599e255b31"
     },
     {
       "path": "RELEASE_STATUS.json",
@@ -117,8 +122,8 @@
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 3785,
-      "sha256": "016ee6f8c3871b00f190d70fda12b0200933fefa398c5418c743b4faf5abd93d"
+      "bytes": 4307,
+      "sha256": "5b5a679ffdc079039494eecd1178a3200006121d5f0205386785e030474e16b8"
     },
     {
       "path": "VALIDATION.md",
@@ -496,9 +501,289 @@
       "sha256": "98e1e14f695b956f322afa0f8f862c5e8f696926cd1d4ac7d4759ba2c59e7b4d"
     },
     {
+      "path": "docs/README.md",
+      "bytes": 1591,
+      "sha256": "6a9b142c4c0ab964344b2404a32530730c40139d8bcefca5205c28fdc6b911e3"
+    },
+    {
+      "path": "docs/_includes/search-walkthrough.html",
+      "bytes": 9731,
+      "sha256": "1edeed85a61d7fe3c7fbe84f14713c35ce3c28493b7b1337d757df76af09035a"
+    },
+    {
+      "path": "docs/_includes/search-walkthrough.html.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/custom.css",
+      "bytes": 1710,
+      "sha256": "5e7c86a37a8df23cf20c7cf0ee95e5f581607d12f62a70485af13a2b647a3ffe"
+    },
+    {
+      "path": "docs/_static/custom.css.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/imc-mcts-icon-mono.svg",
+      "bytes": 1395,
+      "sha256": "ce7a824c0ed3fb1b7a1df00a6d74036f7707d558ba2b8c0a97ce38e492110d11"
+    },
+    {
+      "path": "docs/_static/imc-mcts-icon-mono.svg.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/imc-mcts-icon-reversed.svg",
+      "bytes": 1395,
+      "sha256": "bd246de44b015fd7a6c650b8963e40a9af461f5e5a70f8350687f377db647d9e"
+    },
+    {
+      "path": "docs/_static/imc-mcts-icon-reversed.svg.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/imc-mcts-icon.svg",
+      "bytes": 1395,
+      "sha256": "f8ef51ebbce84e7264c7a496d9a6f37a8171f2cd76dd67664cd9e236df4c3d14"
+    },
+    {
+      "path": "docs/_static/imc-mcts-icon.svg.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/imc-mcts-logo-mono.svg",
+      "bytes": 3199,
+      "sha256": "7d3ed54ea154c5fa7bf80dcf2f94b3de57c5a320c121edee1ce921ac2496f7c3"
+    },
+    {
+      "path": "docs/_static/imc-mcts-logo-mono.svg.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/imc-mcts-logo-reversed.svg",
+      "bytes": 3199,
+      "sha256": "18be32128dd462503aa1187c32f532358e42fcdcac427eafd11ed32fc3d02079"
+    },
+    {
+      "path": "docs/_static/imc-mcts-logo-reversed.svg.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/imc-mcts-logo.svg",
+      "bytes": 3199,
+      "sha256": "1e52336a96da7cb6dc3d73eb97c8a2dd7f79d4a0e8e0f4faaaea43e8f162c79c"
+    },
+    {
+      "path": "docs/_static/imc-mcts-logo.svg.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/licenses/BOOTSTRAP.txt",
+      "bytes": 1093,
+      "sha256": "8c14611ae41ac6fd543c13349f22188eb12c69b3e59105c5eca3925a8e4eca3e"
+    },
+    {
+      "path": "docs/_static/licenses/FONT_AWESOME.txt",
+      "bytes": 7427,
+      "sha256": "9b914eae88817d63b576eab5aafde7068c7a1abae125d7cdfb034f1da43a9afc"
+    },
+    {
+      "path": "docs/_static/licenses/PYDATA_SPHINX_THEME.txt",
+      "bytes": 1506,
+      "sha256": "d92fc698623827d7204139dee7874fbd7447f9256b8199acbd71cf8ee53d6f64"
+    },
+    {
+      "path": "docs/_static/licenses/SPHINX.txt",
+      "bytes": 1476,
+      "sha256": "64c96919bbaf3a13baa0f10e418cc1fc88768ce1b9c07f5b7bf49f0fb23db106"
+    },
+    {
+      "path": "docs/_static/tutorial-mapping.svg",
+      "bytes": 8043,
+      "sha256": "0319bdff04a62b240cdf4ce50663e54457eead7b269e3fe6bdd9b567c31a1745"
+    },
+    {
+      "path": "docs/_static/tutorial-mapping.svg.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/tutorial.css",
+      "bytes": 9824,
+      "sha256": "cd91e8fbfd1d18c39cce19420c7b4389dee9ca7529735e840f1cb6cdef7f69a4"
+    },
+    {
+      "path": "docs/_static/tutorial.css.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/tutorial.js",
+      "bytes": 6445,
+      "sha256": "3245494b7e926d95704fae3ee741f1940fadeff2f844e0928e90866cb64f4d33"
+    },
+    {
+      "path": "docs/_static/tutorial.js.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/tutorial/hardware-mapping.png",
+      "bytes": 192764,
+      "sha256": "8b7b38f0cb2bd58561e5d4fc0bedb9b540b39aeddd9fc321cc76c50f8381fbfc"
+    },
+    {
+      "path": "docs/_static/tutorial/hardware-mapping.png.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/tutorial/step-0-start.png",
+      "bytes": 59970,
+      "sha256": "822d089515c49c32255867963c4c36e7d923a3fb6d240118cd17a4da78ccc97e"
+    },
+    {
+      "path": "docs/_static/tutorial/step-0-start.png.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/tutorial/step-1-select.png",
+      "bytes": 65853,
+      "sha256": "82bfd37a5821d97841acd03547a4a2931855de4eb268b1e972cfd0ad746e282c"
+    },
+    {
+      "path": "docs/_static/tutorial/step-1-select.png.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/tutorial/step-2-expand.png",
+      "bytes": 70479,
+      "sha256": "050da75d9a67d3fb6258c11daae5ac74ca2916c56b846dc6b83eb94ac4b48e50"
+    },
+    {
+      "path": "docs/_static/tutorial/step-2-expand.png.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/tutorial/step-3-evaluate.png",
+      "bytes": 82770,
+      "sha256": "fb732cb211598adced88ee10745469d7f59a54c81c4f552c03846b40f67e540c"
+    },
+    {
+      "path": "docs/_static/tutorial/step-3-evaluate.png.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_static/tutorial/step-4-backup.png",
+      "bytes": 83697,
+      "sha256": "7e32fbf7cd954235b4f2a1afb5189ba52b522c1ce76f50b61d43dd0b5ac2b335"
+    },
+    {
+      "path": "docs/_static/tutorial/step-4-backup.png.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/_templates/sidebar-global.html",
+      "bytes": 369,
+      "sha256": "f08fe8fb9ece6384e9df35490e10791bfd394d0e8d958d50c60cc115cf3cebe3"
+    },
+    {
+      "path": "docs/_templates/sidebar-global.html.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/brand/imc-mcts.drawio",
+      "bytes": 21401,
+      "sha256": "b6c6f60d58fba9a75bcdfc3c2ce784d6454d5966fdac80512daa3f10cc0c2192"
+    },
+    {
+      "path": "docs/brand/imc-mcts.drawio.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/conf.py",
+      "bytes": 1492,
+      "sha256": "9692d7b9d112c3f316c1a68990649a8df02deae4cc068bd0d890024009105762"
+    },
+    {
+      "path": "docs/conf.py.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "docs/guide/install.rst",
+      "bytes": 2633,
+      "sha256": "9b49aa64693a006149f89831dee7bc4fd9c0432ca8d3bde4eb568b0de7b21c93"
+    },
+    {
+      "path": "docs/guide/model.rst",
+      "bytes": 2912,
+      "sha256": "953843f9d0e31865740d7f96dd7486b1832664c4abfc348925574132505944d9"
+    },
+    {
+      "path": "docs/guide/tutorial.rst",
+      "bytes": 10326,
+      "sha256": "8076ad30c2da0df49078f84c95a265ff2951874679e5ea433dac23e2f1fa93b0"
+    },
+    {
+      "path": "docs/guide/usage.rst",
+      "bytes": 2907,
+      "sha256": "0501f09e24ac4af821e241ea78040f0730c16ae666589c24ec2c655d5637070f"
+    },
+    {
+      "path": "docs/index.rst",
+      "bytes": 1996,
+      "sha256": "5473f5c4d6af1d06043457620e2b361ddbbdaa074a1a672ae43c0e5070a83cd7"
+    },
+    {
+      "path": "docs/tools/build_tutorial_images.cjs",
+      "bytes": 2149,
+      "sha256": "8d0950a0046b62a7d3ca3e85dfcea1ceeee7f220c7fcd0bd4cc3d630121f4cf5"
+    },
+    {
+      "path": "docs/tools/build_tutorial_images.cjs.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
       "path": "figures/README.md",
       "bytes": 4769,
       "sha256": "39cadc7267f127d8fd5e07fd0482844f47c979ef712529d9099f20661bab069f"
+    },
+    {
+      "path": "figures/brand/imc-mcts-logo-reversed.svg",
+      "bytes": 3199,
+      "sha256": "18be32128dd462503aa1187c32f532358e42fcdcac427eafd11ed32fc3d02079"
+    },
+    {
+      "path": "figures/brand/imc-mcts-logo-reversed.svg.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
+    },
+    {
+      "path": "figures/brand/imc-mcts-logo.svg",
+      "bytes": 3199,
+      "sha256": "1e52336a96da7cb6dc3d73eb97c8a2dd7f79d4a0e8e0f4faaaea43e8f162c79c"
+    },
+    {
+      "path": "figures/brand/imc-mcts-logo.svg.license",
+      "bytes": 105,
+      "sha256": "bcdd42ef1db2bd27496dd80efffe93c413b594d4a9df3c7b660f736cbb981fed"
     },
     {
       "path": "figures/coverage.json",
@@ -694,6 +979,11 @@
       "path": "reproduce.py",
       "bytes": 14444,
       "sha256": "404da90a3baa23aaa838ac506f0354229ec48a678336a83287f60de60a18d613"
+    },
+    {
+      "path": "requirements-docs.txt",
+      "bytes": 42,
+      "sha256": "a97d3ea16215063cf3ea3075ed9f2ca02ca1af6dcca333f46f5fe612b86e1a89"
     },
     {
       "path": "requirements-lock.txt",

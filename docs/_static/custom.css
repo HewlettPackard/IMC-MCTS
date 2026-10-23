@@ -1,0 +1,20 @@
+/* Project identity, with the standard documentation layout preserved. */
+html[data-theme="light"]{--pst-color-primary:#087f75;--pst-color-link:#08766f;--pst-color-link-hover:#07564f;--pst-color-inline-code:#1d4850;--pst-color-text-base:#24363a;--pst-color-background:#fff;--pst-color-surface:#f6f8f7;--pst-color-border:#dce5e1}
+html[data-theme="dark"]{--pst-color-primary:#65c7b6;--pst-color-link:#79d1c3;--pst-color-link-hover:#b7e9df}
+.navbar-brand img{width:250px;height:auto;max-height:52px;max-width:100%;}
+.bd-header .navbar-header-items{gap:1rem}
+.bd-sidebar-primary{font-size:.91rem}
+.bd-sidebar-primary .sidebar-header-items{margin-bottom:1rem}
+.bd-article-container h1{font-size:2.35rem;letter-spacing:-.025em;line-height:1.2}
+.bd-article-container h2{font-size:1.55rem;letter-spacing:-.015em;margin-top:2rem}
+.bd-article-container{font-size:1rem;line-height:1.7}
+.bd-main .bd-content .bd-article-container{max-width:52rem}
+.bd-page-width{max-width:90rem}
+.bd-article-container .version-note{color:var(--pst-color-text-muted);font-size:.85rem;margin-top:-.5rem}
+.bd-article-container .intro{font-size:1.12rem;line-height:1.7}
+.bd-article-container .admonition{box-shadow:none;border-radius:3px}
+.bd-article-container .admonition.note{border-left-color:var(--pst-color-primary)}
+.bd-article-container .admonition.note>.admonition-title{background:rgba(8,127,117,.07)}
+.table-wrapper{overflow-x:auto}
+@media(max-width:575px){.navbar-brand img{width:min(210px,calc(100vw - 138px));max-height:43px}.bd-article-container h1{font-size:1.9rem}.bd-article-container h2{font-size:1.4rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
